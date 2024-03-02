@@ -1,34 +1,5 @@
 #!/bin/bash
 
-####################
-#--Echo functions--#
-####################
-# Colors and more
-# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
-BHIGreen='\033[1;92m' # Bold High Intensity Green
-BHIYellow='\033[1;93m' # Bold High Intensity Green
-BHICyan='\033[1;96m' # Bold High Intensity Cyan
-NoColor='\033[0m'
-echo_info() {
-    echo -e "${BHICyan}$1${NoColor}"
-}
-
-echo_success() {
-    echo -e "${BHIGreen}$1${NoColor}"
-}
-
-echo_other() {
-    echo -e "${BHIYellow}$1${NoColor}"
-}
-
-echo_installing() {
-    echo -e "${BHICyan}Installing $1${NoColor}"
-}
-
-echo_installed() {
-    echo -e "${BHIGreen}$1 installed${NoColor}"
-}
-
 ##################################
 #--Generic Installing Functions--#
 ##################################
@@ -258,24 +229,3 @@ install_openvpnc() {
 ###########
 #--Other--#
 ###########
-##
-# @Description
-# Update packages from Ubuntu repositories, Flatpak and Snap 
-##
-update() {
-	echo_info 'Upgrading and updating packages'
-	sudo apt-get update -y
-	sudo apt-get upgrade -y
-	sudo apt-get full-upgrade -y
-	sudo apt-get autoremove -y
-	sudo apt-get autoclean -y
-	echo_info "Packages upgrades and updates finished"
-
-	echo_info "Flatpak updates started"
-	flatpak update
-	echo_info "Flatpak updates finished"
-
-	echo_info "Snap updates started"
-	sudo snap refresh
-	echo_info "Snap updates finished"
-}

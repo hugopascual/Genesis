@@ -1,10 +1,15 @@
 #!/bin/bash
 
+# Imports
 DIRECTORY=$(dirname "$0")
-FUNCTIONS_FILEPATH="$DIRECTORY/support_scripts/functions.sh"
-# Import installing functions
+
+INSTALLATIONS_FILEPATH="$DIRECTORY/support_scripts/functions.sh"
 # shellcheck source=/dev/null
-source "$FUNCTIONS_FILEPATH"
+source "$INSTALLATIONS_FILEPATH"
+
+AUXILIAR_FILEPATH="$DIRECTORY/support_scripts/functions.sh"
+# shellcheck source=/dev/null
+source "$AUXILIAR_FILEPATH"
 
 #------------------------------- Configuration
 ./"$DIRECTORY"/support_scripts/config.sh
@@ -46,6 +51,9 @@ flathub_install "Telegram" "org.telegram.desktop"
 flathub_install "Steam" "com.valvesoftware.Steam"
 
 #-------------------------------Custom installs
+
+#-------------------------------Additional Config
+git_config
 
 #------------------------------- Updates and Cleaning 
 update
