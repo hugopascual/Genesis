@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#------------------------------- Imports
+DIRECTORY=$(dirname "$0")
+
+AUXILIAR_FILEPATH="$DIRECTORY/utils/auxiliar.sh"
+# shellcheck source=/dev/null
+source "$AUXILIAR_FILEPATH"
+
 ##################################
 #--Generic Installing Functions--#
 ##################################
@@ -206,10 +213,10 @@ install_auto_firma_fnmt() {
 # https://www.addictivetips.com/ubuntu-linux-tips/hearthstone-linux/
 ##
 install_lutris() {
-  echo_info "Installing Lutris"
-  sudo add-apt-repository ppa:lutris-team/lutris
-  sudo apt-get update
-  sudo apt-get -y install lutris
+    echo_info "Installing Lutris"
+    sudo add-apt-repository ppa:lutris-team/lutris
+    sudo apt-get update
+    sudo apt-get -y install lutris
 	echo_installed "Lutris installed"
 }
 
@@ -220,10 +227,10 @@ install_lutris() {
 # https://web.dit.upm.es/.cdc/index.php/Configuracion_manual_vpnc_en_ubuntu
 ##
 install_openvpnc() {
-  echo_info "Installing OpenVPNC"
-  sudo apt-get update
-  sudo apt-get -y install vpnc
-	echo_installed "OpenVPNC installed"
+    echo_info "Installing OpenVPNC"
+    sudo apt-get update
+    sudo apt-get -y install vpnc
+    echo_installed "OpenVPNC installed"
 }
 
 ###########
