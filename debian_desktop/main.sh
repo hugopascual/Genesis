@@ -42,7 +42,6 @@ apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
 apt_get_install "GNU Image Manipulation Program" "gimp"
-apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
 
 #------------------------------- Snap installs
 
@@ -68,3 +67,4 @@ update
 
 #------------------------------- END
 echo_success "Restart the computer now"
+

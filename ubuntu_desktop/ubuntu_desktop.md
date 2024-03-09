@@ -1,35 +1,11 @@
-# Ubuntu software installations
-Inside this folder there are all the scripts and info necessary to install the 
-software I usually use. I tried to make it in a modular way so everyone can 
-modify it to its own taste.
-
-## Use and scripts
-The scripts in `scripts` folder are the support scripts for the `main.sh` 
-script which install all the software and make the wanted configurations. 
-Furthermore, outside the `support_scripts` folder there are two more scripts. 
-The first one is `update.sh` which can be used to update most of the software 
-installed. Some of the custom installations needed to be updated manually. The 
-second one is `test.sh` which only purpose is to test some functionalities or 
-code.
-
-To install all the software specified you just need to execute `main.sh`.
-```
-# If you dont have permissions of execution in the file give them
-chmod +x installations.sh
-# Then execute it
-./installations.sh
-```
-
-Once the installations have finished restart the computer because flatpak 
-recommend it and just in case something needs a restart to work in the proper 
-way.
+# Ubuntu Desktop specialized notes
 
 ## Games with Lutris
 There is a function to install Lutris, so you can install games like Hearthstone
 Linux. Once Lutris is installed you can go to https://lutris.net/games and 
 search for the games you want and follow the instructions to install them.
 
-## Things that are not automatized
+## Things that are not automatized in desktops
 - **Activate Wayland**
 To activate Wayland, on the password screen click on the gear icon and activate
 it.
