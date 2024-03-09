@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #------------------------------- Imports
+# TODO review
 DIRECTORY=$(dirname "$0")
 
 INSTALLATIONS_FILEPATH="$DIRECTORY/utils/installations.sh"
