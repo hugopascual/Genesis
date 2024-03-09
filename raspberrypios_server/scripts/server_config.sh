@@ -7,6 +7,6 @@ AUXILIAR_FILEPATH="$DIRECTORY/utils/auxiliar.sh"
 # shellcheck source=/dev/null
 source "$AUXILIAR_FILEPATH"
 
-sudo apt-get install -y openssh-server
-sudo systemctl enable ssh
-sudo systemctl restart ssh
+# ------------------------------- Terminal
+# Modify file .bashrc changing \w with \W
+sed -iE 's/\\w/\\W/' ~/.bashrc

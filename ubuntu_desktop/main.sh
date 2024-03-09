@@ -29,7 +29,7 @@ install_jetbrains_toolbox
 install_lutris
 
 #------------------------------- Ubuntu repository installs
-apt_get_install "Basic utilities" "wget curl"
+apt_get_install "Basic utilities" "wget curl net-tools"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"

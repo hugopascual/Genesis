@@ -34,6 +34,8 @@ install_openvpnc
 
 #------------------------------- Configuration
 ./"$DIRECTORY"/scripts/git_config.sh
+# This one is probably needed before this installation
+# ./"$DIRECTORY"/scripts/ssh_server.sh
 
 #------------------------------- Updates and Cleaning 
 ./"$DIRECTORY"/scripts/update_system.sh
