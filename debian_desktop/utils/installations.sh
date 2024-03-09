@@ -208,7 +208,7 @@ install_auto_firma_fnmt() {
 
 ##
 # @Description
-# Install Lutris.
+# Install Lutris
 # This software is used to install windows games on Linux
 # https://www.addictivetips.com/ubuntu-linux-tips/hearthstone-linux/
 ##
@@ -233,6 +233,3 @@ install_openvpnc() {
     echo_installed "OpenVPNC installed"
 }
 
-###########
-#--Other--#
-###########

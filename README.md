@@ -6,10 +6,9 @@ structure and a similar use cases and code organization.
 The scripts in `scripts` folder are the support scripts for the `main.sh` 
 script which install all the software and make the wanted configurations. 
 Furthermore, outside the `support_scripts` folder there are two more scripts. 
-The first one is `update.sh` which can be used to update most of the software 
-installed. Some of the custom installations needed to be updated manually. The 
-second one is `test.sh` which only purpose is to test some functionalities or 
-code.
+The first one is `main.sh` which install all the software and config the system 
+with the config scripts. The second one is `test.sh` which only purpose is to 
+test some functionalities or code.
 
 To install all the software specified you just need to execute `main.sh`.
 ```

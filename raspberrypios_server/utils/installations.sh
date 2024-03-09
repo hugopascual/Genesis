@@ -23,33 +23,6 @@ apt_get_install() {
     echo_installed "$1"
 }
 
-##
-# @Description
-# Install a software package from flathub via flatpak
-# @Params
-# $1 Name of the software, just to print
-# $2 Name of the apt package software wanted to be installed
-##
-flathub_install() {
-    echo_installing "$1 via flatpak"
-    flatpak install -y flathub $2
-    echo_installed "$1"
-}
-
-##
-# @Description
-# Install a software package via snap
-# @Params
-# $1 Name of the software, just to print
-# $2 Name of the apt package software wanted to be installed
-# $3 Option used in snap intallations
-##
-snap_install() {
-    echo_installing "$1 via snap"
-    sudo snap install $2 $3
-    echo_installed "$1"
-}
-
 ####################################
 #--Especific Installing Functions--#
 ####################################
@@ -60,36 +33,6 @@ snap_install() {
 ##
 install_template() {
 	echo_info ""
-}
-
-##
-# @Description
-# Install flatpak package manager
-# https://flatpak.org/setup/Ubuntu
-##
-install_flatpak() {
-    echo_info "Installing Flatpak (only command line)"
-    sudo apt install -y flatpak
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    echo_success "Flatpak installed"
-}
-
-##
-# @Description
-# Install Visual Studio Code
-# https://code.visualstudio.com/docs/setup/linux
-##
-install_VScode() {
-    echo_info "Installing Visual Studio Code"
-    sudo apt-get install wget gpg
-    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-    sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-    sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-    rm -f packages.microsoft.gpg
-    sudo apt install apt-transport-https
-    sudo apt update -y
-    sudo apt install -y code
-    echo_success "Visual Studio Code installed"
 }
 
 ##
@@ -124,7 +67,6 @@ uninstall_nodejs() {
     rm -r /etc/apt/keyrings/nodesource.gpg
 }
 
-
 ##
 # @Description
 # Install Docker
@@ -151,28 +93,6 @@ install_docker() {
 
 ##
 # @Description
-# Install jetbrains-toolbox
-# https://www.jetbrains.com/help/idea/installation-guide.html#toolbox
-# https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
-##
-install_jetbrains_toolbox() {
-    tar_file="jetbrains-toolbox-1.27.3.14493.tar.gz"
-    # Descargar el tar.gz
-    curl -OL https://download.jetbrains.com/toolbox/$tar_file
-    # Descomprimir el tar.gz
-    sudo tar -xzf "$tar_file"
-    # Mover el directorio descomprimido a /opt
-    descompressed_dir="${tar_file: : -7}"
-    sudo mv "$descompressed_dir" /opt/
-    # Ejecutar el binario de dentro
-    /opt/"$descompressed_dir"/jetbrains-toolbox
-    # Borrar los restos
-    sudo rm -rf /opt/"$descompressed_dir"
-    sudo rm -f "$tar_file"
-}
-
-##
-# @Description
 # Install ProtonVPN
 # https://protonvpn.com/support/linux-ubuntu-vpn-setup/
 # https://protonvpn.com/support/linux-vpn-tool/
@@ -192,47 +112,3 @@ install_proton_vpn() {
     # Install command client
     sudo apt-get -y install protonvpn-cli
 }
-
-##
-# @Description
-# Install Autofirma from FNMT
-# https://firmaelectronica.gob.es/Home/Descargas.html
-##
-install_auto_firma_fnmt() {
-	echo_info "Installing AutoFirma"
-	curl -OL https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip
-	unzip AutoFirma_Linux_Debian.zip
-	sudo apt install ./"$(ls | grep .deb)"
-	echo_installed "AutoFirma installed"
-}
-
-##
-# @Description
-# Install Lutris.
-# This software is used to install windows games on Linux
-# https://www.addictivetips.com/ubuntu-linux-tips/hearthstone-linux/
-##
-install_lutris() {
-    echo_info "Installing Lutris"
-    sudo add-apt-repository ppa:lutris-team/lutris
-    sudo apt-get update
-    sudo apt-get -y install lutris
-	echo_installed "Lutris installed"
-}
-
-##
-# @Description
-# Install OpenVPNC
-# VPN to connect to the DIT net
-# https://web.dit.upm.es/.cdc/index.php/Configuracion_manual_vpnc_en_ubuntu
-##
-install_openvpnc() {
-    echo_info "Installing OpenVPNC"
-    sudo apt-get update
-    sudo apt-get -y install vpnc
-    echo_installed "OpenVPNC installed"
-}
-
-###########
-#--Other--#
-###########

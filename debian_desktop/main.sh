@@ -3,10 +3,6 @@
 #------------------------------- Imports
 DIRECTORY=$(dirname "$0")
 
-DESKTOP_CONFIG_FILEPATH="$DIRECTORY/scripts/desktop_config.sh"
-# shellcheck source=/dev/null
-source "$DESKTOP_CONFIG_FILEPATH"
-
 INSTALLATIONS_FILEPATH="$DIRECTORY/utils/installations.sh"
 # shellcheck source=/dev/null
 source "$INSTALLATIONS_FILEPATH"
@@ -21,11 +17,8 @@ source "$DIT_FILEPATH"
 
 echo_info "Starting installation"
 
-#------------------------------- Configurations
-./"$DIRECTORY"/scripts/desktop_config.sh
-
 #------------------------------- Update and Upgrade
-update
+./"$DIRECTORY"/scripts/update_system.sh
 
 #------------------------------- Custom installations
 install_flatpak
@@ -42,6 +35,7 @@ apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
 apt_get_install "GNU Image Manipulation Program" "gimp"
+apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
 
 #------------------------------- Snap installs
 
@@ -59,12 +53,12 @@ flathub_install "Steam" "com.valvesoftware.Steam"
 #------------------------------- DIT Installs and config
 install_openvpnc
 
-#------------------------------- Additional Config
-git_config
+#------------------------------- Configuration
+./"$DIRECTORY"/scripts/desktop_config.sh
+./"$DIRECTORY"/scripts/git_config.sh
 
 #------------------------------- Updates and Cleaning 
-update
+./"$DIRECTORY"/scripts/update_system.sh
 
 #------------------------------- END
 echo_success "Restart the computer now"
-
