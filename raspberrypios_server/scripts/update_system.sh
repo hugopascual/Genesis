@@ -1,8 +1,12 @@
 #!/bin/bash
 
 #------------------------------- Imports
+# Get the path to the main directory.
+FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
+DIRECTORY="$(dirname "$FULL_PATH_TO_SCRIPT")"
+
 # shellcheck source=/dev/null
-source "../utils/auxiliar.sh"
+source "$DIRECTORY/../utils/auxiliar.sh"
 
 #------------------------------- Update the system
 echo_info 'Upgrading and updating packages'
