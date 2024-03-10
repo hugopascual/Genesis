@@ -15,6 +15,9 @@ source "$BASE_DIR/utils/dit.sh"
 #------------------------------- Start
 echo_info "Starting installation"
 
+#------------------------------- Initial Confifuration
+"$BASE_DIR"/scripts/server_config.sh
+
 #------------------------------- Update and Upgrade
 "$BASE_DIR"/scripts/update_system.sh
 
@@ -30,7 +33,6 @@ apt_get_install "Java" "default-jre"
 install_openvpnc
 
 #------------------------------- Configuration
-"$BASE_DIR"/scripts/server_config.sh
 "$BASE_DIR"/scripts/git_config.sh
 # This one is probably needed before this installation
 # "$BASE_DIR"/scripts/ssh_server.sh
