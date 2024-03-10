@@ -1,11 +1,8 @@
 #!/bin/bash
 
 #------------------------------- Imports
-DIRECTORY=$(dirname "$0")
-
-AUXILIAR_FILEPATH="$DIRECTORY/utils/auxiliar.sh"
 # shellcheck source=/dev/null
-source "$AUXILIAR_FILEPATH"
+source "../utils/auxiliar.sh"
 
 # ------------------------------- Terminal
 # Modify file .bashrc changing \w with \W
