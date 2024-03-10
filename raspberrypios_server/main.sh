@@ -1,22 +1,22 @@
 #!/bin/bash
 
 #------------------------------- Imports
-# Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
-DIRECTORY="$(dirname "$FULL_PATH_TO_SCRIPT")"
+# Get the path to the main BASE_DIR.
+FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
+BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/auxiliar.sh"
+source "$BASE_DIR/utils/auxiliar.sh"
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/installations.sh"
+source "$BASE_DIR/utils/installations.sh"
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/dit.sh"
+source "$BASE_DIR/utils/dit.sh"
 
 #------------------------------- Start
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-"$DIRECTORY"/scripts/update_system.sh
+"$BASE_DIR"/scripts/update_system.sh
 
 #------------------------------- Custom installations
 
@@ -30,13 +30,13 @@ apt_get_install "Java" "default-jre"
 install_openvpnc
 
 #------------------------------- Configuration
-"$DIRECTORY"/scripts/server_config.sh
-"$DIRECTORY"/scripts/git_config.sh
+"$BASE_DIR"/scripts/server_config.sh
+"$BASE_DIR"/scripts/git_config.sh
 # This one is probably needed before this installation
-# "$DIRECTORY"/scripts/ssh_server.sh
+# "$BASE_DIR"/scripts/ssh_server.sh
 
 #------------------------------- Updates and Cleaning 
-"$DIRECTORY"/scripts/update_system.sh
+"$BASE_DIR"/scripts/update_system.sh
 
 #------------------------------- END
 echo_success "Restart the computer now"

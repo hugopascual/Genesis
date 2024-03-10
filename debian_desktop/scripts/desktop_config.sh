@@ -2,11 +2,11 @@
 
 #------------------------------- Imports
 # Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
-DIRECTORY="$(dirname "$FULL_PATH_TO_SCRIPT")"
+FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
+SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$DIRECTORY/../utils/auxiliar.sh"
+source "$SCRIPTS_DIR/../utils/auxiliar.sh"
 
 #------------------------------- Initialization
 echo_info "Starting configuration"

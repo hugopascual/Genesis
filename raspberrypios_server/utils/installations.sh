@@ -2,11 +2,11 @@
 
 #------------------------------- Imports
 # Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
-DIRECTORY="$(dirname "$FULL_PATH_TO_SCRIPT")"
+FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
+UTILS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$DIRECTORY/auxiliar.sh"
+source "$UTILS_DIR/auxiliar.sh"
 
 ##################################
 #--Generic Installing Functions--#
@@ -20,7 +20,7 @@ source "$DIRECTORY/auxiliar.sh"
 ##
 apt_get_install() {
     echo_installing "$1 via apt-get"
-    sudo apt-get install -y $2
+    sudo apt-get install -y "$2"
     echo_installed "$1"
 }
 

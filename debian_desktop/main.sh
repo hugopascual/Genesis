@@ -2,21 +2,21 @@
 
 #------------------------------- Imports
 # Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
-DIRECTORY="$(dirname "$FULL_PATH_TO_SCRIPT")"
+FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
+BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/auxiliar.sh"
+source "$BASE_DIR/utils/auxiliar.sh"
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/installations.sh"
+source "$BASE_DIR/utils/installations.sh"
 # shellcheck source=/dev/null
-source "$DIRECTORY/utils/dit.sh"
+source "$BASE_DIR/utils/dit.sh"
 
 #------------------------------- Start
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-"$DIRECTORY"/scripts/update_system.sh
+"$BASE_DIR"/scripts/update_system.sh
 
 #------------------------------- Custom installations
 install_flatpak
@@ -52,11 +52,11 @@ flathub_install "Steam" "com.valvesoftware.Steam"
 install_openvpnc
 
 #------------------------------- Configuration
-"$DIRECTORY"/scripts/desktop_config.sh
-"$DIRECTORY"/scripts/git_config.sh
+"$BASE_DIR"/scripts/desktop_config.sh
+"$BASE_DIR"/scripts/git_config.sh
 
 #------------------------------- Updates and Cleaning 
-"$DIRECTORY"/scripts/update_system.sh
+"$BASE_DIR"/scripts/update_system.sh
 
 #------------------------------- END
 echo_success "Restart the computer now"
