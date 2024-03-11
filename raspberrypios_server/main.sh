@@ -22,7 +22,7 @@ echo_info "Starting installation"
 "$BASE_DIR"/scripts/update_system.sh
 
 #------------------------------- Custom installations
-
+install_docker
 
 #------------------------------- Official repository installs
 apt_get_install "Basic utilities" "wget curl"
