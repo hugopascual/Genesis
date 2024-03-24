@@ -11,20 +11,13 @@ source "$SCRIPTS_DIR/../utils/auxiliar.sh"
 #------------------------------- Initialization
 echo_info "Starting configuration"
 
-#------------------------------- Appearance
+#------------------------------- Gnome Desktop
 # Style
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
-
-# Dock
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action minimize
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 #------------------------------- Multitasking 
 gsettings set org.gnome.mutter workspaces-only-on-primary false

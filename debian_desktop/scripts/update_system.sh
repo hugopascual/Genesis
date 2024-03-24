@@ -20,7 +20,3 @@ echo_info "Packages upgrades and updates finished"
 echo_info "Flatpak updates started"
 flatpak update
 echo_info "Flatpak updates finished"
-
-echo_info "Snap updates started"
-sudo snap refresh
-echo_info "Snap updates finished"

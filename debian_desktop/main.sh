@@ -54,6 +54,7 @@ install_openvpnc
 #------------------------------- Configuration
 "$BASE_DIR"/scripts/desktop_config.sh
 "$BASE_DIR"/scripts/git_config.sh
+"$BASE_DIR"/scripts/nvidia_driver.sh
 
 #------------------------------- Updates and Cleaning 
 "$BASE_DIR"/scripts/update_system.sh
