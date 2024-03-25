@@ -9,5 +9,5 @@ SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 source "$SCRIPTS_DIR/../utils/auxiliar.sh"
 
 #------------------------------- Config
-git config --global user.email "hugopascual998@gmail.com"
+git config --global user.email "hugo.pascual.adan@gmail.com"
 git config --global user.name "hugopascual"   

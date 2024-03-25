@@ -21,7 +21,6 @@ echo_info "Starting installation"
 #------------------------------- Custom installations
 install_flatpak
 install_VScode
-install_nodejs
 install_docker
 install_jetbrains_toolbox
 install_lutris
@@ -29,13 +28,12 @@ install_lutris
 #------------------------------- Ubuntu repository installs
 apt_get_install "Basic utilities" "wget curl net-tools"
 apt_get_install "Git" "git"
-apt_get_install "Java" "default-jre"
-apt_get_install "Firefox" "firefox"
+apt_get_install "Java JRE" "default-jre"
+apt_get_install "Java JDK" "default-jdk"
+apt_get_install "Firefox" "firefox-esr"
 apt_get_install "Teminator" "terminator"
 apt_get_install "GNU Image Manipulation Program" "gimp"
 apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
-
-#------------------------------- Snap installs
 
 #------------------------------- Flatpak installs
 flathub_install "VLC" "org.videolan.VLC"
@@ -54,7 +52,6 @@ install_openvpnc
 #------------------------------- Configuration
 "$BASE_DIR"/scripts/desktop_config.sh
 "$BASE_DIR"/scripts/git_config.sh
-"$BASE_DIR"/scripts/nvidia_driver.sh
 
 #------------------------------- Updates and Cleaning 
 "$BASE_DIR"/scripts/update_system.sh
