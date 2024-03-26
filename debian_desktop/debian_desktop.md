@@ -4,7 +4,7 @@
 Pre-Installations Steps
 ```
 sudo apt update
-sudo apt updagrade
+sudo apt upgrade
 ```
 
 Delete previous installations
@@ -18,25 +18,12 @@ sudo /usr/bin/nvidia-uninstall
 Enable `contrib` and `non-free` repositories on Debian
 ```
 sudo apt install software-properties-common -y
-sudo add-apt-repository contrib non-free-firmware
+sudo add-apt-repository contrib non-free-firmware non-free
 sudo apt update
 ```
 
 ### Installation via APT
-Check your system build 32bit or 64bit
-```
-lscpu | grep CPU
-```
-
-I suppose that the system is 64bit capable
-```
-# Non-PAE kernel
-sudo apt install linux-headers-686
-# PAE kernel
-sudo apt install linux-headers-686
-```
-
-Install the drivers
+Install the nvidia software to detect the GPU
 ```
 sudo apt install nvidia-detect
 ```
@@ -44,9 +31,11 @@ sudo apt install nvidia-detect
 nvidia-detect
 ```
 This last command will detect the GPU on your computer and suggest the package 
-to install. Install the reccomended one.
+to install. Install the reccomended one. Probably a warning will appear 
+mentioning that the new drivers have a conflict with the ones installed and a 
+reboot should fix the problem. Just accept it.
 ```
-sudo apt install nvidia-driver linux-image-amd64
+sudo apt install nvidia-driver
 ```
 Now reboot the system
 ```
