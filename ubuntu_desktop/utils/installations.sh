@@ -223,24 +223,11 @@ install_lutris() {
 
 ##
 # @Description
-# Install OpenVPNC
-# VPN to connect to the DIT net
-# https://web.dit.upm.es/.cdc/index.php/Configuracion_manual_vpnc_en_ubuntu
-##
-install_openvpnc() {
-    echo_info "Installing OpenVPNC"
-    sudo apt-get update
-    sudo apt-get -y install vpnc
-    echo_installed "OpenVPNC installed"
-}
-
-##
-# @Description
 # Install GitHub CLI
 # Github client to make login via terminal
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 ##
-install_openvpnc() {
+install_github_cli() {
     echo_info "Installing GitHub CLI"
     sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
     && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
