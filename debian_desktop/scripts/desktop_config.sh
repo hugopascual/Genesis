@@ -14,19 +14,16 @@ echo_info "Starting configuration"
 #------------------------------- Gnome Desktop
 # Style
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
-
-# Desktop icons
-gsettings set org.gnome.shell.extensions.ding show-home false
 
 #------------------------------- Multitasking 
 gsettings set org.gnome.mutter workspaces-only-on-primary false
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
-
 #------------------------------- Mouse and Touchpad
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 
 #------------------------------- Notifications
 gsettings set org.gnome.desktop.notifications show-in-lock-screen false
