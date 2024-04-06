@@ -157,7 +157,7 @@ install_docker() {
 # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
 ##
 install_jetbrains_toolbox() {
-    tar_file="jetbrains-toolbox-1.27.3.14493.tar.gz"
+    tar_file="jetbrains-toolbox-2.2.3.20090.tar.gz"
     # Descargar el tar.gz
     curl -OL https://download.jetbrains.com/toolbox/$tar_file
     # Descomprimir el tar.gz
