@@ -203,8 +203,24 @@ install_auto_firma_fnmt() {
 	echo_info "Installing AutoFirma"
 	curl -OL https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip
 	unzip AutoFirma_Linux_Debian.zip
-	sudo apt install ./"$(ls | grep .deb)"
+	sudo apt install -y ./*.deb
+    rm AutoFirma*
 	echo_installed "AutoFirma installed"
+}
+
+##
+# @Description
+# Install Configurador FNMT
+# App for requesting keys needed to obtain a spanish digital certificate
+# https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
+##
+install_config_fnmt() {
+    echo_info "Installing Configurador FNMT"
+    sudo apt install -y default-jdk
+    wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
+    sudo apt install -y ./configuradorfnmt*
+    rm configuradorfnmt*
+    echo_installed "Configurador FNMT"    
 }
 
 ##
