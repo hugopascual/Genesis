@@ -32,6 +32,13 @@ following command.
 sudo apt-get install nvidia-driver-525
 ```
 
+## Display Link
+To install the display link driver go to the [official web](
+https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu) and
+download the drivers directly. There is an option to install the repository 
+but the time I have tried it failed.
+
+
 ## Synchronize accounts
 To finish the setup just synchronize your accounts in the web browser and the 
 Ubuntu utility if you want.
