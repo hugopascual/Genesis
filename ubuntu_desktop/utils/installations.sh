@@ -61,6 +61,7 @@ snap_install() {
 ##
 install_template() {
 	echo_info ""
+    echo_installed ""
 }
 
 ##
@@ -69,10 +70,10 @@ install_template() {
 # https://flatpak.org/setup/Ubuntu
 ##
 install_flatpak() {
-    echo_info "Installing Flatpak (only command line)"
+    echo_installing "Flatpak (only command line)"
     sudo apt install -y flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    echo_success "Flatpak installed"
+    echo_installed "Flatpak"
 }
 
 ##
@@ -81,7 +82,7 @@ install_flatpak() {
 # https://code.visualstudio.com/docs/setup/linux
 ##
 install_VScode() {
-    echo_info "Installing Visual Studio Code"
+    echo_installing "Visual Studio Code"
     sudo apt-get install wget gpg
     wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
     sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -90,7 +91,7 @@ install_VScode() {
     sudo apt install apt-transport-https
     sudo apt update -y
     sudo apt install -y code
-    echo_success "Visual Studio Code installed"
+    echo_installed "Visual Studio Code"
 }
 
 ##
@@ -99,7 +100,7 @@ install_VScode() {
 # https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04
 ##
 install_nodejs() {
-    echo_info "Installing nodejs via apt-get"
+    echo_installing "nodejs"
     sudo apt-get update
     sudo apt-get install -y ca-certificates curl gnupg
     sudo mkdir -p /etc/apt/keyrings
@@ -111,7 +112,7 @@ install_nodejs() {
     
     sudo apt-get update
     sudo apt-get install nodejs -y
-    echo_success "nodejs installed"
+    echo_installed "nodejs"
 }
 
 ##
@@ -120,9 +121,11 @@ install_nodejs() {
 # https://github.com/nodesource/distributions#installation-instructions
 ##
 uninstall_nodejs() {
+    echo_info "Removing node from system"
     apt-get purge nodejs &&\
     rm -r /etc/apt/sources.list.d/nodesource.list &&\
     rm -r /etc/apt/keyrings/nodesource.gpg
+    echo_success "Nodejs successfully removed"
 }
 
 
@@ -132,7 +135,7 @@ uninstall_nodejs() {
 # 
 ##
 install_docker() {
-    echo_info "Installing Docker via apt-get"
+    echo_installing "Docker"
     # Uninstall old versions
     sudo apt-get remove docker docker-engine docker.io containerd runc
     # Necessary installs to do
@@ -147,7 +150,7 @@ install_docker() {
     #Install Docker Engine
     sudo apt-get update -y
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    echo_success "Docker installed"
+    echo_installed "Docker"
 }   
 
 ##
@@ -157,6 +160,7 @@ install_docker() {
 # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
 ##
 install_jetbrains_toolbox() {
+    echo_installing "JetBrains Toolbox"
     tar_file="jetbrains-toolbox-2.2.3.20090.tar.gz"
     # Descargar el tar.gz
     curl -OL https://download.jetbrains.com/toolbox/$tar_file
@@ -170,6 +174,7 @@ install_jetbrains_toolbox() {
     # Borrar los restos
     sudo rm -rf /opt/"$descompressed_dir"
     sudo rm -f "$tar_file"
+    echo_installed "JetBrains Toolbox"
 }
 
 ##
@@ -179,6 +184,7 @@ install_jetbrains_toolbox() {
 # https://protonvpn.com/support/linux-vpn-tool/
 ##
 install_proton_vpn() {
+    echo_installing "ProtonVPN"
     proton_package_name="protonvpn-stable-release_1.0.3_all.deb"
     # Descargar el .deb
     curl -OL https://repo.protonvpn.com/debian/dists/stable/main/binary-all/$proton_package_name
@@ -192,6 +198,7 @@ install_proton_vpn() {
     sudo apt install -y gnome-shell-extension-appindicator gir1.2-appindicator3-0.1
     # Install command client
     sudo apt-get -y install protonvpn-cli
+    echo_installed "ProtonVPN"
 }
 
 ##
@@ -200,12 +207,12 @@ install_proton_vpn() {
 # https://firmaelectronica.gob.es/Home/Descargas.html
 ##
 install_auto_firma_fnmt() {
-	echo_info "Installing AutoFirma"
+	echo_installing "AutoFirma"
 	curl -OL https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip
 	unzip AutoFirma_Linux_Debian.zip
 	sudo apt install -y ./*.deb
     rm AutoFirma*
-	echo_installed "AutoFirma installed"
+	echo_installed "AutoFirma"
 }
 
 ##
@@ -215,7 +222,7 @@ install_auto_firma_fnmt() {
 # https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
 ##
 install_config_fnmt() {
-    echo_info "Installing Configurador FNMT"
+    echo_installing "Configurador FNMT"
     sudo apt install -y default-jdk
     wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
     sudo apt install -y ./configuradorfnmt*
@@ -230,11 +237,11 @@ install_config_fnmt() {
 # https://www.addictivetips.com/ubuntu-linux-tips/hearthstone-linux/
 ##
 install_lutris() {
-    echo_info "Installing Lutris"
+    echo_installing "Lutris"
     sudo add-apt-repository ppa:lutris-team/lutris
     sudo apt-get update
     sudo apt-get -y install lutris
-	echo_installed "Lutris installed"
+	echo_installed "Lutris"
 }
 
 ##
@@ -244,12 +251,26 @@ install_lutris() {
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 ##
 install_github_cli() {
-    echo_info "Installing GitHub CLI"
+    echo_installing "GitHub CLI"
     sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
     && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
-    echo_installed "GitHub CLI installed"
+    echo_installed "GitHub CLI"
 }
 
+
+##
+# @Description
+# Install NVTop
+# Software to monitor the usage of GPU
+# https://github.com/Syllo/nvtop
+##
+install_nvtop() {
+	echo_installing "NVTop"
+    sudo add-apt-repository ppa:flexiondotorg/nvtop
+    sudo apt update
+    sudo apt install nvtop
+    echo_installed "NVTop"
+}

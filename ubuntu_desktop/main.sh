@@ -21,11 +21,15 @@ echo_info "Starting installation"
 #------------------------------- Custom installations
 install_flatpak
 install_VScode
-install_nodejs
+# install_nodejs
 install_docker
 install_jetbrains_toolbox
+# install_proton_vpn
+install_auto_firma_fnmt
+install_config_fnmt
 install_lutris
 install_github_cli
+install_nvtop
 
 #------------------------------- Ubuntu repository installs
 apt_get_install "Basic utilities" "wget curl net-tools"
