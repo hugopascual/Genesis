@@ -271,6 +271,20 @@ install_nvtop() {
 	echo_installing "NVTop"
     sudo add-apt-repository ppa:flexiondotorg/nvtop
     sudo apt update
-    sudo apt install nvtop
+    sudo apt install -y nvtop
     echo_installed "NVTop"
+}
+
+##
+# @Description
+# Install Fastfetch
+# Terminal tool used to show the characteristics of the machine in a pretty way 
+# https://github.com/fastfetch-cli/fastfetch
+##
+install_fastfetch() {
+	echo_info "Fastfetch"
+    sudo apt add-apt-repository ppa:zhangsongcui3371/fastfetch
+    sudo apt update
+    sudo apt install -y fastfetch
+    echo_installed "Fastfetch"
 }
