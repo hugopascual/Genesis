@@ -30,9 +30,10 @@ install_config_fnmt
 install_lutris
 install_github_cli
 install_nvtop
+install_fastfetch
 
 #------------------------------- Ubuntu repository installs
-apt_get_install "Basic utilities" "wget curl net-tools"
+apt_get_install "Basic utilities" "wget curl net-tools htop"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"

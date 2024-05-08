@@ -283,7 +283,7 @@ install_nvtop() {
 ##
 install_fastfetch() {
 	echo_info "Fastfetch"
-    sudo apt add-apt-repository ppa:zhangsongcui3371/fastfetch
+    sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
     sudo apt update
     sudo apt install -y fastfetch
     echo_installed "Fastfetch"
