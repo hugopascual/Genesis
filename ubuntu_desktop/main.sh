@@ -55,6 +55,7 @@ flathub_install "Steam" "com.valvesoftware.Steam"
 
 #------------------------------- DIT Installs and config
 install_openvpnc
+# ssh_server_activate
 
 #------------------------------- Configuration
 "$BASE_DIR"/scripts/desktop_config.sh
