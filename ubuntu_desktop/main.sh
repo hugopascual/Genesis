@@ -31,6 +31,7 @@ install_lutris
 install_github_cli
 install_nvtop
 install_fastfetch
+install_displaylink_driver
 
 #------------------------------- Ubuntu repository installs
 apt_get_install "Basic utilities" "wget curl net-tools htop"

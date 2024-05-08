@@ -288,3 +288,19 @@ install_fastfetch() {
     sudo apt install -y fastfetch
     echo_installed "Fastfetch"
 }
+
+##
+# @Description
+# Install Displylink driver
+# Drivers to use displays with hubs
+# https://www.synaptics.com/products/displaylink-graphics/downloads
+##
+install_displaylink_driver() {
+    echo_installing "Displaylink driver"
+    wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+    sudo apt install -y ./synaptics-repository-keyring.deb
+    sudo apt update
+    sudo apt install -y displaylink-driver
+    sudo rm synaptics-repository-keyring.deb
+    echo_installed "Displaylink driver"
+}

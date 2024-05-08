@@ -26,6 +26,7 @@ install_jetbrains_toolbox
 # install_auto_firma_fnmt
 install_lutris
 install_github_cli
+install_displaylink_driver
 
 #------------------------------- Ubuntu repository installs
 apt_get_install "Basic utilities" "wget curl net-tools"
