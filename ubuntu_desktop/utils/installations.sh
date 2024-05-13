@@ -238,7 +238,7 @@ install_config_fnmt() {
 ##
 install_lutris() {
     echo_installing "Lutris"
-    sudo add-apt-repository ppa:lutris-team/lutris
+    sudo add-apt-repository -y ppa:lutris-team/lutris
     sudo apt-get update
     sudo apt-get -y install lutris
 	echo_installed "Lutris"
@@ -269,7 +269,7 @@ install_github_cli() {
 ##
 install_nvtop() {
 	echo_installing "NVTop"
-    sudo add-apt-repository ppa:flexiondotorg/nvtop
+    sudo add-apt-repository -y ppa:flexiondotorg/nvtop
     sudo apt update
     sudo apt install -y nvtop
     echo_installed "NVTop"
@@ -283,7 +283,7 @@ install_nvtop() {
 ##
 install_fastfetch() {
 	echo_info "Fastfetch"
-    sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+    sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
     sudo apt update
     sudo apt install -y fastfetch
     echo_installed "Fastfetch"
