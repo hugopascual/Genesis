@@ -34,7 +34,7 @@ install_fastfetch
 install_displaylink_driver
 
 #------------------------------- Ubuntu repository installs
-apt_get_install "Basic utilities" "wget curl net-tools htop"
+apt_get_install "Basic utilities" "wget curl net-tools htop tree"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
