@@ -4,19 +4,18 @@
 # Get the path to the main directory.
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
+UTILS_DIR="$BASE_DIR/utils/"
+SCRIPTS_DIR="$BASE_DIR/scripts/"
 
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/auxiliar.sh"
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/installations.sh"
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/dit.sh"
+# Import utils
+# shellcheck disable=SC1090
+for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 
 #------------------------------- Start
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-"$BASE_DIR"/scripts/update_system.sh
+"$SCRIPTS_DIR"update_system.sh
 
 #------------------------------- Custom installations
 install_flatpak
@@ -60,11 +59,11 @@ install_openvpnc
 # ssh_server_activate
 
 #------------------------------- Configuration
-"$BASE_DIR"/scripts/desktop_config.sh
-"$BASE_DIR"/scripts/git_config.sh
+"$SCRIPTS_DIR"desktop_config.sh
+"$SCRIPTS_DIR"git_config.sh
 
 #------------------------------- Updates and Cleaning 
-"$BASE_DIR"/scripts/update_system.sh
+"$SCRIPTS_DIR"update_system.sh
 
 #------------------------------- END
 echo_success "Restart the computer now"

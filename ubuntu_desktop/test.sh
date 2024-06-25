@@ -4,12 +4,11 @@
 # Get the path to the main directory.
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
+UTILS_DIR="$BASE_DIR/utils/"
+SCRIPTS_DIR="$BASE_DIR/scripts/"
 
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/auxiliar.sh"
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/installations.sh"
-# shellcheck source=/dev/null
-source "$BASE_DIR/utils/dit.sh"
+# Import utils
+# shellcheck disable=SC1090
+for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 
 #------------------------------- Test

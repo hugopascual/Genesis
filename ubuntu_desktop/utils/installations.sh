@@ -1,13 +1,5 @@
 #!/bin/bash
 
-#------------------------------- Imports
-# Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
-UTILS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-
-# shellcheck source=/dev/null
-source "$UTILS_DIR/auxiliar.sh"
-
 ##################################
 #--Generic Installing Functions--#
 ##################################
