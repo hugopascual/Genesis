@@ -4,7 +4,7 @@
 # Get the path to the main directory.
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-UTILS_DIR="$BASE_DIR/utils/"
+UTILS_DIR="$BASE_DIR/functions/"
 SCRIPTS_DIR="$BASE_DIR/scripts/"
 
 # Import utils

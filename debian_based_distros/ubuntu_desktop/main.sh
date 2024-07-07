@@ -4,7 +4,7 @@
 # Get the path to the main directory.
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 BASE_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-UTILS_DIR="$BASE_DIR/utils/"
+UTILS_DIR="$BASE_DIR/functions/"
 SCRIPTS_DIR="$BASE_DIR/scripts/"
 
 # Import utils
@@ -15,33 +15,38 @@ for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
+# TODO search for a better execution of scripts
 "$SCRIPTS_DIR"update_system.sh
 
-#------------------------------- Custom installations
+#------------------------------- Basic
 install_flatpak
-install_VScode
-# install_nodejs
-install_docker
-install_jetbrains_toolbox
-# install_proton_vpn
 install_auto_firma_fnmt
 install_config_fnmt
-install_lutris
-install_github_cli
 install_nvtop
 install_fastfetch
 install_displaylink_driver
-
-#------------------------------- Ubuntu repository installs
 apt_get_install "Basic utilities" "wget curl net-tools htop tree"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
+
+#------------------------------- Development
+# install_nodejs
+install_docker
+install_VScode
+install_jetbrains_toolbox
+install_github_cli
+
+#------------------------------- Games
+install_lutris
+
+#------------------------------- Services
+# install_proton_vpn
+
+#------------------------------- Extra Funcionalities
 apt_get_install "GNU Image Manipulation Program" "gimp"
 apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
-
-#------------------------------- Snap installs
 
 #------------------------------- Flatpak installs
 flathub_install "VLC" "org.videolan.VLC"
