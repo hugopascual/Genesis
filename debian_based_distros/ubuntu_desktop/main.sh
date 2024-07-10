@@ -11,7 +11,7 @@ SCRIPTS_DIR="$BASE_DIR/scripts/"
 # shellcheck disable=SC1090
 for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 
-#------------------------------- Start
+#------------------------------- Starts
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade

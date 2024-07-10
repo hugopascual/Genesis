@@ -30,6 +30,14 @@ echo_installed() {
     echo -e "${BHIGreen}$1 installed${NoColor}"
 }
 
+echo_uninstalling() {
+    echo -e "${BHICyan}Uninstalling $1${NoColor}"
+}
+
+echo_uninstalled() {
+    echo -e "${BHIGreen}$1 uninstalled${NoColor}"
+}
+
 
 ##################################
 #--Generic Installing Functions--#
@@ -56,7 +64,7 @@ apt_get_install() {
 ##
 flathub_install() {
     echo_installing "$1 via flatpak"
-    flatpak install -y flathub $2
+    flatpak install -y flathub "$2"
     echo_installed "$1"
 }
 
@@ -70,6 +78,21 @@ flathub_install() {
 ##
 snap_install() {
     echo_installing "$1 via snap"
-    sudo snap install $2 $3
+    sudo snap install "$2" "$3"
+    echo_installed "$1"
+}
+
+##
+# @Description
+# Install a software package downloading the deb package
+# @Params
+# $1 Name of the software, just to print
+# $2 URL of deb package to install
+##
+deb_download_and_install() {
+    echo_installing "$1 via deb package"
+    wget --content-disposition "$2"
+    sudo apt-get install -y ./*.deb
+    rm ./*.deb
     echo_installed "$1"
 }

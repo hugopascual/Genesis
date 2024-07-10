@@ -9,20 +9,42 @@
 #  
 ##
 install_template() {
-	echo_info ""
+	echo_installing ""
     echo_installed ""
 }
 
 ##
 # @Description
-# Install flatpak package manager
+# Install 
+#  
+##
+uninstall_template() {
+    echo_uninstalling ""
+    echo_uninstalled ""
+}
+
+##
+# @Description
+# Install Flatpak package manager
 # https://flatpak.org/setup/Ubuntu
 ##
 install_flatpak() {
     echo_installing "Flatpak (only command line)"
     sudo apt install -y flatpak
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    # add the Flathub repository
+    FLATHUB_REPO_URI=https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists flathub "$FLATHUB_REPO_URI"
     echo_installed "Flatpak"
+}
+
+##
+# @Description
+# Install Flatpak package manager
+#  
+##
+uninstall_flatpak() {
+    echo_uninstalling "WIP"
+    echo_uninstalled "WIP"
 }
 
 ##
@@ -31,18 +53,21 @@ install_flatpak() {
 # https://code.visualstudio.com/docs/setup/linux
 ##
 install_VScode() {
-    echo_installing "Visual Studio Code"
-    sudo apt-get install wget gpg
-    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-    sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-    sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-    rm -f packages.microsoft.gpg
-    sudo apt install apt-transport-https
-    sudo apt update -y
-    sudo apt install -y code
-    echo_installed "Visual Studio Code"
+    VSCODE_DEB_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
+    deb_download_and_install "Visual Studio Code" "$VSCODE_DEB_URL"
 }
 
+##
+# @Description
+# Install 
+#  
+##
+uninstall_template() {
+    echo_uninstalling ""
+    echo_uninstalled ""
+}
+
+# TODO make a review if this continue to work
 ##
 # @Description
 # Install nodejs and npm
@@ -64,6 +89,7 @@ install_nodejs() {
     echo_installed "nodejs"
 }
 
+# TODO make a review if this continue to work
 ##
 # @Description
 # Uninstall nodejs and npm
@@ -81,26 +107,53 @@ uninstall_nodejs() {
 ##
 # @Description
 # Install Docker
-# 
+# https://docs.docker.com/engine/install/ubuntu/
 ##
 install_docker() {
     echo_installing "Docker"
-    # Uninstall old versions
-    sudo apt-get remove docker docker-engine docker.io containerd runc
-    # Necessary installs to do
-    sudo apt-get install -y ca-certificates curl gnupg lsb-release
-    # Add Docker's official GPG key 
-    sudo mkdir -p /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    # Set up the repository
+    # Remove previous installations
+    uninstall_docker
+    
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
     echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    #Install Docker Engine
-    sudo apt-get update -y
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    sudo apt-get update
+
     echo_installed "Docker"
 }   
+
+##
+# @Description
+# Uninstall Docker
+# https://docs.docker.com/engine/install/ubuntu/
+##
+uninstall_docker() {
+    # Uninstall old versions and unofficial packages
+    PACKAGES_LIST=(
+        "docker.io" 
+        "docker-doc" 
+        "docker-compose" 
+        "docker-compose-v2" 
+        "podman-docker" 
+        "containerd" 
+        "runc")
+    for pkg in "${PACKAGES_LIST[@]}"; 
+        do sudo apt-get remove $pkg; 
+    done
+
+    sudo rm -rf /var/lib/docker
+    sudo rm -rf /var/lib/containerd
+}
 
 ##
 # @Description
@@ -110,7 +163,7 @@ install_docker() {
 ##
 install_jetbrains_toolbox() {
     echo_installing "JetBrains Toolbox"
-    tar_file="jetbrains-toolbox-2.2.3.20090.tar.gz"
+    tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
     # Descargar el tar.gz
     curl -OL https://download.jetbrains.com/toolbox/$tar_file
     # Descomprimir el tar.gz
@@ -124,6 +177,16 @@ install_jetbrains_toolbox() {
     sudo rm -rf /opt/"$descompressed_dir"
     sudo rm -f "$tar_file"
     echo_installed "JetBrains Toolbox"
+}
+
+##
+# @Description
+# Install 
+#  
+##
+uninstall_template() {
+    echo_uninstalling ""
+    echo_uninstalled ""
 }
 
 ##
