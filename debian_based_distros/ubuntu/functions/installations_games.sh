@@ -36,7 +36,7 @@ uninstall_lutris() {
 # Install Steam
 #  
 ##
-install_template() {
+install_steam() {
     NAME="Steam"
     URL="https://cdn.akamai.steamstatic.com/client/installer/steam.deb"
     deb_download_and_install "$NAME" "$URL"
@@ -47,8 +47,8 @@ install_template() {
 # Uninstall
 #  
 ##
-uninstall_template() {
-    NAME="WIP"
+uninstall_steam() {
+    NAME="Steam"
     echo_uninstalling "$NAME"
     echo_uninstalled "$NAME"
 }
