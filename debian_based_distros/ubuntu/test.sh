@@ -12,9 +12,5 @@ SCRIPTS_DIR="$BASE_DIR/scripts/"
 for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 
 #------------------------------- Test
-array=("item 1" 
-"item 2" 
-"item 3")
-for i in "${array[@]}"; do   # The quotes are necessary here
-    echo "$i"
-done
+URL=""
+wget --content-dispositio "$URL"

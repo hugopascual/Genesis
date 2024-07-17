@@ -19,39 +19,39 @@ echo_info "Starting installation"
 "$SCRIPTS_DIR"update_system.sh
 
 #------------------------------- Basic
-install_flatpak
-install_auto_firma_fnmt
-install_config_fnmt
-install_nvtop
-install_fastfetch
-install_displaylink_driver
-apt_get_install "Basic utilities" "wget curl net-tools htop tree"
+apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
+install_nvtop
+install_fastfetch
+install_displaylink_driver
+install_flatpak
+install_auto_firma_fnmt
+install_config_fnmt
+
 
 #------------------------------- Development
-# install_nodejs
 install_docker
+# install_nodejs
 install_VScode
-install_jetbrains_toolbox
+install_jetbrains_toolbox   
 install_github_cli
 
 #------------------------------- Games
 install_lutris
+deb_download_and_install 
 
 #------------------------------- Services
 # install_proton_vpn
+apt_get_install "Spotify" "spotify-client"
 
-#------------------------------- Extra Funcionalities
+#------------------------------- Extra
 apt_get_install "GNU Image Manipulation Program" "gimp"
 apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
-
-#------------------------------- Flatpak installs
-flathub_install "VLC" "org.videolan.VLC"
+snap_install "VLC" "vlc"
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
-flathub_install "Spotify" "com.spotify.client"
 flathub_install "Google Chrome" "com.google.Chrome"
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
 flathub_install "Wireshark" "org.wireshark.Wireshark"
