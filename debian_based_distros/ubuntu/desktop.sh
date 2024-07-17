@@ -24,6 +24,10 @@ apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
+
+flathub_install "Thunderbird" "org.mozilla.Thunderbird"
+flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
+
 install_nvtop
 install_fastfetch
 install_displaylink_driver
@@ -41,23 +45,22 @@ install_github_cli
 
 #------------------------------- Games
 install_lutris
-deb_download_and_install 
+install_steam
 
 #------------------------------- Services
 # install_proton_vpn
+
 apt_get_install "Spotify" "spotify-client"
+
+flathub_install "Telegram" "org.telegram.desktop"
 
 #------------------------------- Extra
 apt_get_install "GNU Image Manipulation Program" "gimp"
 apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
+
 snap_install "VLC" "vlc"
-flathub_install "Thunderbird" "org.mozilla.Thunderbird"
+
 flathub_install "Google Chrome" "com.google.Chrome"
-flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
-flathub_install "Wireshark" "org.wireshark.Wireshark"
-flathub_install "Postman" "com.getpostman.Postman"
-flathub_install "Telegram" "org.telegram.desktop"
-flathub_install "Steam" "com.valvesoftware.Steam"
 
 #------------------------------- DIT Installs and config
 install_openvpnc
