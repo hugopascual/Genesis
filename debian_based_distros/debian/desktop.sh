@@ -35,6 +35,7 @@ install_config_fnmt
 
 #------------------------------- Development
 install_docker
+# install_nodejs
 install_VScode
 install_jetbrains_toolbox   
 install_github_cli
@@ -45,6 +46,7 @@ install_steam
 install_minecraft
 
 #------------------------------- Services
+# install_proton_vpn
 install_spotify
 flathub_install "Telegram" "org.telegram.desktop"
 
@@ -56,6 +58,7 @@ flathub_install "Google Chrome" "com.google.Chrome"
 
 #------------------------------- DIT Installs and config
 install_openvpnc
+# ssh_server_activate
 
 #------------------------------- Configuration
 "$SCRIPTS_DIR"desktop_config.sh
