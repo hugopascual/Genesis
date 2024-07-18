@@ -12,5 +12,3 @@ SCRIPTS_DIR="$BASE_DIR/scripts/"
 for f in $( find "$UTILS_DIR" -type f -print | sort ); do source "$f"; done
 
 #------------------------------- Test
-URL=""
-wget --content-dispositio "$URL"

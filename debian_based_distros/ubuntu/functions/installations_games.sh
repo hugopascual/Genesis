@@ -53,3 +53,29 @@ uninstall_steam() {
     echo_uninstalled "$NAME"
 }
 
+###########
+#--Games--#
+###########
+
+# @Description
+# Install Minecraft
+#  
+##
+install_minecraft() {
+    # TODO
+    NAME="Minecraft"
+	echo_installing "$NAME"
+    echo_installed "$NAME"
+}
+
+##
+# @Description
+# Uninstall Minecraft
+#  
+##
+uninstall_template() {
+    # TODO
+    NAME="Minecraft"
+    echo_uninstalling "$NAME"
+    echo_uninstalled "$NAME"
+}

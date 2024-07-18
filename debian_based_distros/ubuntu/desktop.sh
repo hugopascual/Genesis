@@ -24,17 +24,14 @@ apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
-
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
-
 install_nvtop
 install_fastfetch
 install_displaylink_driver
 install_flatpak
 install_auto_firma_fnmt
 install_config_fnmt
-
 
 #------------------------------- Development
 install_docker
@@ -46,20 +43,17 @@ install_github_cli
 #------------------------------- Games
 install_lutris
 install_steam
+install_minecraft
 
 #------------------------------- Services
 # install_proton_vpn
-
-apt_get_install "Spotify" "spotify-client"
-
+install_spotify
 flathub_install "Telegram" "org.telegram.desktop"
 
 #------------------------------- Extra
 apt_get_install "GNU Image Manipulation Program" "gimp"
 apt_get_install "Raspberry Pi OS Imager" "rpi-imager"
-
 snap_install "VLC" "vlc"
-
 flathub_install "Google Chrome" "com.google.Chrome"
 
 #------------------------------- DIT Installs and config

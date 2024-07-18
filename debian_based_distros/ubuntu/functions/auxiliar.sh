@@ -74,11 +74,10 @@ flathub_install() {
 # @Params
 # $1 Name of the software, just to print
 # $2 Name of the apt package software wanted to be installed
-# $3 Option used in snap intallations
 ##
 snap_install() {
     echo_installing "$1 via snap"
-    sudo snap install "$2" "$3"
+    sudo snap install "$2"
     echo_installed "$1"
 }
 
