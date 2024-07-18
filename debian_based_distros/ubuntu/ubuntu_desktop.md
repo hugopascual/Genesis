@@ -48,5 +48,8 @@ In my case I start session in:
 - Firefox:
   - Web browser synchronization
   - Google services inside
+  - Add FNMT certificate
 - Thunderbird: Import settings if possible
 - Spotify
+- Visual Studio Code Sync
+

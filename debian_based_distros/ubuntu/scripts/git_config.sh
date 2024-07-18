@@ -6,7 +6,7 @@ FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$SCRIPTS_DIR/../utils/auxiliar.sh"
+source "$SCRIPTS_DIR/../functions/auxiliar.sh"
 
 #------------------------------- Config
 echo_info "Git config"

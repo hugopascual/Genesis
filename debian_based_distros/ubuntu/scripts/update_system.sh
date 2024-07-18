@@ -6,7 +6,7 @@ FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
 
 # shellcheck source=/dev/null
-source "$SCRIPTS_DIR/../utils/auxiliar.sh"
+source "$SCRIPTS_DIR/../functions/auxiliar.sh"
 
 #------------------------------- Update the system
 echo_info 'Upgrading and updating packages'
@@ -18,7 +18,7 @@ sudo apt-get autoclean -y
 echo_info "Packages upgrades and updates finished"
 
 echo_info "Flatpak updates started"
-flatpak update
+sudo flatpak update -y
 echo_info "Flatpak updates finished"
 
 echo_info "Snap updates started"
