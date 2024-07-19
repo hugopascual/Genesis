@@ -5,7 +5,7 @@
 ###############
 # @Description
 # Install 
-#  
+# 
 ##
 install_template() {
     NAME="WIP"
@@ -16,7 +16,7 @@ install_template() {
 ##
 # @Description
 # Uninstall
-#  
+# 
 ##
 uninstall_template() {
     NAME="WIP"
