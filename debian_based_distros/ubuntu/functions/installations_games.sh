@@ -11,6 +11,7 @@
 # https://www.addictivetips.com/ubuntu-linux-tips/hearthstone-linux/
 ##
 install_lutris() {
+    # TODO Review repository
     echo_installing "Lutris"
     sudo add-apt-repository -y ppa:lutris-team/lutris
     sudo apt-get update

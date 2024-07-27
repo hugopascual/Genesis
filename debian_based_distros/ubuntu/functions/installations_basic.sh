@@ -11,6 +11,7 @@
 # https://github.com/Syllo/nvtop
 ##
 install_nvtop() {
+    # TODO Review repository
 	echo_installing "NVTop"
     sudo add-apt-repository -y ppa:flexiondotorg/nvtop
     sudo apt update

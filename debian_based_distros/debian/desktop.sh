@@ -30,7 +30,7 @@ install_nvtop
 install_fastfetch
 install_displaylink_driver
 install_flatpak
-install_auto_firma_fnmt
+install_autofirma
 install_config_fnmt
 
 #------------------------------- Development
