@@ -56,6 +56,7 @@ install_obsidian
 install_openvpnc
 
 #------------------------------- Games
+apt_get_install "Lutris" "lutris"
 install_steam
 install_minecraft
 
