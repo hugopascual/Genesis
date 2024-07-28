@@ -6,7 +6,7 @@ Linux. Once Lutris is installed you can go to https://lutris.net/games and
 search for the games you want and follow the instructions to install them.
 
 ## Things that are not automatized in desktops
-- **Activate Wayland**
+- **Activate Wayland (Only on laptops)**
 To activate Wayland, on the password screen click on the gear icon and activate
 it.
 
