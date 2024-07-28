@@ -59,13 +59,12 @@ uninstall_steam() {
 
 # @Description
 # Install Minecraft
-#  
+# https://www.minecraft.net/en-us/download/alternative
 ##
 install_minecraft() {
-    # TODO
     NAME="Minecraft"
-	echo_installing "$NAME"
-    echo_installed "$NAME"
+    URL="https://launcher.mojang.com/download/Minecraft.deb"
+    deb_download_and_install "$NAME" "$URL"
 }
 
 ##
