@@ -15,7 +15,6 @@ for f in $( find "$FUNCTIONS_DIR" -type f -print | sort ); do source "$f"; done
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-# TODO search for a better execution of scripts
 "$SCRIPTS_DIR"update_system.sh
 
 #------------------------------- Basic

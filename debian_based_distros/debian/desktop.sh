@@ -15,8 +15,10 @@ for f in $( find "$FUNCTIONS_DIR" -type f -print | sort ); do source "$f"; done
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-# TODO search for a better execution of scripts
 "$SCRIPTS_DIR"update_system.sh
+
+#------------------------------- Desktop Config
+"$SCRIPTS_DIR"desktop_config.sh
 
 #------------------------------- Basic
 apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"
@@ -39,11 +41,6 @@ install_VScode
 install_jetbrains_toolbox   
 install_github_cli
 
-#------------------------------- Games
-install_lutris
-install_steam
-install_minecraft
-
 #------------------------------- Services
 install_spotify
 flathub_install "Telegram" "org.telegram.desktop"
@@ -58,8 +55,11 @@ install_obsidian
 #------------------------------- DIT Installs and config
 install_openvpnc
 
+#------------------------------- Games
+install_steam
+install_minecraft
+
 #------------------------------- Configuration
-"$SCRIPTS_DIR"desktop_config.sh
 "$SCRIPTS_DIR"git_config.sh
 
 #------------------------------- Updates and Cleaning 

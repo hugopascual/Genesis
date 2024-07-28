@@ -15,8 +15,10 @@ for f in $( find "$FUNCTIONS_DIR" -type f -print | sort ); do source "$f"; done
 echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
-# TODO search for a better execution of scripts
 "$SCRIPTS_DIR"update_system.sh
+
+#------------------------------- Desktop Config
+"$SCRIPTS_DIR"desktop_config.sh
 
 #------------------------------- Basic
 apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"
@@ -24,27 +26,19 @@ apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
-# TODO
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
-# TODO
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
 install_fastfetch
 install_displaylink_driver
 install_flatpak
-# TODO
 install_autofirma
 install_config_fnmt
 
 #------------------------------- Development
-# TODO
 install_docker
 install_VScode
 install_jetbrains_toolbox   
 install_github_cli
-
-#------------------------------- Games
-install_steam
-install_minecraft
 
 #------------------------------- Services
 install_spotify
@@ -60,8 +54,11 @@ install_obsidian
 #------------------------------- DIT Installs and config
 install_openvpnc
 
+#------------------------------- Games
+install_steam
+install_minecraft
+
 #------------------------------- Configuration
-"$SCRIPTS_DIR"desktop_config.sh
 "$SCRIPTS_DIR"git_config.sh
 
 #------------------------------- Updates and Cleaning 
