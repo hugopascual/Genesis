@@ -24,15 +24,19 @@ apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
+# TODO
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
+# TODO
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
 install_fastfetch
 install_displaylink_driver
 install_flatpak
+# TODO
 install_autofirma
 install_config_fnmt
 
 #------------------------------- Development
+# TODO
 install_docker
 install_VScode
 install_jetbrains_toolbox   
