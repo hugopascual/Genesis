@@ -73,7 +73,6 @@ install_minecraft() {
 #  
 ##
 uninstall_template() {
-    # TODO
     NAME="Minecraft"
     echo_uninstalling "$NAME"
     echo_uninstalled "$NAME"

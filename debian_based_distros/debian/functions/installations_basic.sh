@@ -6,30 +6,6 @@
 
 ##
 # @Description
-# Install NVTop
-# Software to monitor the usage of GPU
-# https://github.com/Syllo/nvtop
-##
-install_nvtop() {
-	echo_installing "NVTop"
-    sudo add-apt-repository -y ppa:flexiondotorg/nvtop
-    sudo apt update
-    sudo apt install -y nvtop
-    echo_installed "NVTop"
-}
-
-##
-# @Description
-# Uninstall NVTop
-#  
-##
-uninstall_nvtop() {
-    echo_uninstalling "WIP"
-    echo_uninstalled "WIP"
-}
-
-##
-# @Description
 # Install Fastfetch
 # Terminal tool used to show the characteristics of the machine in a pretty way 
 # https://github.com/fastfetch-cli/fastfetch

@@ -78,13 +78,14 @@ install_nodejs() {
     echo_installed "nodejs"
 }
 
-# TODO make a review if this continue to work
+
 ##
 # @Description
 # Uninstall nodejs and npm
 # https://github.com/nodesource/distributions#installation-instructions
 ##
 uninstall_nodejs() {
+    # TODO make a review if this continue to work
     echo_info "Removing node from system"
     apt-get purge nodejs &&\
     rm -r /etc/apt/sources.list.d/nodesource.list &&\
@@ -126,12 +127,12 @@ install_jetbrains_toolbox() {
     echo_installing "JetBrains Toolbox"
     tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
     # Descargar el tar.gz
-    curl -OL https://download.jetbrains.com/toolbox/$tar_file
+    wget -c https://download.jetbrains.com/toolbox/$tar_file
     # Descomprimir el tar.gz
-    sudo tar -xzf "$tar_file"
-    # Mover el directorio descomprimido a /opt
+    sudo tar -xzf "$tar_file" -C /opt
     descompressed_dir="${tar_file: : -7}"
-    sudo mv "$descompressed_dir" /opt/
+    # In some cases this could be necessary
+    sudo apt-get install -y libfuse2
     # Ejecutar el binario de dentro
     /opt/"$descompressed_dir"/jetbrains-toolbox
     # Borrar los restos

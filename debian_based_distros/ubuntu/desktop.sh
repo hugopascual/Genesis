@@ -28,6 +28,7 @@ apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
+apt_get_install "NVTop" "nvtop"
 install_fastfetch
 install_displaylink_driver
 install_flatpak
