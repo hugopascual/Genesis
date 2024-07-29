@@ -26,12 +26,12 @@ apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"
 apt_get_install "Teminator" "terminator"
+install_flatpak
 flathub_install "Thunderbird" "org.mozilla.Thunderbird"
 flathub_install "KeePassXC" "org.keepassxc.KeePassXC"
 apt_get_install "NVTop" "nvtop"
 install_fastfetch
 install_displaylink_driver
-install_flatpak
 install_autofirma
 install_config_fnmt
 
