@@ -19,6 +19,7 @@ echo_info "Starting installation"
 
 #------------------------------- Desktop Config
 "$SCRIPTS_DIR"desktop_config.sh
+"$SCRIPTS_DIR"locales_config.sh
 
 #------------------------------- Basic
 apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"

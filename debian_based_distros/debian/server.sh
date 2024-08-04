@@ -16,6 +16,7 @@ echo_info "Starting installation"
 
 #------------------------------- Update and Upgrade
 "$SCRIPTS_DIR"update_system.sh
+"$SCRIPTS_DIR"locales_config.sh
 
 #------------------------------- Basic
 apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"
