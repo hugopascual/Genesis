@@ -58,5 +58,33 @@ uninstall_spotify() {
     NAME="Spotify"
     echo_uninstalling "$NAME"
     sudp apt remove spotify-client
+    sudo apt autoremove
+    sudo apt autoclean
+    echo_uninstalled "$NAME"
+}
+
+# @Description
+# Install Discrord
+# https://discord.com/
+##
+install_discord() {
+    NAME="Discord"
+	echo_installing "$NAME"
+    URL_DEB="https://discord.com/api/download?platform=linux&format=deb"
+    deb_download_and_install "$NAME" "$URL"
+    echo_installed "$NAME"
+}
+
+##
+# @Description
+# Uninstall Discord
+# 
+##
+uninstall_discord() {
+    NAME="WIP"
+    echo_uninstalling "$NAME"
+    sudo apt remove debian
+    sudo apt autoremove
+    sudo apt autoclean
     echo_uninstalled "$NAME"
 }

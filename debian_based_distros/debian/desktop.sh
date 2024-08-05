@@ -46,6 +46,7 @@ install_github_cli
 #------------------------------- Services
 install_spotify
 flathub_install "Telegram" "org.telegram.desktop"
+install_discord
 
 #------------------------------- Extra
 apt_get_install "GNU Image Manipulation Program" "gimp"
