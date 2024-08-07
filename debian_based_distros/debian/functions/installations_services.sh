@@ -70,7 +70,7 @@ uninstall_spotify() {
 install_discord() {
     NAME="Discord"
 	echo_installing "$NAME"
-    URL_DEB="https://discord.com/api/download?platform=linux&format=deb"
+    URL="https://discord.com/api/download?platform=linux&format=deb"
     deb_download_and_install "$NAME" "$URL"
     echo_installed "$NAME"
 }
