@@ -22,7 +22,11 @@ echo_info "Starting installation"
 "$SCRIPTS_DIR"locales_config.sh
 
 #------------------------------- Basic
-apt_get_install "Mix of basic Sfotware" "wget curl net-tools htop tree"
+apt_get_install "wget" "wget"
+apt_get_install "curl" "curl"
+apt_get_install "net-tools" "net-tools"
+apt_get_install "htop" "htop"
+apt_get_install "tree" "tree"
 apt_get_install "Git" "git"
 apt_get_install "Java" "default-jre"
 apt_get_install "Firefox" "firefox"

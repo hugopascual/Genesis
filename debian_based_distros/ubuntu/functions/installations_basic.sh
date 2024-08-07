@@ -99,8 +99,9 @@ uninstall_flatpak() {
 ##
 install_autofirma() {
 	echo_installing "AutoFirma"
-	curl -OL https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip
-	unzip AutoFirma_Linux_Debian.zip
+    URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
+	curl -OL "$URL"
+	unzip "AutoFirma_Linux_Debian.zip"
 	sudo apt install -y ./*.deb
     rm AutoFirma*
 	echo_installed "AutoFirma"
