@@ -28,15 +28,49 @@ if [[ ! " ${DISTROS[*]} " =~ [[:space:]]${SELECTED_DISTRO}[[:space:]] ]]; then
 fi
 
 #------------------------------- Imports
-
-
-
 # Get the path to the main directory.
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 LINUX_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-FUNCTIONS_DIR="$LINUX_DIR/functions/"
-SCRIPTS_DIR="$LINUX_DIR/scripts/"
+# Files to import
+FUNCTIONS_DIR="$LINUX_DIR/common_functions/"
+SCRIPTS_DIR="$LINUX_DIR/common_scripts/"
 
 # Import utils
 # shellcheck disable=SC1090
 for f in $( find "$FUNCTIONS_DIR" -type f -print | sort ); do source "$f"; done
+
+#------------------------------- Start with the setup
+echo_info "Starting setup"
+
+#------------------------------- Update and Upgrade
+"$SCRIPTS_DIR"update_system.sh
+
+#------------------------------- Customization
+"$SCRIPTS_DIR"desktop_config.sh
+"$SCRIPTS_DIR"locales_config.sh
+
+#------------------------------- Software installations
+# Basic
+
+
+# Development
+
+
+# Services
+
+
+# Extra
+
+
+# DIT
+
+
+# Games
+
+#------------------------------- Software configuration
+
+#------------------------------- Update and Clean
+"$SCRIPTS_DIR"update_system.sh
+
+#------------------------------- Finish
+echo_success "Restart the computer now"
