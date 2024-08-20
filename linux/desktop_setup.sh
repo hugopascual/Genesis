@@ -55,8 +55,8 @@ CHILD_DISTRO_DIR_SCRIPTS="$CHILD_DISTRO""_scripts"
 FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
 LINUX_PATH="$(dirname "$FULL_PATH_TO_SCRIPT")"
 # Files to import
-LINUX_FUNCTIONS_PATH="$LINUX_PATH/linux_functions/"
-LINUX_SCRIPTS_PATH="$LINUX_PATH/linux_scripts/"
+LINUX_FUNCTIONS_PATH="$LINUX_PATH/linux_functions"
+LINUX_SCRIPTS_PATH="$LINUX_PATH/linux_scripts"
 
 # Selected distribution paths
 PARENT_DISTRO_PATH="$LINUX_PATH/distro_specific/$PARENT_DISTRO_DIR"
@@ -93,11 +93,11 @@ done
 echo_info "Starting setup"
 
 #------------------------------- Update and Upgrade
-# "$LINUX_SCRIPTS_PATH"update_system.sh
+"$LINUX_SCRIPTS_PATH/update_system.sh"
 
 #------------------------------- Customization
-# "$LINUX_SCRIPTS_PATH"desktop_config.sh
-# "$LINUX_SCRIPTS_PATH"locales_config.sh
+"$LINUX_SCRIPTS_PATH/desktop_customization.sh"
+"$LINUX_SCRIPTS_PATH/locales_config.sh"
 
 #------------------------------- Software installations
 # Basic
@@ -141,7 +141,7 @@ linux_install_rpi_imager
 #------------------------------- Software configuration
 
 #------------------------------- Update and Clean
-# "$LINUX_SCRIPTS_PATH"update_system.sh
+"$LINUX_SCRIPTS_PATH/update_system.sh"
 
 #------------------------------- Finish
 echo_success "Restart the computer now"

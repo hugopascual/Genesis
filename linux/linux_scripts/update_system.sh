@@ -1,21 +1,6 @@
 #!/bin/bash
 
-#------------------------------- Imports
-# Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
-SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-AUXILIAR_FUNCTIONS="$SCRIPTS_DIR/../functions/auxiliar.sh"
-# shellcheck source=/dev/null
-source "$AUXILIAR_FUNCTIONS"
-
-#------------------------------- Update the system
-echo_info 'Upgrading and updating packages'
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get full-upgrade -y
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
-echo_info "Packages upgrades and updates finished"
+"$PARENT_DISTRO_SCRIPTS_DIR/package_manager_update.sh"
 
 echo_info "Flatpak updates started"
 sudo flatpak update -y

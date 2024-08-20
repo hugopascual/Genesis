@@ -1,1 +1,1 @@
-# Manjaro Desktop
+# Manjaro desktop

@@ -1,1 +1,1 @@
-# Arch Desktop
+# Arch desktop

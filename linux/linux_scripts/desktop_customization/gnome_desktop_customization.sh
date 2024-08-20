@@ -1,13 +1,5 @@
 #!/bin/bash
 
-#------------------------------- Imports
-# Get the path to the main directory.
-FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[0]}")"
-SCRIPTS_DIR="$(dirname "$FULL_PATH_TO_SCRIPT")"
-AUXILIAR_FUNCTIONS="$SCRIPTS_DIR/../functions/auxiliar.sh"
-# shellcheck source=/dev/null
-source "$AUXILIAR_FUNCTIONS"
-
 #------------------------------- Initialization
 echo_info "Starting configuration"
 
