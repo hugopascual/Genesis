@@ -12,6 +12,7 @@ linux_install_obsidian() {
     NAME="Obsidian"
 	echo_installing "$NAME"
     install_obsidian
+    mkdir "$HOME/obsidian"
     echo_installed "$NAME"
 }
 

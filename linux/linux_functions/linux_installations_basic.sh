@@ -23,6 +23,9 @@ linux_install_common_funcionalities() {
     NAME="Common funcionalities"
 	echo_installing "$NAME"
     install_common_funcionalities
+    mkdir "$HOME/dev"
+    mkdir "$HOME/dev/$USER"
+    mkdir "$HOME/dev/STRAST"
     echo_installed "$NAME"
 }
 

@@ -1,1 +1,110 @@
 # Linux desktop
+
+## Instructions
+Execute `desktop_setup.sh` and follow the instructions. If your distro is not 
+supported I am very sorry (okay, maybe not that much).
+
+### Update system
+Using the `desktop_setup.sh` script the system will be updated and upgraded. If 
+you want to execute another standard upgrade use the `update.sh` script.
+
+## Not Automatic Steps
+Although I have tried to automatize the whole process there are some aspects I 
+do not know how to make it. 
+
+### Not automatic installations
+- Lutris
+    - Battle.net (https://lutris.net/games/battlenet/)
+- Jetbrains Toolbox
+    - Install Pycharm Professional
+    - Install IntelliJ IDEA Ultimate
+    - Install Android Studio
+
+### Accounts Initializations
+- Keepassxc
+    - Download credentials database and check if works
+- Google Chrome
+    - Github login
+- Firefox
+    - Web browser syncronization
+    - Github login
+    - Google accounts on web browser
+        - Google personal account 
+        - Google profesional account
+        - Google games account
+- Thunderbird
+    - UPM worker account
+    - UPM student account
+    - Google personal account
+    - Google profesional account
+    - Google games account
+    - Microsoft personal account
+    - Projects accounts if work laptop
+- VSCode
+    - Sync settings with Github account
+- Jetbrains Toolbox
+    - Syncronize with licensed account
+- Github CLI (terminal)
+    - Github account via browser 
+    - `gh auth login`
+    - Clone personal and work repositories from list
+- VPNs
+    - Get VPN DIT configuration file (`dit.conf`) and test
+    - `sudo vpnc-connect dit`
+    - `sudo vpnc-connect --enable-weak-encryption 
+        --enable-weak-authentication dit`
+- Spotify
+    - Spotify login
+- Telegram
+    - Telegram login personal
+    - Telegram login profesional
+- Discord
+    - Discord login
+- Battle.net
+    - Battle.net login
+- Steam
+    - Steam login
+- Minecraft
+    - Microsoft login
+- Obsidian
+    - Clone obsidian vaults from git
+
+### Personal NAS syncro
+Not ready for production yet
+
+## Remote git repositories list
+- Personal repositories
+    -
+```
+cd "$HOME/dev/$USER" || exit
+git clone https://github.com/hugopascual/AdventCode
+git clone https://github.com/hugopascual/BetAPI
+git clone https://github.com/hugopascual/TGBotDuplicator
+git clone https://github.com/hugopascual/WindowsOS
+git clone https://github.com/hugopascual/BetWatchdog
+git clone https://github.com/hugopascual/BetWatchdog-tgSupervisor
+git clone https://github.com/hugopascual/BetWatchdog-API
+git clone https://github.com/hugopascual/OS_setup
+```
+
+- Work repositories
+    -
+```
+git clone https://github.com/hugopascual/iGreedy3.0
+git clone https://github.com/hugopascual/Hunter
+git clone https://github.com/hugopascual/HunterCache
+git clone https://github.com/STRAST-UPM/cluster-documentation
+git clone https://github.com/STRAST-UPM/hunter_experiment_anycast_europe
+git clone https://github.com/SARA-MSRA-UPM/PG0_intro_python
+git clone https://github.com/SARA-MSRA-UPM/
+
+```
+
+- Obsidian vaults
+    -
+```
+git clone https://github.com/hugopascual/template_vault
+git clone https://github.com/hugopascual/family_vault
+git clone https://github.com/hugopascual/personal_vault
+git clone https://github.com/hugopascual/work_vault
+```
