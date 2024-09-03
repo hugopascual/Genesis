@@ -19,7 +19,7 @@ source "$LINUX_SCRIPTS_PATH/locales_config.sh"
 #------------------------------- Software installations
 # Basic
 linux_install_net_basic
-linux_install_common_utilities
+linux_install_common_funcionalities
 linux_install_displaylink_driver
 linux_install_flatpak
 linux_install_terminator
