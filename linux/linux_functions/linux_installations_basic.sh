@@ -56,7 +56,7 @@ linux_install_displaylink_driver() {
 linux_install_flatpak() {
     NAME="Flatpak (only command line)"
 	echo_installing "$NAME"
-    install_net_basic
+    install_flatpak
     echo_installed "$NAME"
 }
 
