@@ -86,10 +86,34 @@ install_fastfetch() {
 
 ##
 # @Description
+# Install NVTop
+##
+install_nvtop() {
+    apt_get_install "nvtop"
+}
+
+##
+# @Description
 # Install Firefox
 ##
 install_firefox() {
     apt_get_install "firefox"
+}
+
+##
+# @Description
+# Install Thunderbird
+##
+install_thunderbird() {
+    flathub_install "org.mozilla.Thunderbird"
+}
+
+##
+# @Description
+# Install KeePassXC
+##
+install_keepassxc() {
+    flathub_install "org.keepassxc.KeePassXC"
 }
 
 ###########################
@@ -124,20 +148,4 @@ install_config_fnmt() {
     sudo apt install -y ./configuradorfnmt*
     rm configuradorfnmt*
     echo_installed "Configurador FNMT"    
-}
-
-##
-# @Description
-# Install Thunderbird
-##
-install_thunderbird() {
-    flathub_install "org.mozilla.Thunderbird"
-}
-
-##
-# @Description
-# Install KeePassXC
-##
-install_keepassxc() {
-    flathub_install "org.keepassxc.KeePassXC"
 }

@@ -21,17 +21,17 @@ do not know how to make it.
     - Install Android Studio
 
 ### Accounts Initializations
-- Keepassxc
-    - Download credentials database and check if works
-- Google Chrome
-    - Github login
 - Firefox
-    - Web browser syncronization
     - Github login
+    - Web browser syncronization
     - Google accounts on web browser
         - Google personal account 
         - Google profesional account
         - Google games account
+- Keepassxc
+    - Download credentials database and check if works
+- Google Chrome
+    - Github login
 - Thunderbird
     - UPM worker account
     - UPM student account

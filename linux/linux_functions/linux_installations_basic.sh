@@ -89,6 +89,17 @@ linux_install_fastfetch() {
 
 ##
 # @Description
+# Install NVtop
+##
+linux_install_nvtop() {
+    NAME="NVtop"
+	echo_installing "$NAME"
+    install_nvtop
+    echo_installed "$NAME"
+}
+
+##
+# @Description
 # Install Firefox
 ##
 linux_install_firefox() {

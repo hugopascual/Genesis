@@ -28,6 +28,8 @@ linux_install_nvtop
 linux_install_firefox
 linux_install_thunderbird
 linux_install_keepassxc
+linux_install_autofirma
+linux_install_config_fnmt
 
 # Development
 linux_install_docker
