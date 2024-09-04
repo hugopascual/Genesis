@@ -10,6 +10,10 @@
 ##
 install_lutris() {
     apt_get_install "lutris"
+    # Install wine32 and arquitecture i386
+    sudo dpkg --add-architecture i386
+    sudo apt update
+    apt_get_install "wine32:i386"
 }
 
 ###############

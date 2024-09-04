@@ -12,6 +12,13 @@ you want to execute another standard upgrade use the `update.sh` script.
 Although I have tried to automatize the whole process there are some aspects I 
 do not know how to make it. 
 
+### Config
+- Put on startup the apps:
+    - `firefox`
+    - `flatpak run org.mozilla.Thunderbird`
+    - `obsidian`
+- Config second keyboard distribution
+
 ### Not automatic installations
 - Lutris
     - Battle.net (https://lutris.net/games/battlenet/)
@@ -19,6 +26,7 @@ do not know how to make it.
     - Install Pycharm Professional
     - Install IntelliJ IDEA Ultimate
     - Install Android Studio
+    
 
 ### Accounts Initializations
 - Firefox
@@ -28,30 +36,51 @@ do not know how to make it.
         - Google personal account 
         - Google profesional account
         - Google games account
+- Github CLI (terminal)
+    - Github account via browser 
+    - `gh auth login`
+    - Clone personal and work repositories from list
+- Obsidian
+    - Clone obsidian vaults from git
+- VSCode
+    - Sync settings with Github account
+- GNOME Desktop
+    - Google personal account
+    - Google profesional account
+    - Google games account
 - Keepassxc
     - Download credentials database and check if works
-- Google Chrome
-    - Github login
+    - Config:
+        - Titulo / Usuario /Contraseña / URL / Notas
+        - Ajustar a la ventana
 - Thunderbird
     - UPM worker account
+        - Incoming server: 
+            - `correo.upm.es` / `SSL/TLS` / `hugo.pascual.adan`
+        - Outgoing server: 
+            - `smtp.upm.es` / `STARTTLS` / `hugo.pascual.adan@upm.es`
     - UPM student account
+        - Incoming server: 
+            - `correo.alumnos.upm.es` / `SSL/TLS` 
+        / `hugo.pascual.adan`
+        - Outgoing server: 
+            - `smtp.upm.es` / `STARTTLS` / `hugo.pascual.adan@alumnos.upm.es`
     - Google personal account
     - Google profesional account
     - Google games account
     - Microsoft personal account
     - Projects accounts if work laptop
-- VSCode
-    - Sync settings with Github account
+    - Config:
+        - Disable show lost reminders 
 - Jetbrains Toolbox
     - Syncronize with licensed account
-- Github CLI (terminal)
-    - Github account via browser 
-    - `gh auth login`
-    - Clone personal and work repositories from list
+    - Config:
+        - Not open on startup
 - VPNs
     - Get VPN DIT configuration file (`dit.conf`) and test
-    - `sudo vpnc-connect dit`
-    - `sudo vpnc-connect --enable-weak-encryption 
+    - Move the file: `sudo mv dit.conf /etc/vpnc/`
+    - Connect: `sudo vpnc-connect dit`
+    - Connect if new system: `sudo vpnc-connect --enable-weak-encryption 
         --enable-weak-authentication dit`
 - Spotify
     - Spotify login
@@ -60,14 +89,19 @@ do not know how to make it.
     - Telegram login profesional
 - Discord
     - Discord login
+    - Config:
+        - Linux ajustements -> NOT Open Discord on Startup
+        - Linux ajustements -> NOT Minimize on close
 - Battle.net
     - Battle.net login
+    - Config:
+        - Disable open on startup
 - Steam
     - Steam login
+    - Config:
+        - Disable open on startup
 - Minecraft
     - Microsoft login
-- Obsidian
-    - Clone obsidian vaults from git
 
 ### Personal NAS syncro
 Not ready for production yet
@@ -90,6 +124,7 @@ git clone https://github.com/hugopascual/OS_setup
 - Work repositories
     -
 ```
+cd "$HOME/dev/STRAST" || exit
 git clone https://github.com/hugopascual/iGreedy3.0
 git clone https://github.com/hugopascual/Hunter
 git clone https://github.com/hugopascual/HunterCache
@@ -107,6 +142,7 @@ git clone https://github.com/SARA-MSRA-UPM/PE3_programacion_web
 - Obsidian vaults
     -
 ```
+cd "$HOME/obsidian" || exit
 git clone https://github.com/hugopascual/template_vault
 git clone https://github.com/hugopascual/family_vault
 git clone https://github.com/hugopascual/personal_vault
