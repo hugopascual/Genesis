@@ -54,7 +54,6 @@ linux_install_minecraft
 linux_install_obsidian
 linux_install_vlc
 linux_install_gimp
-linux_install_google_chrome
 linux_install_rpi_imager
 
 #------------------------------- Software configuration
