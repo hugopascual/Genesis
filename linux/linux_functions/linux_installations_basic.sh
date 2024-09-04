@@ -12,6 +12,7 @@ linux_install_net_basic() {
     NAME="Net basics"
 	echo_installing "$NAME"
     install_net_basic
+    sudo mkdir /mnt/nfs
     echo_installed "$NAME"
 }
 

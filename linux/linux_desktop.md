@@ -18,6 +18,7 @@ do not know how to make it.
     - `flatpak run org.mozilla.Thunderbird`
     - `obsidian`
 - Config second keyboard distribution
+- Add to bookmark in files: `dev`, `obsidian`
 
 ### Not automatic installations
 - Lutris
