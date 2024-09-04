@@ -52,7 +52,7 @@ do not know how to make it.
 - Keepassxc
     - Download credentials database and check if works
     - Config:
-        - Titulo / Usuario /Contraseña / URL / Notas
+        - Titulo / Usuario / Contraseña / URL / Notas
         - Ajustar a la ventana
 - Thunderbird
     - UPM worker account
