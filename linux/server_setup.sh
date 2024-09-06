@@ -35,6 +35,7 @@ linux_install_openvpnc
 # Extra
 
 #------------------------------- Software configuration
+source "$LINUX_SCRIPTS_PATH/enable_ssh_service.sh"
 
 #------------------------------- Update and Clean
 # shellcheck disable=SC1091
