@@ -1,0 +1,205 @@
+################################################################################
+# Inicio y configuración básica
+#------------------------------------------------------------------------------- 
+# - Actualizar Windows desde Configuración
+# - Desinstalar aplicaciones que vienen predeterminadas
+# - Quitar iconos de escritorio
+#-------------------------------------------------------------------------------
+# Configuración
+# Pestaña: Personalización
+# - Modo Oscuro de Windows en tono azul
+> Fondo
+- Cambiar fondo de escritorio
+> Pantalla de bloqueo
+- Cambiar imagen de bloqueo
+- Deseleccionar los datos curiosos y consejos
+> Inicio
+- Seleccionar: Mas elementos anclados
+	> Carpetas
+	- Añadir Configuración y Explorador de archivos
+> Barra de tareas
+- Deseleccionar: Widgets y Chat
+	> Comportamiento de la barra de tareas
+	- Activar Ocultar automaticamente la barra de tareas
+
+# Sinconizar con One drive:
+- Cuenta personal [hugo.pasadan@hotmail.com]
+- Cuenta UPM [hugo.pascual.adan@upm.es]
+
+# Drivers
+- Dirvers tarjeta inalámbrica usando el disco para ello
+
+# Instalar Chocolatey a traves de la PowerShell ejecutandola como Administrador
+# Consultar el comando a ejecutar en https://chocolatey.org/
+# Reiniciar después de instalarlo
+
+# ------------------------------------------- Instalaciones
+# Comandos:
+choco install -y googledrive
+choco install -y firefox
+choco install -y googlechrome
+choco install -y steam-client
+choco install -y thunderbird
+choco install -y geforce-experience
+choco install -y spotify
+choco install -y vscode
+choco install -y 7zip
+choco install -y keepass.install
+choco install -y adobereader
+choco install -y epicgameslauncher
+choco install -y amazongames
+choco install -y discord.install
+
+Descargar exe:
+https://www.blizzard.com/es-es/apps/battle.net/desktop
+https://www.sublimetext.com/
+https://www.sublimemerge.com/
+https://www.razer.com/synapse-3
+https://www.techpowerup.com/review/royal-kludge-rk84-keyboard/5.html
+https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
+https://www.epilogue.co/downloads
+
+Microsoft Store: 
+Minecraft
+Microsoft Office
+
+# Google Drive
+- choco install -y googledrive
+- Iniciar sesión [hugopascual998@gmail.com]
+
+# Mozilla Firefox
+- choco install -y firefox
+- Establecer como predeterminado
+- Sincronizar cuenta [hugopascual998@gmail.com]
+- Iniciar sesión en Google 
+[hugopascual998@gmail.com; turfusplays@gmail.com; hugo.pascual.adan@gmail.com]
+
+# Google Chrome
+- choco install -y googlechrome
+
+# Steam
+- choco install -y steam-client
+- Iniciar sesión [turfus98]
+- Quitar que se inicie con el ordenador
+- Desactivar aceleración por GPU en vista web
+
+# Battle.net
+- Descargar exe (https://www.blizzard.com/es-es/apps/battle.net/desktop)
+- Iniciar sesión [turfusplays@gmail.com]
+- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
+
+# Minecraft
+- Instalar desde Microft Store
+- Iniciar sesión con Microsoft [hugo.pasadan@hotmail.com]
+
+# Thunderbird
+- choco install -y thunderbird
+- Configurar correos con calendarios 
+[hugopascual998@gmail.com; turfusplays@gmail.com; hugo.pascual.adan@gmail.com; hugo.pasadan@hotmail.com]
+
+# GeForce Experience
+- choco install -y geforce-experience
+- Iniciar sesión
+
+# Spotify
+- choco install -y spotify
+- Iniciar sesión [hugopascual998@gmail.com]
+- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
+- Modo oscuro
+
+# Visual Studio Code
+- choco install -y vscode
+- Modo oscuro
+
+# Sublime Text
+- Descargar exe (https://www.sublimetext.com/)
+- Modo oscuro
+
+# Sublime Merge
+- Descargar exe (https://www.sublimemerge.com/)
+
+# 7zip
+- choco install -y 7zip
+
+# Nvidia Control Panel
+- Revisar que esta instalado
+
+# KeePass2
+- choco install -y keepass.install
+
+# Adobe Acrobat Reader
+- choco install -y adobereader
+
+# Microsoft Office con la cuenta de la UPM / En su defecto Libre Office
+- Instalar desde Microft Store
+
+# Epic games
+- choco install -y epicgameslauncher
+- Iniciar sesión
+- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
+
+# Amazon Games
+- choco install -y amazongames
+- Iniciar sesión
+- Quitar que se inicie con el ordenador
+- Modo oscuro
+
+# Discord
+- choco install -y discord.install
+- Iniciar sesión
+- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
+- Modo oscuro
+- Quitar aceleración por hardware
+
+# Razer Synapse
+- Descargar exe (https://www.razer.com/synapse-3)
+- Iniciar cuenta [hugopascual998@gmail.com]
+
+# RK RGB Keyboard
+- Dedscargar exe (https://www.techpowerup.com/review/royal-kludge-rk84-keyboard/5.html)
+
+# Configurador FNMT
+- Descargar de (https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves)
+
+# Autofirma (se instala a la vez que el configurador)
+- Descargar de (https://firmaelectronica.gob.es/Home/Descargas.htm)
+
+# Instalar certificado en Firefox
+
+------------------------------------------- Anclados a Inicio Windows
+
+# Navegadores Web:
+- Mozilla Firefox
+- Google Chrome
+- Microsoft Edge
+
+# Juegos:
+- Los distintos juegos [Hearthstone, World Of Warcraft, Starcraft2, Oxygen Not Included, Total War Warhammer 3]
+- Minecraft
+- Launchers, Extras y Epilogue
+
+# Uso diario:
+- Thunderbird
+- Spotify
+- KeePass2
+
+# PC:
+- Panel de control
+- Comprobación de estado del PC
+- GeForce Experience
+
+# Desarrollo:
+- Visual Studio Code
+- Sublime Text
+- Sublime Merge
+
+# Terminales
+- Windows PowerShell
+- Simbolo del sistema
+
+# Extra (aquello de hardware especifico)
+- Armoury Crate (solo el Zephyrus G14)
+- Razer Synapse
+- RK RGB Keyboard
+
+-------------------------------------------
