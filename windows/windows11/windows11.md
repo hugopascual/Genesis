@@ -75,10 +75,48 @@ choco install -y vlc
 **Games**
 - [Battle.net](https://eu.shop.battle.net/es-es)
 - [Minecraft](https://www.minecraft.net/es-es/download)
+- [Epilogue](https://www.epilogue.co/downloads)
 
 **Extra**
+- [Razer synapse](https://www.razer.com/synapse-3)
+- [RK Royal Gaming Keyboard](https://rkgamingstore.com/products/rk84-75-percent-keyboard)
+    - [Other link](https://www.techpowerup.com/review/royal-kludge-rk84-keyboard/5.html)
+- [Aura Creator]()
+- [Armor Crate]()
+- [MyAsus]()
+- [Dolby Access]()
+
+### Special Drivers
+Drivers of PCIe cards
 
 ## Customization
+The first step is to remove software not useful. Go to `Apps -> Installed apps` remove and disable.
+
+Now is the time to customize the desktop
+- In screen `View -> Disable Show Desktop Icons`
+Inside Settings
+- Personalisation
+    - Black Mode in blue
+    - Background
+        - Select Photo
+    - Lock Screen
+        - Select Photo
+        - Disble fun facts, tips and tricks
+        - App on screen -> None
+    - Taskbar
+        - Pinned apps: Firefox - File explorer - Thunderbird - Obsidian - Spotify - VSCode - Pycharm - IntelliJ - Android Studio
+        - Search icon only
+        - Disble Widgets
+        - Taskbar Behaviours
+            - Automatically hide the taskbar
+    - Start
+        - More pins
+        - Disble recomendations
+        - Disbale related notifications
+        - Folders
+            - Settings
+            - File Explorer
+            - Personal folder
 
 ## Accounts sync
 - Firefox
@@ -89,6 +127,15 @@ choco install -y vlc
         - Google profesional account
         - Google games account
    - FNMT Certificate
+- Google Drive
+	- Google personal account
+    - Google profesional account
+    - Google games account
+    - Keep a copy of files locally for all accounts
+- One Drive
+    - Microsoft personal account
+    - UPM professional account
+    - Keep a copy of files locally for all accounts
 - Thunderbird
     - UPM worker account
         - Incoming server: 
@@ -115,8 +162,6 @@ choco install -y vlc
     - Config:
         - Title / User / Password / URL / Notes
         - Fit to Window
-- Google Drive
-	- 
 - Adobe Reader
 	- Adobe account sync
 - VSCode
@@ -153,12 +198,16 @@ choco install -y vlc
     - Microsoft login
 - Obsidian
     - Clone obsidian vaults from git
+- Office 365
+    - UPM professional account
+- Razer Synapse
+    - Account login
 
 ## Remote git repositories list
 - Personal repositories
     -
 ```
-cd "$HOME/dev/$USER" || exit
+cd "$HOME/dev/hugopascual"
 git clone https://github.com/hugopascual/AdventCode
 git clone https://github.com/hugopascual/BetAPI
 git clone https://github.com/hugopascual/TGBotDuplicator
@@ -172,7 +221,7 @@ git clone https://github.com/hugopascual/OS_setup
 - Work repositories
     -
 ```
-cd "$HOME/dev/STRAST" || exit
+cd "$HOME/dev/STRAST"
 git clone https://github.com/hugopascual/iGreedy3.0
 git clone https://github.com/hugopascual/Hunter
 git clone https://github.com/hugopascual/HunterCache
@@ -190,214 +239,9 @@ git clone https://github.com/SARA-MSRA-UPM/PE3_programacion_web
 - Obsidian vaults
     -
 ```
-cd "$HOME/obsidian" || exit
+cd "$HOME/obsidian"
 git clone https://github.com/hugopascual/template_vault
 git clone https://github.com/hugopascual/family_vault
 git clone https://github.com/hugopascual/personal_vault
 git clone https://github.com/hugopascual/work_vault
 ```
-
-
-## Things that are not automatized
-### Uninstall preinstalled software
-Desintalar mierda y quetar que cosas como Cortana puedan ir en segundo plano
-
-
-### Personalization
-Quitar inconos escritorio
-
-- Modo Oscuro de Windows en tono azul
-> Fondo
-- Cambiar fondo de escritorio
-> Pantalla de bloqueo
-- Cambiar imagen de bloqueo
-- Deseleccionar los datos curiosos y consejos
-> Inicio
-- Seleccionar: Mas elementos anclados
-	> Carpetas
-	- Añadir Configuración y Explorador de archivos
-> Barra de tareas
-- Deseleccionar: Widgets y Chat
-	> Comportamiento de la barra de tareas
-	- Activar Ocultar automaticamente la barra de tareas
-
-### Updates and drivers
-Drivers
-- Dirvers tarjeta inalámbrica usando el disco para ello
-
-### Manual installations
-Descargar exe:
-https://www.blizzard.com/es-es/apps/battle.net/desktop
-https://www.razer.com/synapse-3
-https://rkgamingstore.com/es/pages/software
-https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
-https://firmaelectronica.gob.es/Home/Descargas.htm
-https://www.epilogue.co/downloads
-
-Microsoft Store: 
-Minecraft
-Microsoft Office
-
-
-## Synchronize accounts
-- One drive:
-    - Cuenta personal [hugo.pasadan@hotmail.com]
-    - Cuenta UPM [hugo.pascual.adan@upm.es]
-
-# Detalles sobre cada software
-Google Drive
-- choco install -y googledrive
-- Iniciar sesión [hugopascual998@gmail.com]
-
-Mozilla Firefox
-- choco install -y firefox
-- Establecer como predeterminado
-- Sincronizar cuenta [hugopascual998@gmail.com]
-- Mostrar siempre la barra de marcadores
-- Colocar el botón de inicio
-- Iniciar sesión en Google 
-[hugopascual998@gmail.com; turfusplays@gmail.com; hugo.pascual.adan@gmail.com]
-
-Google Chrome
-- choco install -y googlechrome
-
-Steam
-- choco install -y steam-client
-- Iniciar sesión [turfus98]
-- Quitar que se inicie con el ordenador
-
-Thunderbird
-- choco install -y thunderbird
-- Configurar correos con calendarios 
-[hugopascual998@gmail.com; turfusplays@gmail.com; hugo.pascual.adan@gmail.com; hugo.pasadan@hotmail.com]
-
-GeForce Experience
-- choco install -y geforce-experience
-- Iniciar sesión
-
-Nvidia Control Panel
-- Revisar que esta instalado
-
-Spotify
-- choco install -y spotify
-- Iniciar sesión [hugopascual998@gmail.com]
-- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
-- Modo oscuro
-
-Visual Studio Code
-- choco install -y vscode
-- Iniciar sesión con GitHub
-
-7zip
-- choco install -y 7zip
-
-KeePass2
-- choco install -y keepass.install
-- Hacer que se vea el campo custom de email
-
-Adobe Acrobat Reader
-- choco install -y adobereader
-
-Epic games
-- choco install -y epicgameslauncher
-- Iniciar sesión
-- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
-
-Amazon Games
-- choco install -y amazongames
-- Iniciar sesión
-- Quitar que se inicie con el ordenador
-- Modo oscuro
-
-Discord
-- choco install -y discord.install
-- Iniciar sesión
-- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
-- Modo oscuro
-
-Battle.net
-- Descargar exe (https://www.blizzard.com/es-es/apps/battle.net/desktop)
-- Iniciar sesión [hugopascual998@gmail.com]
-- Quitar que se inicie con el ordenador y hacer que al cerrar no se minimice
-
-Razer Synapse
-- Descargar exe (https://www.razer.com/synapse-3)
-- Iniciar cuenta [hugopascual998@gmail.com]
-
-RK RGB Keyboard
-- Dedscargar exe (https://www.techpowerup.com/review/royal-kludge-rk84-keyboard/5.html)
-
-Configurador FNMT
-- Descargar de (https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves)
-
-Autofirma (se instala a la vez que el configurador)
-- Descargar de (https://firmaelectronica.gob.es/Home/Descargas.htm)
-
-Epilogue
-- Descargar de (https://www.epilogue.co/downloads)
-
-Hearthstone Tracker
-- Descargar de (https://hsreplay.net/downloads/)
-- Iniciar cuenta
-- Restaurar última copia de seguridad
-
-Hearth Arena
-- Descargar de (https://www.heartharena.com/app)
-- Iniciar cuenta
-
-Overwolf
-- Instalado con Heartharena
-- Quitar el inicio con Windows
-
-Minecraft
-- Instalar desde Microft Store
-- Iniciar sesión con Microsoft [hugo.pasadan@hotmail.com]
-
-Microsoft Office con la cuenta de la UPM / En su defecto Libre Office
-- Instalar desde Microft Store
-
-Instalar certificado en Firefox
-
-------------------------------------------- Anclados a Inicio Windows
-Navegadores Web:
-- Mozilla Firefox
-
-Launchers:
-- Los distintos Launchers
-
-Juegos 
-- Minecraft
-- Hearthstone
-
-Extra Juegos
-- Hearthstone Deck Tracker
-- Heartharena
-- Epilogue
-- Overwolf
-
-Uso diario:
-- Thunderbird
-- Spotify
-- Discord
-
-PC:
-- Panel de control
-- GeForce Experience
-
-Desarrollo:
-- Visual Studio Code
-
-Hardware (aquello de hardware especifico)
-- Armoury Crate (solo el Zephyrus G14)
-- Razer Synapse
-- RK RGB Keyboard
-
--------------------------------------------
-
-Al usar el portatil Zephyrus G14 añadir los programas:
-
-Periféricos
-- Armor Create
-- Dolby Access
-- Aura Creator
-- MyASUS
