@@ -17,6 +17,7 @@ do not know how to make it.
     - `firefox`
     - `flatpak run org.mozilla.Thunderbird`
     - `obsidian`
+    - `spotify`
 - Config second keyboard distribution
 - Add to bookmark in files: `dev`, `obsidian`, `nfs`
 
@@ -37,6 +38,7 @@ do not know how to make it.
         - Google personal account 
         - Google profesional account
         - Google games account
+    - FNMT Certificate
 - Github CLI (terminal)
     - Github account via browser 
     - `gh auth login`
@@ -52,8 +54,8 @@ do not know how to make it.
 - Keepassxc
     - Download credentials database and check if works
     - Config:
-        - Titulo / Usuario / Contraseña / URL / Notas
-        - Ajustar a la ventana
+        - Title / User / Password / URL / Notes
+        - Fit to Window
 - Thunderbird
     - UPM worker account
         - Incoming server: 
