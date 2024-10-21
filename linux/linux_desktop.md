@@ -111,10 +111,6 @@ Not ready for production yet
 
 ## Remote git clone commands
 
-```
-./linux/linux_scripts/clone_repo.sh
-```
-
 - Personal repositories
     -
 ```
