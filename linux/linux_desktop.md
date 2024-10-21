@@ -109,37 +109,37 @@ do not know how to make it.
 ### Personal NAS syncro
 Not ready for production yet
 
-## Remote git repositories list
+## Remote git clone commands
+
+```
+./linux/linux_scripts/clone_repo.sh
+```
+
 - Personal repositories
     -
 ```
-cd "$HOME/dev/$USER" || exit
-git clone https://github.com/hugopascual/AdventCode
-git clone https://github.com/hugopascual/BetAPI
-git clone https://github.com/hugopascual/TGBotDuplicator
-git clone https://github.com/hugopascual/WindowsOS
-git clone https://github.com/hugopascual/BetWatchdog
-git clone https://github.com/hugopascual/BetWatchdog-tgSupervisor
-git clone https://github.com/hugopascual/BetWatchdog-API
-git clone https://github.com/hugopascual/OS_setup
+USERNAME=hugopascual
+EMAIL=hugo.pascual.adan@gmail.com
+
+ORGANIZATION=hugopascual
+REPOSITORIES=()
+
+for repo in "${REPOSITORIES}"
+    ./linux/linux_scripts/clone_repo.sh "$USERNAME" "$EMAIL" "$ORGANIZATION" "$repo"
 ```
 
 - Work repositories
     -
 ```
+USERNAME=hugopascual
+EMAIL=hugo.pascual.adan@upm.es
+
+ORGANIZATION=STRAST-UPM
+REPOSITORIES=()
+
+for repo in "${REPOSITORIES}"
+    ./linux/linux_scripts/clone_repo.sh "$USERNAME" "$EMAIL" "$ORGANIZATION" "$repo"
 cd "$HOME/dev/STRAST" || exit
-git clone https://github.com/hugopascual/iGreedy3.0
-git clone https://github.com/hugopascual/Hunter
-git clone https://github.com/hugopascual/HunterCache
-git clone https://github.com/STRAST-UPM/cluster-documentation
-git clone https://github.com/STRAST-UPM/hunter_experiment_anycast_europe
-git clone https://github.com/SARA-MSRA-UPM/PG0_intro_python
-git clone https://github.com/SARA-MSRA-UPM/PG1_concurrencia
-git clone https://github.com/SARA-MSRA-UPM/PE1_concurrencia
-git clone https://github.com/SARA-MSRA-UPM/PG2_tiempo_real
-git clone https://github.com/SARA-MSRA-UPM/PE2_tiempo_real
-git clone https://github.com/SARA-MSRA-UPM/PG3_programacion_web
-git clone https://github.com/SARA-MSRA-UPM/PE3_programacion_web
 ```
 
 - Obsidian vaults
