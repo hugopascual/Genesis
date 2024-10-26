@@ -13,6 +13,7 @@ install_net_basic() {
     apt_get_install "curl"
     apt_get_install "net-tools"
     apt_get_install "software-properties-common"
+    apt_get_install "nfs-common"
 }
 
 ##
