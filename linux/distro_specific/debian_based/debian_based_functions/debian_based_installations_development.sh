@@ -6,6 +6,16 @@
 
 ##
 # @Description
+# Install Python
+##
+install_python() {
+    apt_get_install "python3"
+    apt_get_install "python3-venv"
+    apt_get_install "python3-pip"
+}
+
+##
+# @Description
 # Install Docker
 ##
 install_docker() {

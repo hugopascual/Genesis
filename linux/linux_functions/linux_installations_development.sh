@@ -6,6 +6,17 @@
 
 ##
 # @Description
+# Install Python
+##
+linux_install_python() {
+    NAME="Python"
+	echo_installing "$NAME"
+    install_python
+    echo_installed "$NAME"
+}
+
+##
+# @Description
 # Install Docker
 ##
 linux_install_docker() {
