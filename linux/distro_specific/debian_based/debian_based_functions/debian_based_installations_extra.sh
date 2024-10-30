@@ -45,3 +45,13 @@ install_google_chrome() {
 install_rpi_imager() {
     apt_get_install "rpi-imager"
 }
+
+##
+# @Description
+# Install TeamViewer
+# https://www.teamviewer.com/es/download/linux/
+##
+install_teamviewer() {
+    URL_DEB="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+    deb_download_and_install "$URL"
+}

@@ -60,3 +60,16 @@ linux_install_rpi_imager() {
     echo_installed "$NAME"
 }
 
+##
+# @Description
+# Install TeamViewer
+##
+linux_install_teamviewer() {
+    NAME="TeamViewer"
+	echo_installing "$NAME"
+    install_teamviewer
+    echo_installed "$NAME"
+}
+
+
+
