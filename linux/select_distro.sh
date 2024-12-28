@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # Distributions available
-DEBIAN_DISTROS=("ubuntu" "debian" "raspberryPi")
-ARCH_DISTROS=("arch" "manjaro")
-
-DISTROS=("${DEBIAN_DISTROS[@]}" "${ARCH_DISTROS[@]}")
+DISTROS=( "ubuntu" "debian" )
 
 # Select the distibution in which we are working to start the configuration
 SELECT_DISTRO_MESSAGE=$'Enter the linux distribution which desktop you wants to setup: \n'
@@ -17,38 +14,20 @@ for DISTRO in "${DISTROS[@]}"; do
     echo "$DISTRO"
 done
 
-read -rp "$SELECT_DISTRO_MESSAGE" CHILD_DISTRO
+read -rp "$SELECT_DISTRO_MESSAGE" DISTRO_SELECTED
 
-echo "$SELECTED_DISTRO_MESSAGE $CHILD_DISTRO"
+echo "$SELECTED_DISTRO_MESSAGE $DISTRO_SELECTED"
 
 #------------------------------- Check distro valid and parent distro
-if [[ ! " ${DISTROS[*]} " =~ [[:space:]]${CHILD_DISTRO}[[:space:]] ]]; then
+if [[ ! " ${DISTROS[*]} " =~ [[:space:]]${DISTRO_SELECTED}[[:space:]] ]]; then
     # Message when array doesn't contain a valid distribution
     echo "$NOT_VALID_DISTRO_MESSAGE"
     exit 1
 fi
 
-PARENT_DISTRO="none"
-# Check if CHILD_DISTRO is in DEBIAN
-if [[ " ${DEBIAN_DISTROS[*]} " =~ [[:space:]]${CHILD_DISTRO}[[:space:]] ]]; then
-    PARENT_DISTRO="debian"
-fi
-
-# Check if CHILD_DISTRO is in ARCH
-if [[ " ${ARCH_DISTROS[*]} " =~ [[:space:]]${CHILD_DISTRO}[[:space:]] ]]; then
-    PARENT_DISTRO="arch"
-fi
-
-if [[ "$PARENT_DISTRO" = "none" ]]; then
-    exit 1
-fi
-
-PARENT_DISTRO_DIR="$PARENT_DISTRO""_based"
-PARENT_DISTRO_DIR_FUNCTIONS="$PARENT_DISTRO_DIR""_functions"
-PARENT_DISTRO_DIR_SCRIPTS="$PARENT_DISTRO_DIR""_scripts"
-
-CHILD_DISTRO_DIR_FUNCTIONS="$CHILD_DISTRO""_functions"
-CHILD_DISTRO_DIR_SCRIPTS="$CHILD_DISTRO""_scripts"
+DISTRO_DIR="$DISTRO_SELECTED"
+DISTRO_INSTALLATIONS_DIR="$DISTRO_SELECTED/installations"
+DISTRO_SCRIPTS_DIR="$DISTRO_SELECTED/scripts"
 
 #------------------------------- Imports
 # Get the path to the main directory.
