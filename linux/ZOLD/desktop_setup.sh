@@ -56,6 +56,7 @@ linux_install_vlc
 linux_install_gimp
 linux_install_rpi_imager
 
+
 #------------------------------- Software configuration
 
 #------------------------------- Update and Clean
