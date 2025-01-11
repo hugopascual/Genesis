@@ -1,23 +1,86 @@
-# LinuxOS
-Automation of Linux operative systems. In every folder there is a similar 
-structure and a similar use cases and code organization.
+# Operative Systems setup
 
-## Use and scripts
-The scripts in `scripts` folder are the support scripts for the `main.sh` 
-script which install all the software and make the wanted configurations. 
-Furthermore, outside the main folder there are two more scripts. 
-The first one is `main.sh` which install all the software and config the system 
-with the config scripts. The second one is `test.sh` which only purpose is to 
-test some functionalities or code.
+## Software installations
 
-To install all the software specified you just need to execute `main.sh`.
-```
-# If you dont have permissions of execution in the file give them
-chmod +x installations.sh
-# Then execute it
-./main.sh
-```
+### Desktop
 
-Once the installations have finished, restart the computer because flatpak 
-recommend it and just in case something needs a restart to work in the proper 
-way.
+The software to install on desktops across Linux or Windows are:
+
+1. **Basic**
+    - Git
+    - Firefox
+    - Thunderbird
+    - KeePass
+    - Obsidian
+    - Wireguard
+    - Autofirma
+    - FNMT Configurator
+
+2. **Development**
+    - Visual Studio Code
+    - JetBrains Toolbox
+    - Docker
+    - GitHub
+
+3. **Services**
+    - Spotify
+    - Telegram
+    - Discord
+
+4. **Hobbys**
+    - Steam
+    - Epic Games Launcher
+    - Battle.net
+    - Amazon Games
+    - Minecraft
+    - Chitubox
+    - Chitubox Manager
+    - Lychee
+
+5. **Extra**
+    - VLC
+    - DisplayLink Driver
+    - Graphic drivers
+
+#### Linux especial installations
+
+1. **Basic**
+    - Net packet: wget, curl, net-tools
+    - Flatpak
+    - Terminator
+    - Fastfetch
+    - nvtop
+    - OpenVPNC
+
+2. **Development**
+
+3. **Services**
+
+4. **Hobbys**
+    - Lutris
+
+5. **Extra**
+    - GIMP
+    - RPI Imager
+
+#### Windows especial installations
+
+1. **Basic**
+    - Cisco VPN
+
+2. **Development**
+
+3. **Services**
+
+4. **Hobbys**
+    - Epilogue
+
+5. **Extra**
+    - Razer Synapse
+    - RK Royal Gaming Keyboard
+    - Aura Creator
+    - Armor Create (only in ASUS laptops)
+
+---
+
+### Server
