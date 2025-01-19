@@ -26,4 +26,4 @@ clone_repo() {
     cd "$REPO_DIR" && git config user.email "$EMAIL"
 }
 
-clone_repo "$1" "$2" "$3" "$4"
+# clone_repo "$1" "$2" "$3" "$4"

@@ -1,8 +1,11 @@
 #!/bin/bash
 
 export INSTALL_COMMAND_TYPES=(
-    "desktop" "server"
+    "desktop" 
+    "server"
 )
+
 export AVAILABLE_DISTROS=(
-        "ubuntu" "debian"
+    "ubuntu" 
+    "debian"
 )

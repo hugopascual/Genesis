@@ -55,18 +55,30 @@ fi
 
 
 ### Import distro functions
-# Get distribution to act over
+# Getting the distribution to act on
 distro_selected="None"
 select_distribution
 # Proper import
 distro_dir="$linux_path/$distro_selected"
+import_from_dir "$distro_dir"
 import_from_dir "$distro_dir/installations"
-import_from_dir "$distro_dir/scripts"
 import_from_dir "$distro_dir/functions"
 
 
 if [ $installation_command ]; then
-    echo "hacer instalación TODO"
+    case $command_value in
+        "dekstop")
+            desktop_setup
+            ;;
+        "server")
+            server_setup
+            ;;
+        *)
+            echo "$command_not_valid_message"
+            help_message
+            ;;
+    esac
+
 elif [ $update_command ]; then
     update
 fi
