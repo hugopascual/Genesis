@@ -62,10 +62,11 @@ select_distribution
 distro_dir="$linux_path/$distro_selected"
 import_from_dir "$distro_dir/installations"
 import_from_dir "$distro_dir/scripts"
+import_from_dir "$distro_dir/functions"
 
 
 if [ $installation_command ]; then
     echo "hacer instalación TODO"
 elif [ $update_command ]; then
-    echo "hacer la actualización TODO"
+    update
 fi
