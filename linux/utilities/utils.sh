@@ -164,7 +164,7 @@ update_apt() {
     echo_info "APT update started"
     sudo apt update -y
     sudo apt upgrade -y
-    sudo autoremove -y
-    sudo autoclean -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
     echo_info "APT update finished"
 }
