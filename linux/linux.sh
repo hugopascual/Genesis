@@ -11,7 +11,7 @@
 import_from_dir() {
     directory="$1"
     # shellcheck disable=SC1090
-    for file in $( find "$directory" -type f -print | sort ); 
+    for file in $( find "$directory" -type f -name "*.sh" -print | sort ); 
     do
         source "$file"
     done
@@ -65,7 +65,7 @@ import_from_dir "$distro_dir/installations"
 import_from_dir "$distro_dir/functions"
 
 
-if [ $installation_command ]; then
+if [ "$installation_command" == true ]; then
     case $command_value in
         "dekstop")
             desktop_setup
@@ -78,7 +78,9 @@ if [ $installation_command ]; then
             help_message
             ;;
     esac
-
-elif [ $update_command ]; then
+elif [ "$update_command" == true ]; then
     update
+else
+    echo "$command_value_not_valid_message"
+    help_message
 fi
