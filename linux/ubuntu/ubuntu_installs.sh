@@ -355,9 +355,9 @@ ubuntu_install_teamviewer() {
     deb_download_and_install "$URL"
 }
 
-#############
-#-- Games --#
-#############
+##############
+#-- Hobbys --#
+##############
 
 ##
 # @Description
@@ -390,6 +390,24 @@ ubuntu_install_minecraft() {
     deb_download_and_install "$URL"
 }
 
+##
+# @Description
+# Install Chitubox software. Chitubox and Chitubox Manager.
+##
+ubuntu_install_chitubox_software() {
+  echo_info "Manual install on "
+  echo_info "https://www.chitubox.com/en/download/chitubox-free"
+}
+
+##
+# @Description
+# Install Lychee Slicer
+##
+ubuntu_install_lychee_slicer() {
+  echo_info "Manual install on "
+  echo_info "https://lychee.mango3d.io/download-lychee-slicer"
+}
+
 #############
 #-- Extra --#
 #############
@@ -416,22 +434,4 @@ ubuntu_install_google_chrome() {
 ##
 ubuntu_install_rpi_imager() {
     apt_get_install "rpi-imager"
-}
-
-##
-# @Description
-# Install Chitubox software. Chitubox and Chitubox Manager.
-##
-ubuntu_install_chitubox_software() {
-  echo_info "Manual install on "
-  echo_info "https://www.chitubox.com/en/download/chitubox-free"
-}
-
-##
-# @Description
-# Install Lychee Slicer
-##
-ubuntu_install_lychee_slicer() {
-  echo_info "Manual install on "
-  echo_info "https://lychee.mango3d.io/download-lychee-slicer"
 }

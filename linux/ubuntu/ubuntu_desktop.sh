@@ -40,16 +40,16 @@ desktop_setup() {
     ubuntu_install_discord
     ubuntu_install_teamviewer
 
-    # Games
+    # Hobbys
     ubuntu_install_lutris
     ubuntu_install_steam
     ubuntu_install_minecraft
+    ubuntu_install_chitubox_software
+    ubuntu_install_lychee_slicer
 
     # Extra
     ubuntu_install_gimp
     ubuntu_install_rpi_imager
-    ubuntu_install_chitubox_software
-    ubuntu_install_lychee_slicer
 
     #------------------------------- Update and clean
     update
