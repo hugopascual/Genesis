@@ -1,7 +1,0 @@
-Al usar el portatil Zephyrus G14 añadir los programas:
-
-# Periféricos
-- Armor Create
-- Dolby Access
-- Aura Creator
-- MyASUS
