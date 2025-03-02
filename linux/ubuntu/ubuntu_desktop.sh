@@ -21,20 +21,24 @@ desktop_setup() {
     ubuntu_install_keepassxc
     ubuntu_install_autofirma
     ubuntu_install_config_fnmt
+    ubuntu_install_obsidian
+    ubuntu_install_vlc
 
     # Development
     ubuntu_install_docker
+    ubuntu_install_python
     ubuntu_install_vscode
     ubuntu_install_jetbrains_toolbox
     ubuntu_install_github_cli
 
-    # DIT Installs and config
+    # DIT Software
     ubuntu_install_openvpnc
 
     # Services
     ubuntu_install_spotify
     ubuntu_install_telegram
     ubuntu_install_discord
+    ubuntu_install_teamviewer
 
     # Games
     ubuntu_install_lutris
@@ -42,10 +46,10 @@ desktop_setup() {
     ubuntu_install_minecraft
 
     # Extra
-    ubuntu_install_obsidian
-    ubuntu_install_vlc
     ubuntu_install_gimp
     ubuntu_install_rpi_imager
+    ubuntu_install_chitubox_software
+    ubuntu_install_lychee_slicer
 
     #------------------------------- Update and clean
     update

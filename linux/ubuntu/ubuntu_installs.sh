@@ -25,6 +25,7 @@ ubuntu_install_common_funcionalities() {
     apt_get_install "git"
     apt_get_install "default-jre"
     apt_get_install "nfs-common"
+    apt_get_install "rename"
 }
 
 ##
@@ -134,6 +135,24 @@ ubuntu_install_config_fnmt() {
     sudo apt install -y ./configuradorfnmt*
     rm configuradorfnmt*
     echo_installed "Configurador FNMT"
+}
+
+##
+# @Description
+# Install Obsidian
+# https://obsidian.md/download
+##
+ubuntu_install_obsidian() {
+    URL_DEB="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb"
+    deb_download_and_install "$URL_DEB"
+}
+
+##
+# @Description
+# Install VLC
+##
+ubuntu_install_vlc() {
+    apt_get_install "vlc"
 }
 
 ###################
@@ -326,6 +345,16 @@ ubuntu_install_discord() {
     deb_download_and_install "$URL"
 }
 
+##
+# @Description
+# Install TeamViewer
+# https://www.teamviewer.com/es/download/linux/
+##
+ubuntu_install_teamviewer() {
+    URL_DEB="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+    deb_download_and_install "$URL"
+}
+
 #############
 #-- Games --#
 #############
@@ -367,24 +396,6 @@ ubuntu_install_minecraft() {
 
 ##
 # @Description
-# Install Obsidian
-# https://obsidian.md/download
-##
-ubuntu_install_obsidian() {
-    URL_DEB="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb"
-    deb_download_and_install "$URL_DEB"
-}
-
-##
-# @Description
-# Install VLC
-##
-ubuntu_install_vlc() {
-    apt_get_install "vlc"
-}
-
-##
-# @Description
 # Install GNU Image Manipulation Program
 ##
 ubuntu_install_gimp() {
@@ -409,10 +420,18 @@ ubuntu_install_rpi_imager() {
 
 ##
 # @Description
-# Install TeamViewer
-# https://www.teamviewer.com/es/download/linux/
+# Install Chitubox software. Chitubox and Chitubox Manager.
 ##
-ubuntu_install_teamviewer() {
-    URL_DEB="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-    deb_download_and_install "$URL"
+ubuntu_install_chitubox_software() {
+  echo_info "Manual install on "
+  echo_info "https://www.chitubox.com/en/download/chitubox-free"
+}
+
+##
+# @Description
+# Install Lychee Slicer
+##
+ubuntu_install_lychee_slicer() {
+  echo_info "Manual install on "
+  echo_info "https://lychee.mango3d.io/download-lychee-slicer"
 }
