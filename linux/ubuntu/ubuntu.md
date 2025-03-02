@@ -1,10 +1,12 @@
-# Ubuntu desktop
+# Ubuntu
 
-## Games with Lutris
+## Desktop post installs
+
+### Games with Lutris
 Once Lutris is installed on [this site](https://lutris.net/games) games can be 
 searched and installed in a semi-automatic way.
 
-## Things that are not automatized in desktops
+### Things that are not automatized in desktops
 - **Activate Wayland (Only on laptops)**
 To activate Wayland, on the password screen click on the gear icon and activate
 it.
@@ -16,7 +18,7 @@ folder.
 - **Second Keyboard distribution**. 
 Settings -> Keyboard -> Add Input Source
 
-## Nvidia drivers
+### Nvidia drivers
 With the following command you can see the different drivers available for your 
 hardware, including NVIDIA graphics card if present.
 ```
@@ -28,7 +30,7 @@ Select the one you want and install it with the following command.
 sudo apt-get install <driver-name>
 ```
 
-## Synchronize accounts
+### Synchronize accounts
 To finish the setup just synchronize your accounts in the web browser and apps.
 
 - Ubuntu Online Accounts: Google ones
