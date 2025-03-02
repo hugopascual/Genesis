@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#########
-# Basic #
-#########
+#############
+#-- Basic --#
+#############
 
 ##
 # @Description
@@ -136,9 +136,9 @@ ubuntu_install_config_fnmt() {
     echo_installed "Configurador FNMT"
 }
 
-###############
-# Development #
-###############
+###################
+#-- Development --#
+###################
 
 ##
 # @Description
@@ -200,7 +200,7 @@ ubuntu_uninstall_docker() {
 # @Description
 # Install Python
 ##
-install_python() {
+ubuntu_install_python() {
     apt_get_install "python3"
     apt_get_install "python3-venv"
     apt_get_install "python3-pip"
@@ -212,7 +212,7 @@ install_python() {
 # Install NodeJS and npm
 # https://nodejs.org/es/download
 ##
-install_nodejs() {
+ubuntu_install_nodejs() {
     # Download and install nvm:
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
@@ -235,7 +235,7 @@ install_nodejs() {
 # Install VSCode
 # https://code.visualstudio.com/docs/setup/linux
 ##
-install_vscode() {
+ubuntu_install_vscode() {
     VSCODE_DEB_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
     deb_download_and_install "$VSCODE_DEB_URL"
 }
@@ -246,7 +246,7 @@ install_vscode() {
 # https://www.jetbrains.com/help/idea/installation-guide.html#toolbox
 # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
 ##
-install_jetbrains_toolbox() {
+ubuntu_install_jetbrains_toolbox() {
     tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
     # Descargar el tar.gz
     wget -c https://download.jetbrains.com/toolbox/$tar_file
@@ -268,10 +268,151 @@ install_jetbrains_toolbox() {
 # Github client to make login via terminal
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 ##
-install_github_cli() {
+ubuntu_install_github_cli() {
     sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
     && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
+}
+
+####################
+#-- DIT Software --#
+####################
+
+##
+# @Description
+# Install OpenVPNC
+# VPN to connect to the DIT net
+# https://web.dit.upm.es/.cdc/index.php/Configuracion_manual_vpnc_en_ubuntu
+##
+ubuntu_install_openvpnc() {
+    sudo apt-get update
+    sudo apt-get -y install vpnc
+}
+
+
+################
+#-- Services --#
+################
+
+##
+# @Description
+# Install Spotify
+# https://www.spotify.com/us/download/linux/
+##
+ubuntu_install_spotify() {
+    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt-get update
+    sudo apt-get install spotify-client
+}
+
+##
+# @Description
+# Install Telegram
+##
+ubuntu_install_telegram() {
+    flathub_install "org.telegram.desktop"
+}
+
+##
+# @Description
+# Install Discord
+# https://discord.com/
+##
+ubuntu_install_discord() {
+    URL="https://discord.com/api/download?platform=linux&format=deb"
+    deb_download_and_install "$URL"
+}
+
+#############
+#-- Games --#
+#############
+
+##
+# @Description
+# Install Lutris
+##
+ubuntu_install_lutris() {
+    apt_get_install "lutris"
+    # Install wine32 and arquitecture i386
+    sudo dpkg --add-architecture i386
+    sudo apt update
+    apt_get_install "wine32:i386"
+}
+
+##
+# @Description
+# Install Steam
+##
+ubuntu_install_steam() {
+    URL="https://cdn.akamai.steamstatic.com/client/installer/steam.deb"
+    deb_download_and_install "$URL"
+}
+
+##
+# @Description
+# Install Minecraft
+# https://www.minecraft.net/en-us/download/alternative
+##
+ubuntu_install_minecraft() {
+    URL="https://launcher.mojang.com/download/Minecraft.deb"
+    deb_download_and_install "$URL"
+}
+
+#############
+#-- Extra --#
+#############
+
+##
+# @Description
+# Install Obsidian
+# https://obsidian.md/download
+##
+ubuntu_install_obsidian() {
+    URL_DEB="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb"
+    deb_download_and_install "$URL_DEB"
+}
+
+##
+# @Description
+# Install VLC
+##
+ubuntu_install_vlc() {
+    apt_get_install "vlc"
+}
+
+##
+# @Description
+# Install GNU Image Manipulation Program
+##
+ubuntu_install_gimp() {
+    apt_get_install "gimp"
+}
+
+##
+# @Description
+# Install Google Chrome
+##
+ubuntu_install_google_chrome() {
+    flathub_install "com.google.Chrome"
+}
+
+##
+# @Description
+# Install Raspberry Pi OS Imager
+##
+ubuntu_install_rpi_imager() {
+    apt_get_install "rpi-imager"
+}
+
+##
+# @Description
+# Install TeamViewer
+# https://www.teamviewer.com/es/download/linux/
+##
+ubuntu_install_teamviewer() {
+    URL_DEB="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+    deb_download_and_install "$URL"
 }
