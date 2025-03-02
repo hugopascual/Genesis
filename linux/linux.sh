@@ -61,9 +61,6 @@ select_distribution
 # Proper import
 distro_dir="$linux_path/$distro_selected"
 import_from_dir "$distro_dir"
-import_from_dir "$distro_dir/installations"
-import_from_dir "$distro_dir/functions"
-
 
 if [ "$installation_command" == true ]; then
     case $command_value in
