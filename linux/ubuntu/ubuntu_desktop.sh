@@ -8,21 +8,10 @@ desktop_setup() {
     execute_customization
 
     #------------------------------- Software installations
-    # Basic
-    ubuntu_install_net_basic
-    ubuntu_install_common_funcionalities
-    ubuntu_install_displaylink_driver
-    ubuntu_install_flatpak
-    ubuntu_install_terminator
+    # Minimum
+    ubuntu_install_basics
+    ubuntu_install_basics_network
     ubuntu_install_fastfetch
-    ubuntu_install_nvtop
-    ubuntu_install_firefox
-    ubuntu_install_thunderbird
-    ubuntu_install_keepassxc
-    ubuntu_install_autofirma
-    ubuntu_install_config_fnmt
-    ubuntu_install_obsidian
-    ubuntu_install_vlc
 
     # Development
     ubuntu_install_docker
@@ -30,15 +19,30 @@ desktop_setup() {
     ubuntu_install_vscode
     ubuntu_install_jetbrains_toolbox
     ubuntu_install_github_cli
+    ubuntu_install_postman
+    ubuntu_install_rpi_imager
 
     # DIT Software
-    ubuntu_install_openvpnc
+    ubuntu_install_openvpn
 
-    # Services
+    # Desktop
+    ubuntu_install_displaylink_driver
+    ubuntu_install_nvtop
+    ubuntu_install_flatpak
+    ubuntu_install_terminator
+    ubuntu_install_firefox
+    ubuntu_install_thunderbird
+    ubuntu_install_keepassxc
+    ubuntu_install_autofirma
+    ubuntu_install_config_fnmt
+    ubuntu_install_obsidian
+    ubuntu_install_vlc
     ubuntu_install_spotify
     ubuntu_install_telegram
     ubuntu_install_discord
     ubuntu_install_teamviewer
+    ubuntu_install_gimp
+    ubuntu_install_wireguard
 
     # Hobbys
     ubuntu_install_lutris
@@ -46,10 +50,6 @@ desktop_setup() {
     ubuntu_install_minecraft
     ubuntu_install_chitubox_software
     ubuntu_install_lychee_slicer
-
-    # Extra
-    ubuntu_install_gimp
-    ubuntu_install_rpi_imager
 
     #------------------------------- Update and clean
     update

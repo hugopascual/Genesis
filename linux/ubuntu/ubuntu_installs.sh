@@ -1,66 +1,30 @@
 #!/bin/bash
 
-#############
-#-- Basic --#
-#############
+################################################################################
+#-- Minimum --#
+################################################################################
 
 ##
 # @Description
-# Install basic net tools (wget, curl and net-tools)
+# Install some basic functionalities
 ##
-ubuntu_install_net_basic() {
-    apt_get_install "wget"
-    apt_get_install "curl"
-    apt_get_install "net-tools"
-    apt_get_install "software-properties-common"
-}
-
-##
-# @Description
-# Install funcionalities (htop, tree, git and Java Runtime Env)
-##
-ubuntu_install_common_funcionalities() {
+ubuntu_install_basics() {
+    # TODO include sudo install
     apt_get_install "htop"
     apt_get_install "tree"
-    apt_get_install "git"
-    apt_get_install "default-jre"
     apt_get_install "nfs-common"
     apt_get_install "rename"
 }
 
 ##
 # @Description
-# Install Displylink driver
-# Drivers to use displays with hubs
-# https://www.synaptics.com/products/displaylink-graphics/downloads
+# Install basic net tools (wget, curl and net-tools)
 ##
-ubuntu_install_displaylink_driver() {
-    URL="https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb"
-    wget "$URL"
-    sudo apt install -y ./synaptics-repository-keyring.deb
-    sudo apt update
-    sudo apt install -y displaylink-driver
-    sudo rm synaptics-repository-keyring.deb
-}
-
-##
-# @Description
-# Install Flatpak package manager
-# https://flatpak.org/setup/Ubuntu
-##
-ubuntu_install_flatpak() {
-    sudo apt install -y flatpak
-    # add the Flathub repository
-    FLATHUB_REPO_URI=https://dl.flathub.org/repo/flathub.flatpakrepo
-    flatpak remote-add --if-not-exists flathub "$FLATHUB_REPO_URI"
-}
-
-##
-# @Description
-# Install Terminator
-##
-ubuntu_install_terminator() {
-    apt_get_install "terminator"
+ubuntu_install_basics_network() {
+    apt_get_install "wget"
+    apt_get_install "curl"
+    apt_get_install "net-tools"
+    apt_get_install "software-properties-common"
 }
 
 ##
@@ -75,89 +39,18 @@ ubuntu_install_fastfetch() {
     sudo apt install -y fastfetch
 }
 
-##
-# @Description
-# Install NVTop
-##
-ubuntu_install_nvtop() {
-    apt_get_install "nvtop"
-}
-
-##
-# @Description
-# Install Firefox
-##
-ubuntu_install_firefox() {
-    apt_get_install "firefox"
-}
-
-##
-# @Description
-# Install Thunderbird
-##
-ubuntu_install_thunderbird() {
-    flathub_install "org.mozilla.Thunderbird"
-}
-
-##
-# @Description
-# Install KeePassXC
-##
-ubuntu_install_keepassxc() {
-    flathub_install "org.keepassxc.KeePassXC"
-}
-
-##
-# @Description
-# Install Autofirma from FNMT
-# https://firmaelectronica.gob.es/Home/Descargas.html
-##
-ubuntu_install_autofirma() {
-	echo_installing "AutoFirma"
-    URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
-	curl -OL "$URL"
-	unzip "AutoFirma_Linux_Debian.zip"
-	sudo apt install -y ./*.deb
-    rm AutoFirma*
-	echo_installed "AutoFirma"
-}
-
-##
-# @Description
-# Install Configurador FNMT
-# App for requesting keys needed to obtain a spanish digital certificate
-# https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
-##
-ubuntu_install_config_fnmt() {
-    echo_installing "Configurador FNMT"
-    sudo apt install -y default-jdk
-    wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
-    sudo apt install -y ./configuradorfnmt*
-    rm configuradorfnmt*
-    echo_installed "Configurador FNMT"
-}
-
-##
-# @Description
-# Install Obsidian
-# https://obsidian.md/download
-##
-ubuntu_install_obsidian() {
-    URL_DEB="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb"
-    deb_download_and_install "$URL_DEB"
-}
-
-##
-# @Description
-# Install VLC
-##
-ubuntu_install_vlc() {
-    apt_get_install "vlc"
-}
-
-###################
+################################################################################
 #-- Development --#
-###################
+################################################################################
+
+##
+# @Description
+# Install some basic development software
+##
+ubuntu_install_basics_development() {
+    apt_get_install "git"
+    apt_get_install "default-jre"
+}
 
 ##
 # @Description
@@ -225,30 +118,6 @@ ubuntu_install_python() {
     apt_get_install "python3-pip"
 }
 
-
-##
-# @Description
-# Install NodeJS and npm
-# https://nodejs.org/es/download
-##
-ubuntu_install_nodejs() {
-    # Download and install nvm:
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-
-    # in lieu of restarting the shell
-    \. "$HOME/.nvm/nvm.sh"
-
-    # Download and install Node.js:
-    nvm install 22
-
-    # Verify the Node.js version:
-    node -v # Should print "v22.14.0".
-    nvm current # Should print "v22.14.0".
-
-    # Verify npm version:
-    npm -v # Should print "10.9.2".
-}
-
 ##
 # @Description
 # Install VSCode
@@ -295,14 +164,82 @@ ubuntu_install_github_cli() {
     && sudo apt install gh -y
 }
 
-####################
+##
+# @Description
+# Install Postman
+##
+ubuntu_install_postman() {
+    snap_install "postman"
+}
+
+##
+# @Description
+# Install Raspberry Pi OS Imager
+##
+ubuntu_install_rpi_imager() {
+    apt_get_install "rpi-imager"
+}
+
+##
+# @Description
+# Install NodeJS and npm
+# https://nodejs.org/es/download
+##
+ubuntu_install_nodejs() {
+    # Download and install nvm:
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+    # in lieu of restarting the shell
+    \. "$HOME/.nvm/nvm.sh"
+
+    # Download and install Node.js:
+    nvm install 22
+
+    # Verify the Node.js version:
+    node -v # Should print "v22.14.0".
+    nvm current # Should print "v22.14.0".
+
+    # Verify npm version:
+    npm -v # Should print "10.9.2".
+}
+
+################################################################################
 #-- DIT Software --#
-####################
+################################################################################
+
+##
+# @Description
+# Install OpenVPN
+# VPN to connect to the DIT net
+# TODO include the website with the tutorial from DIT
+# Installation guide from OpenVPN
+# https://community.openvpn.net/Pages/OpenVPN3Linux
+##
+ubuntu_install_openvpn() {
+    # Install other necessary software
+    sudo apt update
+    sudo apt install -y apt-transport-https curl
+
+    # Repository keys
+    mkdir -p /etc/apt/keyrings
+    curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /tmp/openvpn.asc
+    sudo mv /tmp/openvpn.asc /etc/apt/keyrings/openvpn.asc
+
+    ## TODO update to change DISTRIBUTION dynamically
+    DISTRIBUTION="noble"
+    cp /etc/apt/sources.list.d/openvpn3.list /tmp/openvpn3.list
+    echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian ${DISTRIBUTION} main" >> /tmp/openvpn3.list
+    sudo mv /tmp/openvpn3.list /etc/apt/sources.list.d/openvpn3.list
+
+    # Install OpenVPN
+    sudo apt update
+    sudo apt install -y openvpn3
+}
 
 ##
 # @Description
 # Install OpenVPNC
-# VPN to connect to the DIT net
+# Legacy VPN to connect to the DIT net
 # https://web.dit.upm.es/.cdc/index.php/Configuracion_manual_vpnc_en_ubuntu
 ##
 ubuntu_install_openvpnc() {
@@ -310,10 +247,132 @@ ubuntu_install_openvpnc() {
     sudo apt-get -y install vpnc
 }
 
+################################################################################
+#-- Desktop --#
+################################################################################
 
-################
-#-- Services --#
-################
+##
+# @Description
+# Install Displylink driver
+# Drivers to use displays with hubs
+# https://www.synaptics.com/products/displaylink-graphics/downloads
+##
+ubuntu_install_displaylink_driver() {
+    URL="https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb"
+    wget "$URL"
+    sudo apt install -y ./synaptics-repository-keyring.deb
+    sudo apt update
+    sudo apt install -y displaylink-driver
+    sudo rm synaptics-repository-keyring.deb
+}
+
+##
+# @Description
+# Install NVTop
+##
+ubuntu_install_nvtop() {
+    apt_get_install "nvtop"
+}
+
+##
+# @Description
+# Install Flatpak package manager
+# https://flatpak.org/setup/Ubuntu
+##
+ubuntu_install_flatpak() {
+    sudo apt install -y flatpak
+    # add the Flathub repository
+    FLATHUB_REPO_URI=https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists flathub "$FLATHUB_REPO_URI"
+}
+
+##
+# @Description
+# Install Terminator
+##
+ubuntu_install_terminator() {
+    apt_get_install "terminator"
+}
+
+##
+# @Description
+# Install Firefox
+##
+ubuntu_install_firefox() {
+    apt_get_install "firefox"
+}
+
+##
+# @Description
+# Install Google Chrome
+##
+ubuntu_install_google_chrome() {
+    flathub_install "com.google.Chrome"
+}
+
+##
+# @Description
+# Install Thunderbird
+##
+ubuntu_install_thunderbird() {
+    flathub_install "org.mozilla.Thunderbird"
+}
+
+##
+# @Description
+# Install KeePassXC
+##
+ubuntu_install_keepassxc() {
+    flathub_install "org.keepassxc.KeePassXC"
+}
+
+##
+# @Description
+# Install Autofirma from FNMT
+# https://firmaelectronica.gob.es/Home/Descargas.html
+##
+ubuntu_install_autofirma() {
+	echo_installing "AutoFirma"
+    URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
+	curl -OL "$URL"
+	unzip "AutoFirma_Linux_Debian.zip"
+	sudo apt install -y ./*.deb
+    rm AutoFirma*
+	echo_installed "AutoFirma"
+}
+
+##
+# @Description
+# Install Configurador FNMT
+# App for requesting keys needed to obtain a spanish digital certificate
+# https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
+##
+ubuntu_install_config_fnmt() {
+    echo_installing "Configurador FNMT"
+    sudo apt install -y default-jdk
+    wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
+    sudo apt install -y ./configuradorfnmt*
+    rm configuradorfnmt*
+    echo_installed "Configurador FNMT"
+}
+
+##
+# @Description
+# Install Obsidian
+# https://obsidian.md/download
+##
+ubuntu_install_obsidian() {
+    URL_DEB="https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb"
+    deb_download_and_install "$URL_DEB"
+}
+
+##
+# @Description
+# Install VLC
+##
+ubuntu_install_vlc() {
+    apt_get_install "vlc"
+}
 
 ##
 # @Description
@@ -355,9 +414,26 @@ ubuntu_install_teamviewer() {
     deb_download_and_install "$URL"
 }
 
-##############
+##
+# @Description
+# Install GNU Image Manipulation Program
+##
+ubuntu_install_gimp() {
+    apt_get_install "gimp"
+}
+
+##
+# @Description
+# Install Wireguard
+# https://www.wireguard.com/install/
+##
+ubuntu_install_wireguard() {
+    sudo apt install "wireguard"
+}
+
+################################################################################
 #-- Hobbys --#
-##############
+################################################################################
 
 ##
 # @Description
@@ -406,32 +482,4 @@ ubuntu_install_chitubox_software() {
 ubuntu_install_lychee_slicer() {
   echo_info "Manual install on "
   echo_info "https://lychee.mango3d.io/download-lychee-slicer"
-}
-
-#############
-#-- Extra --#
-#############
-
-##
-# @Description
-# Install GNU Image Manipulation Program
-##
-ubuntu_install_gimp() {
-    apt_get_install "gimp"
-}
-
-##
-# @Description
-# Install Google Chrome
-##
-ubuntu_install_google_chrome() {
-    flathub_install "com.google.Chrome"
-}
-
-##
-# @Description
-# Install Raspberry Pi OS Imager
-##
-ubuntu_install_rpi_imager() {
-    apt_get_install "rpi-imager"
 }

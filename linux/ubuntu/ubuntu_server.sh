@@ -6,13 +6,13 @@ server_setup() {
     #------------------------------- Customization
 
     #------------------------------- Software installations
-    # Basic
-    ubuntu_install_net_basic
-    ubuntu_install_common_funcionalities
+    # Minimum
+    ubuntu_install_basics
+    ubuntu_install_basics_network
     ubuntu_install_fastfetch
-    ubuntu_install_nvtop
 
     # Development
+    ubuntu_install_basics_development
     ubuntu_install_docker
     ubuntu_install_python
 

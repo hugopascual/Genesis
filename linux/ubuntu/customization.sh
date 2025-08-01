@@ -9,7 +9,6 @@ execute_customization() {
     config_bash
     desktop_customization
     development_config
-    add_alias
 }
 
 ##
@@ -84,51 +83,10 @@ desktop_customization() {
 
 ##
 # @Description
-#
+# Config the folder and copy clone_repos.sh
 ##
 development_config() {
-    mkdir "$HOME/repositories"
+    mkdir -p "$HOME/repositories"
     script_folder="$(dirname "$0")"
     cp "$script_folder/../statics/scripts/clone.sh" "$HOME/repositories"
-}
-
-##
-# @Description
-#
-##
-add_alias() {
-    echo "
-    # Custom alias
-    alias egrep='egrep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias grep='grep --color=auto'
-    alias l='ls -CF'
-    alias la='ls -A'
-    alias ll='ls -alF'
-    alias ls='ls --color=auto'
-
-    alias mountdrive='sudo mount -t nfs archaedas.home:/mnt/main/drive /mnt/drive'
-    alias umountdrive='sudo umount -f /mnt/drive'
-    alias homevpnin='sudo wg-quick up vpn_mad-ly129'
-    alias homevpnout='sudo wg-quick down vpn_mad-ly129'
-
-    alias inhome='homevpnin && mountdrive'
-    alias outhome='umountdrive && homevpnout'
-
-    alias ditvpnconnect='sudo vpnc-connect --enable-weak-encryption --enable-weak-authentication vpn_dit'
-    alias ditvpndisconnect='sudo vpnc-disconnect'
-    " >> "$HOME/.bashrc"
-}
-
-##
-# @Description
-#
-##
-dit_vpn_config() {
-    echo "
-IPSec gateway
-IPSec ID
-IPSec secret
-Xauth username
-Xauth password " | sudo tee -a /etc/vpnc/vpn_dit.conf
 }

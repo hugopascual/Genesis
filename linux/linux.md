@@ -1,15 +1,30 @@
 # Linux Software
 
-## Software Escritorio
+## Desktop software
 
-1. **Basic**
-    - Net basic: wget, curl, net-tools
-    - Common Funcionalities: htop, tree, git, default-jre, nfs-common, rename
+1. **Minimum**
+    - Basics: sudo, htop, tree, nfs-common, rename
+    - Basics network: wget, curl, net-tools
+    - Fastfetch
+
+2. **Development**
+    - Basics development: git, default-jre
+    - Docker
+    - Python
+    - VScode
+    - JetBrains Toolbox
+    - GitHub Cli
+    - Postman
+    - RPI Imager
+
+3. **DIT Software**
+    - OpenVPNv3
+
+4. **Desktop**
     - DisplayLink Driver
+    - NVtop
     - Flatpak
     - Terminator
-    - Fastfetch
-    - NVtop
     - Firefox
     - Thunderbird
     - KeePass XC
@@ -17,22 +32,12 @@
     - Config FNMT
     - Obsidian
     - VLC
-
-2. **Development**
-    - Docker
-    - Python
-    - VScode
-    - JetBrains Toolbox
-    - GitHub Cli
-
-3. **DIT Software**
-    - OpenVPNC
-
-4. **Services**
     - Spotify
     - Telegram
     - Discord
     - Team Viewer
+    - GIMP
+    - Wireguard
 
 5. **Hobbys**
     - Lutris
@@ -41,18 +46,14 @@
     - Chitubox Software: Chitubox Free y Chitubox Manager
     - Lychee Slicer
 
-6. **Extra**
-    - GIMP
-    - RPI Imager
+## Server Software
 
-## Software Server
-
-1. **Basic**
-    - Net basic: wget, curl, net-tools
-    - Common Funcionalities: htop, tree, git, default-jre, nfs-common, rename
-    - Fastfetch
-    - NVtop
+1. **Minimum**
+   - Basics: sudo, htop, tree, nfs-common, rename
+   - Basics network: wget, curl, net-tools
+   - Fastfetch
 
 2. **Development**
-    - Docker
-    - Python
+   - Basics development: git, default-jre
+   - Docker
+   - Python
