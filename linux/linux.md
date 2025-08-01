@@ -42,6 +42,7 @@
 5. **Hobbys**
     - Lutris
     - Steam
+    - Heroic
     - Minecraft
     - Chitubox Software: Chitubox Free y Chitubox Manager
     - Lychee Slicer
