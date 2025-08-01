@@ -458,6 +458,14 @@ ubuntu_install_steam() {
 
 ##
 # @Description
+# Install Heroic. Aggregator of games platforms
+##
+ubuntu_install_heroic() {
+    flathub_install "com.heroicgameslauncher.hgl"
+}
+
+##
+# @Description
 # Install Minecraft
 # https://www.minecraft.net/en-us/download/alternative
 ##
