@@ -5,6 +5,7 @@
 # 
 ##
 execute_customization() {
+    echo "execute_customization"
     config_locale
     config_bash
     desktop_customization

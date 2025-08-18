@@ -1,14 +1,21 @@
 #!/bin/bash
 
-desktop_setup() {
-    #------------------------------- Start with the setup
-    echo "Starting Setup"
+server_setup() {
+    echo "Starting server setup"
 
     #------------------------------- Customization
-    execute_customization
 
     #------------------------------- Software installations
-    
+    # Minimum
+    debian_install_basics
+    debian_install_basics_network
+    debian_install_fastfetch
+
+    # Development
+    debian_install_basics_development
+    debian_install_docker
+    debian_install_python
+
     #------------------------------- Update and clean
     update
 

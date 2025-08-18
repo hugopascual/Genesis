@@ -6,4 +6,6 @@
 ##
 update() {
     echo "update"
+    # APT packages update
+    update_apt
 }

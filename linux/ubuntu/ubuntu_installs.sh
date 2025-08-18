@@ -14,6 +14,7 @@ ubuntu_install_basics() {
     apt_get_install "tree"
     apt_get_install "nfs-common"
     apt_get_install "rename"
+    apt_get_install "rsync"
 }
 
 ##

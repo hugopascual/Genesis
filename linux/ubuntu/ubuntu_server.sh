@@ -1,7 +1,7 @@
 #!/bin/bash
 
 server_setup() {
-    echo "server_setup"
+    echo "Starting server setup"
 
     #------------------------------- Customization
 
