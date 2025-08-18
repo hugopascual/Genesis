@@ -7,6 +7,7 @@
 execute_server_customization() {
     echo "execute_server_customization"
     config_locale
+    config_bash
 }
 
 ##
@@ -30,4 +31,13 @@ config_locale() {
     localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
     localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
     localectl set-locale LC_ALL=es_ES.UTF-8
+}
+
+##
+# @Description
+# 
+##
+config_bash(){
+    # Modify file .bashrc changing \w with \W
+    sed -iE 's/\\w/\\W/' ~/.bashrc
 }
