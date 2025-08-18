@@ -4,7 +4,8 @@ server_setup() {
     echo "Starting server setup"
 
     #------------------------------- Customization
-
+    execute_server_customization
+    
     #------------------------------- Software installations
     # Minimum
     debian_install_basics

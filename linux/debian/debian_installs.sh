@@ -35,9 +35,8 @@ debian_install_basics_network() {
 # https://github.com/fastfetch-cli/fastfetch
 ##
 debian_install_fastfetch() {
-    sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
-    sudo apt update
-    sudo apt install -y fastfetch
+    URL="https://github.com/fastfetch-cli/fastfetch/releases/download/2.50.2/fastfetch-linux-amd64.deb"
+    deb_download_and_install "$URL"
 }
 
 ################################################################################
