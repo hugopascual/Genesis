@@ -14,6 +14,7 @@ server_setup() {
     # Development
     ubuntu_install_basics_development
     ubuntu_install_docker
+    ubuntu_install_lazydocker
     ubuntu_install_python
 
     #------------------------------- Update and clean

@@ -15,6 +15,7 @@ desktop_setup() {
 
     # Development
     ubuntu_install_docker
+    ubuntu_install_lazydocker
     ubuntu_install_python
     ubuntu_install_vscode
     ubuntu_install_jetbrains_toolbox

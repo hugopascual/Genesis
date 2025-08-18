@@ -10,6 +10,7 @@
 2. **Development**
     - Basics development: git, default-jre
     - Docker
+    - lazydocker
     - Python
     - VScode
     - JetBrains Toolbox
@@ -57,4 +58,5 @@
 2. **Development**
    - Basics development: git, default-jre
    - Docker
+   - lazydocker
    - Python

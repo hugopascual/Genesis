@@ -110,6 +110,18 @@ ubuntu_uninstall_docker() {
 
 ##
 # @Description
+# Install lazydocker
+# https://github.com/jesseduffield/lazydocker
+##
+ubuntu_install_lazydocker() {
+    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+    sudo mv .local/bin/lazydocker /usr/local/bin/
+    rm -d .local/bin/
+    rm -d .local/
+}
+
+##
+# @Description
 # Install Python
 ##
 ubuntu_install_python() {

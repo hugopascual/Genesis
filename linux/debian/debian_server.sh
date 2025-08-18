@@ -15,6 +15,7 @@ server_setup() {
     # Development
     debian_install_basics_development
     debian_install_docker
+    debian_install_lazydocker
     debian_install_python
 
     #------------------------------- Update and clean

@@ -108,6 +108,18 @@ debian_uninstall_docker() {
 
 ##
 # @Description
+# Install lazydocker
+# https://github.com/jesseduffield/lazydocker
+##
+debian_install_lazydocker() {
+    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+    sudo mv .local/bin/lazydocker /usr/local/bin/
+    rm -d .local/bin/
+    rm -d .local/
+}
+
+##
+# @Description
 # Install Python
 ##
 debian_install_python() {
