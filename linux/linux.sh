@@ -64,7 +64,7 @@ import_from_dir "$distro_dir"
 
 if [ "$installation_command" == true ]; then
     case $command_value in
-        "dekstop")
+        "desktop")
             desktop_setup
             ;;
         "server")

@@ -2,6 +2,33 @@
 
 ## Desktop post installs
 
+### Synchronize accounts
+
+- Firefox:
+  - Web browser synchronization
+  - Google services inside
+  - Add FNMT certificate
+- Ubuntu Online Accounts: Google ones
+- Thunderbird: Import settings if possible
+- Visual Studio Code Sync
+- GitHub Cli - `gh auth login`
+- Descarga de repositorios
+- Spotify
+- Jetbrains Toolbox
+- Games:
+  - Steam
+  - Minecraft
+
+### Startup apps
+
+- Add to startup
+  - Thunderbird - `flatpak run org.mozilla.Thunderbird`
+  - Firefox - `firefox`
+  - Obsidian - `obsidian`
+
+- Disable:
+  - JetBrains Toolbox
+
 ### Games with Lutris
 
 Once Lutris is installed on [this site](https://lutris.net/games) games can be
@@ -18,7 +45,7 @@ it.
 If you want to see the hidden files and folder you can use Crtl-H on any
 folder.
 
-- **Second Keyboard distribution**. 
+- **Second Keyboard distribution**.
 Settings -> Keyboard -> Add Input Source
 
 ### Nvidia drivers
@@ -35,20 +62,3 @@ Select the one you want and install it with the following command.
 ```shell
 sudo apt-get install <driver-name>
 ```
-
-### Synchronize accounts
-
-To finish the setup just synchronize your accounts in the web browser and apps.
-
-- Ubuntu Online Accounts: Google ones
-- Firefox:
-  - Web browser synchronization
-  - Google services inside
-  - Add FNMT certificate
-- Thunderbird: Import settings if possible
-- Spotify
-- Visual Studio Code Sync
-- Jetbrains Toolbox
-- Games:
-  - Steam
-  - Minecraft
