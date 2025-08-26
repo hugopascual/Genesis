@@ -12,6 +12,7 @@
     - Docker
     - lazydocker
     - Python
+    - GitHub Cli
     - VScode
     - JetBrains Toolbox
     - GitHub Cli
