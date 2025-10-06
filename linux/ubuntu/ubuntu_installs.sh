@@ -116,9 +116,9 @@ ubuntu_uninstall_docker() {
 ##
 ubuntu_install_lazydocker() {
     curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-    sudo mv .local/bin/lazydocker /usr/local/bin/
-    rm -d .local/bin/
-    rm -d .local/
+    sudo mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
+    rm -d "$HOME/.local/bin/"
+    rm -d "$HOME/.local/"
 }
 
 ##
@@ -148,6 +148,7 @@ ubuntu_install_vscode() {
 # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
 ##
 ubuntu_install_jetbrains_toolbox() {
+    # TODO install for all users
     tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
     # Descargar el tar.gz
     wget -c https://download.jetbrains.com/toolbox/$tar_file
@@ -345,7 +346,8 @@ ubuntu_install_keepassxc() {
 # https://firmaelectronica.gob.es/Home/Descargas.html
 ##
 ubuntu_install_autofirma() {
-	echo_installing "AutoFirma"
+	# TODO add to installations
+    echo_installing "AutoFirma"
     URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
 	curl -OL "$URL"
 	unzip "AutoFirma_Linux_Debian.zip"
@@ -361,6 +363,7 @@ ubuntu_install_autofirma() {
 # https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
 ##
 ubuntu_install_config_fnmt() {
+    # TODO add to installations
     echo_installing "Configurador FNMT"
     sudo apt install -y default-jdk
     wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
@@ -474,6 +477,7 @@ ubuntu_install_steam() {
 # Install Heroic. Aggregator of games platforms
 ##
 ubuntu_install_heroic() {
+    # TODO install for all users
     flathub_install "com.heroicgameslauncher.hgl"
 }
 
@@ -492,8 +496,9 @@ ubuntu_install_minecraft() {
 # Install Chitubox software. Chitubox and Chitubox Manager.
 ##
 ubuntu_install_chitubox_software() {
-  echo_info "Manual install on "
-  echo_info "https://www.chitubox.com/en/download/chitubox-free"
+    # TODO install for all users
+    echo_info "Manual install on "
+    echo_info "https://www.chitubox.com/en/download/chitubox-free"
 }
 
 ##
@@ -501,6 +506,7 @@ ubuntu_install_chitubox_software() {
 # Install Lychee Slicer
 ##
 ubuntu_install_lychee_slicer() {
-  echo_info "Manual install on "
-  echo_info "https://lychee.mango3d.io/download-lychee-slicer"
+    # TODO add to installations
+    echo_info "Manual install on "    
+    echo_info "https://lychee.mango3d.io/download-lychee-slicer"
 }
