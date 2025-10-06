@@ -3,12 +3,24 @@
 ## Desktop software
 
 1. **Minimum**
-    - Basics: sudo, htop, tree, nfs-common, rename
-    - Basics network: wget, curl, net-tools
+    - Basics
+        - sudo
+        - htop
+        - tree
+        - nfs-common
+        - rename
+        - rsync
+        - lshw
+    - Basics network
+        - wget
+        - curl
+        - net-tools
     - Fastfetch
 
 2. **Development**
-    - Basics development: git, default-jre
+    - Basics development
+        - git
+        - default-jre
     - Docker
     - lazydocker
     - Python
