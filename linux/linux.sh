@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ### Auxiliar functions
 ##
 # @Description
@@ -21,63 +20,33 @@ import_from_dir() {
 ### Import utilities
 # Get the path to the main directory.
 full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
-linux_path="$(dirname "$full_path_to_script")"
+BASE_PATH="$(dirname "$full_path_to_script")"
+export BASE_PATH
 # Proper import of utilities
-import_from_dir "$linux_path/utilities"
-
+import_from_dir "$BASE_PATH/utilities"
 
 ### Check commands input
-command_not_valid_message="Command not valid"
-command_value_not_valid_message="Value for command not valid"
-installation_command=false
-update_command=false
-command_value="$2"
+# Validate if command among available ones
+if [[ ! " ${COMMAND_TYPES[*]} " =~ [[:space:]]$1[[:space:]] ]]; then
+    echo "$COMMAND_NOT_VALID_MESSAGE"
+    help_message
+fi
 
+# Execute rutine depending on command
+# Import commnands functions
+import_from_dir "$BASE_PATH/commands"
 case $1 in
     "install")
-        installation_command=true
+        install_command "$2" "$3"
         ;;
     "update")
-        update_command=true
+        update_command "$2"
+        ;;
+    "customize")
+        customize_command "$2"
         ;;
     *)
-        echo "$command_not_valid_message"
+        echo "$COMMAND_NOT_VALID_MESSAGE"
         help_message
         ;;
 esac
-
-if [ $installation_command == true ];then
-    if [[ ! " ${INSTALL_COMMAND_TYPES[*]} " =~ [[:space:]]${command_value}[[:space:]] ]]; then
-        echo "$command_value_not_valid_message"
-        help_message
-    fi
-fi
-
-
-### Import distro functions
-# Getting the distribution to act on
-distro_selected="None"
-select_distribution
-# Proper import
-distro_dir="$linux_path/$distro_selected"
-import_from_dir "$distro_dir"
-
-if [ "$installation_command" == true ]; then
-    case $command_value in
-        "desktop")
-            desktop_setup
-            ;;
-        "server")
-            server_setup
-            ;;
-        *)
-            echo "$command_not_valid_message"
-            help_message
-            ;;
-    esac
-elif [ "$update_command" == true ]; then
-    update
-else
-    echo "$command_value_not_valid_message"
-    help_message
-fi

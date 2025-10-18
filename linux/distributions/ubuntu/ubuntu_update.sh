@@ -4,7 +4,7 @@
 # @Description
 # Update and upgrade the packages of the system
 ##
-update() {
+system_update() {
     # Snap packages update
     update_snap
     # Flatpak packages update

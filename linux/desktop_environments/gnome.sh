@@ -4,8 +4,8 @@
 # @Description
 # 
 ##
-execute_desktop_customization() {
-    echo "execute_desktop_customization"
+customize_desktop_environment() {
+    echo "customize_desktop_environment"
     config_locale
     config_bash
     desktop_customization

@@ -3,9 +3,6 @@
 desktop_setup() {
     #------------------------------- Start with the setup
     echo_info "Starting setup"
-    
-    #------------------------------- Customization
-    # execute_desktop_customization
 
     #------------------------------- Software installations
     # Minimum

@@ -4,6 +4,8 @@
 # @Description
 # Update and upgrade the packages of the system
 ##
-update() {
+system_update() {
     echo "update"
+    # APT packages update
+    update_apt
 }
