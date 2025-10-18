@@ -346,9 +346,8 @@ ubuntu_install_keepassxc() {
 # https://firmaelectronica.gob.es/Home/Descargas.html
 ##
 ubuntu_install_autofirma() {
-	# TODO add to installations
     echo_installing "AutoFirma"
-    URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
+    URL="https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip"
 	curl -OL "$URL"
 	unzip "AutoFirma_Linux_Debian.zip"
 	sudo apt install -y ./*.deb
@@ -444,7 +443,7 @@ ubuntu_install_gimp() {
 # https://www.wireguard.com/install/
 ##
 ubuntu_install_wireguard() {
-    sudo apt install "wireguard"
+    apt_get_install "wireguard"
 }
 
 ################################################################################

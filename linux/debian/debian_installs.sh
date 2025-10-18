@@ -15,6 +15,7 @@ debian_install_basics() {
     apt_get_install "nfs-common"
     apt_get_install "rename"
     apt_get_install "rsync"
+    apt_get_install "lshw"
 }
 
 ##
