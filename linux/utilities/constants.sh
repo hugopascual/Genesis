@@ -3,7 +3,7 @@
 # Available command types
 export COMMAND_TYPES=(
     "install" 
-    "customization" 
+    "customize" 
     "update"
 )
 
