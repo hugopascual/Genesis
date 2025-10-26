@@ -349,9 +349,9 @@ ubuntu_install_autofirma() {
     echo_installing "AutoFirma"
     URL="https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip"
 	curl -OL "$URL"
-	unzip "AutoFirma_Linux_Debian.zip"
+	unzip "Autofirma_Linux_Debian.zip"
 	sudo apt install -y ./*.deb
-    rm AutoFirma*
+    rm Autofirma*
 	echo_installed "AutoFirma"
 }
 
