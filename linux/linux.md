@@ -27,7 +27,6 @@
     - GitHub Cli
     - VScode
     - JetBrains Toolbox
-    - GitHub Cli
     - Postman
     - RPI Imager
 
@@ -56,8 +55,12 @@
 5. **Hobbys**
     - Lutris
     - Steam
+    - Epic Games Launcher (via Lutris)
+    - Battle.net (via Lutris)
+    - EA App (via Lutris)
+    - Minecraft Launcher
     - Heroic
-    - Minecraft
+    - Amazon Games (via Lutris)
     - Chitubox Software: Chitubox Free y Chitubox Manager
     - Lychee Slicer
 
