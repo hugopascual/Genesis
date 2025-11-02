@@ -24,7 +24,7 @@ function install_from_url {
 ################################################################################
 # Minimum installations
 ################################################################################
-choco install -y 7zip
+# choco install -y 7zip
 
 ################################################################################
 # Development installations
@@ -32,28 +32,25 @@ choco install -y 7zip
 choco install -y git
 choco install -y vscode
 choco install -y jetbrainstoolbox
-install_from_url -urls @(
-    # Docker Desktop
-    # Python
-    # GitHub Desktop
-    # Postman
-    # RPI Imager
-    "https://example.com/dit_installer.exe"
-)
+choco install -y docker-desktop
+choco install -y python
+choco install -y github-desktop
+choco install -y postman
+# RPI Imager
+# install_from_url -urls @("https://downloads.raspberrypi.com/imager/imager_latest.exe")
 
 ################################################################################
 # DIT installations
 ################################################################################
-install_from_url -urls @(
-    # OpenVPN
-    "https://example.com/dit_installer.exe"
-)
+# OpenVPNv3
+choco install -y openvpn-connect
 
 ################################################################################
 # Desktop installations
 ################################################################################
 choco install -y geforce-experience
 choco install -y firefox
+choco install -y googlechrome
 choco install -y thunderbird
 choco install -y keepass.install
 choco install -y googledrive
@@ -63,14 +60,14 @@ choco install -y telegram.install
 choco install -y discord.install
 choco install -y obsidian
 choco install -y vlc
-install_from_url -urls @(
-    # DisplayLink Driver
-    # Autofirma
-    # Config FNMT
-    # Team Viewer
-    # Wireguard
-    "https://example.com/desktop_installer.exe"
-)
+# DisplayLink Driver
+# https://www.synaptics.com/products/displaylink-graphics/downloads
+# Autofirma
+# https://firmaelectronica.gob.es/ciudadanos/descargas
+# Config FNMT
+# install_from_url -urls @(""https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe")
+choco install -y teamviewer9
+choco install -y wireguard
 
 ################################################################################
 # Hobbys installations
@@ -78,12 +75,15 @@ install_from_url -urls @(
 choco install -y steam --ignore-checksums
 choco install -y epicgameslauncher
 choco install -y amazongames --ignore-checksums
-install_from_url -urls @(
-    # Battle.net
-    # EA App
-    # Minecraft Launcher
-    # Heroic
-    # Chitubox Software: Chitubox Free y Chitubox Manager
-    # Lychee Slicer
-    "https://example.com/hobbys_installer.exe"
-)
+# Battle.net
+# https://eu.shop.battle.net/
+# EA App
+choco install -y ea-app
+# Minecraft Launcher
+# https://www.minecraft.net/es-es/download
+# Heroic
+choco install -y heroic-games-launcher
+# Chitubox Software: Chitubox Free
+# https://www.chitubox.com/en/download/chitubox-free
+# Lychee Slicer
+# https://mango3d.io/download-lychee-slicer
