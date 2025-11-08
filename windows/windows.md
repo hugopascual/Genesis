@@ -54,11 +54,17 @@
    - Chitubox Software: Chitubox Free y Chitubox Manager
    - Lychee Slicer
 
-## Chocolatey install
+## Installation steps
+
+### Chocolatey install
+
+On an administrative powershell, run:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
+
+### Software installation script
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\windows.ps1
