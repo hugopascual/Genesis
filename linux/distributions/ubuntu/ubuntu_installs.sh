@@ -117,8 +117,6 @@ ubuntu_uninstall_docker() {
 ubuntu_install_lazydocker() {
     curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
     sudo mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
-    rm -d "$HOME/.local/bin/"
-    rm -d "$HOME/.local/"
 }
 
 ##

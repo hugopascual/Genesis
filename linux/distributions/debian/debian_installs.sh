@@ -114,9 +114,7 @@ debian_uninstall_docker() {
 ##
 debian_install_lazydocker() {
     curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-    sudo mv .local/bin/lazydocker /usr/local/bin/
-    rm -d .local/bin/
-    rm -d .local/
+    sudo mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
 }
 
 ##

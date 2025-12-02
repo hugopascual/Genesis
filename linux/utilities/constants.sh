@@ -15,6 +15,7 @@ export INSTALL_COMMAND_TYPES=(
 export AVAILABLE_DISTROS=(
     "ubuntu" 
     "debian"
+    "raspberrypi"
 )
 
 export CUSTOMIZATION_TYPES=(

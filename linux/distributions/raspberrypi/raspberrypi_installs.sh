@@ -60,6 +60,16 @@ EOF
     sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 }
 
+##
+# @Description
+# Install lazydocker
+# https://github.com/jesseduffield/lazydocker
+##
+raspberrypi_install_lazydocker() {
+    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+    sudo mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
+}
+
 raspberrypi_install_python() {
     apt_get_install "python3"
     apt_get_install "python3-venv"
