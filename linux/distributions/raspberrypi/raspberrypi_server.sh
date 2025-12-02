@@ -2,18 +2,20 @@
 
 server_setup() {
     echo "Starting server setup"
-    
+
+    #------------------------------- Customization
+
     #------------------------------- Software installations
     # Minimum
-    debian_install_basics
-    debian_install_basics_network
-    debian_install_fastfetch
+    raspberrypi_install_basics
+    raspberrypi_install_basics_network
+    raspberrypi_install_fastfetch
 
     # Development
-    debian_install_basics_development
-    debian_install_docker
-    debian_install_lazydocker
-    debian_install_python
+    raspberrypi_install_basics_development
+    raspberrypi_install_docker
+    raspberrypi_install_lazydocker
+    raspberrypi_install_python
 
     #------------------------------- Update and clean
     update

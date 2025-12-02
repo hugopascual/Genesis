@@ -17,7 +17,8 @@ customize_desktop_environment() {
 # 
 ##
 config_locale() {
-    sudo locale-gen es_ES.UTF-8
+    # TODO: Modify /etc/locale.gen to uncomment es_ES.UTF-8
+    sudo locale-gen
     localectl set-locale LANG=en_US.UTF-8
     localectl set-locale LANGUAGE=en_US.UTF-8
     localectl set-locale LC_CTYPE=es_ES.UTF-8
