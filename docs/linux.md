@@ -3,19 +3,11 @@
 ## Desktop software
 
 1. **Minimum**
-    - Basics
-        - sudo
-        - htop
-        - tree
-        - nfs-common
-        - rename
-        - rsync
-        - lshw
-    - Basics network
-        - wget
-        - curl
-        - net-tools
-    - Fastfetch
+
+(
+    `htop`, `tree`, `nfs-common`, `rename`, `rsync`, `lshw`,  `wget`,  `curl`,  
+    `net-tools`,  `software-properties-common`,
+)
 
 2. **Development**
     - Basics development

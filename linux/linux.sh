@@ -36,17 +36,17 @@ fi
 # Import commnands functions
 import_from_dir "$BASE_PATH/commands"
 case $1 in
-    "install")
+    "$INSTALL_COMMAND")
         install_command "$2" "$3"
         ;;
-    "update")
+    "$UPDATE_COMMAND")
         update_command "$2"
         ;;
-    "customize")
-        customize_command "$2"
+    "$SETUP_COMMAND")
+        setup_command "$2"
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"
-        help_message
+        help
         ;;
 esac
