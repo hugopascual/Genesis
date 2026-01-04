@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Customize command
-customize_command() {
+setup_manager() {
     desktop_environment="$1"
     check_desktop_environment "$desktop_environment"
 

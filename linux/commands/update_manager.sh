@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Update command
-update_command() {
+update_manager() {
     distro_selected="$1"
     check_distribution "$distro_selected"
 
