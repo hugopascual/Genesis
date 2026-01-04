@@ -44,4 +44,4 @@ export SETUP_TYPES=(
 export COMMAND_NOT_VALID_MESSAGE="Command selected not valid"
 export INSTALLATION_TYPE_NOT_VALID_MESSAGE="Installation type selected not valid"
 export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
-export PERSONAL_ENVIRONMENT_TYPE_NOT_VALID_MESSAGE="Personal environment type selected not valid"
+export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"

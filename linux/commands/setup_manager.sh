@@ -1,12 +1,16 @@
 #!/bin/bash
 
-### Customize command
-setup_manager() {
-    desktop_environment="$1"
-    check_desktop_environment "$desktop_environment"
+##
+# @Description
+# 
+##
+setup_command() {
+    setup_type="$1"
+    distro_selected="$2"
 
-    customization_script_path="$BASE_PATH/desktop_environments/$desktop_environment.sh"
+    check_option_supported "$setup_type" "${SETUP_TYPES[@]}" "$SETUP_TYPE_NOT_VALID_MESSAGE"
+    check_option_supported "$distro_selected" "${AVAILABLE_DISTROS[@]}" "$DISTRIBUTION_NOT_VALID_MESSAGE"
+
     # shellcheck disable=SC1090
-    source "$customization_script_path"
-    customize_desktop_environment
+    source "$COMMAND_SETUP_PATH/${distro_selected}_${setup_type}.sh"
 }

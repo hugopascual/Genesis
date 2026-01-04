@@ -1,23 +1,16 @@
 #!/bin/bash
 
-# Install command
-install_manager() {
+##
+# @Description
+# 
+##
+install_command() {
     installation_type="$1"
-    distribution_selected="$2"
-    check_distribution "$distribution_selected"
+    distro_selected="$2"
+
+    check_option_supported "$installation_type" "${INSTALL_COMMAND_TYPES[@]}" "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
+    check_option_supported "$distro_selected" "${AVAILABLE_DISTROS[@]}" "$DISTRIBUTION_NOT_VALID_MESSAGE"
     
-    case $installation_type in
-        "$INSTALL_TYPE_PERSONAL")
-            # shellcheck disable=SC1090
-            source "$COMMAND_INSTALL_PATH/${distribution_selected}_${INSTALL_TYPE_PERSONAL}.sh"
-            ;;
-        "$INSTALL_TYPE_SERVER")
-            # shellcheck disable=SC1090
-            source "$COMMAND_INSTALL_PATH/${distribution_selected}_${INSTALL_TYPE_SERVER}.sh"
-            ;;
-        *)
-            echo "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
-            help
-            ;;
-    esac    
+    # shellcheck disable=SC1090
+    source "$COMMAND_INSTALL_PATH/${distro_selected}_${installation_type}.sh"
 }

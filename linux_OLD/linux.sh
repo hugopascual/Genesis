@@ -30,28 +30,22 @@ import_from_dir() {
         source "$file"
     done
 }
+
 ################################################################################
 ### Import utilities
 import_from_dir "$UTILITIES_PATH"
-
-### Check commands input
-# Validate if command among available ones
-if [[ ! " ${COMMAND_TYPES[*]} " =~ [[:space:]]$1[[:space:]] ]]; then
-    echo "$COMMAND_NOT_VALID_MESSAGE"
-    help
-fi
 
 # Execute rutine depending on command
 import_from_dir "$COMMANDS_PATH"
 case $1 in
     "$INSTALL_COMMAND")
-        install_manager "$2" "$3"
+        install_command "$2" "$3"
         ;;
     "$UPDATE_COMMAND")
-        update_manager "$2"
+        update_command "$2"
         ;;
     "$SETUP_COMMAND")
-        setup_manager "$2"
+        setup_command "$2" "$3"
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"

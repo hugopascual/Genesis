@@ -43,29 +43,18 @@ echo_uninstalled() {
 ###########################
 ##
 # @Description
-#
+# $1 Option to check
+# $2 Supported options list
+# $3 Error message to show if option not supported
 ##
-check_distribution() {
-    distro_selected="$1"
+check_option_supported() {
+    option="$1"
+    supported_options=("${@:2}")
+    error_message="$3"
 
-    if [[ ! " ${AVAILABLE_DISTROS[*]} " =~ [[:space:]]${distro_selected}[[:space:]] ]]; then
-        # Message when array doesn't contain a valid distribution
-        echo "$DISTRIBUTION_NOT_VALID_MESSAGE"
-        help_message
-    fi
-}
-
-##
-# @Description
-#
-##
-check_desktop_environment() {
-    desktop_environment_type="$1"
-
-    if [[ ! " ${CUSTOMIZATION_TYPES[*]} " =~ [[:space:]]${desktop_environment_type}[[:space:]] ]]; then
-        # Message when array doesn't contain a valid distribution
-        echo "$DESKTOP_ENVIRONMENT_TYPE_NOT_VALID_MESSAGE"
-        help_message
+    if [[ ! " ${supported_options[*]} " =~ [[:space:]]${option}[[:space:]] ]]; then
+        echo "$error_message"
+        help
     fi
 }
 
@@ -112,4 +101,50 @@ deb_download_and_install() {
     wget --content-disposition "$1"
     sudo apt-get install -y ./*.deb
     rm ./*.deb
+}
+
+######################
+#--Update Functions--#
+######################
+##
+# @Description
+# Flatpak packages update
+##
+update_flatpak() {
+    echo_info "Flatpak update started"
+    sudo flatpak update -y
+    echo_info "Flatpak update finished"
+}
+
+##
+# @Description
+# Snap packages update
+##
+update_snap() {
+    echo_info "Snap update started"
+    sudo snap refresh
+    echo_info "Snap update finished"
+}
+
+##
+# @Description
+# APT packages update and cleanup
+##
+update_apt() {
+    echo_info "APT update started"
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
+    echo_info "APT update finished"
+}
+
+##
+# @Description
+# Pacman packages update and cleanup
+##
+update_pacman() {
+    echo_info "Pacman update started"
+    sudo pacman -Syu --noconfirm
+    echo_info "Pacman update finished"
 }
