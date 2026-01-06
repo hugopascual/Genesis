@@ -5,41 +5,25 @@
 ################################################################################
 
 # sudo
-# TODO: Install sudo
 # htop
-pacman_install 'htop'
 # tree
-pacman_install 'tree'
 # NFS
-# TODO: install nfs funcionalities
 # rename
-# TODO: install rename
 # rsync
-pacman_install 'rsync'
 # lshw
-pacman_install 'lshw'
 # wget
-pacman_install 'wget'
 # curl
-pacman_install 'curl'
 # Fastfetch
-pacman_install 'fastfetch'
 # NVtop
-# TODO: install NVtop
 
 ################################################################################
 #-- Development --#
 ################################################################################
 
 # Git
-pacman_install 'git'
 # Java Runtime
-# TODO: install Java Runtime
 # Docker
-# TODO: install Docker
 # Lazydocker
-# TODO: install Lazydocker
 # Python3
-# TODO: install Python3
 
 ################################################################################

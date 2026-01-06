@@ -5,106 +5,65 @@
 ################################################################################
 
 # sudo
-# TODO: Install sudo
 # htop
-pacman_install 'htop'
 # tree
-pacman_install 'tree'
 # NFS
-# TODO: install nfs funcionalities
 # rename
-# TODO: install rename
 # rsync
-pacman_install 'rsync'
 # lshw
-pacman_install 'lshw'
 # wget
-pacman_install 'wget'
 # curl
-pacman_install 'curl'
 # Fastfetch
-pacman_install 'fastfetch'
 # NVtop
-# TODO: install NVtop
 
 ################################################################################
 #-- Development --#
 ################################################################################
 
 # Git
-pacman_install 'git'
 # GitHub Cli
-# TODO: install GitHub Cli
 # Java Runtime
-# TODO: install Java Runtime
 # Docker
-# TODO: install Docker
 # Lazydocker
-# TODO: install Lazydocker
 # Python3
-# TODO: install Python3
 # NodeJS
-# TODO: install NodeJS
 # Visual Studio Code
-# TODO: install Visual Studio Code
 # JetBrains Toolbox
-# TODO: install JetBrains Toolbox
 # Postman
-# TODO: install Postman
 # Raspberry Pi Imager
-# TODO: install Raspberry Pi Imager
 
 ################################################################################
 #-- DIT Software --#
 ################################################################################
 
 # OpenVPNv3
-# TODO: install OpenVPNv3
 
 ################################################################################
 #-- Desktop --#
 ################################################################################
 
 # kitty
-pacman_install 'kitty'
 # DisplayLink Driver
-# TODO: install DisplayLink Driver
 # Firefox
-# TODO: install Firefox
 # Google Chrome
-# TODO: install Google Chrome
 # Thunderbird
-# TODO: install Thunderbird
 # KeePassXC
-# TODO: install KeePassXC
 # Autofirma
-# TODO: install Autofirma
 # Configurador FNMT
-# TODO: install Configurador FNMT
 # Obsidian
-# TODO: install Obsidian
 # VLC
-# TODO: install VLC
 # Spotify
-# TODO: install Spotify
 # Telegram Desktop
-# TODO: install Telegram Desktop
 # Discord
-# TODO: install Discord
 # TeamViewer
-# TODO: install TeamViewer
 # GIMP
-# TODO: install GIMP
 # WireGuard
-# TODO: install WireGuard
 
 ################################################################################
 #-- Hobbys --#
 ################################################################################
 
 # Steam
-# TODO: install Steam
 # Minecraft
-# TODO: install Minecraft
 
 ################################################################################

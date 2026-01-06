@@ -68,7 +68,27 @@ check_option_supported() {
 # $1 Name of the apt package software wanted to be installed
 ##
 apt_get_install() {
-    sudo apt-get install -y "$1"
+    apt-get install -y "$1"
+}
+
+##
+# @Description
+# Install a software package using pacman
+# @Params
+# $1 Name of the pacman package software wanted to be installed
+##
+pacman_install() {
+    pacman -S --noconfirm "$1"
+}
+
+##
+# @Description
+# Install a software package using yay
+# @Params
+# $1 Name of the yay package software wanted to be installed
+##
+yay_install() {
+    yay -S --noconfirm "$1"
 }
 
 ##
@@ -88,7 +108,7 @@ flathub_install() {
 # $1 Name of the apt package software wanted to be installed
 ##
 snap_install() {
-    sudo snap install "$1"
+    snap install "$1"
 }
 
 ##
@@ -99,7 +119,7 @@ snap_install() {
 ##
 deb_download_and_install() {
     wget --content-disposition "$1"
-    sudo apt-get install -y ./*.deb
+    apt-get install -y ./*.deb
     rm ./*.deb
 }
 
@@ -112,7 +132,7 @@ deb_download_and_install() {
 ##
 update_flatpak() {
     echo_info "Flatpak update started"
-    sudo flatpak update -y
+    flatpak update -y
     echo_info "Flatpak update finished"
 }
 
@@ -122,7 +142,7 @@ update_flatpak() {
 ##
 update_snap() {
     echo_info "Snap update started"
-    sudo snap refresh
+    snap refresh
     echo_info "Snap update finished"
 }
 
@@ -132,10 +152,10 @@ update_snap() {
 ##
 update_apt() {
     echo_info "APT update started"
-    sudo apt update -y
-    sudo apt upgrade -y
-    sudo apt autoremove -y
-    sudo apt autoclean -y
+    apt update -y
+    apt upgrade -y
+    apt autoremove -y
+    apt autoclean -y
     echo_info "APT update finished"
 }
 
@@ -145,6 +165,6 @@ update_apt() {
 ##
 update_pacman() {
     echo_info "Pacman update started"
-    sudo pacman -Syu --noconfirm
+    pacman -Syu --noconfirm
     echo_info "Pacman update finished"
 }

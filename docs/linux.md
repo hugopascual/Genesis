@@ -1,70 +1,24 @@
 # Linux Software
 
-## Desktop software
+## Personal software installations
 
-1. **Minimum**
+1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
+Fastfetch, NVtop )
 
-(
-    `htop`, `tree`, `nfs-common`, `rename`, `rsync`, `lshw`,  `wget`,  `curl`,  
-    `net-tools`,  `software-properties-common`,
-)
+2. **Development**: ( Git, GitHub CLI, Java Runtime, Docker, lazydocker, Python,
+NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
 
-2. **Development**
-    - Basics development
-        - git
-        - default-jre
-    - Docker
-    - lazydocker
-    - Python
-    - GitHub Cli
-    - VScode
-    - JetBrains Toolbox
-    - Postman
-    - RPI Imager
+3. **DIT Software**: ( OpenVPNv3 )
 
-3. **DIT Software**
-    - OpenVPNv3
+4. **Desktop**: ( kitty, DisplayLink Driver, Firefox, Google Chrome,
+Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
+Telegram, Discord, Team Viewer, GIMP, Wireguard )
 
-4. **Desktop**
-    - DisplayLink Driver
-    - NVtop
-    - Flatpak
-    - Terminator
-    - Firefox
-    - Thunderbird
-    - KeePass XC
-    - Autofirma
-    - Config FNMT
-    - Obsidian
-    - VLC
-    - Spotify
-    - Telegram
-    - Discord
-    - Team Viewer
-    - GIMP
-    - Wireguard
+5. **Hobbys**: ( Steam, Minecraft Launcher )
 
-5. **Hobbys**
-    - Lutris
-    - Steam
-    - Epic Games Launcher (via Lutris)
-    - Battle.net (via Lutris)
-    - EA App (via Lutris)
-    - Minecraft Launcher
-    - Heroic
-    - Amazon Games (via Lutris)
-    - Chitubox Software: Chitubox Free y Chitubox Manager
-    - Lychee Slicer
+## Server software installations
 
-## Server Software
+1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
+Fastfetch, NVtop )
 
-1. **Minimum**
-   - Basics: sudo, htop, tree, nfs-common, rename
-   - Basics network: wget, curl, net-tools
-   - Fastfetch
-
-2. **Development**
-   - Basics development: git, default-jre
-   - Docker
-   - lazydocker
-   - Python
+2. **Development**: ( Git, Java Runtime, Docker, lazydocker, Python )
