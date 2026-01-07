@@ -21,11 +21,11 @@ pacman_install 'hyprshot'
 pacman_install 'hyprctl'
 
 
-# Configuration
-## Startup and login
+# Startup and login
 rsync -azP --delete "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd" '/etc/greetd'
-## Waybar
-## https://github.com/sejjy/mechabar
+
+# Waybar
+# https://github.com/sejjy/mechabar
 git clone https://github.com/sejjy/mechabar.git ~/.config/waybar
 # shellcheck disable=SC1090
 source ~/.config/waybar/install.sh

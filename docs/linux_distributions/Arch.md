@@ -1,4 +1,4 @@
-# ArchLinux
+# Arch
 
 ## Arch with Hyprland
 

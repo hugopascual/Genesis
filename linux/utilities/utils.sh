@@ -168,3 +168,13 @@ update_pacman() {
     pacman -Syu --noconfirm
     echo_info "Pacman update finished"
 }
+
+##
+# @Description
+# AUR packages update and cleanup
+##
+update_yay() {
+    echo_info "AUR packages update started"
+    yay -Syu --noconfirm
+    echo_info "AUR packages update finished"
+}

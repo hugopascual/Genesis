@@ -112,18 +112,13 @@ apt_get_install '7zip'
 
 # OpenVPNv3
 # https://community.openvpn.net/Pages/OpenVPN3Linux
+# https://openvpn.net/cloud-docs/tutorials/configuration-tutorials/connectors/operating-systems/linux/tutorial--learn-to-install-and-control-the-openvpn-3-client.html
 ## Install other necessary software
 apt install -y apt-transport-https curl
 ## Repository keys
-mkdir -p /etc/apt/keyrings
-curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /tmp/openvpn.asc
-mv /tmp/openvpn.asc /etc/apt/keyrings/openvpn.asc
-## TODO update to change DISTRIBUTION dynamically
-DISTRIBUTION="noble"
-cp /etc/apt/sources.list.d/openvpn3.list /tmp/openvpn3.list
-echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian ${DISTRIBUTION} main" >> /tmp/openvpn3.list
-mv /tmp/openvpn3.list /etc/apt/sources.list.d/openvpn3.list
-## Install OpenVPN
+sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
+DISTRO=$(lsb_release -c -s)
+echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
 apt update
 apt install -y openvpn3
 
