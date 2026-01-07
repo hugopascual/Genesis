@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Locales
 # TODO: Modify /etc/locale.gen to uncomment es_ES.UTF-8

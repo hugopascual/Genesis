@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ################################################################################
 #-- Minimum --#
@@ -33,13 +33,18 @@ pacman_install 'fastfetch'
 
 # Git
 pacman_install 'git'
-# Java Runtime
-# TODO: install Java Runtime
+# GitHub Cli
+pacman_install 'github-cli'
+# Java Runtime and Java Development Kit
+# https://wiki.archlinux.org/title/Java#OpenJDK
+pacman_install 'jdk-openjdk'
 # Docker
-# TODO: install Docker
+pacman_install 'docker'
+pacman_install 'docker-compose'
+systemctl enable docker.service
 # Lazydocker
-# TODO: install Lazydocker
+yay_install 'lazydocker'
 # Python3
-# TODO: install Python3
+pacman_install 'python'
 
 ################################################################################

@@ -3,7 +3,7 @@
 ## Personal software installations
 
 1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
-Fastfetch, NVtop )
+vim, nvim, Fastfetch, NVtop )
 
 2. **Development**: ( Git, GitHub CLI, Java Runtime, Docker, lazydocker, Python,
 NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
@@ -12,13 +12,13 @@ NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
 
 4. **Desktop**: ( kitty, DisplayLink Driver, Firefox, Google Chrome,
 Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
-Telegram, Discord, Team Viewer, GIMP, Wireguard )
+Telegram, Discord, Team Viewer, GIMP, Wireguard, 7zip)
 
 5. **Hobbys**: ( Steam, Minecraft Launcher )
 
 ## Server software installations
 
 1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
-Fastfetch, NVtop )
+vim, nvim, Fastfetch, NVtop )
 
 2. **Development**: ( Git, Java Runtime, Docker, lazydocker, Python )

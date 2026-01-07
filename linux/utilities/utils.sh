@@ -78,7 +78,7 @@ apt_get_install() {
 # $1 Name of the pacman package software wanted to be installed
 ##
 pacman_install() {
-    pacman -S --noconfirm "$1"
+    pacman -Syu --noconfirm "$1"
 }
 
 ##
@@ -88,7 +88,7 @@ pacman_install() {
 # $1 Name of the yay package software wanted to be installed
 ##
 yay_install() {
-    yay -S --noconfirm "$1"
+    yay -Syu --noconfirm "$1"
 }
 
 ##

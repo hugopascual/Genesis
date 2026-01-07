@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ################################################################################
 #-- Minimum --#
@@ -13,7 +13,7 @@ pacman_install 'tree'
 # NFS
 # TODO: install nfs funcionalities
 # rename
-# TODO: install rename
+pacman_install 'perl-rename'
 # rsync
 pacman_install 'rsync'
 # lshw
@@ -22,10 +22,19 @@ pacman_install 'lshw'
 pacman_install 'wget'
 # curl
 pacman_install 'curl'
+# vim
+pacman_install 'vim'
+# nvim
+pacman_install 'nvim'
 # Fastfetch
 pacman_install 'fastfetch'
 # NVtop
-# TODO: install NVtop
+pacman_install 'nvtop'
+
+# yay
+pacman -S git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si
 
 ################################################################################
 #-- Development --#
@@ -34,23 +43,34 @@ pacman_install 'fastfetch'
 # Git
 pacman_install 'git'
 # GitHub Cli
-# TODO: install GitHub Cli
-# Java Runtime
-# TODO: install Java Runtime
+pacman_install 'github-cli'
+# Java Runtime and Java Development Kit
+# https://wiki.archlinux.org/title/Java#OpenJDK
+pacman_install 'jdk-openjdk'
 # Docker
-# TODO: install Docker
+pacman_install 'docker'
+pacman_install 'docker-compose'
+systemctl enable docker.service
 # Lazydocker
-# TODO: install Lazydocker
+yay_install 'lazydocker'
 # Python3
-# TODO: install Python3
+pacman_install 'python'
 # NodeJS
-# TODO: install NodeJS
+## Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+## in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+## Download and install Node.js:
+nvm install 24
 # Visual Studio Code
-# TODO: install Visual Studio Code
+pacman_install 'code'
 # JetBrains Toolbox
 # TODO: install JetBrains Toolbox
+# https://www.jetbrains.com/help/toolbox-app/toolbox-app-silent-installation.html#tba_installation
+# https://dev.to/jorgecastro/install-jetbrains-toolbox-on-linux-596n
 # Postman
 # TODO: install Postman
+# https://www.geeksforgeeks.org/installation-guide/install-postman-on-arch-based-linux/
 # Raspberry Pi Imager
 # TODO: install Raspberry Pi Imager
 
@@ -59,32 +79,33 @@ pacman_install 'git'
 ################################################################################
 
 # OpenVPNv3
-# TODO: install OpenVPNv3
+yay_install 'openvpn3'
 
 ################################################################################
 #-- Desktop --#
 ################################################################################
 
+
 # kitty
 pacman_install 'kitty'
 # DisplayLink Driver
-# TODO: install DisplayLink Driver
+yay_install 'displaylink'
 # Firefox
-# TODO: install Firefox
+pacman_install 'firefox'
 # Google Chrome
-# TODO: install Google Chrome
+yay_install 'google-chrome'
 # Thunderbird
-# TODO: install Thunderbird
+pacman_install 'thunderbrid'
 # KeePassXC
-# TODO: install KeePassXC
+pacman_install 'keepass'
 # Autofirma
 # TODO: install Autofirma
 # Configurador FNMT
 # TODO: install Configurador FNMT
 # Obsidian
-# TODO: install Obsidian
+pacman_install 'obsidian'
 # VLC
-# TODO: install VLC
+pacman_install 'vlc'
 # Spotify
 # TODO: install Spotify
 # Telegram Desktop
@@ -96,7 +117,9 @@ pacman_install 'kitty'
 # GIMP
 # TODO: install GIMP
 # WireGuard
-# TODO: install WireGuard
+pacman_install 'wireguard-tools'
+# 7zip
+pacman_install '7zip'
 
 ################################################################################
 #-- Hobbys --#

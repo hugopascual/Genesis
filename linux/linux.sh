@@ -1,6 +1,21 @@
 #!/bin/bash
 
-### Auxiliar functions
+################################################################################
+# Get the path to the main directory.
+full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
+BASE_PATH="$(dirname "$full_path_to_script")"
+export BASE_PATH
+
+# Paths constants
+export UTILITIES_PATH="$BASE_PATH/utilities"
+
+export STATICS_PATH="$BASE_PATH/statics"
+
+export COMMANDS_PATH="$BASE_PATH/commands"
+export COMMAND_INSTALL_PATH="$COMMANDS_PATH/install"
+export COMMAND_UPDATE_PATH="$COMMANDS_PATH/update"
+export COMMAND_SETUP_PATH="$COMMANDS_PATH/setup"
+################################################################################
 ##
 # @Description
 # Import all the scripts from the objective folder
@@ -16,25 +31,12 @@ import_from_dir() {
     done
 }
 
-
+################################################################################
 ### Import utilities
-# Get the path to the main directory.
-full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
-BASE_PATH="$(dirname "$full_path_to_script")"
-export BASE_PATH
-# Proper import of utilities
-import_from_dir "$BASE_PATH/utilities"
-
-### Check commands input
-# Validate if command among available ones
-if [[ ! " ${COMMAND_TYPES[*]} " =~ [[:space:]]$1[[:space:]] ]]; then
-    echo "$COMMAND_NOT_VALID_MESSAGE"
-    help_message
-fi
+import_from_dir "$UTILITIES_PATH"
 
 # Execute rutine depending on command
-# Import commnands functions
-import_from_dir "$BASE_PATH/commands"
+import_from_dir "$COMMANDS_PATH"
 case $1 in
     "$INSTALL_COMMAND")
         install_command "$2" "$3"
@@ -43,7 +45,7 @@ case $1 in
         update_command "$2"
         ;;
     "$SETUP_COMMAND")
-        setup_command "$2"
+        setup_command "$2" "$3"
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"

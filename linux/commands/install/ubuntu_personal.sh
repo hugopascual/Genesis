@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ################################################################################
 #-- Minimum --#
@@ -22,6 +22,10 @@ apt_get_install 'lshw'
 apt_get_install 'wget'
 # curl
 apt_get_install 'curl'
+# vim
+apt_get_install 'vim'
+# nvim
+apt_get_install 'nvim'
 # Fastfetch
 # https://github.com/fastfetch-cli/fastfetch
 deb_download_and_install 'https://github.com/fastfetch-cli/fastfetch/releases/download/2.50.2/fastfetch-linux-amd64.de'
@@ -33,7 +37,7 @@ apt_get_install "nvtop"
 ################################################################################
 
 # Git
-apt_get_install "git"1
+apt_get_install "git"
 # GitHub Cli
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
@@ -98,6 +102,8 @@ rm -f "$jetbrains_toolbox_tar_file"
 snap_install "postman"
 # Raspberry Pi Imager
 apt_get_install "rpi-imager"
+# 7zip
+apt_get_install '7zip'
 
 ################################################################################
 #-- DIT Software --#
