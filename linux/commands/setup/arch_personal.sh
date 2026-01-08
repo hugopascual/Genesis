@@ -34,8 +34,8 @@ source ~/.config/waybar/install.sh
 # Home folders configuration
 for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
 do
-    mkdir -p "$home_user_path/development/repos"
-    mkdir -p "$home_user_path/development/docker_volumes"
+    mkdir -p "$home_user_path/devops/repos"
+    mkdir -p "$home_user_path/devops/docker_volumes"
     folders_to_copy=('hypr' 'kitty' 'wofi' 'yazi')
     for folder in "${folders_to_copy[@]}";
     do
