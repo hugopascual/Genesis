@@ -7,14 +7,16 @@ BASE_PATH="$(dirname "$full_path_to_script")"
 export BASE_PATH
 
 # Paths constants
-export UTILITIES_PATH="$BASE_PATH/utilities"
-
-export STATICS_PATH="$BASE_PATH/statics"
-
 export COMMANDS_PATH="$BASE_PATH/commands"
 export COMMAND_INSTALL_PATH="$COMMANDS_PATH/install"
 export COMMAND_UPDATE_PATH="$COMMANDS_PATH/update"
 export COMMAND_SETUP_PATH="$COMMANDS_PATH/setup"
+
+export INSTALLATIONS_FUNCTIONS_PATH="$BASE_PATH/installations"
+
+export UTILITIES_PATH="$BASE_PATH/utilities"
+
+export STATICS_PATH="$BASE_PATH/statics"
 ################################################################################
 ##
 # @Description
@@ -32,20 +34,24 @@ import_from_dir() {
 }
 
 ################################################################################
-### Import utilities
+### Imports needed
 import_from_dir "$UTILITIES_PATH"
+import_from_dir "$COMMANDS_PATH"
+1
+export DISTRO_SELECTED="$2"
+check_option_supported "$DISTRO_SELECTED" "$AVAILABLE_DISTROS" "$DISTRIBUTION_NOT_VALID_MESSAGE"
 
 # Execute rutine depending on command
-import_from_dir "$COMMANDS_PATH"
 case $1 in
     "$INSTALL_COMMAND")
-        install_command "$2" "$3"
+        import_from_dir "$INSTALLATIONS_FUNCTIONS_PATH"
+        install_command "$DISTRO_SELECTED" "$3"
         ;;
     "$UPDATE_COMMAND")
-        update_command "$2"
+        update_command "$DISTRO_SELECTED"
         ;;
     "$SETUP_COMMAND")
-        setup_command "$2" "$3"
+        setup_command "$DISTRO_SELECTED" "$3"
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"

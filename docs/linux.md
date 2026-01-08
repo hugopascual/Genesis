@@ -1,5 +1,17 @@
 # Linux Software
 
+## Available software installations
+
+- ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl, vim, nvim,
+Fastfetch, NVtop )
+- ( Git, GitHub CLI, Java Development Kit, Docker, lazydocker, Python, NodeJS,
+Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
+- ( OpenVPNv3 )
+- ( kitty, DisplayLink Driver, Firefox, Google Chrome,
+Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
+Telegram, Discord, Team Viewer, GIMP, Wireguard, 7zip )
+- ( Steam, Minecraft Launcher )
+
 ## Personal software installations
 
 1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
