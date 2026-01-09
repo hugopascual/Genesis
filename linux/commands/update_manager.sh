@@ -10,5 +10,5 @@ update_command() {
     check_option_supported "$distro_selected" "${AVAILABLE_DISTROS[@]}" "$DISTRIBUTION_NOT_VALID_MESSAGE"
 
     # shellcheck disable=SC1090
-    source "$COMMAND_UPDATE_PATH/${distro_selected}_update.sh"
+    source "$COMMAND_UPDATE_FUNCTIONS_PATH/${distro_selected}_update.sh"
 }

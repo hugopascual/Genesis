@@ -5,14 +5,13 @@
 # 
 ##
 setup_command() {
-    setup_type="$1"
-    distro_selected="$2"
+    setup_type="$2"
+    check_option_supported "$setup_type" \
+        "${INSTALL_COMMAND_TYPES[@]}" \
+        "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
 
-    export DISTRO_PLUS_TYPE="${distro_selected}_${setup_type}"
-
-    check_option_supported "$setup_type" "${SETUP_TYPES[@]}" "$SETUP_TYPE_NOT_VALID_MESSAGE"
-    check_option_supported "$distro_selected" "${AVAILABLE_DISTROS[@]}" "$DISTRIBUTION_NOT_VALID_MESSAGE"
+    export DISTRO_PLUS_TYPE="${DISTRO_SELECTED}_${setup_type}"
 
     # shellcheck disable=SC1090
-    source "$COMMAND_SETUP_PATH/${distro_selected}_${setup_type}.sh"
+    source "$COMMAND_SETUP_FUNCTIONS_PATH/$DISTRO_PLUS_TYPE.sh"
 }

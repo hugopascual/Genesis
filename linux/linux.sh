@@ -8,11 +8,9 @@ export BASE_PATH
 
 # Paths constants
 export COMMANDS_PATH="$BASE_PATH/commands"
-export COMMAND_INSTALL_PATH="$COMMANDS_PATH/install"
-export COMMAND_UPDATE_PATH="$COMMANDS_PATH/update"
-export COMMAND_SETUP_PATH="$COMMANDS_PATH/setup"
-
-export INSTALLATIONS_FUNCTIONS_PATH="$BASE_PATH/installations"
+export COMMAND_INSTALL_FUNCTIONS_PATH="$COMMANDS_PATH/install"
+export COMMAND_UPDATE_FUNCTIONS_PATH="$COMMANDS_PATH/update"
+export COMMAND_SETUP_FUNCTIONS_PATH="$COMMANDS_PATH/setup"
 
 export UTILITIES_PATH="$BASE_PATH/utilities"
 
@@ -44,7 +42,7 @@ check_option_supported "$DISTRO_SELECTED" "$AVAILABLE_DISTROS" "$DISTRIBUTION_NO
 # Execute rutine depending on command
 case $1 in
     "$INSTALL_COMMAND")
-        import_from_dir "$INSTALLATIONS_FUNCTIONS_PATH"
+        import_from_dir "$COMMAND_INSTALL_FUNCTIONS_PATH"
         install_command "$DISTRO_SELECTED" "$3"
         ;;
     "$UPDATE_COMMAND")
