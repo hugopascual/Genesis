@@ -5,13 +5,12 @@
 # 
 ##
 setup_command() {
-    setup_type="$2"
-    check_option_supported "$setup_type" \
+    check_option_supported "$OPTION_SELECTED" \
         "${INSTALL_COMMAND_TYPES[@]}" \
         "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
 
-    export DISTRO_PLUS_TYPE="${DISTRO_SELECTED}_${setup_type}"
+    export DISTRO_PLUS_TYPE="${DISTRO_SELECTED}_${OPTION_SELECTED}"
 
     # shellcheck disable=SC1090
-    source "$COMMAND_SETUP_FUNCTIONS_PATH/$DISTRO_PLUS_TYPE.sh"
+    source "$SETUP_FUNCTIONS_PATH/$DISTRO_PLUS_TYPE.sh"
 }

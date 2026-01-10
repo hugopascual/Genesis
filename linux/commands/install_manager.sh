@@ -5,16 +5,15 @@
 # 
 ##
 install_command() {
-    installation_type="$2"
-    check_option_supported "$installation_type" \
+    check_option_supported "$OPTION_SELECTED" \
         "${INSTALL_COMMAND_TYPES[@]}" \
         "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
 
     # Import the distro specific installation functions
     # shellcheck disable=SC1090
-    source "$COMMAND_INSTALL_FUNCTIONS_PATH/$DISTRO_SELECTED.sh"
+    source "$INSTALL_FUNCTIONS_PATH/$DISTRO_SELECTED.sh"
 
-    case $installation_type in
+    case $OPTION_SELECTED in
         "$INSTALL_TYPE_PERSONAL")
             personal_installation
             ;;

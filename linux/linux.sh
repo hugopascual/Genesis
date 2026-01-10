@@ -8,13 +8,15 @@ export BASE_PATH
 
 # Paths constants
 export COMMANDS_PATH="$BASE_PATH/commands"
-export COMMAND_INSTALL_FUNCTIONS_PATH="$COMMANDS_PATH/install"
-export COMMAND_UPDATE_FUNCTIONS_PATH="$COMMANDS_PATH/update"
-export COMMAND_SETUP_FUNCTIONS_PATH="$COMMANDS_PATH/setup"
-
+export FUNCTIONS_PATH="$BASE_PATH/functions"
 export UTILITIES_PATH="$BASE_PATH/utilities"
-
 export STATICS_PATH="$BASE_PATH/statics"
+
+export INSTALL_FUNCTIONS_PATH="$FUNCTIONS_PATH/install"
+export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
+export SETUP_FUNCTIONS_PATH="$FUNCTIONS_PATH/setup"
+
+
 ################################################################################
 ##
 # @Description
@@ -32,24 +34,44 @@ import_from_dir() {
 }
 
 ################################################################################
-### Imports needed
+### Imports
 import_from_dir "$UTILITIES_PATH"
 import_from_dir "$COMMANDS_PATH"
-1
-export DISTRO_SELECTED="$2"
-check_option_supported "$DISTRO_SELECTED" "$AVAILABLE_DISTROS" "$DISTRIBUTION_NOT_VALID_MESSAGE"
 
-# Execute rutine depending on command
-case $1 in
+export COMMAND_SELECTED="$1"
+check_option_supported "$COMMAND_SELECTED" \
+    "$COMMAND_TYPES" \
+    "$COMMAND_NOT_VALID_MESSAGE"
+
+export DISTRO_SELECTED="$2"
+check_option_supported "$DISTRO_SELECTED" \
+    "$AVAILABLE_DISTROS" \
+    "$DISTRIBUTION_NOT_VALID_MESSAGE"
+
+export OPTION_SELECTED="$3"
+
+# Display options selected and ask for confirmation
+echo_info "Command selected: $COMMAND_SELECTED"
+echo_info "Distribution selected: $DISTRO_SELECTED"
+echo_info "Option selected: $OPTION_SELECTED"
+
+read -p "Are you sure you want to continue? (y/n): " -n 1 -r ANSWER
+echo
+if [[ ! $ANSWER =~ ^[Yy]$ ]]; then
+    echo_info "Operation cancelled by user"
+    exit 1
+fi
+
+# Execute routine depending on command
+case $COMMAND_SELECTED in
     "$INSTALL_COMMAND")
-        import_from_dir "$COMMAND_INSTALL_FUNCTIONS_PATH"
-        install_command "$DISTRO_SELECTED" "$3"
+        install_command
         ;;
     "$UPDATE_COMMAND")
-        update_command "$DISTRO_SELECTED"
+        update_command
         ;;
     "$SETUP_COMMAND")
-        setup_command "$DISTRO_SELECTED" "$3"
+        setup_command
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"
