@@ -8,7 +8,7 @@ base_install() {
     echo_installing 'Basic installs for this distribution'
     
     # yay
-    pacman -S git base-devel
+    pacman -Syu --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay && makepkg -si
 
