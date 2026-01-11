@@ -23,25 +23,25 @@ localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 sed -iE 's/\\w/\\W/' ~/.bashrc
 
 
-# Home folders configuration
+# Configuration for every user
 for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
 do
     # Create development folders
     mkdir -p "$home_user_path/devops/repos"
     mkdir -p "$home_user_path/devops/docker_volumes"
-    rsync -azP --delete "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
+    rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
     
     # Copy configuration folders
     folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
     for folder in "${folders_to_copy[@]}";
     do
-        rsync -azP --delete "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
+        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
     done
 
     # Add aliases to .bashrc
-    echo "alias ll='ls -alF'
-    alias bkhypr='rsync -azP ~/.config/hypr ~/arch_hypr/'
-    alias bkwaybar='rsync -azP ~/.config/waybar ~/arch_hypr/'
+    echo \
+    "
+    alias ll='ls -alF'
     " >> "$home_user_path/.bashrc"
 done
 

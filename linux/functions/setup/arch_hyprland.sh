@@ -21,35 +21,36 @@ pacman_install 'hyprctl'
 # Startup and login configuration with greetd
 pacman_install 'greetd'
 pacman_install 'greetd-tuigreet'
-rsync -azP --delete "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd" '/etc/greetd'
+rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd" '/etc/greetd'
 
 
-# Waybar
-pacman_install 'waybar'
-# https://github.com/sejjy/mechabar
-git clone https://github.com/sejjy/mechabar.git ~/.config/waybar
-# shellcheck disable=SC1090
-source ~/.config/waybar/install.sh
-
-
-# Home folders configuration
+# Configuration for every user
 for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
-do
+do  
+    user=$(basename "$home_user_path")
+
     # Create development folders
     mkdir -p "$home_user_path/devops/repos"
     mkdir -p "$home_user_path/devops/docker_volumes"
-    rsync -azP --delete "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
+    rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
     
     # Copy configuration folders
     folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
     for folder in "${folders_to_copy[@]}";
     do
-        rsync -azP --delete "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
+        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
     done
 
     # Add aliases to .bashrc
-    echo "alias ll='ls -alF'
-    alias bkhypr='rsync -azP ~/.config/hypr ~/arch_hypr/'
-    alias bkwaybar='rsync -azP ~/.config/waybar ~/arch_hypr/'
-    " >> "$home_user_path/.bashrc" 
+    echo \
+    "
+    alias ll='ls -alF'
+    " >> "$home_user_path/.bashrc"
+
+    # Waybar
+    pacman_install 'waybar'
+    # https://github.com/sejjy/mechabar
+    git clone https://github.com/sejjy/mechabar.git "$home_user_path/.config/waybar"
+    # shellcheck disable=SC1090
+    su "$user" -c "$home_user_path/.config/waybar/install.sh"
 done
