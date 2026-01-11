@@ -15,10 +15,12 @@ install_command() {
 
     case $OPTION_SELECTED in
         "$INSTALL_TYPE_PERSONAL")
-            personal_installation
+            echo_info "Starting $INSTALL_TYPE_PERSONAL installation"
+            # personal_installation
             ;;
         "$INSTALL_TYPE_SERVER")
-            server_installation
+            echo_info "Starting $INSTALL_TYPE_SERVER installation"
+            # server_installation
             ;;
         *)
             echo "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"

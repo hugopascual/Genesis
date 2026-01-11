@@ -49,8 +49,8 @@ echo_uninstalled() {
 ##
 check_option_supported() {
     option="$1"
-    supported_options=("${@:2}")
-    error_message="$3"
+    supported_options=("${@:1:$#-1}") # All arguments except the last one
+    error_message="${@: -1}" # Last argument
 
     if [[ ! " ${supported_options[*]} " =~ [[:space:]]${option}[[:space:]] ]]; then
         echo "$error_message"

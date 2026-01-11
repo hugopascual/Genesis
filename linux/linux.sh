@@ -39,15 +39,7 @@ import_from_dir "$UTILITIES_PATH"
 import_from_dir "$COMMANDS_PATH"
 
 export COMMAND_SELECTED="$1"
-check_option_supported "$COMMAND_SELECTED" \
-    "$COMMAND_TYPES" \
-    "$COMMAND_NOT_VALID_MESSAGE"
-
 export DISTRO_SELECTED="$2"
-check_option_supported "$DISTRO_SELECTED" \
-    "$AVAILABLE_DISTROS" \
-    "$DISTRIBUTION_NOT_VALID_MESSAGE"
-
 export OPTION_SELECTED="$3"
 
 # Display options selected and ask for confirmation
@@ -55,22 +47,33 @@ echo_info "Command selected: $COMMAND_SELECTED"
 echo_info "Distribution selected: $DISTRO_SELECTED"
 echo_info "Option selected: $OPTION_SELECTED"
 
-read -p "Are you sure you want to continue? (y/n): " -n 1 -r ANSWER
+read -p "Are you sure you want to continue? (y/N): " -r ANSWER
 echo
-if [[ ! $ANSWER =~ ^[Yy]$ ]]; then
+if [[ ! $ANSWER =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
     echo_info "Operation cancelled by user"
     exit 1
 fi
 
+check_option_supported "$COMMAND_SELECTED" \
+    "${COMMAND_TYPES[@]}" \
+    "$COMMAND_NOT_VALID_MESSAGE"
+
+check_option_supported "$DISTRO_SELECTED" \
+    "${AVAILABLE_DISTROS[@]}" \
+    "$DISTRIBUTION_NOT_VALID_MESSAGE"
+
 # Execute routine depending on command
 case $COMMAND_SELECTED in
     "$INSTALL_COMMAND")
+        echo_info "Starting installation for $DISTRO_SELECTED with option $OPTION_SELECTED"
         install_command
         ;;
     "$UPDATE_COMMAND")
+        echo_info "Starting update for $DISTRO_SELECTED"
         update_command
         ;;
     "$SETUP_COMMAND")
+        echo_info "Starting setup for $DISTRO_SELECTED with option $OPTION_SELECTED"
         setup_command
         ;;
     *)

@@ -51,5 +51,5 @@ do
     echo "alias ll='ls -alF'
     alias bkhypr='rsync -azP ~/.config/hypr ~/arch_hypr/'
     alias bkwaybar='rsync -azP ~/.config/waybar ~/arch_hypr/'
-    " >> ~/.bashrc
+    " >> "$home_user_path/.bashrc" 
 done
