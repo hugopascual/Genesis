@@ -8,7 +8,7 @@ base_install() {
     echo_installing 'Basic installs for this distribution'
     
     # yay
-    pacman -Syu --noconfirm git base-devel
+    sudo pacman -Syu --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay && makepkg -si
 
@@ -127,7 +127,7 @@ docker_install() {
     echo_installing 'Installing Docker'
     pacman_install 'docker'
     pacman_install 'docker-compose'
-    systemctl enable docker.service
+    sudo systemctl enable docker.service
     echo_installing 'Docker installed'
 }
 
@@ -144,6 +144,7 @@ python_install() {
 }
 
 nodejs_install() {
+    # https://nodejs.org/es/download
     echo_installing 'Installing NodeJS'
     ## Download and install nvm:
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash

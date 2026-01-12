@@ -47,12 +47,13 @@ echo_info "Distribution selected: $DISTRO_SELECTED"
 echo_info "Option selected: $OPTION_SELECTED"
 
 check_option_supported "$COMMAND_SELECTED" \
-    "${COMMAND_TYPES[@]}" \
-    "$COMMAND_NOT_VALID_MESSAGE"
+    "$COMMAND_NOT_VALID_MESSAGE" \
+    "${COMMAND_TYPES[@]}" 
+    
 
 check_option_supported "$DISTRO_SELECTED" \
-    "${AVAILABLE_DISTROS[@]}" \
-    "$DISTRIBUTION_NOT_VALID_MESSAGE"
+    "$DISTRIBUTION_NOT_VALID_MESSAGE" \
+    "${AVAILABLE_DISTROS[@]}"
 
 # Display options selected and ask for confirmation
 read -p "Are you sure you want to continue? (y/N): " -r ANSWER

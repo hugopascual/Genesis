@@ -21,38 +21,33 @@ pacman_install 'hyprctl'
 # Startup and login configuration with greetd
 pacman_install 'greetd'
 pacman_install 'greetd-tuigreet'
-rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/*" '/etc/greetd'
-systemctl enable greetd.service
+rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
+sudo systemctl enable greetd.service
 
 
-# Configuration for every user
-for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
-do  
-    user=$(basename "$home_user_path")
+# User configuration
+# Create development folders
+mkdir -p "$HOME/devops/repos"
+mkdir -p "$HOME/devops/docker_volumes"
+rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$HOME/devops/repos/"
 
-    # Create development folders
-    mkdir -p "$home_user_path/devops/repos"
-    mkdir -p "$home_user_path/devops/docker_volumes"
-    rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
-    
-    # Copy configuration folders
-    folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
-    for folder in "${folders_to_copy[@]}";
-    do
-        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$home_user_path/.config/$folder"
-    done
-
-    # Add aliases to .bashrc
-    echo \
-    "
-alias ll='ls -alF'
-    " >> "$home_user_path/.bashrc"
-
-    # Waybar
-    pacman_install 'waybar'
-    # https://github.com/sejjy/mechabar
-    git clone https://github.com/sejjy/mechabar.git "$home_user_path/.config/waybar"
-    # TODO: Fix installation on every user
-    # shellcheck disable=SC1090
-    # su "$user" -c "$home_user_path/.config/waybar/install.sh"
+# Copy configuration folders
+folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
+for folder in "${folders_to_copy[@]}";
+do
+    rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
 done
+
+# Add aliases to .bashrc
+echo \
+"
+alias ll='ls -alF'
+" >> "$HOME/.bashrc"
+
+# Waybar
+pacman_install 'waybar'
+# https://github.com/sejjy/mechabar
+git clone https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
+# shellcheck disable=SC1090
+"$HOME/.config/waybar/install.sh"
+

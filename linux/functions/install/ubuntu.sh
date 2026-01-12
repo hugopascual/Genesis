@@ -106,15 +106,16 @@ git_install() {
 }
 
 github_cli_install() {
-    echo_installing 'Installing GitHub CLI'
     # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-    # shellcheck disable=SC2174
-    mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-    && chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && apt update \
-    && apt install gh -y
-    echo_installing 'GitHub CLI installed'
+    (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
 }
 
 jdk_install() {
@@ -132,24 +133,29 @@ jre_install() {
 docker_install() {
     echo_installing 'Installing Docker'
     # https://docs.docker.com/engine/install/ubuntu/
-    ## Add Docker's official GPG key:
-    apt-get update
-    apt-get install -y curl
-    apt-get install -y ca-certificates
-    install -m 0755 -d /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-    chmod a+r /etc/apt/keyrings/docker.asc
-    ## Add the repository to Apt sources:
+    # Add Docker's official GPG key:
+    sudo apt update
+    sudo apt install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
     echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-    tee /etc/apt/sources.list.d/docker.list > /dev/null
-    apt-get update
-    apt-get install -y docker-ce
-    apt-get install -y docker-ce-cli
-    apt-get install -y containerd.io
-    apt-get install -y docker-buildx-plugin
-    apt-get install -y docker-compose-plugin
+"Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    sudo apt update
+    sudo apt-get install -y docker-ce
+    sudo apt-get install -y docker-ce-cli
+    sudo apt-get install -y containerd.io
+    sudo apt-get install -y docker-buildx-plugin
+    sudo apt-get install -y docker-compose-plugin
+    
     echo_installing 'Docker installed'
 }
 
@@ -157,7 +163,7 @@ lazydocker_install() {
     echo_installing 'Installing lazydocker'
     # https://github.com/jesseduffield/lazydocker
     curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-    mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
+    sudo mv "$HOME/.local/bin/lazydocker" /usr/local/bin/
     echo_installing 'lazydocker installed'
 }
 
@@ -173,11 +179,11 @@ nodejs_install() {
     echo_installing 'Installing NodeJS'
     # https://nodejs.org/es/download
     # Download and install nvm:
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
     # in lieu of restarting the shell
     \. "$HOME/.nvm/nvm.sh"
     # Download and install Node.js:
-    nvm install 22
+    nvm install 24
     echo_installing 'NodeJS installed'
 }
 
@@ -193,13 +199,14 @@ jetbrains_toolbox_install() {
     # https://www.jetbrains.com/help/idea/installation-guide.html#toolbox
     # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
     ## TODO install for all users
+    ## TODO: improve with the build variable
+    sudo apt-get install -y libfuse2
     jetbrains_toolbox_tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
     wget -c https://download.jetbrains.com/toolbox/$jetbrains_toolbox_tar_file
-    tar -xzf "$jetbrains_toolbox_tar_file" -C /opt
+    sudo tar -xzf "$jetbrains_toolbox_tar_file" -C /opt
     descompressed_dir="${jetbrains_toolbox_tar_file: : -7}"
-    apt-get install -y libfuse2
-    /opt/"$descompressed_dir"/jetbrains-toolbox
-    rm -rf /opt/"$descompressed_dir"
+    sudo /opt/"$descompressed_dir"/jetbrains-toolbox
+    sudo rm -rf /opt/"$descompressed_dir"
     rm -f "$jetbrains_toolbox_tar_file"
     echo_installing 'JetBrains Toolbox installed'
 }
@@ -224,13 +231,13 @@ openvpn3_install() {
     # https://community.openvpn.net/Pages/OpenVPN3Linux
     # https://openvpn.net/cloud-docs/tutorials/configuration-tutorials/connectors/operating-systems/linux/tutorial--learn-to-install-and-control-the-openvpn-3-client.html
     ## Install other necessary software
-    apt install -y apt-transport-https curl
+    sudo apt install -y apt-transport-https curl
     ## Repository keys
     sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
     DISTRO=$(lsb_release -c -s)
     echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
-    apt update
-    apt install -y openvpn3
+    sudo apt update
+    sudo apt install -y openvpn3
     echo_installing 'OpenVPNv3 installed'
 }
 
@@ -246,9 +253,9 @@ displaylink_driver_install() {
     echo_installing 'Installing DisplayLink Driver'
     # https://www.synaptics.com/products/displaylink-graphics/downloads
     wget 'https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb'
-    apt install -y ./synaptics-repository-keyring.deb
-    apt update
-    apt install -y displaylink-driver
+    sudo apt install -y ./synaptics-repository-keyring.deb
+    sudo apt update
+    sudo apt install -y displaylink-driver
     rm synaptics-repository-keyring.deb
     echo_installing 'DisplayLink Driver installed'
 }
@@ -282,7 +289,7 @@ autofirma_install() {
     # https://firmaelectronica.gob.es/Home/Descargas.html
     curl -OL 'https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip'
     unzip "Autofirma_Linux_Debian.zip"
-    apt install -y ./*.deb
+    sudo apt install -y ./*.deb
     rm Autofirma*
     echo_installing 'Autofirma installed'
 }
@@ -290,9 +297,8 @@ autofirma_install() {
 config_fnmt_install() {
     echo_installing 'Installing Config FNMT'
     # https://www.sede.fnmt.gob.es/descargas/descarga-software/instalacion-software-generacion-de-claves
-    apt install -y default-jdk
     wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb
-    apt install -y ./configuradorfnmt*
+    sudo apt install -y ./configuradorfnmt*
     rm configuradorfnmt*
     echo_installing 'Config FNMT installed'
 }
@@ -313,9 +319,9 @@ spotify_install() {
     echo_installing 'Installing Spotify'
     # https://www.spotify.com/us/download/linux/
     curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-    echo "deb https://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
-    apt-get update
-    apt-get install -y spotify-client
+    echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt-get update
+    sudo apt-get install -y spotify-client
     echo_installing 'Spotify installed'
 }
 

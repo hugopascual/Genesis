@@ -19,9 +19,6 @@ localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 
-
-
-
 # Configuration for every user
 for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
 do
@@ -38,7 +35,7 @@ do
     done
 
     # Bash configuration
-sed -iE 's/\\w/\\W/' "$home_user_path/.bashrc"
+    sed -iE 's/\\w/\\W/' "$home_user_path/.bashrc"
     echo \
     "
 alias ll='ls -alF'

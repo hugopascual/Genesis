@@ -19,10 +19,6 @@ localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 
-# Bash
-sed -iE 's/\\w/\\W/' ~/.bashrc
-
-
 # Configuration for every user
 for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
 do
@@ -38,7 +34,8 @@ do
         rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$home_user_path/.config/$folder"
     done
 
-    # Add aliases to .bashrc
+    # Bash configuration
+    sed -iE 's/\\w/\\W/' "$home_user_path/.bashrc"
     echo \
     "
 alias ll='ls -alF'

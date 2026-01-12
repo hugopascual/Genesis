@@ -44,14 +44,13 @@ echo_uninstalled() {
 ##
 # @Description
 # $1 Option to check
-# $2 Supported options list
-# $3 Error message to show if option not supported
+# $2 Error message to show if option not supported
+# $3 Supported options list
 ##
 check_option_supported() {
     option="$1"
-    supported_options=("${@:1:$#-1}") # All arguments except the last one
-    # shellcheck disable=SC2124
-    error_message="${@: -1}" # Last argument
+    error_message="$2"
+    local supported_options=("${@:3}")
 
     if [[ ! " ${supported_options[*]} " =~ [[:space:]]${option}[[:space:]] ]]; then
         echo "$error_message"
@@ -69,7 +68,7 @@ check_option_supported() {
 # $1 Name of the apt package software wanted to be installed
 ##
 apt_get_install() {
-    apt-get install -y "$1"
+    sudo apt-get install -y "$1"
 }
 
 ##
@@ -79,7 +78,7 @@ apt_get_install() {
 # $1 Name of the pacman package software wanted to be installed
 ##
 pacman_install() {
-    pacman -Syu --noconfirm "$1"
+    sudo pacman -Syu --noconfirm "$1"
 }
 
 ##
@@ -89,7 +88,7 @@ pacman_install() {
 # $1 Name of the yay package software wanted to be installed
 ##
 yay_install() {
-    yay -Syu --noconfirm "$1"
+    sudo yay -Syu --noconfirm "$1"
 }
 
 ##
@@ -99,7 +98,7 @@ yay_install() {
 # $1 Name of the apt package software wanted to be installed
 ##
 flathub_install() {
-    flatpak install -y flathub "$1"
+    sudo flatpak install -y flathub "$1"
 }
 
 ##
@@ -109,7 +108,7 @@ flathub_install() {
 # $1 Name of the apt package software wanted to be installed
 ##
 snap_install() {
-    snap install "$1"
+    sudo snap install "$1"
 }
 
 ##
@@ -120,7 +119,7 @@ snap_install() {
 ##
 deb_download_and_install() {
     wget --content-disposition "$1"
-    apt-get install -y ./*.deb
+    sudo apt-get install -y ./*.deb
     rm ./*.deb
 }
 
@@ -133,7 +132,7 @@ deb_download_and_install() {
 ##
 update_flatpak() {
     echo_info "Flatpak update started"
-    flatpak update -y
+    sudo flatpak update -y
     echo_info "Flatpak update finished"
 }
 
@@ -143,7 +142,7 @@ update_flatpak() {
 ##
 update_snap() {
     echo_info "Snap update started"
-    snap refresh
+    sudo snap refresh
     echo_info "Snap update finished"
 }
 
@@ -153,10 +152,10 @@ update_snap() {
 ##
 update_apt() {
     echo_info "APT update started"
-    apt update -y
-    apt upgrade -y
-    apt autoremove -y
-    apt autoclean -y
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
     echo_info "APT update finished"
 }
 
@@ -166,7 +165,7 @@ update_apt() {
 ##
 update_pacman() {
     echo_info "Pacman update started"
-    pacman -Syu --noconfirm
+    sudo pacman -Syu --noconfirm
     echo_info "Pacman update finished"
 }
 
@@ -176,6 +175,6 @@ update_pacman() {
 ##
 update_yay() {
     echo_info "AUR packages update started"
-    yay -Syu --noconfirm
+    sudo yay -Syu --noconfirm
     echo_info "AUR packages update finished"
 }

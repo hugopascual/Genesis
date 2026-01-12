@@ -6,8 +6,8 @@
 ##
 install_command() {
     check_option_supported "$OPTION_SELECTED" \
-        "${INSTALL_COMMAND_TYPES[@]}" \
-        "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
+        "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
+        "${INSTALL_COMMAND_TYPES[@]}"
 
     # Import the distro specific installation functions
     # shellcheck disable=SC1090
