@@ -19,8 +19,7 @@ localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 
-# Bash
-sed -iE 's/\\w/\\W/' ~/.bashrc
+
 
 
 # Configuration for every user
@@ -32,16 +31,17 @@ do
     rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
     
     # Copy configuration folders
-    folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
+    folders_to_copy=('kitty' 'yazi')
     for folder in "${folders_to_copy[@]}";
     do
-        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
+        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$home_user_path/.config/$folder"
     done
 
-    # Add aliases to .bashrc
+    # Bash configuration
+sed -iE 's/\\w/\\W/' "$home_user_path/.bashrc"
     echo \
     "
-    alias ll='ls -alF'
+alias ll='ls -alF'
     " >> "$home_user_path/.bashrc"
 done
 

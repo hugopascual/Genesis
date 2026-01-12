@@ -21,7 +21,8 @@ pacman_install 'hyprctl'
 # Startup and login configuration with greetd
 pacman_install 'greetd'
 pacman_install 'greetd-tuigreet'
-rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd" '/etc/greetd'
+rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/*" '/etc/greetd'
+systemctl enable greetd.service
 
 
 # Configuration for every user
@@ -38,19 +39,20 @@ do
     folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
     for folder in "${folders_to_copy[@]}";
     do
-        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder" "$home_user_path/.config/$folder"
+        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$home_user_path/.config/$folder"
     done
 
     # Add aliases to .bashrc
     echo \
     "
-    alias ll='ls -alF'
+alias ll='ls -alF'
     " >> "$home_user_path/.bashrc"
 
     # Waybar
     pacman_install 'waybar'
     # https://github.com/sejjy/mechabar
     git clone https://github.com/sejjy/mechabar.git "$home_user_path/.config/waybar"
+    # TODO: Fix installation on every user
     # shellcheck disable=SC1090
-    su "$user" -c "$home_user_path/.config/waybar/install.sh"
+    # su "$user" -c "$home_user_path/.config/waybar/install.sh"
 done
