@@ -6,8 +6,8 @@
 ##
 setup_command() {
     check_option_supported "$OPTION_SELECTED" \
-        "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
-        "${INSTALL_COMMAND_TYPES[@]}"
+        "$SETUP_NOT_VALID_MESSAGE" \
+        "${SETUP_TYPES[@]}"
 
     export DISTRO_PLUS_TYPE="${DISTRO_SELECTED}_${OPTION_SELECTED}"
 

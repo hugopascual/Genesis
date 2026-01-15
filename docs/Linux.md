@@ -10,7 +10,7 @@ Raspberry Pi Imager )
 - ( OpenVPNv3 )
 - ( kitty, DisplayLink Driver, Firefox, Google Chrome,
 Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
-Telegram, Discord, Team Viewer, GIMP, Wireguard, 7zip )
+Telegram, Discord, Rust Desk, GIMP, Wireguard, 7zip )
 - ( Steam, Minecraft Launcher )
 
 ## Personal software installations
@@ -24,8 +24,8 @@ NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
 3. **DIT Software**: ( OpenVPNv3 )
 
 4. **Desktop**: ( kitty, DisplayLink Driver, Firefox, Google Chrome,
-Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
-Telegram, Discord, Team Viewer, GIMP, Wireguard, 7zip)
+Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Telegram,
+Discord, Rust Desk, GIMP, Wireguard, 7zip)
 
 5. **Hobbys**: ( Steam, Minecraft Launcher )
 

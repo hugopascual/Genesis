@@ -336,10 +336,10 @@ discord_install() {
     echo_installing 'Discord installed'
 }
 
-teamviewer_install() {
-    echo_installing 'Installing Team Viewer'
-    deb_download_and_install 'https://download.teamviewer.com/download/linux/teamviewer_amd64.deb'
-    echo_installing 'Team Viewer installed'
+rustdesk_install() {
+    echo_installing 'Installing Rust Desk'
+    # TODO: Install Rust Desk
+    echo_installing 'Rust Desk installed'
 }
 
 gimp_install() {

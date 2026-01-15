@@ -21,7 +21,7 @@ pacman_install 'hyprctl'
 # Startup and login configuration with greetd
 pacman_install 'greetd'
 pacman_install 'greetd-tuigreet'
-rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
+sudo rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
 sudo systemctl enable greetd.service
 
 

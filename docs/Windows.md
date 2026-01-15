@@ -37,7 +37,7 @@
    - Spotify
    - Telegram
    - Discord
-   - Team Viewer
+   - Rust Desk
    - Wireguard
    - Google Drive
    - Adobe Reader

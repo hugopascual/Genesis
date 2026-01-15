@@ -8,9 +8,11 @@ base_install() {
     echo_installing 'Basic installs for this distribution'
     
     # yay
-    sudo pacman -Syu --noconfirm git base-devel
+    pacman_install 'git'
+    pacman_install 'base-devel'
     git clone https://aur.archlinux.org/yay.git
     cd yay && makepkg -si
+    cd .. && rm -rf yay
 
     echo_installing 'Basic installs for this distribution completed'
 }
@@ -37,7 +39,8 @@ tree_install() {
 
 nfs_install() {
     echo_installing 'Installing NFS utilities'
-    #TODO: Install NFS utilities
+    # https://wiki.archlinux.org/title/NFS
+    pacman_install 'nfs-utils'
     echo_installing 'NFS utilities installed'
 }
 
@@ -164,22 +167,23 @@ vscode_install() {
 
 jetbrains_toolbox_install() {
     echo_installing 'Installing JetBrains Toolbox'
-    #TODO: Install JetBrains Toolbox
-    # https://www.jetbrains.com/help/toolbox-app/toolbox-app-silent-installation.html#tba_installation
-    # https://dev.to/jorgecastro/install-jetbrains-toolbox-on-linux-596n
+    # https://aur.archlinux.org/packages/jetbrains-toolbox
+    yay_install 'jetbrains-toolbox'
     echo_installing 'JetBrains Toolbox installed'
 }
 
 postman_install() {
     echo_installing 'Installing Postman'
-    #TODO: Install Postman
-    # https://www.geeksforgeeks.org/installation-guide/install-postman-on-arch-based-linux/
+    # https://aur.archlinux.org/packages/postman-bin
+    yay_install 'postman-bin'
     echo_installing 'Postman installed'
 }
 
 raspberry_pi_imager_install() {
     echo_installing 'Installing Raspberry Pi Imager'
-    #TODO: Install Raspberry Pi Imager
+    # https://archlinux.org/packages/extra/x86_64/rpi-imager/
+    # TODO: install to run with privilegies
+    pacman_install 'rpi-imager'
     echo_installing 'Raspberry Pi Imager installed'
 }
 
@@ -231,13 +235,15 @@ keepassxc_install() {
 
 autofirma_install() {
     echo_installing 'Installing Autofirma'
-    #TODO: Install Autofirma
+    # https://aur.archlinux.org/packages/autofirma-bin
+    yay_install 'autofirma-bin'
     echo_installing 'Autofirma installed'
 }
 
 config_fnmt_install() {
     echo_installing 'Installing Config FNMT'
-    #TODO: Install Config FNMT
+    # https://aur.archlinux.org/packages/configuradorfnmt
+    yay_install 'configuradorfnmt'
     echo_installing 'Config FNMT installed'
 }
 
@@ -255,31 +261,36 @@ vlc_install() {
 
 spotify_install() {
     echo_installing 'Installing Spotify'
-    #TODO: Install Spotify
+    # https://wiki.archlinux.org/title/Spotify
+    # https://archlinux.org/packages/?name=spotify-launcher
+    pacman_install 'spotify-launcher'
     echo_installing 'Spotify installed'
 }
 
 telegram_install() {
     echo_installing 'Installing Telegram'
-    #TODO: Install Telegram
+    # https://archlinux.org/packages/?name=telegram-desktop
+    pacman_install 'telegram-desktop'
     echo_installing 'Telegram installed'
 }
 
 discord_install() {
     echo_installing 'Installing Discord'
-    #TODO: Install Discord
+    # https://archlinux.org/packages/?name=discord
+    pacman_install 'discord'
     echo_installing 'Discord installed'
 }
 
-teamviewer_install() {
-    echo_installing 'Installing Team Viewer'
-    #TODO: Install Team Viewer
-    echo_installing 'Team Viewer installed'
+rustdesk_install() {
+    echo_installing 'Installing Rust Desk'
+    #TODO: Install Rust Desk
+    echo_installing 'Rust Desk installed'
 }
 
 gimp_install() {
     echo_installing 'Installing GIMP'
-    #TODO: Install GIMP
+    # https://archlinux.org/packages/?name=gimp
+    pacman_install 'gimp'
     echo_installing 'GIMP installed'
 }
 

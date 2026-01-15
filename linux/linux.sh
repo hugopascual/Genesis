@@ -49,7 +49,6 @@ echo_info "Option selected: $OPTION_SELECTED"
 check_option_supported "$COMMAND_SELECTED" \
     "$COMMAND_NOT_VALID_MESSAGE" \
     "${COMMAND_TYPES[@]}" 
-    
 
 check_option_supported "$DISTRO_SELECTED" \
     "$DISTRIBUTION_NOT_VALID_MESSAGE" \

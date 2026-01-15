@@ -88,7 +88,7 @@ pacman_install() {
 # $1 Name of the yay package software wanted to be installed
 ##
 yay_install() {
-    sudo yay -Syu --noconfirm "$1"
+    yay -Syu --noconfirm "$1"
 }
 
 ##

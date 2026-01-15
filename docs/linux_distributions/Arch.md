@@ -29,7 +29,7 @@ Descubierto el nombre de la red a la que nos queremos conectar nos podemos conec
 nmcli dev wifi connect <SSID> --ask
 ```
 
-Información más detallada en la[página oficial](https://wiki.archlinux.org/title/NetworkManager) o
+Información más detallada en la [página oficial](https://wiki.archlinux.org/title/NetworkManager) o
 [aquí](https://itsfoss.gitlab.io/post/enable-networkmanager-after-arch-installation/).
 
 ### Configuración de arranque
@@ -93,3 +93,7 @@ Configuración custom usando la [mechabar](https://github.com/sejjy/mechabar).
 git clone https://github.com/sejjy/mechabar.git ~/.config/waybar
 ~/.config/waybar/install.sh
 ```
+
+### Sitios de interés
+
+- [hyprlock configs](https://github.com/MrVivekRajan/Hyprlock-Styles/)

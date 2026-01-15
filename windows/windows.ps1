@@ -66,7 +66,7 @@ choco install -y vlc
 # https://firmaelectronica.gob.es/ciudadanos/descargas
 # Config FNMT
 # install_from_url -urls @(""https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe")
-choco install -y teamviewer9
+# TODO: install rustdesk
 choco install -y wireguard
 
 ################################################################################
