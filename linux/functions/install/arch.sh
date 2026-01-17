@@ -20,8 +20,8 @@ base_install() {
 # Minimum ######################################################################
 
 sudo_install() {
+    # TODO: Install sudo
     echo_installing 'Installing sudo'
-    #TODO: Install sudo
     echo_installing 'sudo installed'
 }
 
@@ -38,8 +38,8 @@ tree_install() {
 }
 
 nfs_install() {
-    echo_installing 'Installing NFS utilities'
     # https://wiki.archlinux.org/title/NFS
+    echo_installing 'Installing NFS utilities'
     pacman_install 'nfs-utils'
     echo_installing 'NFS utilities installed'
 }
@@ -166,23 +166,23 @@ vscode_install() {
 }
 
 jetbrains_toolbox_install() {
-    echo_installing 'Installing JetBrains Toolbox'
     # https://aur.archlinux.org/packages/jetbrains-toolbox
+    echo_installing 'Installing JetBrains Toolbox'
     yay_install 'jetbrains-toolbox'
     echo_installing 'JetBrains Toolbox installed'
 }
 
 postman_install() {
-    echo_installing 'Installing Postman'
     # https://aur.archlinux.org/packages/postman-bin
+    echo_installing 'Installing Postman'
     yay_install 'postman-bin'
     echo_installing 'Postman installed'
 }
 
 raspberry_pi_imager_install() {
-    echo_installing 'Installing Raspberry Pi Imager'
     # https://archlinux.org/packages/extra/x86_64/rpi-imager/
     # TODO: install to run with privilegies
+    echo_installing 'Installing Raspberry Pi Imager'
     pacman_install 'rpi-imager'
     echo_installing 'Raspberry Pi Imager installed'
 }
@@ -204,8 +204,12 @@ kitty_install() {
 }
 
 displaylink_driver_install() {
+    # https://wiki.archlinux.org/title/DisplayLink
     echo_installing 'Installing DisplayLink Driver'
+    pacman_install 'linux-headers'
+    yay_install 'evdi-dkms'
     yay_install 'displaylink'
+    sudo systemctl enable displaylink.service
     echo_installing 'DisplayLink Driver installed'
 }
 
@@ -234,15 +238,15 @@ keepassxc_install() {
 }
 
 autofirma_install() {
-    echo_installing 'Installing Autofirma'
     # https://aur.archlinux.org/packages/autofirma-bin
+    echo_installing 'Installing Autofirma'
     yay_install 'autofirma-bin'
     echo_installing 'Autofirma installed'
 }
 
 config_fnmt_install() {
-    echo_installing 'Installing Config FNMT'
     # https://aur.archlinux.org/packages/configuradorfnmt
+    echo_installing 'Installing Config FNMT'
     yay_install 'configuradorfnmt'
     echo_installing 'Config FNMT installed'
 }
@@ -260,36 +264,36 @@ vlc_install() {
 }
 
 spotify_install() {
-    echo_installing 'Installing Spotify'
     # https://wiki.archlinux.org/title/Spotify
     # https://archlinux.org/packages/?name=spotify-launcher
+    echo_installing 'Installing Spotify'
     pacman_install 'spotify-launcher'
     echo_installing 'Spotify installed'
 }
 
 telegram_install() {
-    echo_installing 'Installing Telegram'
     # https://archlinux.org/packages/?name=telegram-desktop
+    echo_installing 'Installing Telegram'
     pacman_install 'telegram-desktop'
     echo_installing 'Telegram installed'
 }
 
 discord_install() {
-    echo_installing 'Installing Discord'
     # https://archlinux.org/packages/?name=discord
+    echo_installing 'Installing Discord'
     pacman_install 'discord'
     echo_installing 'Discord installed'
 }
 
 rustdesk_install() {
+    # TODO: Install Rust Desk
     echo_installing 'Installing Rust Desk'
-    #TODO: Install Rust Desk
     echo_installing 'Rust Desk installed'
 }
 
 gimp_install() {
-    echo_installing 'Installing GIMP'
     # https://archlinux.org/packages/?name=gimp
+    echo_installing 'Installing GIMP'
     pacman_install 'gimp'
     echo_installing 'GIMP installed'
 }
@@ -309,13 +313,13 @@ wireguard_install() {
 # Hobbys #######################################################################
 
 steam_install() {
+    # TODO: Install Steam
     echo_installing 'Installing Steam'
-    #TODO: Install Steam
     echo_installing 'Steam installed'
 }
 
 minecraft_launcher_install() {
+    # TODO: Install Minecraft Launcher
     echo_installing 'Installing Minecraft Launcher'
-    #TODO: Install Minecraft Launcher
     echo_installing 'Minecraft Launcher installed'
 }
