@@ -15,7 +15,7 @@ clone_repo() {
     organization="$3"
     repo_name="$4"
 
-	repos_dir="$HOME/repositories"
+	repos_dir="$HOME/devops/repos"
 	organization_repos_dir="$repos_dir/$organization"
     repo_to_clone_dir="$organization_repos_dir/$repo_name"
 

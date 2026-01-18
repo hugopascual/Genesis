@@ -159,9 +159,8 @@ nodejs_install() {
 }
 
 vscode_install() {
-    # In this case we install Code - OSS version
     echo_installing 'Installing Visual Studio Code'
-    pacman_install 'code'
+    yay_install 'visual-studio-code-bin'
     echo_installing 'Visual Studio Code installed'
 }
 

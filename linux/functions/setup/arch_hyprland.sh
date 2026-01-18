@@ -51,6 +51,15 @@ git clone https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
 # shellcheck disable=SC1090
 "$HOME/.config/waybar/install.sh"
 
-# Bluetooth
 # Bluetooth powered off on startup
-# TODO: substitute "#AutoEnable=true" with "AutoEnable=false" in /etc/bluetooth/main.conf
+sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
+
+# Dark theme
+pacman_install 'gtk3'
+pacman_install 'gtk4'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+pacman_install 'qt5ct'
+pacman_install 'qt6ct'
+pacman_install 'kvantum'
