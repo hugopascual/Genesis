@@ -51,3 +51,6 @@ git clone https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
 # shellcheck disable=SC1090
 "$HOME/.config/waybar/install.sh"
 
+# Bluetooth
+# Bluetooth powered off on startup
+# TODO: substitute "#AutoEnable=true" with "AutoEnable=false" in /etc/bluetooth/main.conf
