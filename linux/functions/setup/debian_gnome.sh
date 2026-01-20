@@ -18,6 +18,7 @@ localectl set-locale LC_TELEPHONE=es_ES.UTF-8
 localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
+
 # User configuration
 # Create development folders and more
 mkdir -p "$REPOSITORIES_PATH"
