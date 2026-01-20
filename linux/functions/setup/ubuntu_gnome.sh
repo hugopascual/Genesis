@@ -19,28 +19,27 @@ localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 
-# Configuration for every user
-for home_user_path in $( find /home -maxdepth 1 -mindepth 1 -type d  | sort ); 
-do
-    # Create development folders
-    mkdir -p "$home_user_path/devops/repos"
-    mkdir -p "$home_user_path/devops/docker_volumes"
-    rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$home_user_path/devops/repos/"
+# User configuration
+# Create development folders and more
+mkdir -p "$REPOSITORIES_PATH"
+mkdir -p "$DOCKER_VOLUMES_PATH"
+rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
+sudo mkdir -p "$PERSONAL_NAS_PATH"
+sudo mkdir -p "$WORK_NAS_PATH"
     
-    # Copy configuration folders
-    folders_to_copy=('kitty' 'yazi')
-    for folder in "${folders_to_copy[@]}";
-    do
-        rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$home_user_path/.config/$folder"
-    done
-
-    # Bash configuration
-    sed -iE 's/\\w/\\W/' "$home_user_path/.bashrc"
-    echo \
-    "
-alias ll='ls -alF'
-    " >> "$home_user_path/.bashrc"
+# Copy configuration folders
+folders_to_copy=('kitty' 'yazi')
+for folder in "${folders_to_copy[@]}";
+do
+    rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$HOME/.config/$folder"
 done
+
+# Bash configuration
+sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
+echo \
+"
+alias ll='ls -alF'
+" >> "$HOME /.bashrc"
 
 
 # GNOME

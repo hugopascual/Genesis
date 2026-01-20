@@ -45,3 +45,10 @@ export COMMAND_NOT_VALID_MESSAGE="Command selected not valid"
 export INSTALLATION_TYPE_NOT_VALID_MESSAGE="Installation type selected not valid"
 export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
 export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"
+
+# Setup paths
+export BASE_DEVELOPMENT_PATH="$HOME/devops"
+export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
+export DOCKER_VOLUMES_PATH="$BASE_DEVELOPMENT_PATH/docker_volumes"
+export PERSONAL_NAS_PATH="/mnt/nas_personal"
+export WORK_NAS_PATH="/mnt/nas_work"

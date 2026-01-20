@@ -26,10 +26,13 @@ sudo systemctl enable greetd.service
 
 
 # User configuration
-# Create development folders
-mkdir -p "$HOME/devops/repos"
-mkdir -p "$HOME/devops/docker_volumes"
-rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$HOME/devops/repos/"
+# Create development folders and more
+mkdir -p "$REPOSITORIES_PATH"
+mkdir -p "$DOCKER_VOLUMES_PATH"
+rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
+sudo mkdir -p "$PERSONAL_NAS_PATH"
+sudo mkdir -p "$WORK_NAS_PATH"
+
 
 # Copy configuration folders
 folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
