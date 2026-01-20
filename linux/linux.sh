@@ -1,6 +1,23 @@
 #!/bin/bash
 
-### Auxiliar functions
+################################################################################
+# Get the path to the main directory.
+full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
+BASE_PATH="$(dirname "$full_path_to_script")"
+export BASE_PATH
+
+# Paths constants
+export COMMANDS_PATH="$BASE_PATH/commands"
+export FUNCTIONS_PATH="$BASE_PATH/functions"
+export UTILITIES_PATH="$BASE_PATH/utilities"
+export STATICS_PATH="$BASE_PATH/statics"
+
+export INSTALL_FUNCTIONS_PATH="$FUNCTIONS_PATH/install"
+export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
+export SETUP_FUNCTIONS_PATH="$FUNCTIONS_PATH/setup"
+
+
+################################################################################
 ##
 # @Description
 # Import all the scripts from the objective folder
@@ -16,37 +33,51 @@ import_from_dir() {
     done
 }
 
+################################################################################
+### Imports
+import_from_dir "$UTILITIES_PATH"
+import_from_dir "$COMMANDS_PATH"
 
-### Import utilities
-# Get the path to the main directory.
-full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
-BASE_PATH="$(dirname "$full_path_to_script")"
-export BASE_PATH
-# Proper import of utilities
-import_from_dir "$BASE_PATH/utilities"
+export COMMAND_SELECTED="$1"
+export DISTRO_SELECTED="$2"
+export OPTION_SELECTED="$3"
 
-### Check commands input
-# Validate if command among available ones
-if [[ ! " ${COMMAND_TYPES[*]} " =~ [[:space:]]$1[[:space:]] ]]; then
-    echo "$COMMAND_NOT_VALID_MESSAGE"
-    help_message
+echo_info "Command selected: $COMMAND_SELECTED"
+echo_info "Distribution selected: $DISTRO_SELECTED"
+echo_info "Option selected: $OPTION_SELECTED"
+
+check_option_supported "$COMMAND_SELECTED" \
+    "$COMMAND_NOT_VALID_MESSAGE" \
+    "${COMMAND_TYPES[@]}" 
+
+check_option_supported "$DISTRO_SELECTED" \
+    "$DISTRIBUTION_NOT_VALID_MESSAGE" \
+    "${AVAILABLE_DISTROS[@]}"
+
+# Display options selected and ask for confirmation
+read -p "Are you sure you want to continue? (y/N): " -r ANSWER
+echo
+if [[ ! $ANSWER =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
+    echo_info "Operation cancelled by user"
+    exit 1
 fi
 
-# Execute rutine depending on command
-# Import commnands functions
-import_from_dir "$BASE_PATH/commands"
-case $1 in
-    "install")
-        install_command "$2" "$3"
+# Execute routine depending on command
+case $COMMAND_SELECTED in
+    "$INSTALL_COMMAND")
+        echo_info "Starting installation for $DISTRO_SELECTED with option $OPTION_SELECTED"
+        install_command
         ;;
-    "update")
-        update_command "$2"
+    "$UPDATE_COMMAND")
+        echo_info "Starting update for $DISTRO_SELECTED"
+        update_command
         ;;
-    "customize")
-        customize_command "$2"
+    "$SETUP_COMMAND")
+        echo_info "Starting setup for $DISTRO_SELECTED with option $OPTION_SELECTED"
+        setup_command
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"
-        help_message
+        help
         ;;
 esac

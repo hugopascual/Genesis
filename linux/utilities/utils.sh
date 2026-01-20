@@ -43,46 +43,138 @@ echo_uninstalled() {
 ###########################
 ##
 # @Description
-#
+# $1 Option to check
+# $2 Error message to show if option not supported
+# $3 Supported options list
 ##
-help_message() {
-    echo \
-"
-Usage:  ./linux.sh install { INSTALLATION_TYPE } { DISTRO }
-        ./linux.sh update { DISTRO }
-        ./linux.sh customize { DESKTOP_ENVIRONMENT_TYPE }
+check_option_supported() {
+    option="$1"
+    error_message="$2"
+    local supported_options=("${@:3}")
 
-where   INSTALLATION_TYPE := { desktop | server }
-        DISTRO := { ubuntu | debian | raspberrypi }
-        DESKTOP_ENVIRONMENT_TYPE := { gnome }
-"
-    exit 1
+    if [[ ! " ${supported_options[*]} " =~ [[:space:]]${option}[[:space:]] ]]; then
+        echo "$error_message"
+        help
+    fi
+}
+
+##################################
+#--Generic Installing Functions--#
+##################################
+##
+# @Description
+# Install a software package using apt-get
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+apt_get_install() {
+    sudo apt-get install -y "$1"
 }
 
 ##
 # @Description
-#
+# Install a software package using pacman
+# @Params
+# $1 Name of the pacman package software wanted to be installed
 ##
-check_distribution() {
-    distro_selected="$1"
-
-    if [[ ! " ${AVAILABLE_DISTROS[*]} " =~ [[:space:]]${distro_selected}[[:space:]] ]]; then
-        # Message when array doesn't contain a valid distribution
-        echo "$DISTRIBUTION_NOT_VALID_MESSAGE"
-        help_message
-    fi
+pacman_install() {
+    sudo pacman -Syu --noconfirm "$1"
 }
 
 ##
 # @Description
-#
+# Install a software package using yay
+# @Params
+# $1 Name of the yay package software wanted to be installed
 ##
-check_desktop_environment() {
-    desktop_environment_type="$1"
+yay_install() {
+    yay -Syu --noconfirm "$1"
+}
 
-    if [[ ! " ${CUSTOMIZATION_TYPES[*]} " =~ [[:space:]]${desktop_environment_type}[[:space:]] ]]; then
-        # Message when array doesn't contain a valid distribution
-        echo "$DESKTOP_ENVIRONMENT_TYPE_NOT_VALID_MESSAGE"
-        help_message
-    fi
+##
+# @Description
+# Install a software package from flathub via flatpak
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+flathub_install() {
+    sudo flatpak install -y flathub "$1"
+}
+
+##
+# @Description
+# Install a software package via snap
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+snap_install() {
+    sudo snap install "$1"
+}
+
+##
+# @Description
+# Install a software package downloading the deb package
+# @Params
+# $1 URL of deb package to install
+##
+deb_download_and_install() {
+    wget --content-disposition "$1"
+    sudo apt-get install -y ./*.deb
+    rm ./*.deb
+}
+
+######################
+#--Update Functions--#
+######################
+##
+# @Description
+# Flatpak packages update
+##
+update_flatpak() {
+    echo_info "Flatpak update started"
+    sudo flatpak update -y
+    echo_info "Flatpak update finished"
+}
+
+##
+# @Description
+# Snap packages update
+##
+update_snap() {
+    echo_info "Snap update started"
+    sudo snap refresh
+    echo_info "Snap update finished"
+}
+
+##
+# @Description
+# APT packages update and cleanup
+##
+update_apt() {
+    echo_info "APT update started"
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
+    echo_info "APT update finished"
+}
+
+##
+# @Description
+# Pacman packages update and cleanup
+##
+update_pacman() {
+    echo_info "Pacman update started"
+    sudo pacman -Syu --noconfirm
+    echo_info "Pacman update finished"
+}
+
+##
+# @Description
+# AUR packages update and cleanup
+##
+update_yay() {
+    echo_info "AUR packages update started"
+    sudo yay -Syu --noconfirm
+    echo_info "AUR packages update finished"
 }
