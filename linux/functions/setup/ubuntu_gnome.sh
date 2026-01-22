@@ -76,3 +76,6 @@ gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
 #------------------------------- END
 echo_success "Setup finished"
+
+# TODO: Add second keyboard layout and shortcut to switch between them. Spanish
+# and English

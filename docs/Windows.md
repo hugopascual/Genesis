@@ -69,3 +69,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\windows.ps1
 ```
+
+## Post installation configuration
+
