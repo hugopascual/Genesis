@@ -35,3 +35,15 @@ Discord, Rust Desk, GIMP, Wireguard, 7zip)
 vim, nvim, Fastfetch, NVtop )
 
 2. **Development**: ( Git, Java Runtime Environment, Docker, lazydocker, Python )
+
+## Final setup steps
+
+- Add second keyboard distibution
+- Graphics Drivers
+- Startup apps: Firefox, Obsidian, Thunderbird
+- Login into GitHubCli
+- Clonar repositorios
+- Configurar VPNs
+  - Wireguard
+  - OpenVPN3
+- Iniciar sesión en los distintos servicios
