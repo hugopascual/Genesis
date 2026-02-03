@@ -186,14 +186,6 @@ raspberry_pi_imager_install() {
     echo_installing 'Raspberry Pi Imager installed'
 }
 
-# DIT Software #################################################################
-
-openvpn3_install() {
-    echo_installing 'Installing OpenVPNv3'
-    yay_install 'openvpn3'
-    echo_installing 'OpenVPNv3 installed'
-}
-
 # Desktop ######################################################################
 
 kitty_install() {
@@ -307,6 +299,13 @@ wireguard_install() {
     echo_installing 'Installing 7zip'
     pacman_install '7zip'
     echo_installing '7zip installed'
+}
+
+
+openvpn3_install() {
+    echo_installing 'Installing OpenVPNv3'
+    yay_install 'openvpn3'
+    echo_installing 'OpenVPNv3 installed'
 }
 
 # Hobbys #######################################################################

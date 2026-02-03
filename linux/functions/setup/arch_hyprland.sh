@@ -1,5 +1,13 @@
 #!/bin/bash
 
+################################################################################
+# Configure system locales
+
+# TODO
+
+################################################################################
+# Configure desktop environment
+
 # Install hyprland desktop and the around software used
 ## First of all the around software used for som functionalities 
 pacman_install 'qt5-wayland'
@@ -18,22 +26,6 @@ pacman_install 'hyprshot'
 pacman_install 'hyprctl'
 
 
-# Startup and login configuration with greetd
-pacman_install 'greetd'
-pacman_install 'greetd-tuigreet'
-sudo rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
-sudo systemctl enable greetd.service
-
-
-# User configuration
-# Create development folders and more
-mkdir -p "$REPOSITORIES_PATH"
-mkdir -p "$DOCKER_VOLUMES_PATH"
-rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
-sudo mkdir -p "$PERSONAL_NAS_PATH"
-sudo mkdir -p "$WORK_NAS_PATH"
-
-
 # Copy configuration folders
 folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
 for folder in "${folders_to_copy[@]}";
@@ -41,11 +33,13 @@ do
     rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
 done
 
-# Add aliases to .bashrc
-echo \
-"
-alias ll='ls -alF'
-" >> "$HOME/.bashrc"
+
+# Startup and login configuration with greetd
+pacman_install 'greetd'
+pacman_install 'greetd-tuigreet'
+sudo rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
+sudo systemctl enable greetd.service
+
 
 # Waybar
 pacman_install 'waybar'
@@ -54,8 +48,6 @@ git clone https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
 # shellcheck disable=SC1090
 "$HOME/.config/waybar/install.sh"
 
-# Bluetooth powered off on startup
-sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 
 # Dark theme
 pacman_install 'gtk3'
@@ -66,3 +58,31 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 pacman_install 'qt5ct'
 pacman_install 'qt6ct'
 pacman_install 'kvantum'
+
+################################################################################
+# Create basics folders structure 
+
+mkdir -p "$REPOSITORIES_PATH"
+mkdir -p "$DOCKER_VOLUMES_PATH"
+rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
+sudo mkdir -p "$PERSONAL_NAS_PATH"
+sudo mkdir -p "$WORK_NAS_PATH"
+
+################################################################
+# Add second keyboard distribution
+
+# Already done with the configuration files of the desktop environment
+
+################################################################################
+# Other setup configurations
+
+# .bashrc configuration and customization
+sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
+
+# Add aliases to .bashrc
+echo \
+"
+alias ll='ls -alF'
+" >> "$HOME/.bashrc"
+
+################################################################################

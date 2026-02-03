@@ -2,48 +2,50 @@
 
 ## Available software installations
 
-- ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl, vim, nvim,
-Fastfetch, NVtop )
-- ( Git, GitHub CLI, Java Development Kit, Java Runtime Environment, Docker,
+- sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl, vim, nvim, Fastfetch,
+NVtop, Git, GitHub CLI, Java Development Kit, Java Runtime Environment, Docker,
 lazydocker, Python, NodeJS, Visual Studio Code, JetBrains Toolbox, Postman,
-Raspberry Pi Imager )
-- ( OpenVPNv3 )
-- ( kitty, DisplayLink Driver, Firefox, Google Chrome,
+Raspberry Pi Imager, kitty, DisplayLink Driver, Firefox, Google Chrome,
 Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Spotify,
-Telegram, Discord, Rust Desk, GIMP, Wireguard, 7zip )
-- ( Steam, Minecraft Launcher )
+Telegram, Discord, Rust Desk, GIMP, Wireguard, 7zip, OpenVPNv3, Steam,
+Minecraft Launcher
 
 ## Personal software installations
 
-1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
-vim, nvim, Fastfetch, NVtop )
+1. **Basic**: sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
+vim, nvim, Fastfetch, NVtop
 
-2. **Development**: ( Git, GitHub CLI, Java Development Kit, Docker, lazydocker, Python,
-NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi Imager )
+2. **Development**: Git, GitHub CLI, Java Development Kit, Docker, lazydocker,
+Python, NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi
+Imager
 
-3. **DIT Software**: ( OpenVPNv3 )
+3. **Desktop**: kitty, DisplayLink Driver, Firefox, Google Chrome,3Thunderbird,
+KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Telegram, Discord, Rust Desk,
+GIMP, Wireguard, 7zip, OpenVPNv3
 
-4. **Desktop**: ( kitty, DisplayLink Driver, Firefox, Google Chrome,
-Thunderbird, KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Telegram,
-Discord, Rust Desk, GIMP, Wireguard, 7zip)
-
-5. **Hobbys**: ( Steam, Minecraft Launcher )
+4. **Hobbys**: Steam, Minecraft Launcher
 
 ## Server software installations
 
-1. **Minimum**: ( sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
-vim, nvim, Fastfetch, NVtop )
+1. **Basic**: sudo, htop, tree, NFS, rename, rsync, lshw, wget, curl,
+vim, nvim, Fastfetch, NVtop
 
-2. **Development**: ( Git, Java Runtime Environment, Docker, lazydocker, Python )
+2. **Development**: Git, Java Runtime Environment, Docker, lazydocker, Python
 
-## Final setup steps
+## Setup steps
 
-- Add second keyboard distibution
-- Graphics Drivers
-- Startup apps: Firefox, Obsidian, Thunderbird
-- Login into GitHubCli
-- Clonar repositorios
-- Configurar VPNs
+- Configure system locales (scripted)
+- Configure desktop environment (scripted)
+- Create basics folders structure (scripted)
+- Add second keyboard distibution (scripted)
+- Startup apps: Firefox, Obsidian, Thunderbird (scripted)
+- Other setup configurations (scripted)
+  - `.bashrc` aliases and customization
+- Graphics Drivers (TODO: scripted)
+
+- Login into GitHub CLI
+- Clone repositories
+- Configure VPNs
   - Wireguard
   - OpenVPN3
-- Iniciar sesión en los distintos servicios
+- Log in to the various services

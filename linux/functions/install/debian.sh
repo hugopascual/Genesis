@@ -223,23 +223,6 @@ raspberry_pi_imager_install() {
     echo_installing 'Raspberry Pi Imager installed'
 }
 
-# DIT Software #################################################################
-
-openvpn3_install() {
-    echo_installing 'Installing OpenVPNv3'
-    # https://community.openvpn.net/Pages/OpenVPN3Linux
-    # https://openvpn.net/cloud-docs/tutorials/configuration-tutorials/connectors/operating-systems/linux/tutorial--learn-to-install-and-control-the-openvpn-3-client.html
-    ## Install other necessary software
-    sudo apt install -y apt-transport-https curl
-    ## Repository keys
-    sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
-    DISTRO=$(lsb_release -c -s)
-    echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
-    sudo apt update
-    sudo apt install -y openvpn3
-    echo_installing 'OpenVPNv3 installed'
-}
-
 # Desktop ######################################################################
 
 kitty_install() {
@@ -358,6 +341,21 @@ wireguard_install() {
     echo_installing 'Installing 7zip'
     apt_get_install '7zip'
     echo_installing '7zip installed'
+}
+
+openvpn3_install() {
+    echo_installing 'Installing OpenVPNv3'
+    # https://community.openvpn.net/Pages/OpenVPN3Linux
+    # https://openvpn.net/cloud-docs/tutorials/configuration-tutorials/connectors/operating-systems/linux/tutorial--learn-to-install-and-control-the-openvpn-3-client.html
+    ## Install other necessary software
+    sudo apt install -y apt-transport-https curl
+    ## Repository keys
+    sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc
+    DISTRO=$(lsb_release -c -s)
+    echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list
+    sudo apt update
+    sudo apt install -y openvpn3
+    echo_installing 'OpenVPNv3 installed'
 }
 
 # Hobbys #######################################################################
