@@ -43,6 +43,8 @@ vim, nvim, Fastfetch, NVtop
   - `.bashrc` aliases and customization
 - Graphics Drivers (TODO: scripted)
 
+### Private setup
+
 - Login into GitHub CLI
 - Clone repositories
 - Configure VPNs
