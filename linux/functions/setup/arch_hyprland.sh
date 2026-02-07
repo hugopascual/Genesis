@@ -43,8 +43,8 @@ sudo systemctl enable greetd.service
 
 # Waybar
 pacman_install 'waybar'
-# https://github.com/sejjy/mechabar
-git clone https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
+# Fix for 0.14.0 Waybar
+git clone -b fix/v0.14.0 https://github.com/sejjy/mechabar.git "$HOME/.config/waybar"
 # shellcheck disable=SC1090
 "$HOME/.config/waybar/install.sh"
 
