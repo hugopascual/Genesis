@@ -224,7 +224,7 @@ thunderbird_install() {
 
 keepassxc_install() {
     echo_installing 'Installing KeePass XC'
-    pacman_install 'keepass'
+    pacman_install 'keepassxc'
     echo_installing 'KeePass XC installed'
 }
 
