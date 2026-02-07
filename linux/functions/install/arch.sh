@@ -20,8 +20,8 @@ base_install() {
 # Minimum ######################################################################
 
 sudo_install() {
-    # TODO: Install sudo
     echo_installing 'Installing sudo'
+    # TODO: Install sudo
     echo_installing 'sudo installed'
 }
 
@@ -131,6 +131,7 @@ docker_install() {
     pacman_install 'docker'
     pacman_install 'docker-compose'
     sudo systemctl enable docker.service
+    sudo usermod -aG docker "$USER"
     echo_installing 'Docker installed'
 }
 
@@ -180,8 +181,8 @@ postman_install() {
 
 raspberry_pi_imager_install() {
     # https://archlinux.org/packages/extra/x86_64/rpi-imager/
-    # TODO: install to run with privilegies
     echo_installing 'Installing Raspberry Pi Imager'
+    # TODO: install to run with privilegies
     pacman_install 'rpi-imager'
     echo_installing 'Raspberry Pi Imager installed'
 }
@@ -277,8 +278,8 @@ discord_install() {
 }
 
 rustdesk_install() {
-    # TODO: Install Rust Desk
     echo_installing 'Installing Rust Desk'
+    # TODO: Install Rust Desk
     echo_installing 'Rust Desk installed'
 }
 
@@ -311,13 +312,13 @@ openvpn3_install() {
 # Hobbys #######################################################################
 
 steam_install() {
-    # TODO: Install Steam
     echo_installing 'Installing Steam'
+    # TODO: Install Steam
     echo_installing 'Steam installed'
 }
 
 minecraft_launcher_install() {
-    # TODO: Install Minecraft Launcher
     echo_installing 'Installing Minecraft Launcher'
+    # TODO: Install Minecraft Launcher
     echo_installing 'Minecraft Launcher installed'
 }

@@ -76,8 +76,6 @@ personal_installation() {
     config_fnmt_install
     obsidian_install
     vlc_install
-    # spotify_install
-    telegram_install
     discord_install
     rustdesk_install
     gimp_install

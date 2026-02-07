@@ -156,6 +156,8 @@ Signed-By: /etc/apt/keyrings/docker.asc
     sudo apt-get install -y docker-buildx-plugin
     sudo apt-get install -y docker-compose-plugin
     
+    sudo usermod -aG docker "$USER"
+    
     echo_installing 'Docker installed'
 }
 
