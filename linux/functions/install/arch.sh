@@ -302,7 +302,6 @@ wireguard_install() {
     echo_installing '7zip installed'
 }
 
-
 openvpn3_install() {
     echo_installing 'Installing OpenVPNv3'
     yay_install 'openvpn3'

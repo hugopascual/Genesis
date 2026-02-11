@@ -4,6 +4,12 @@
 # Configure system locales
 
 # TODO: Modify /etc/locale.gen to include the line es_ES.UTF-8
+
+# Enable en_US.UTF-8 UTF-8 locale
+sudo sed -i -E 's/^#(en_US\.UTF-8 UTF-8)/\1/' /etc/locale.gen
+# Enable es_ES.UTF-8 UTF-8 locale
+sudo sed -i -E 's/^#(es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
+
 sudo locale-gen
 localectl set-locale LANG=en_US.UTF-8
 localectl set-locale LANGUAGE=en_US.UTF-8
@@ -26,12 +32,22 @@ localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 # GNOME
 echo_info "Starting GNOME setup"
 #------------------------------- Installation
-# TODO: Install GNOME if not installed
+echo_info 'Checking if GNOME is installed...'
+if command -v gnome-shell >/dev/null 2>&1; then
+    echo_info "GNOME is installed"
+else
+    echo_info "GNOME not installed"
+    exit 1
+fi
 
 #------------------------------- Appearance and general settings
 # Style
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
+
+# Background and screensaver
+gsettings set org.gnome.desktop.background picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/screensaver.jpg"
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
@@ -44,9 +60,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 # Multitasking 
-gsettings set org.gnome.mutter workspaces-only-on-primary false
+gsettings set org.gnome.mutter workspaces-only-on-primary true
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
-
 
 # Mouse and Touchpad
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
@@ -57,7 +72,6 @@ gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
 #------------------------------- END
 echo_success "Setup finished"
-
 
 # Copy configuration folders
 folders_to_copy=('kitty' 'yazi')
@@ -78,7 +92,8 @@ sudo mkdir -p "$WORK_NAS_PATH"
 ################################################################
 # Add second keyboard distribution
 
-# TODO
+# Define the 2 keyboard distributions
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'es')]"
 
 ################################################################################
 # Other setup configurations
