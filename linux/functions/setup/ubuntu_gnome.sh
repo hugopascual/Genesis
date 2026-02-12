@@ -5,26 +5,26 @@
 
 # TODO: Modify /etc/locale.gen to include the line es_ES.UTF-8
 
-# Enable en_US.UTF-8 UTF-8 locale
-sudo sed -i -E 's/^#(en_US\.UTF-8 UTF-8)/\1/' /etc/locale.gen
-# Enable es_ES.UTF-8 UTF-8 locale
-sudo sed -i -E 's/^#(es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
+# # Enable en_US.UTF-8 UTF-8 locale
+# sudo sed -i -E 's/^#(en_US\.UTF-8 UTF-8)/\1/' /etc/locale.gen
+# # Enable es_ES.UTF-8 UTF-8 locale
+# sudo sed -i -E 's/^#(es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
 
-sudo locale-gen
-localectl set-locale LANG=en_US.UTF-8
-localectl set-locale LANGUAGE=en_US.UTF-8
-localectl set-locale LC_CTYPE=es_ES.UTF-8
-localectl set-locale LC_NUMERIC=es_ES.UTF-8
-localectl set-locale LC_TIME=es_ES.UTF-8
-localectl set-locale LC_COLLATE=es_ES.UTF-8
-localectl set-locale LC_MONETARY=es_ES.UTF-8
-localectl set-locale LC_MESSAGES=es_ES.UTF-8
-localectl set-locale LC_PAPER=es_ES.UTF-8
-localectl set-locale LC_NAME=es_ES.UTF-8
-localectl set-locale LC_ADDRESS=es_ES.UTF-8
-localectl set-locale LC_TELEPHONE=es_ES.UTF-8
-localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
-localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
+# sudo locale-gen
+# localectl set-locale LANG=en_US.UTF-8
+# localectl set-locale LANGUAGE=en_US.UTF-8
+# localectl set-locale LC_CTYPE=es_ES.UTF-8
+# localectl set-locale LC_NUMERIC=es_ES.UTF-8
+# localectl set-locale LC_TIME=es_ES.UTF-8
+# localectl set-locale LC_COLLATE=es_ES.UTF-8
+# localectl set-locale LC_MONETARY=es_ES.UTF-8
+# localectl set-locale LC_MESSAGES=es_ES.UTF-8
+# localectl set-locale LC_PAPER=es_ES.UTF-8
+# localectl set-locale LC_NAME=es_ES.UTF-8
+# localectl set-locale LC_ADDRESS=es_ES.UTF-8
+# localectl set-locale LC_TELEPHONE=es_ES.UTF-8
+# localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
+# localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 ################################################################################
 # Configure desktop environment

@@ -8,7 +8,7 @@ base_install() {
     echo_installing 'Basic installs for this distribution'
     
     # Flatpak
-    apt install -y flatpak
+    sudo apt install -y flatpak
     # add the Flathub repository
     FLATHUB_REPO_URI=https://dl.flathub.org/repo/flathub.flatpakrepo
     flatpak remote-add --if-not-exists flathub "$FLATHUB_REPO_URI"
@@ -144,7 +144,7 @@ docker_install() {
     echo \
 "Types: deb
 URIs: https://download.docker.com/linux/ubuntu
-Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
 Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
 " | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
