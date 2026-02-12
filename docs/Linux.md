@@ -19,9 +19,9 @@ vim, nvim, Fastfetch, NVtop
 Python, NodeJS, Visual Studio Code, JetBrains Toolbox, Postman, Raspberry Pi
 Imager
 
-3. **Desktop**: kitty, DisplayLink Driver, Firefox, Google Chrome, Thunderbird,
-KeePass XC, Autofirma, Config FNMT, Obsidian, VLC, Discord, Rust Desk, GIMP,
-Wireguard, 7zip, OpenVPNv3
+3. **Desktop**: kitty, DisplayLink Driver, Firefox, Thunderbird, KeePass XC,
+Autofirma, Config FNMT, Obsidian, VLC, Discord, Rust Desk, GIMP, Wireguard,
+7zip, OpenVPNv3
 
 4. **Hobbys**: Steam, Minecraft Launcher
 

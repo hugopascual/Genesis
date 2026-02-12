@@ -69,7 +69,6 @@ personal_installation() {
     kitty_install
     displaylink_driver_install
     firefox_install
-    google_chrome_install
     thunderbird_install
     keepassxc_install
     autofirma_install

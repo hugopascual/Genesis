@@ -87,7 +87,7 @@ nvim_install() {
 fastfetch_install() {
     echo_installing 'Installing Fastfetch'
     # https://github.com/fastfetch-cli/fastfetch
-    deb_download_and_install 'https://github.com/fastfetch-cli/fastfetch/releases/download/2.50.2/fastfetch-linux-amd64.de'
+    deb_download_and_install 'https://github.com/fastfetch-cli/fastfetch/releases/download/2.58.0/fastfetch-linux-amd64.deb'
     echo_installing 'Fastfetch installed'
 }
 
@@ -211,8 +211,7 @@ jetbrains_toolbox_install() {
 
 postman_install() {
     echo_installing 'Installing Postman'
-    # TODO: use another package manager to install Postman
-    snap_install 'postman'
+    flathub_install 'com.getpostman.Postman'
     echo_installing 'Postman installed'
 }
 
@@ -226,7 +225,7 @@ raspberry_pi_imager_install() {
 
 kitty_install() {
     echo_installing 'Installing kitty'
-    #TODO: Install kitty
+    apt_get_install 'kitty'
     echo_installing 'kitty installed'
 }
 
@@ -320,7 +319,9 @@ discord_install() {
 
 rustdesk_install() {
     echo_installing 'Installing Rust Desk'
-    # TODO: Install Rust Desk
+    # https://github.com/rustdesk
+    # https://flathub.org/en/apps/com.rustdesk.RustDesk
+    flathub_install 'com.rustdesk.RustDesk'
     echo_installing 'Rust Desk installed'
 }
 
