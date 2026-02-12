@@ -47,6 +47,7 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Background and screensaver
 gsettings set org.gnome.desktop.background picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
 gsettings set org.gnome.desktop.screensaver picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/screensaver.jpg"
 
 # Desktop icons
@@ -77,7 +78,7 @@ echo_success "Setup finished"
 folders_to_copy=('kitty' 'yazi')
 for folder in "${folders_to_copy[@]}";
 do
-    rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/*" "$HOME/.config/$folder"
+    rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
 done
 
 ################################################################
