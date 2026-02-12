@@ -147,7 +147,7 @@ URIs: https://download.docker.com/linux/ubuntu
 Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
 Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
-" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+" | sudo tee /etc/apt/sources.list.d/docker.sources > /dev/null
 
     sudo apt update
     sudo apt install -y docker-ce
