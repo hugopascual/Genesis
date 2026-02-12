@@ -26,61 +26,61 @@ sudo_install() {
 
 htop_install() {
     echo_installing 'Installing htop'
-    apt_get_install 'htop'
+    apt_install 'htop'
     echo_installing 'htop installed'
 }
 
 tree_install() {
     echo_installing 'Installing tree'
-    apt_get_install 'tree'
+    apt_install 'tree'
     echo_installing 'tree installed'
 }
 
 nfs_install() {
     echo_installing 'Installing NFS utilities'
-    apt_get_install 'nfs-common'
+    apt_install 'nfs-common'
     echo_installing 'NFS utilities installed'
 }
 
 rename_install() {
     echo_installing 'Installing rename'
-    apt_get_install 'rename'
+    apt_install 'rename'
     echo_installing 'rename installed'
 }
 
 rsync_install() {
     echo_installing 'Installing rsync'
-    apt_get_install 'rsync'
+    apt_install 'rsync'
     echo_installing 'rsync installed'
 }
 
 lshw_install() {
     echo_installing 'Installing lshw'
-    apt_get_install 'lshw'
+    apt_install 'lshw'
     echo_installing 'lshw installed'
 }
 
 wget_install() {
     echo_installing 'Installing wget'
-    apt_get_install 'wget'
+    apt_install 'wget'
     echo_installing 'wget installed'
 }
 
 curl_install() {
     echo_installing 'Installing curl'
-    apt_get_install 'curl'
+    apt_install 'curl'
     echo_installing 'curl installed'
 }
 
 vim_install() {
     echo_installing 'Installing vim'
-    apt_get_install 'vim'
+    apt_install 'vim'
     echo_installing 'vim installed'
 }
 
 nvim_install() {
     echo_installing 'Installing nvim'
-    apt_get_install 'nvim'
+    apt_install 'nvim'
     echo_installing 'nvim installed'
 }
 
@@ -93,7 +93,7 @@ fastfetch_install() {
 
 nvtop_install() {
     echo_installing 'Installing NVTop'
-    apt_get_install 'nvtop'
+    apt_install 'nvtop'
     echo_installing 'NVTOP installed'
 }
 
@@ -101,7 +101,7 @@ nvtop_install() {
 
 git_install() {
     echo_installing 'Installing Git'
-    apt_get_install 'git'
+    apt_install 'git'
     echo_installing 'Git installed'
 }
 
@@ -120,13 +120,13 @@ github_cli_install() {
 
 jdk_install() {
     echo_installing 'Installing Java Development Kit'
-    apt_get_install 'default-jdk'
+    apt_install 'default-jdk'
     echo_installing 'Java Development Kit installed'
 }
 
 jre_install() {
     echo_installing 'Installing Java Runtime Environment'
-    apt_get_install 'default-jre'
+    apt_install 'default-jre'
     echo_installing 'Java Runtime Environment installed'
 }
 
@@ -150,11 +150,11 @@ Signed-By: /etc/apt/keyrings/docker.asc
 " | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
     sudo apt update
-    sudo apt-get install -y docker-ce
-    sudo apt-get install -y docker-ce-cli
-    sudo apt-get install -y containerd.io
-    sudo apt-get install -y docker-buildx-plugin
-    sudo apt-get install -y docker-compose-plugin
+    sudo apt install -y docker-ce
+    sudo apt install -y docker-ce-cli
+    sudo apt install -y containerd.io
+    sudo apt install -y docker-buildx-plugin
+    sudo apt install -y docker-compose-plugin
 
     sudo usermod -aG docker "$USER"
     
@@ -171,9 +171,9 @@ lazydocker_install() {
 
 python_install() {
     echo_installing 'Installing Python'
-    apt_get_install 'python3'
-    apt_get_install 'python3-venv'
-    apt_get_install 'python3-pip'
+    apt_install 'python3'
+    apt_install 'python3-venv'
+    apt_install 'python3-pip'
     echo_installing 'Python installed'
 }
 
@@ -217,7 +217,7 @@ postman_install() {
 
 raspberry_pi_imager_install() {
     echo_installing 'Installing Raspberry Pi Imager'
-    apt_get_install 'rpi-imager'
+    apt_install 'rpi-imager'
     echo_installing 'Raspberry Pi Imager installed'
 }
 
@@ -225,7 +225,7 @@ raspberry_pi_imager_install() {
 
 kitty_install() {
     echo_installing 'Installing kitty'
-    apt_get_install 'kitty'
+    apt_install 'kitty'
     echo_installing 'kitty installed'
 }
 
@@ -242,7 +242,7 @@ displaylink_driver_install() {
 
 firefox_install() {
     echo_installing 'Installing Firefox'
-    apt_get_install 'firefox'
+    apt_install 'firefox'
     echo_installing 'Firefox installed'
 }
 
@@ -291,7 +291,7 @@ obsidian_install() {
 
 vlc_install() {
     echo_installing 'Installing VLC'
-    apt_get_install 'vlc'
+    apt_install 'vlc'
     echo_installing 'VLC installed'
 }
 
@@ -327,19 +327,19 @@ rustdesk_install() {
 
 gimp_install() {
     echo_installing 'Installing GIMP'
-    apt_get_install 'gimp'
+    apt_install 'gimp'
     echo_installing 'GIMP installed'
 }
 
 wireguard_install() {
     echo_installing 'Installing Wireguard'
-    apt_get_install 'wireguard'
+    apt_install 'wireguard'
     echo_installing 'Wireguard installed'
 }
 
 7zip_install() {
     echo_installing 'Installing 7zip'
-    apt_get_install '7zip'
+    apt_install '7zip'
     echo_installing '7zip installed'
 }
 

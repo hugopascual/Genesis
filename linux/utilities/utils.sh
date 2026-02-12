@@ -67,8 +67,8 @@ check_option_supported() {
 # @Params
 # $1 Name of the apt package software wanted to be installed
 ##
-apt_get_install() {
-    sudo apt-get install -y "$1"
+apt_install() {
+    sudo apt install -y "$1"
 }
 
 ##
@@ -156,6 +156,10 @@ update_apt() {
     sudo apt upgrade -y
     sudo apt autoremove -y
     sudo apt autoclean -y
+    sudo apt-get update -y
+    sudo apt-get upgrade -y
+    sudo apt-get autoremove -y
+    sudo apt-get autoclean -y
     echo_info "APT update finished"
 }
 
