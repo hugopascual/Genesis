@@ -73,6 +73,11 @@ sudo mkdir -p "$WORK_NAS_PATH"
 
 # Already done with the configuration files of the desktop environment
 
+################################################################
+# Startup applications
+
+# Already done with the configuration files of the desktop environment
+
 ################################################################################
 # Other setup configurations
 

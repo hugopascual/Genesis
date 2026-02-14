@@ -80,7 +80,7 @@ vim_install() {
 
 nvim_install() {
     echo_installing 'Installing nvim'
-    apt_install 'nvim'
+    apt_install 'neovim'
     echo_installing 'nvim installed'
 }
 
