@@ -42,6 +42,10 @@ else
     exit 1
 fi
 
+# GNOME network manager integration with openvpn
+apt_install 'network-manager-openvpn-gnome'
+apt_install 'openvpn-systemd-resolved'
+
 #------------------------------- Appearance and general settings
 # Style
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
