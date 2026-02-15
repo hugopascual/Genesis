@@ -47,6 +47,7 @@ export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
 export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"
 
 # Setup paths
+export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export BASE_DEVELOPMENT_PATH="$HOME/devops"
 export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
 export DOCKER_VOLUMES_PATH="$BASE_DEVELOPMENT_PATH/docker_volumes"

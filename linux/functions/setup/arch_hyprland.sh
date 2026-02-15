@@ -62,6 +62,7 @@ pacman_install 'kvantum'
 ################################################################################
 # Create basics folders structure 
 
+mkdir -p "$WINDOWS_APPS_PATH"
 mkdir -p "$REPOSITORIES_PATH"
 mkdir -p "$DOCKER_VOLUMES_PATH"
 rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
