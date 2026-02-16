@@ -204,7 +204,7 @@ jetbrains_toolbox_install() {
     jetbrains_toolbox_folder="jetbrains-toolbox-$version"
     wget -c https://download.jetbrains.com/toolbox/$jetbrains_toolbox_folder.tar.gz
     sudo tar -xzf "$jetbrains_toolbox_folder.tar.gz" -C /opt
-    mv "/opt/$jetbrains_toolbox_folder" "/opt/jetbrains-toolbox"
+    sudo mv "/opt/$jetbrains_toolbox_folder" "/opt/jetbrains-toolbox"
     rm -f "$jetbrains_toolbox_folder.tar.gz"
     echo_installing 'JetBrains Toolbox installed'
 }

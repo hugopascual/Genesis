@@ -199,17 +199,13 @@ vscode_install() {
 jetbrains_toolbox_install() {
     echo_installing 'Installing JetBrains Toolbox'
     # https://www.jetbrains.com/help/idea/installation-guide.html#toolbox
-    # https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
-    ## TODO install for all users
-    ## TODO: improve with the build variable
     sudo apt-get install -y libfuse2
-    jetbrains_toolbox_tar_file="jetbrains-toolbox-2.4.0.32175.tar.gz"
-    wget -c https://download.jetbrains.com/toolbox/$jetbrains_toolbox_tar_file
-    sudo tar -xzf "$jetbrains_toolbox_tar_file" -C /opt
-    descompressed_dir="${jetbrains_toolbox_tar_file: : -7}"
-    sudo /opt/"$descompressed_dir"/jetbrains-toolbox
-    sudo rm -rf /opt/"$descompressed_dir"
-    rm -f "$jetbrains_toolbox_tar_file"
+    version='3.2.0.65851'
+    jetbrains_toolbox_folder="jetbrains-toolbox-$version"
+    wget -c https://download.jetbrains.com/toolbox/$jetbrains_toolbox_folder.tar.gz
+    sudo tar -xzf "$jetbrains_toolbox_folder.tar.gz" -C /opt
+    sudo mv "/opt/$jetbrains_toolbox_folder" "/opt/jetbrains-toolbox"
+    rm -f "$jetbrains_toolbox_folder.tar.gz"
     echo_installing 'JetBrains Toolbox installed'
 }
 
