@@ -1,0 +1,12 @@
+{
+  "description": "Fast file copying tool",
+  "arch": [
+    "sudo pacman -Syu --noconfirm rsync"
+  ],
+  "ubuntu": [
+    "sudo apt install -y rsync"
+  ],
+  "debian": [
+    "sudo apt install -y rsync"
+  ]
+}

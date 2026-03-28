@@ -1,0 +1,14 @@
+{
+  "description": "Minecraft launcher",
+  "arch": [],
+  "ubuntu": [
+    "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+    "sudo apt-get install -y ./*.deb",
+    "rm ./*.deb"
+  ],
+  "debian": [
+    "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+    "sudo apt-get install -y ./*.deb",
+    "rm ./*.deb"
+  ]
+}

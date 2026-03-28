@@ -1,0 +1,12 @@
+{
+  "description": "Google Chrome web browser",
+  "arch": [
+    "yay -Syu --noconfirm google-chrome"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub com.google.Chrome"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub com.google.Chrome"
+  ]
+}

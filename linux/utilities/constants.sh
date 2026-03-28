@@ -12,11 +12,11 @@ export COMMAND_TYPES=(
 )
 
 # Available installation types
-export INSTALL_TYPE_PERSONAL='personal'
+export INSTALL_TYPE_DESKTOP='desktop'
 export INSTALL_TYPE_SERVER='server'
 
 export INSTALL_COMMAND_TYPES=(
-    "$INSTALL_TYPE_PERSONAL" 
+    "$INSTALL_TYPE_DESKTOP" 
     "$INSTALL_TYPE_SERVER"
 )
 
@@ -46,9 +46,27 @@ export INSTALLATION_TYPE_NOT_VALID_MESSAGE="Installation type selected not valid
 export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
 export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"
 
+# Paths constants
+## Basic paths
+export COMMANDS_PATH="$BASE_PATH/commands"
+export CONFIGS_PATHS="$BASE_PATH/configs"
+export FUNCTIONS_PATH="$BASE_PATH/functions"
+export PACKAGES_PATH="$BASE_PATH/packages"
+export UTILITIES_PATH="$BASE_PATH/utilities"
+export STATICS_PATH="$BASE_PATH/statics"
+
+## Functions paths
+export INSTALL_FUNCTIONS_PATH="$FUNCTIONS_PATH/install"
+export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
+export SETUP_FUNCTIONS_PATH="$FUNCTIONS_PATH/setup"
+
+## Installation default configs paths
+export DEFAULT_DEKSTOP_INSTALL_PATH="$CONFIGS_PATHS/default_desktop.txt"
+export DEFAULT_SERVER_INSTALL_PATH="$CONFIGS_PATHS/default_server.txt"
+
 # Setup paths
-export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export VPN_PATH="$HOME/vpns"
+export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export BASE_DEVELOPMENT_PATH="$HOME/devops"
 export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
 export DOCKER_VOLUMES_PATH="/mnt/docker_volumes"

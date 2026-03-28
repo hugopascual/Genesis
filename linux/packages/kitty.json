@@ -1,0 +1,10 @@
+{
+  "description": "GPU-accelerated terminal emulator",
+  "arch": [
+    "sudo pacman -Syu --noconfirm kitty"
+  ],
+  "ubuntu": [
+    "sudo apt install -y kitty"
+  ],
+  "debian": []
+}

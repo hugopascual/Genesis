@@ -1,0 +1,16 @@
+{
+  "description": "Python programming language",
+  "arch": [
+    "sudo pacman -Syu --noconfirm python"
+  ],
+  "ubuntu": [
+    "sudo apt install -y python3",
+    "sudo apt install -y python3-venv",
+    "sudo apt install -y python3-pip"
+  ],
+  "debian": [
+    "sudo apt install -y python3",
+    "sudo apt install -y python3-venv",
+    "sudo apt install -y python3-pip"
+  ]
+}

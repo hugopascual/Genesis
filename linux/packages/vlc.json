@@ -1,0 +1,12 @@
+{
+  "description": "VLC media player",
+  "arch": [
+    "sudo pacman -Syu --noconfirm vlc"
+  ],
+  "ubuntu": [
+    "sudo apt install -y vlc"
+  ],
+  "debian": [
+    "sudo apt install -y vlc"
+  ]
+}

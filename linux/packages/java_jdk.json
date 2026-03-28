@@ -1,0 +1,12 @@
+{
+  "description": "Java Development Kit",
+  "arch": [
+    "sudo pacman -Syu --noconfirm jdk-openjdk"
+  ],
+  "ubuntu": [
+    "sudo apt install -y default-jdk"
+  ],
+  "debian": [
+    "sudo apt install -y default-jdk"
+  ]
+}

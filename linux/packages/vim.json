@@ -1,0 +1,12 @@
+{
+  "description": "Vi IMproved text editor",
+  "arch": [
+    "sudo pacman -Syu --noconfirm vim"
+  ],
+  "ubuntu": [
+    "sudo apt install -y vim"
+  ],
+  "debian": [
+    "sudo apt install -y vim"
+  ]
+}

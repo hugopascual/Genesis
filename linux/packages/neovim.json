@@ -1,0 +1,12 @@
+{
+  "description": "Vim-fork focused on extensibility",
+  "arch": [
+    "sudo pacman -Syu --noconfirm neovim"
+  ],
+  "ubuntu": [
+    "sudo apt install -y neovim"
+  ],
+  "debian": [
+    "sudo apt install -y neovim"
+  ]
+}

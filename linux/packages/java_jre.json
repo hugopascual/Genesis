@@ -1,0 +1,12 @@
+{
+  "description": "Java Runtime Environment",
+  "arch": [
+    "sudo pacman -Syu --noconfirm jre-openjdk"
+  ],
+  "ubuntu": [
+    "sudo apt install -y default-jre"
+  ],
+  "debian": [
+    "sudo apt install -y default-jre"
+  ]
+}

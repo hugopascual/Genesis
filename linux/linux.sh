@@ -6,17 +6,6 @@ full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
 BASE_PATH="$(dirname "$full_path_to_script")"
 export BASE_PATH
 
-# Paths constants
-export COMMANDS_PATH="$BASE_PATH/commands"
-export FUNCTIONS_PATH="$BASE_PATH/functions"
-export UTILITIES_PATH="$BASE_PATH/utilities"
-export STATICS_PATH="$BASE_PATH/statics"
-
-export INSTALL_FUNCTIONS_PATH="$FUNCTIONS_PATH/install"
-export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
-export SETUP_FUNCTIONS_PATH="$FUNCTIONS_PATH/setup"
-
-
 ################################################################################
 ##
 # @Description
@@ -35,7 +24,7 @@ import_from_dir() {
 
 ################################################################################
 ### Imports
-import_from_dir "$UTILITIES_PATH"
+import_from_dir "$BASE_PATH/utilities"
 import_from_dir "$COMMANDS_PATH"
 
 export COMMAND_SELECTED="$1"
@@ -55,9 +44,9 @@ check_option_supported "$DISTRO_SELECTED" \
     "${AVAILABLE_DISTROS[@]}"
 
 # Display options selected and ask for confirmation
-read -p "Are you sure you want to continue? (y/N): " -r ANSWER
+read -p "Are you sure you want to continue? (Y/n): " -r ANSWER
 echo
-if [[ ! $ANSWER =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
+if [[ -n "$ANSWER" && ! $ANSWER =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
     echo_info "Operation cancelled by user"
     exit 1
 fi

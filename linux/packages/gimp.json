@@ -1,0 +1,12 @@
+{
+  "description": "GNU Image Manipulation Program",
+  "arch": [
+    "sudo pacman -Syu --noconfirm gimp"
+  ],
+  "ubuntu": [
+    "sudo apt install -y gimp"
+  ],
+  "debian": [
+    "sudo apt install -y gimp"
+  ]
+}

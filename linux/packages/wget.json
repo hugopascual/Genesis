@@ -1,0 +1,12 @@
+{
+  "description": "Network downloader",
+  "arch": [
+    "sudo pacman -Syu --noconfirm wget"
+  ],
+  "ubuntu": [
+    "sudo apt install -y wget"
+  ],
+  "debian": [
+    "sudo apt install -y wget"
+  ]
+}

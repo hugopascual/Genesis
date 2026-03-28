@@ -1,0 +1,12 @@
+{
+  "description": "GPU process monitoring",
+  "arch": [
+    "sudo pacman -Syu --noconfirm nvtop"
+  ],
+  "ubuntu": [
+    "sudo apt install -y nvtop"
+  ],
+  "debian": [
+    "sudo apt install -y nvtop"
+  ]
+}

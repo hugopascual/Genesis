@@ -1,0 +1,10 @@
+{
+  "description": "AUR helper for Arch Linux",
+  "arch": [
+    "sudo pacman -Syu --noconfirm git",
+    "sudo pacman -Syu --noconfirm base-devel",
+    "git clone https://aur.archlinux.org/yay.git /tmp/yay",
+    "cd /tmp/yay && makepkg -si --noconfirm",
+    "rm -rf /tmp/yay"
+  ]
+}
