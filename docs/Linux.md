@@ -59,7 +59,7 @@ Install dotfiles and desktop environment configurations:
 ./linux/linux.sh setup <distro> <environment>
 ```
 
-### Setup tasks
+### Setup configurations included
 
 - Configure system locales (scripted)
 - Configure desktop environment (scripted)
