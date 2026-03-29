@@ -1,166 +1,47 @@
 # Genesis
 
-Automated installation and configuration system for Linux distributions.
+Automated installation and configuration system for Linux and Windows operating systems.
+
+## Overview
+
+Genesis provides automated scripts to install and configure software packages across different operating systems and distributions. It simplifies the process of setting up new machines with predefined or custom software configurations.
 
 ## Supported Systems
 
-| Distribution | Status | Environments |
-|--------------|--------|--------------|
-| Ubuntu | Working | GNOME |
-| Debian | Working | GNOME |
-| Arch Linux | Working | Hyprland |
+- **Linux**: Ubuntu, Debian, Arch Linux
+- **Windows**: PowerShell-based installation
 
-## Installation
+## Quick Start
 
-### Basic Usage
+### Linux
 
 ```bash
-# Desktop installation
-./linux/linux.sh install <distro> desktop
-
-# Server installation
-./linux/linux.sh install <distro> server
-
-# Custom configuration
-./linux/linux.sh install <distro> <path/to/my_config.txt>
+./linux/linux.sh install <distro> <config>
 ```
 
-**Available distributions**: `ubuntu`, `debian`, `arch`
+### Windows
 
-### Examples
-
-```bash
-# Ubuntu Desktop
-./linux/linux.sh install ubuntu desktop
-
-# Debian Server
-./linux/linux.sh install debian server
-
-# Custom configuration
-./linux/linux.sh install arch configs/my_setup.txt
+```powershell
+powershell -ExecutionPolicy Bypass -File .\windows.ps1
 ```
-
-## Update
-
-Update all system packages:
-
-```bash
-./linux/linux.sh update <distro>
-```
-
-## Environment Setup
-
-Install dotfiles and desktop environment configurations:
-
-```bash
-./linux/linux.sh setup <distro> <environment>
-```
-
-**Available environments**: `gnome` (Ubuntu/Debian), `hyprland` (Arch)
-
-## Adding Software
-
-### 1. Create JSON definition
-
-Create a file in `linux/packages/software_name.json`:
-
-```json
-{
-  "description": "Software description",
-  "arch": ["sudo pacman -Syu --noconfirm package"],
-  "ubuntu": ["sudo apt install -y package"],
-  "debian": ["sudo apt install -y package"]
-}
-```
-
-For complex installations, use multiple commands:
-
-```json
-{
-  "description": "Docker",
-  "ubuntu": [
-    "sudo apt update",
-    "sudo apt install -y ca-certificates curl",
-    "sudo curl -fsSL https://download.docker.com/.../docker.asc -o /etc/apt/keyrings/docker.asc",
-    "sudo apt install -y docker-ce docker-ce-cli containerd.io"
-  ]
-}
-```
-
-### 2. Add to configuration
-
-Add the software name (without .json) to one of these files:
-
-- `linux/configs/default_desktop.txt` - Desktop installation
-- `linux/configs/default_server.txt` - Server installation
-- Your own custom configuration file
-
-Configuration file example:
-
-```txt
-# System
-htop
-neofetch
-
-# Development
-git
-docker
-vscode
-```
-
-## Included Software
-
-### Desktop
-- **System**: htop, tree, rsync, wget, curl, fastfetch
-- **Development**: git, docker, vscode, jetbrains-toolbox, postman
-- **Browsers**: firefox, google-chrome
-- **Communication**: thunderbird, telegram, discord
-- **Media**: vlc, spotify
-- **Utilities**: keepassxc, obsidian
-
-### Server
-- **System**: htop, tree, rsync, wget, curl
-- **Development**: git, docker, vim
-- **Utilities**: tmux, screen
 
 ## Project Structure
 
-```
+```text
 Genesis/
-├── linux/
-│   ├── linux.sh               # Main script
-│   ├── packages/              # Software definitions (JSON)
-│   ├── configs/               # Predefined configurations
-│   │   ├── default_desktop.txt
-│   │   └── default_server.txt
-│   ├── commands/              # Command managers
-│   │   ├── install_manager.sh
-│   │   ├── setup_manager.sh
-│   │   └── update_manager.sh
-│   ├── utilities/             # Utilities and constants
-│   │   ├── utils.sh
-│   │   ├── constants.sh
-│   │   └── help.sh
-│   ├── functions/             # Distribution-specific scripts
-│   │   ├── install/
-│   │   ├── setup/
-│   │   └── update/
-│   └── statics/               # Static configurations (dotfiles)
-│       ├── arch_hyprland/
-│       ├── debian_gnome/
-│       └── ubuntu_gnome/
-├── docs/                      # Documentation
-└── README.md
+├── linux/          # Linux installation scripts and configurations
+├── windows/        # Windows installation scripts
+└── docs/           # Detailed documentation
 ```
 
 ## Documentation
 
-- [Linux](docs/Linux.md) - Detailed usage guide
-- [Ubuntu](docs/linux_distributions/Ubuntu.md)
-- [Debian](docs/linux_distributions/Debian.md)
-- [Arch](docs/linux_distributions/Arch.md)
+- **[Linux](docs/Linux.md)** - Linux installation and configuration guide
+  - [Ubuntu](docs/linux_distributions/Ubuntu.md)
+  - [Debian](docs/linux_distributions/Debian.md)
+  - [Arch](docs/linux_distributions/Arch.md)
+- **[Windows](docs/Windows.md)** - Windows installation and configuration guide
 
 ## License
 
 See [LICENSE](LICENSE) file
-
