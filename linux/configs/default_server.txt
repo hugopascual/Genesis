@@ -1,6 +1,7 @@
+# System
 htop
 tree
-nfs_utils
+nfs
 rename
 rsync
 lshw
@@ -9,11 +10,11 @@ curl
 vim
 neovim
 fastfetch
-nvtop
+
+# Development
 git
-github
 java_jdk
-java_jre
 docker
 lazydocker
-phyton
+python
+nodejs

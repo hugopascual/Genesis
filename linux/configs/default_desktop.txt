@@ -1,6 +1,7 @@
+# System
 htop
 tree
-nfs_utils
+nfs
 rename
 rsync
 lshw
@@ -10,10 +11,11 @@ vim
 neovim
 fastfetch
 nvtop
+
+# Development
 git
-github
+ghcli
 java_jdk
-java_jre
 docker
 lazydocker
 phyton
@@ -21,23 +23,38 @@ nodejs
 vscode
 jetbrains_toolbox
 postman
-raspberry_pi_imager
-openvpn3
-kitty
-display_link_driver
+
+# Browsers
 firefox
+
+# Communication
 thunderbird
+discord
+
+# Media
+vlc
+gimp
+
+# Utilities
+7zip
+kitty
 keepassxc
+obsidian
 autofirma
 config_fnmt
-obsidian
-vlc
-discord
 rustdesk
-gimp
+raspberry_pi_imager
+
+# VPNs
 wireguard
-7zip
+openvpn3
+
+# Drivers
+display_link_driver
+
+# Videogames
 steam
 lutris
 minecraft
+battle.net
 curseforge

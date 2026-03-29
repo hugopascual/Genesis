@@ -43,18 +43,24 @@ Logs are saved in `logs` directory with the following format
 
 #### Desktop
 
-- **System**: htop, tree, rsync, wget, curl, fastfetch
-- **Development**: git, docker, vscode, jetbrains-toolbox, postman
-- **Browsers**: firefox, google-chrome
-- **Communication**: thunderbird, telegram, discord
-- **Media**: vlc, spotify
-- **Utilities**: keepassxc, obsidian
+- **System**: htop, tree, nfs, rename, rsync, lshw, wget, curl, vim, neovim,
+fastfetch, nvtop
+- **Development**: git, ghcli, java_jdk, docker, lazydocker, python, nodejs,
+vscode, jetbrains-toolbox, postman
+- **Browsers**: firefox
+- **Communication**: thunderbird, discord
+- **Media**: vlc, gimp
+- **Utilities**: 7zip, kitty, keepassxc, obsidian, autofirma, config_fnmt,
+rustdesk, raspberry_pi_imager
+- **VPNs**: wireguard, openvpnv3
+- **Drivers**: displaylink
+- **Videogames**: steam, lutris, minecraft, battle.net, curseforge
 
 #### Server
 
-- **System**: htop, tree, rsync, wget, curl
-- **Development**: git, docker, vim
-- **Utilities**: tmux, screen
+- **System**: htop, tree, nfs, rename, rsync, lshw, wget, curl, vim, neovim,
+fastfetch
+- **Development**: git, java_jdk, docker, lazydocker, python, nodejs
 
 ## Update
 
