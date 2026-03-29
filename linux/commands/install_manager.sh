@@ -45,12 +45,12 @@ install_command() {
 run_installation() {
     local config_file="$1"
     
-    echo_info "Using configuration file: $config_file"
+    log_info "Using configuration file: $config_file"
     
     base_install
 
     if ! command -v jq &> /dev/null; then
-        echo_info "Installing jq (required for JSON-based installation)"
+        log_info "Installing jq (required for JSON-based installation)"
         case $DISTRO_SELECTED in
             "$ARCH")
                 sudo pacman -Syu --noconfirm jq
@@ -63,7 +63,7 @@ run_installation() {
     
     install_from_config_file "$config_file" "$DISTRO_SELECTED"
     
-    echo_success "Installation completed"
+    log_info "Installation completed"
 }
 
 ##
@@ -72,7 +72,7 @@ run_installation() {
 # These are distribution-specific packages needed before other installations
 ##
 base_install() {
-    echo_info "Installing base packages for $DISTRO_SELECTED"
+    log_info "Installing base packages for $DISTRO_SELECTED"
     
     case $DISTRO_SELECTED in
         "$ARCH")
@@ -83,7 +83,7 @@ base_install() {
             ;;
     esac
     
-    echo_success "Base packages installation completed"
+    log_info "Base packages installation completed"
 }
 
 ##
@@ -99,12 +99,12 @@ install_from_config_file() {
     local distro="$2"
     
     if [[ ! -f "$config_file" ]]; then
-        echo_info "Error: Config file not found: $config_file"
+        log_info "Error: Config file not found: $config_file"
         return 1
     fi
     
-    echo_info "Installing packages from: $config_file"
-    echo_info "Distribution: $distro"
+    log_info "Installing packages from: $config_file"
+    log_info "Distribution: $distro"
     
     local failed_packages=()
     local installed_count=0
@@ -127,14 +127,14 @@ install_from_config_file() {
         fi
     done < "$config_file"
     
-    echo_success "Installation summary:"
-    echo_success "  Total packages: $total_count"
-    echo_success "  Successfully installed: $installed_count"
+    log_info "Installation summary:"
+    log_info "  Total packages: $total_count"
+    log_info "  Successfully installed: $installed_count"
     
     if [[ ${#failed_packages[@]} -gt 0 ]]; then
-        echo_info "  Failed packages (${#failed_packages[@]}):"
+        log_info "  Failed packages (${#failed_packages[@]}):"
         for pkg in "${failed_packages[@]}"; do
-            echo_info "    - $pkg"
+            log_info "    - $pkg"
         done
         return 1
     fi
@@ -154,18 +154,18 @@ install_software() {
     local software="$1"
     local distro="$2"
     
-    echo_installing "$software"
+    log_info "$software"
     
     # Check if jq is available
     if ! command -v jq &> /dev/null; then
-        echo_info "Error: jq is not installed. Please install jq to use JSON-based installation."
+        log_info "Error: jq is not installed. Please install jq to use JSON-based installation."
         exit 1
     fi
     
     # Build package file path
     local package_file="$PACKAGES_PATH/$software.json"
     if [[ ! -f "$package_file" ]]; then
-        echo_info "Warning: Package definition not found for '$software' in $package_file"
+        log_info "Warning: Package definition not found for '$software' in $package_file"
         return 1
     fi
     
@@ -175,7 +175,7 @@ install_software() {
     
     # Check if commands were found
     if [[ -z "$commands" || "$commands" == "null" || "$commands" == "[]" ]]; then
-        echo_info "Warning: No installation commands found for '$software' on '$distro'"
+        log_info "Warning: No installation commands found for '$software' on '$distro'"
         return 0
     fi
     
@@ -184,7 +184,7 @@ install_software() {
     cmd_count=$(echo "$commands" | jq -r 'length')
     
     if [[ "$cmd_count" -eq 0 ]]; then
-        echo_info "Info: No commands to execute for '$software' (empty array)"
+        log_info "Info: No commands to execute for '$software' (empty array)"
         return 0
     fi
     
@@ -195,9 +195,9 @@ install_software() {
         cmd=$(echo "$commands" | jq -r ".[$index]")
         
         if [[ -n "$cmd" && "$cmd" != "null" ]]; then
-            echo_info "  Executing: $cmd"
+            log_info "  Executing: $cmd"
             if ! eval "$cmd"; then
-                echo_info "Error: Failed to execute command for '$software': $cmd"
+                log_info "Error: Failed to execute command for '$software': $cmd"
                 return 1
             fi
         fi
@@ -205,6 +205,6 @@ install_software() {
         ((index++))
     done
     
-    echo_installed "$software"
+    log_info "$software"
     return 0
 }

@@ -1,41 +1,76 @@
 #!/bin/bash
 
-####################
-#--Echo functions--#
-####################
-# Colors and more
-# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
-BHIGreen='\033[1;92m' # Bold High Intensity Green
-BHIYellow='\033[1;93m' # Bold High Intensity Green
-BHICyan='\033[1;96m' # Bold High Intensity Cyan
-NoColor='\033[0m'
-
-echo_info() {
-    echo -e "${BHICyan}$1${NoColor}"
+######################
+#--Logging Functions--#
+######################
+##
+# @Description
+# Initialize the log file and create logs directory if it doesn't exist
+##
+init_log() {
+    if [[ "${GENESIS_LOG_ENABLED}" != "true" ]]; then
+        return 0
+    fi
+    
+    # Create logs directory if it doesn't exist
+    mkdir -p "$LOGS_PATH"
+    
+    # Initialize log file with header
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    echo "========================================
+Genesis Linux - Log Session Started
+Timestamp: $timestamp
+========================================
+" >> "$LOG_FILE"
 }
 
-echo_success() {
-    echo -e "${BHIGreen}$1${NoColor}"
+##
+# @Description
+# Write a message to the log file with standard format
+# @Params
+# $1 Log level (INFO, SUCCESS, WARNING, ERROR, etc.)
+# $2 Message to log
+##
+log() {
+    if [[ "${GENESIS_LOG_ENABLED}" != "true" ]]; then
+        return 0
+    fi
+    
+    local level="$1"
+    local message="$2"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    local log_text="[$level: $timestamp] $message"
+
+    echo "$log_text"
+    echo "$log_text" >> "$LOG_FILE"
 }
 
-echo_other() {
-    echo -e "${BHIYellow}$1${NoColor}"
+log_severe() {
+    log "$LOG_LEVEL_SEVERE" "$1"
 }
 
-echo_installing() {
-    echo -e "${BHICyan}Installing $1${NoColor}"
+log_warning() {
+    log "$LOG_LEVEL_WARNING" "$1"
 }
 
-echo_installed() {
-    echo -e "${BHIGreen}$1 installed${NoColor}"
+log_info() {
+    log "$LOG_LEVEL_INFO" "$1"
 }
 
-echo_uninstalling() {
-    echo -e "${BHICyan}Uninstalling $1${NoColor}"
+log_config() {
+    log "$LOG_LEVEL_CONFIG" "$1"
 }
 
-echo_uninstalled() {
-    echo -e "${BHIGreen}$1 uninstalled${NoColor}"
+log_fine() {
+    log "$LOG_LEVEL_FINE" "$1"
+}
+
+log_finer() {
+    log "$LOG_LEVEL_FINER" "$1"
+}
+
+log_finest() {
+    log "$LOG_LEVEL_FINEST" "$1"
 }
 
 ###########################
@@ -56,6 +91,66 @@ check_option_supported() {
         echo "$error_message"
         help
     fi
+}
+
+######################
+#--Update Functions--#
+######################
+##
+# @Description
+# Flatpak packages update
+##
+update_flatpak() {
+    log_info "Flatpak update started"
+    sudo flatpak update -y
+    log_info "Flatpak update finished"
+}
+
+##
+# @Description
+# Snap packages update
+##
+update_snap() {
+    log_info "Snap update started"
+    sudo snap refresh
+    log_info "Snap update finished"
+}
+
+##
+# @Description
+# APT packages update and cleanup
+##
+update_apt() {
+    log_info "APT update started"
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
+    sudo apt-get update -y
+    sudo apt-get upgrade -y
+    sudo apt-get autoremove -y
+    sudo apt-get autoclean -y
+    log_info "APT update finished"
+}
+
+##
+# @Description
+# Pacman packages update and cleanup
+##
+update_pacman() {
+    log_info "Pacman update started"
+    sudo pacman -Syu --noconfirm
+    log_info "Pacman update finished"
+}
+
+##
+# @Description
+# AUR packages update and cleanup
+##
+update_yay() {
+    log_info "AUR packages update started"
+    sudo yay -Syu --noconfirm
+    log_info "AUR packages update finished"
 }
 
 ##################################
@@ -121,64 +216,4 @@ deb_download_and_install() {
     wget --content-disposition "$1"
     sudo apt-get install -y ./*.deb
     rm ./*.deb
-}
-
-######################
-#--Update Functions--#
-######################
-##
-# @Description
-# Flatpak packages update
-##
-update_flatpak() {
-    echo_info "Flatpak update started"
-    sudo flatpak update -y
-    echo_info "Flatpak update finished"
-}
-
-##
-# @Description
-# Snap packages update
-##
-update_snap() {
-    echo_info "Snap update started"
-    sudo snap refresh
-    echo_info "Snap update finished"
-}
-
-##
-# @Description
-# APT packages update and cleanup
-##
-update_apt() {
-    echo_info "APT update started"
-    sudo apt update -y
-    sudo apt upgrade -y
-    sudo apt autoremove -y
-    sudo apt autoclean -y
-    sudo apt-get update -y
-    sudo apt-get upgrade -y
-    sudo apt-get autoremove -y
-    sudo apt-get autoclean -y
-    echo_info "APT update finished"
-}
-
-##
-# @Description
-# Pacman packages update and cleanup
-##
-update_pacman() {
-    echo_info "Pacman update started"
-    sudo pacman -Syu --noconfirm
-    echo_info "Pacman update finished"
-}
-
-##
-# @Description
-# AUR packages update and cleanup
-##
-update_yay() {
-    echo_info "AUR packages update started"
-    sudo yay -Syu --noconfirm
-    echo_info "AUR packages update finished"
 }

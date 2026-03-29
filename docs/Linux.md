@@ -26,6 +26,19 @@ docker
 vscode
 ```
 
+### Logs
+
+If logs of the installation process are needed the `GENESIS_LOG_ENABLED`
+environment variable can be set to `true`. By default, logging is disabled.
+
+```bash
+export GENESIS_LOG_ENABLED=true
+./linux/linux.sh install ubuntu desktop
+```
+
+Logs are saved in `logs` directory with the following format
+`genesis_YYYYMMDD_HHMMSS.log`.
+
 ### Default configurations
 
 #### Desktop

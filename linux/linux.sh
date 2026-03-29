@@ -27,13 +27,17 @@ import_from_dir() {
 import_from_dir "$BASE_PATH/utilities"
 import_from_dir "$COMMANDS_PATH"
 
+################################################################################
+### Initialize logging system
+init_log
+
 export COMMAND_SELECTED="$1"
 export DISTRO_SELECTED="$2"
 export OPTION_SELECTED="$3"
 
-echo_info "Command selected: $COMMAND_SELECTED"
-echo_info "Distribution selected: $DISTRO_SELECTED"
-echo_info "Option selected: $OPTION_SELECTED"
+log_info "Command selected: $COMMAND_SELECTED"
+log_info "Distribution selected: $DISTRO_SELECTED"
+log_info "Option selected: $OPTION_SELECTED"
 
 check_option_supported "$COMMAND_SELECTED" \
     "$COMMAND_NOT_VALID_MESSAGE" \
@@ -47,22 +51,22 @@ check_option_supported "$DISTRO_SELECTED" \
 read -p "Are you sure you want to continue? (Y/n): " -r ANSWER
 echo
 if [[ -n "$ANSWER" && ! $ANSWER =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
-    echo_info "Operation cancelled by user"
+    log_info "Operation cancelled by user"
     exit 1
 fi
 
 # Execute routine depending on command
 case $COMMAND_SELECTED in
     "$INSTALL_COMMAND")
-        echo_info "Starting installation for $DISTRO_SELECTED with option $OPTION_SELECTED"
+        log_info "Starting installation for $DISTRO_SELECTED with option $OPTION_SELECTED"
         install_command
         ;;
     "$UPDATE_COMMAND")
-        echo_info "Starting update for $DISTRO_SELECTED"
+        log_info "Starting update for $DISTRO_SELECTED"
         update_command
         ;;
     "$SETUP_COMMAND")
-        echo_info "Starting setup for $DISTRO_SELECTED with option $OPTION_SELECTED"
+        log_info "Starting setup for $DISTRO_SELECTED with option $OPTION_SELECTED"
         setup_command
         ;;
     *)
@@ -70,3 +74,10 @@ case $COMMAND_SELECTED in
         help
         ;;
 esac
+
+################################################################################
+### Display log file location
+if [[ "${GENESIS_LOG_ENABLED}" == "true" ]]; then
+    log_info "Execution completed!"
+    log_info "Log file saved at: $LOG_FILE"
+fi

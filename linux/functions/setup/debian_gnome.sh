@@ -30,13 +30,13 @@ localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 # Configure desktop environment
 
 # GNOME
-echo_info "Starting GNOME setup"
+log_info "Starting GNOME setup"
 #------------------------------- Installation
-echo_info 'Checking if GNOME is installed...'
+log_info 'Checking if GNOME is installed...'
 if command -v gnome-shell >/dev/null 2>&1; then
-    echo_info "GNOME is installed"
+    log_info "GNOME is installed"
 else
-    echo_info "GNOME not installed"
+    log_info "GNOME not installed"
     exit 1
 fi
 
@@ -77,7 +77,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
 #------------------------------- END
-echo_success "Setup finished"
+log_info "Setup finished"
 
 
 # Copy configuration folders
