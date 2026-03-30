@@ -1,5 +1,5 @@
 {
-  "description": "Terminal UI for docker",
+  "description": "TUI for docker",
   "arch": [
     "yay -Syu --noconfirm lazydocker"
   ],

@@ -1,8 +1,12 @@
 {
   "description": "Application deployment framework",
+  "arch": [
+    "sudo pacman -Syu --noconfirm flatpak",
+    "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+  ],
   "ubuntu": [
     "sudo apt install -y flatpak",
-    "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+    "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
   ],
   "debian": [
     "sudo apt-get install -y flatpak",

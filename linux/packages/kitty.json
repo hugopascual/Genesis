@@ -6,5 +6,7 @@
   "ubuntu": [
     "sudo apt install -y kitty"
   ],
-  "debian": []
+  "debian": [
+    "sudo apt install -y kitty"
+  ]
 }
