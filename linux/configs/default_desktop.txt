@@ -18,7 +18,7 @@ ghcli
 java_jdk
 docker
 lazydocker
-phyton
+python
 nodejs
 vscode
 jetbrains_toolbox
@@ -56,5 +56,4 @@ display_link_driver
 steam
 lutris
 minecraft
-battle.net
 curseforge

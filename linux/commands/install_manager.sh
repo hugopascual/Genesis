@@ -13,6 +13,7 @@ install_command() {
     
     if [[ -f "$OPTION_SELECTED" ]]; then
         config_file="$OPTION_SELECTED"
+        local is_default=0
     else
         check_option_supported "$OPTION_SELECTED" \
             "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
@@ -30,10 +31,11 @@ install_command() {
                 exit 1
                 ;;
         esac
+        local is_default=1
     fi
     
     # Execute installation with determined config file
-    run_installation "$config_file"
+    run_installation "$config_file" $is_default
 }
 
 ##
@@ -44,10 +46,13 @@ install_command() {
 ##
 run_installation() {
     local config_file="$1"
+    local is_default=$2
     
     log_info "Using configuration file: $config_file"
     
-    base_install
+    if [ $is_default == 1 ] ; then
+        base_install
+    fi
 
     if ! command -v jq &> /dev/null; then
         log_info "Installing jq (required for JSON-based installation)"
