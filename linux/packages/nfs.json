@@ -1,0 +1,12 @@
+{
+  "description": "NFS utilities",
+  "arch": [
+    "sudo pacman -Syu --noconfirm nfs-utils"
+  ],
+  "ubuntu": [
+    "sudo apt install -y nfs-common"
+  ],
+  "debian": [
+    "sudo apt install -y nfs-common"
+  ]
+}

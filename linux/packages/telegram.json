@@ -1,0 +1,12 @@
+{
+  "description": "Telegram messaging app",
+  "arch": [
+    "sudo pacman -Syu --noconfirm telegram-desktop"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub org.telegram.desktop"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub org.telegram.desktop"
+  ]
+}

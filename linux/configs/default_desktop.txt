@@ -1,0 +1,59 @@
+# System
+htop
+tree
+nfs
+rename
+rsync
+lshw
+wget
+curl
+vim
+neovim
+fastfetch
+nvtop
+
+# Development
+git
+ghcli
+java_jdk
+docker
+lazydocker
+python
+nodejs
+vscode
+jetbrains_toolbox
+postman
+
+# Browsers
+firefox
+
+# Communication
+thunderbird
+discord
+
+# Media
+vlc
+gimp
+
+# Utilities
+7zip
+kitty
+keepassxc
+obsidian
+autofirma
+config_fnmt
+rustdesk
+raspberry_pi_imager
+
+# VPNs
+wireguard
+openvpn3
+
+# Drivers
+display_link_driver
+
+# Videogames
+steam
+lutris
+minecraft
+curseforge

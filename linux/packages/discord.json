@@ -1,0 +1,16 @@
+{
+  "description": "Discord communication platform",
+  "arch": [
+    "sudo pacman -Syu --noconfirm discord"
+  ],
+  "ubuntu": [
+    "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
+    "sudo apt-get install -y ./*.deb",
+    "rm ./*.deb"
+  ],
+  "debian": [
+    "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
+    "sudo apt-get install -y ./*.deb",
+    "rm ./*.deb"
+  ]
+}

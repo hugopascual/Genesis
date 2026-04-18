@@ -1,0 +1,12 @@
+{
+  "description": "API development platform",
+  "arch": [
+    "yay -Syu --noconfirm postman-bin"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub com.getpostman.Postman"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub com.getpostman.Postman"
+  ]
+}

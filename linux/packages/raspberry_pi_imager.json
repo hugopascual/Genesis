@@ -1,0 +1,12 @@
+{
+  "description": "Raspberry Pi Imaging Utility",
+  "arch": [
+    "sudo pacman -Syu --noconfirm rpi-imager"
+  ],
+  "ubuntu": [
+    "sudo apt install -y rpi-imager"
+  ],
+  "debian": [
+    "sudo apt install -y rpi-imager"
+  ]
+}

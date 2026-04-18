@@ -1,0 +1,12 @@
+{
+  "description": "Password manager",
+  "arch": [
+    "sudo pacman -Syu --noconfirm keepassxc"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
+  ]
+}

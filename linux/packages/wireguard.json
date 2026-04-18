@@ -1,0 +1,12 @@
+{
+  "description": "WireGuard VPN",
+  "arch": [
+    "sudo pacman -Syu --noconfirm wireguard-tools"
+  ],
+  "ubuntu": [
+    "sudo apt install -y wireguard"
+  ],
+  "debian": [
+    "sudo apt install -y wireguard"
+  ]
+}

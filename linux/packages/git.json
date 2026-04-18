@@ -1,0 +1,12 @@
+{
+  "description": "Distributed version control system",
+  "arch": [
+    "sudo pacman -Syu --noconfirm git"
+  ],
+  "ubuntu": [
+    "sudo apt install -y git"
+  ],
+  "debian": [
+    "sudo apt install -y git"
+  ]
+}

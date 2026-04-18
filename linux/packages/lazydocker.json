@@ -1,0 +1,14 @@
+{
+  "description": "TUI for docker",
+  "arch": [
+    "yay -Syu --noconfirm lazydocker"
+  ],
+  "ubuntu": [
+    "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
+    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/"
+  ],
+  "debian": [
+    "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
+    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/"
+  ]
+}

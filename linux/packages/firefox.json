@@ -1,0 +1,12 @@
+{
+  "description": "Mozilla Firefox web browser",
+  "arch": [
+    "sudo pacman -Syu --noconfirm firefox"
+  ],
+  "ubuntu": [
+    "sudo apt install -y firefox"
+  ],
+  "debian": [
+    "sudo apt install -y firefox"
+  ]
+}

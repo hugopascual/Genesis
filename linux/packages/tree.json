@@ -1,0 +1,12 @@
+{
+  "description": "Display directory tree",
+  "arch": [
+    "sudo pacman -Syu --noconfirm tree"
+  ],
+  "ubuntu": [
+    "sudo apt install -y tree"
+  ],
+  "debian": [
+    "sudo apt install -y tree"
+  ]
+}

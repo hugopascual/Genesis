@@ -1,0 +1,12 @@
+{
+  "description": "Mozilla Thunderbird email client",
+  "arch": [
+    "sudo pacman -Syu --noconfirm thunderbird"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub org.mozilla.Thunderbird"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub org.mozilla.Thunderbird"
+  ]
+}

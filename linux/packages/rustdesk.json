@@ -1,0 +1,12 @@
+{
+  "description": "Remote desktop software",
+  "arch": [
+    "sudo flatpak install -y flathub com.rustdesk.RustDesk"
+  ],
+  "ubuntu": [
+    "sudo flatpak install -y flathub com.rustdesk.RustDesk"
+  ],
+  "debian": [
+    "sudo flatpak install -y flathub com.rustdesk.RustDesk"
+  ]
+}

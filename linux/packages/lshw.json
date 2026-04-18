@@ -1,0 +1,12 @@
+{
+  "description": "Hardware lister",
+  "arch": [
+    "sudo pacman -Syu --noconfirm lshw"
+  ],
+  "ubuntu": [
+    "sudo apt install -y lshw"
+  ],
+  "debian": [
+    "sudo apt install -y lshw"
+  ]
+}

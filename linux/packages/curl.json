@@ -1,0 +1,12 @@
+{
+  "description": "Transfer data with URLs",
+  "arch": [
+    "sudo pacman -Syu --noconfirm curl"
+  ],
+  "ubuntu": [
+    "sudo apt install -y curl"
+  ],
+  "debian": [
+    "sudo apt install -y curl"
+  ]
+}

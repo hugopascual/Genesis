@@ -1,0 +1,20 @@
+# System
+htop
+tree
+nfs
+rename
+rsync
+lshw
+wget
+curl
+vim
+neovim
+fastfetch
+
+# Development
+git
+java_jdk
+docker
+lazydocker
+python
+nodejs
