@@ -52,8 +52,8 @@ git clone -b fix/v0.14.0 https://github.com/sejjy/mechabar.git "$HOME/.config/wa
 # Dark theme
 pacman_install 'gtk3'
 pacman_install 'gtk4'
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 pacman_install 'qt5ct'
 pacman_install 'qt6ct'

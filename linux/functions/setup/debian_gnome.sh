@@ -12,7 +12,7 @@ sudo sed -i -E 's/^# (es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
 
 sudo locale-gen
 localectl set-locale LANG=en_GB.UTF-8
-localectl set-locale LANGUAGE=en_US.UTF-8
+localectl set-locale LANGUAGE=en_GB.UTF-8
 localectl set-locale LC_CTYPE=es_ES.UTF-8
 localectl set-locale LC_NUMERIC=es_ES.UTF-8
 localectl set-locale LC_TIME=es_ES.UTF-8
@@ -25,7 +25,7 @@ localectl set-locale LC_ADDRESS=es_ES.UTF-8
 localectl set-locale LC_TELEPHONE=es_ES.UTF-8
 localectl set-locale LC_MEASUREMENT=es_ES.UTF-8
 localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
-    
+
 ################################################################################
 # Configure desktop environment
 
@@ -50,9 +50,11 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Background and screensaver
-gsettings set org.gnome.desktop.background picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/screensaver.jpg"
+cp "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$HOME/.config/genesis/background.jpg"
+cp "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$HOME/.config/genesis/screensaver.jpg"
+gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/genesis/background.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.config/genesis/background.jpg"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$HOME/.config/genesis/screensaver.jpg"
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
