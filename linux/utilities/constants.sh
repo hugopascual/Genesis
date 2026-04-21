@@ -73,7 +73,9 @@ export FUNCTIONS_PATH="$BASE_PATH/functions"
 export LOGS_PATH="$BASE_PATH/logs"
 export PACKAGES_PATH="$BASE_PATH/packages"
 export UTILITIES_PATH="$BASE_PATH/utilities"
+### Statis files paths
 export STATICS_PATH="$BASE_PATH/statics"
+export REPOSITORIES_CLONE_SCRIPT_PATH="$STATICS_PATH/clone.sh"
 
 ## Functions paths
 export INSTALL_FUNCTIONS_PATH="$FUNCTIONS_PATH/install"
@@ -92,8 +94,9 @@ export VPN_PATH="$HOME/vpns"
 export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export BASE_DEVELOPMENT_PATH="$HOME/devops"
 export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
-export DOCKER_VOLUMES_PATH="/mnt/docker_volumes"
-export PERSONAL_NAS_PATH="/mnt/nas_personal"
-export WORK_NAS_PATH="/mnt/nas_work"
+export DOCKER_BASE_DEVELOPMENT_PATH="$BASE_DEVELOPMENT_PATH/docker"
+export DOCKER_DEPLOYMENTS_PATH="$DOCKER_BASE_DEVELOPMENT_PATH/deployments"
+export DOCKER_VOLUMES_PATH="$DOCKER_BASE_DEVELOPMENT_PATH/volumes"
+export NFS_SHARE_PATH="$HOME/nfs"
 
 ################################################################################

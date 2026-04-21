@@ -91,12 +91,11 @@ done
 # Create basics folders structure
 
 mkdir -p "$WINDOWS_APPS_PATH"
-mkdir -p "$VPNS_PATH"
 mkdir -p "$REPOSITORIES_PATH"
-rsync -azP --delete --mkpath "$STATICS_PATH/clone.sh" "$REPOSITORIES_PATH/"
-sudo mkdir -p "$DOCKER_VOLUMES_PATH"
-sudo mkdir -p "$PERSONAL_NAS_PATH"
-sudo mkdir -p "$WORK_NAS_PATH"
+mkdir -p "$DOCKER_DEPLOYMENTS_PATH"
+mkdir -p "$DOCKER_VOLUMES_PATH"
+mkdir -p "$NFS_SHARE_PATH"
+rsync -azP --delete --mkpath "$REPOSITORIES_CLONE_SCRIPT_PATH" "$REPOSITORIES_PATH/"
 
 ################################################################
 # Add second keyboard distribution
