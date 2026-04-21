@@ -82,6 +82,7 @@ base_install() {
     case $DISTRO_SELECTED in
         "$ARCH")
             install_software "yay" "$DISTRO_SELECTED"
+            install_software "flatpak" "$DISTRO_SELECTED"
             ;;
         "$UBUNTU"|"$DEBIAN")
             install_software "flatpak" "$DISTRO_SELECTED"
