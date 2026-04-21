@@ -1,0 +1,12 @@
+{
+  "description": "Terminator is a terminal emulator which supports tabs and multiple resizable terminal panels in one window. It is based on GNOME Terminal.",
+  "arch": [
+    "sudo pacman -Syu --noconfirm terminator"
+  ],
+  "ubuntu": [
+    "sudo apt install -y terminator"
+  ],
+  "debian": [
+    "sudo apt install -y terminator"
+  ]
+}

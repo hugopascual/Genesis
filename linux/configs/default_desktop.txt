@@ -38,6 +38,7 @@ gimp
 # Utilities
 7zip
 kitty
+terminator
 keepassxc
 obsidian
 autofirma
