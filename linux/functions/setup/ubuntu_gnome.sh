@@ -52,11 +52,13 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Background and screensaver
-cp "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$HOME/.config/genesis/background.jpg"
-cp "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$HOME/.config/genesis/screensaver.jpg"
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/genesis/background.jpg"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.config/genesis/background.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "file://$HOME/.config/genesis/screensaver.jpg"
+pictures_path="$HOME/genesis/pictures"
+mkdir -p "$pictures_path"
+rsync -azPu "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$pictures_path/background.jpg"
+rsync -azPu "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$pictures_path/screensaver.jpg"
+gsettings set org.gnome.desktop.background picture-uri "file://$pictures_path/background.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$pictures_path/background.jpg"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$pictures_path/screensaver.jpg"
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
