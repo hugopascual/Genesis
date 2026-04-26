@@ -14,7 +14,7 @@ sudo sed -i -E 's/^# (es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
 
 sudo locale-gen
 localectl set-locale LANG=en_GB.UTF-8
-localectl set-locale LANGUAGE=en_GB.UTF-8
+localectl set-locale LANGUAGE=en_US.UTF-8
 localectl set-locale LC_CTYPE=es_ES.UTF-8
 localectl set-locale LC_NUMERIC=es_ES.UTF-8
 localectl set-locale LC_TIME=es_ES.UTF-8
@@ -52,13 +52,9 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Background and screensaver
-pictures_path="$HOME/genesis/pictures"
-mkdir -p "$pictures_path"
-rsync -azPu "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$pictures_path/background.jpg"
-rsync -azPu "$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg" "$pictures_path/screensaver.jpg"
-gsettings set org.gnome.desktop.background picture-uri "file://$pictures_path/background.jpg"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$pictures_path/background.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "file://$pictures_path/screensaver.jpg"
+gsettings set org.gnome.desktop.background picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/background.jpg"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$STATICS_PATH/$DISTRO_PLUS_TYPE/screensaver.jpg"
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
@@ -94,12 +90,7 @@ done
 ################################################################
 # Create basics folders structure
 
-mkdir -p "$WINDOWS_APPS_PATH"
-mkdir -p "$REPOSITORIES_PATH"
-mkdir -p "$DOCKER_DEPLOYMENTS_PATH"
-mkdir -p "$DOCKER_VOLUMES_PATH"
-mkdir -p "$NFS_SHARE_PATH"
-rsync -azP --delete --mkpath "$REPOSITORIES_CLONE_SCRIPT_PATH" "$REPOSITORIES_PATH/"
+folder_structure_creation
 
 ################################################################
 # Add second keyboard distribution
