@@ -10,6 +10,7 @@ help() {
 Usage:  ./linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
         ./linux.sh $UPDATE_COMMAND { DISTRO } 
         ./linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
+        ./linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
 
 where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
         INSTALLATION_TYPE := { ${INSTALL_COMMAND_TYPES[*]} }
@@ -20,10 +21,19 @@ where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
 
         SETUP_TYPE := { ${SETUP_TYPES[*]} }
 
+        NEW_DISTRO := Distribution key to add in all packages
+            - Example: arch
+
+        BASE_COMMAND := Base install command for the new distro
+            - Use \{package\} as placeholder (recommended)
+            - If \{package\} is not present, package name is appended at the end
+            - Example: "sudo pacman -Syu --noconfirm \{package\}"
+
 Examples:
-  ./linux.sh install arch desktop
-  ./linux.sh install ubuntu configs/custom.txt
-  ./linux.sh update debian
+    ./linux.sh install arch desktop
+    ./linux.sh install ubuntu configs/custom.txt
+    ./linux.sh update debian
+    ./linux.sh add-distro arch "sudo pacman -Syu --noconfirm \{package\}"
 "
     exit 1
 }

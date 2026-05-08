@@ -17,6 +17,9 @@ Genesis provides automated scripts to install and configure software packages ac
 
 ```bash
 ./linux/linux.sh install <distro> <config>
+./linux/linux.sh update <distro>
+./linux/linux.sh setup <distro> <environment>
+./linux/linux.sh add-distro <new_distro> "<base_command>"
 ```
 
 ### Windows

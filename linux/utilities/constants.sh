@@ -19,11 +19,13 @@ export LOG_LEVEL_FINEST="FINEST"
 export INSTALL_COMMAND='install'
 export UPDATE_COMMAND='update'
 export SETUP_COMMAND='setup'
+export ADD_DISTRO_COMMAND='add-distro'
 
 export COMMAND_TYPES=(
     "$INSTALL_COMMAND" 
     "$UPDATE_COMMAND" 
     "$SETUP_COMMAND"
+    "$ADD_DISTRO_COMMAND"
 )
 
 # Available installation types
@@ -62,6 +64,9 @@ export COMMAND_NOT_VALID_MESSAGE="Command selected not valid"
 export INSTALLATION_TYPE_NOT_VALID_MESSAGE="Installation type selected not valid"
 export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
 export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"
+export NEW_DISTRO_NOT_VALID_MESSAGE="New distribution name not valid"
+export BASE_COMMAND_NOT_VALID_MESSAGE="Base command for new distribution not valid"
+export DISTRO_ALREADY_INCLUDED_MESSAGE="New distribution is already included in package definitions"
 
 ################################################################################
 

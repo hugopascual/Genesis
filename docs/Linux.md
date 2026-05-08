@@ -70,6 +70,25 @@ Update all system packages:
 ./linux/linux.sh update <distro>
 ```
 
+## Add New Distribution Commands To All Packages
+
+Add a new distro key to every JSON file in `linux/packages/` using a base command.
+
+```bash
+./linux/linux.sh add-distro <new_distro> "<base_command>"
+```
+
+Rules:
+
+- Use `\{package\}` as placeholder to inject the JSON filename (without `.json`)
+- If `\{package\}` is not included, package name is appended at the end
+
+Example:
+
+```bash
+./linux/linux.sh add-distro fedora "sudo dnf install -y \{package\}"
+```
+
 ## Environment Setup
 
 Install dotfiles and desktop environment configurations:
