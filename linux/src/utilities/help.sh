@@ -7,10 +7,10 @@
 help() {
     echo \
 "
-Usage:  ./linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
-        ./linux.sh $UPDATE_COMMAND { DISTRO } 
-        ./linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
-        ./linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
+Usage:  ./linux/linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
+    ./linux/linux.sh $UPDATE_COMMAND { DISTRO } 
+    ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
+    ./linux/linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
 
 where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
         INSTALLATION_TYPE := { ${INSTALL_COMMAND_TYPES[*]} }
@@ -30,10 +30,10 @@ where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
             - Example: "sudo pacman -Syu --noconfirm \{package\}"
 
 Examples:
-    ./linux.sh install arch desktop
-    ./linux.sh install ubuntu configs/custom.txt
-    ./linux.sh update debian
-    ./linux.sh add-distro arch "sudo pacman -Syu --noconfirm \{package\}"
+    ./linux/linux.sh install arch desktop
+    ./linux/linux.sh install ubuntu configs/custom.txt
+    ./linux/linux.sh update debian
+    ./linux/linux.sh add-distro arch "sudo pacman -Syu --noconfirm \{package\}"
 "
     exit 1
 }

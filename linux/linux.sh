@@ -4,12 +4,15 @@
 # Get the path to the main directory.
 full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
 BASE_PATH="$(dirname "$full_path_to_script")"
+SRC_PATH="$BASE_PATH/src"
+
 export BASE_PATH
+export SRC_PATH
 
 ################################################################################
 ##
 # @Description
-# Import all the scripts from the objective folder
+# Import all the scripts recursively from the objective folder
 # @Parameters
 # $1 Directory to import scripts from
 ##
@@ -24,8 +27,7 @@ import_from_dir() {
 
 ################################################################################
 ### Imports
-import_from_dir "$BASE_PATH/utilities"
-import_from_dir "$COMMANDS_PATH"
+import_from_dir "$SRC_PATH"
 
 ################################################################################
 ### Initialize logging system

@@ -32,7 +32,12 @@ powershell -ExecutionPolicy Bypass -File .\windows.ps1
 
 ```text
 Genesis/
-├── linux/          # Linux installation scripts and configurations
+├── linux/          # Linux entrypoint, source code and configurations
+│   ├── linux.sh
+│   ├── src/
+│   ├── configs/
+│   ├── packages/
+│   └── statics/
 ├── windows/        # Windows installation scripts
 └── docs/           # Detailed documentation
 ```
