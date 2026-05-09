@@ -27,13 +27,13 @@ where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
         BASE_COMMAND := Base install command for the new distro
             - Use \{package\} as placeholder (recommended)
             - If \{package\} is not present, package name is appended at the end
-            - Example: "sudo pacman -Syu --noconfirm \{package\}"
+            - Example: \"sudo pacman -Syu --noconfirm \{package\}\"
 
 Examples:
     ./linux/linux.sh install arch desktop
     ./linux/linux.sh install ubuntu configs/custom.txt
     ./linux/linux.sh update debian
-    ./linux/linux.sh add-distro arch "sudo pacman -Syu --noconfirm \{package\}"
+    ./linux/linux.sh add-distro arch \"sudo pacman -Syu --noconfirm \{package\}\"
 "
     exit 1
 }
