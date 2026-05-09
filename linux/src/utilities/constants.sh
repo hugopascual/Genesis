@@ -79,15 +79,15 @@ export REPOSITORIES_CLONE_SCRIPT_PATH="$STATICS_PATH/clone.sh"
 ## src paths
 export COMMANDS_PATH="$SRC_PATH/commands"
 export CONFIG_PATH="$SRC_PATH/config"
-export FUNCTIONS_PATH="$SRC_PATH/functions"
+export SCRIPTS_PATH="$SRC_PATH/scripts"
 export UTILITIES_PATH="$SRC_PATH/utilities"
 
 ### config paths
-export AVAILABLE_DISTROS_FILEPATH="$SRC_PATH/config/available_distros.txt"
+export AVAILABLE_DISTROS_FILEPATH="$CONFIG_PATH/available_distros.txt"
 
 ### Functions paths
-export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
-export SETUP_FUNCTIONS_PATH="$FUNCTIONS_PATH/setup"
+export UPDATE_SCRIPTS_PATH="$SCRIPTS_PATH/update"
+export SETUP_SCRIPTS_PATH="$SCRIPTS_PATH/setup"
 
 ################################################################################
 

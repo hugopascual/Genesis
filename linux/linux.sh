@@ -27,7 +27,8 @@ import_from_dir() {
 
 ################################################################################
 ### Imports
-import_from_dir "$SRC_PATH"
+import_from_dir "$SRC_PATH/utilities"
+import_from_dir "$COMMANDS_PATH"
 
 ################################################################################
 ### Initialize logging system
