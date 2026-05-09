@@ -28,9 +28,7 @@ vscode
 
 ### Logs
 
-If logs of the installation process are needed the `GENESIS_LOG_ENABLED`
-environment variable can be set to `true`. By default, saving logs in file is
-disabled.
+If logs of the installation process are needed the `GENESIS_LOG_ENABLED` environment variable can be set to `true` or `false`. By default, saving logs in file is enabled.
 
 ```bash
 export GENESIS_LOG_ENABLED=true
