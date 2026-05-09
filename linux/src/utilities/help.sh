@@ -8,9 +8,9 @@ help() {
     echo \
 "
 Usage:  ./linux/linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
-    ./linux/linux.sh $UPDATE_COMMAND { DISTRO } 
-    ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
-    ./linux/linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
+        ./linux/linux.sh $UPDATE_COMMAND { DISTRO } 
+        ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
+        ./linux/linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
 
 where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
         INSTALLATION_TYPE := { ${INSTALL_COMMAND_TYPES[*]} }
