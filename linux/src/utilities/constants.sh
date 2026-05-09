@@ -83,7 +83,7 @@ export FUNCTIONS_PATH="$SRC_PATH/functions"
 export UTILITIES_PATH="$SRC_PATH/utilities"
 
 ### config paths
-
+export AVAILABLE_DISTROS_FILEPATH="$SRC_PATH/config/available_distros.txt"
 
 ### Functions paths
 export UPDATE_FUNCTIONS_PATH="$FUNCTIONS_PATH/update"
@@ -104,8 +104,6 @@ export NFS_SHARE_PATH="$HOME/nfs"
 ################################################################################
 
 # Load available distros
-export AVAILABLE_DISTROS_FILEPATH="$BASE_PATH/configs/available_distros.txt"
-
 load_available_distros() {
     local distros=()
 

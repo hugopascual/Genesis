@@ -80,5 +80,27 @@ add_distro_command() {
         return 1
     fi
 
+    if ! register_distro_in_config "$new_distro"; then
+        return 1
+    fi
+
+    return 0
+}
+
+##
+# @Description
+# Add distro to available_distros config file if not present.
+# @Params
+# $1 Distro key to register
+##
+register_distro_in_config() {
+    local new_distro="$1"
+
+    if ! printf '%s\n' "$new_distro" >> "$AVAILABLE_DISTROS_FILEPATH"; then
+        log_info "Error: Failed to update distros config file: $AVAILABLE_DISTROS_FILEPATH"
+        return 1
+    fi
+
+    log_info "Added '$new_distro' to $AVAILABLE_DISTROS_FILEPATH"
     return 0
 }
