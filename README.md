@@ -35,7 +35,7 @@ Genesis/
 ├── linux/          # Linux entrypoint, source code and configurations
 │   ├── linux.sh
 │   ├── src/
-│   ├── configs/
+│   ├── install_configs/
 │   ├── packages/
 │   └── statics/
 ├── windows/        # Windows installation scripts
