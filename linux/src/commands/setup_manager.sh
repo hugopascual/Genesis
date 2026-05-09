@@ -13,5 +13,5 @@ setup_command() {
 
     log_info "Starting setup for $DISTRO_PLUS_TYPE"
     # shellcheck disable=SC1090
-    source "$SETUP_FUNCTIONS_PATH/$DISTRO_PLUS_TYPE.sh"
+    source "$SETUP_SCRIPTS_PATH/$DISTRO_PLUS_TYPE.sh"
 }

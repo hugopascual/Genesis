@@ -17,6 +17,9 @@ Genesis provides automated scripts to install and configure software packages ac
 
 ```bash
 ./linux/linux.sh install <distro> <config>
+./linux/linux.sh update <distro>
+./linux/linux.sh setup <distro> <environment>
+./linux/linux.sh add-distro <new_distro> "<base_command>"
 ```
 
 ### Windows
@@ -29,7 +32,12 @@ powershell -ExecutionPolicy Bypass -File .\windows.ps1
 
 ```text
 Genesis/
-├── linux/          # Linux installation scripts and configurations
+├── linux/          # Linux entrypoint, source code and configurations
+│   ├── linux.sh
+│   ├── src/
+│   ├── install_configs/
+│   ├── packages/
+│   └── statics/
 ├── windows/        # Windows installation scripts
 └── docs/           # Detailed documentation
 ```

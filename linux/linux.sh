@@ -4,12 +4,15 @@
 # Get the path to the main directory.
 full_path_to_script="$(realpath "${BASH_SOURCE[0]}")"
 BASE_PATH="$(dirname "$full_path_to_script")"
+SRC_PATH="$BASE_PATH/src"
+
 export BASE_PATH
+export SRC_PATH
 
 ################################################################################
 ##
 # @Description
-# Import all the scripts from the objective folder
+# Import all the scripts recursively from the objective folder
 # @Parameters
 # $1 Directory to import scripts from
 ##
@@ -24,7 +27,7 @@ import_from_dir() {
 
 ################################################################################
 ### Imports
-import_from_dir "$BASE_PATH/utilities"
+import_from_dir "$SRC_PATH/utilities"
 import_from_dir "$COMMANDS_PATH"
 
 ################################################################################
@@ -43,9 +46,18 @@ check_option_supported "$COMMAND_SELECTED" \
     "$COMMAND_NOT_VALID_MESSAGE" \
     "${COMMAND_TYPES[@]}" 
 
-check_option_supported "$DISTRO_SELECTED" \
-    "$DISTRIBUTION_NOT_VALID_MESSAGE" \
-    "${AVAILABLE_DISTROS[@]}"
+case $COMMAND_SELECTED in
+    "$INSTALL_COMMAND"|"$UPDATE_COMMAND"|"$SETUP_COMMAND")
+        check_option_supported "$DISTRO_SELECTED" \
+            "$DISTRIBUTION_NOT_VALID_MESSAGE" \
+            "${AVAILABLE_DISTROS[@]}"
+        ;;
+    "$ADD_DISTRO_COMMAND")
+        check_required_value "$DISTRO_SELECTED" "$NEW_DISTRO_NOT_VALID_MESSAGE"
+        check_required_value "$OPTION_SELECTED" "$BASE_COMMAND_NOT_VALID_MESSAGE"
+        check_distro_not_included_in_packages "$DISTRO_SELECTED"
+        ;;
+esac
 
 # Display options selected and ask for confirmation
 read -p "Are you sure you want to continue? (Y/n): " -r ANSWER
@@ -68,6 +80,10 @@ case $COMMAND_SELECTED in
     "$SETUP_COMMAND")
         log_info "Starting setup for $DISTRO_SELECTED with option $OPTION_SELECTED"
         setup_command
+        ;;
+    "$ADD_DISTRO_COMMAND")
+        log_info "Adding new distro '$DISTRO_SELECTED' to all packages"
+        add_distro_command
         ;;
     *)
         echo "$COMMAND_NOT_VALID_MESSAGE"

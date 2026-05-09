@@ -214,3 +214,69 @@ install_software() {
     log_info "$software"
     return 0
 }
+
+# TODO: Probably this is legacy code
+##################################
+#--Generic Installing Functions--#
+##################################
+##
+# @Description
+# Install a software package using apt-get
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+apt_install() {
+    sudo apt install -y "$1"
+}
+
+##
+# @Description
+# Install a software package using pacman
+# @Params
+# $1 Name of the pacman package software wanted to be installed
+##
+pacman_install() {
+    sudo pacman -Syu --noconfirm "$1"
+}
+
+##
+# @Description
+# Install a software package using yay
+# @Params
+# $1 Name of the yay package software wanted to be installed
+##
+yay_install() {
+    yay -Syu --noconfirm "$1"
+}
+
+##
+# @Description
+# Install a software package from flathub via flatpak
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+flathub_install() {
+    sudo flatpak install -y flathub "$1"
+}
+
+##
+# @Description
+# Install a software package via snap
+# @Params
+# $1 Name of the apt package software wanted to be installed
+##
+snap_install() {
+    sudo snap install "$1"
+}
+
+##
+# @Description
+# Install a software package downloading the deb package
+# @Params
+# $1 URL of deb package to install
+##
+deb_download_and_install() {
+    wget --content-disposition "$1"
+    sudo apt-get install -y ./*.deb
+    rm ./*.deb
+}

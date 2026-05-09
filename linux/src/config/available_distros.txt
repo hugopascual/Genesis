@@ -1,0 +1,5 @@
+# Valid Linux distributions for Genesis commands.
+# One distro key per line.
+ubuntu
+debian
+arch
