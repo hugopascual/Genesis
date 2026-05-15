@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y wireguard"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} wireguard"
   ]
 }

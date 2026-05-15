@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y htop"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} htop"
   ]
 }

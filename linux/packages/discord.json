@@ -12,5 +12,8 @@
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
     "sudo apt-get install -y ./*.deb",
     "rm ./*.deb"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} discord"
   ]
 }

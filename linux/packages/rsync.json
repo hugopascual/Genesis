@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y rsync"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} rsync"
   ]
 }

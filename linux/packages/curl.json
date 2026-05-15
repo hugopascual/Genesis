@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y curl"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} curl"
   ]
 }

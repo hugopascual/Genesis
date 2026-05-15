@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo flatpak install flathub --user -y net.lutris.Lutris"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} lutris"
   ]
 }

@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} rustdesk"
   ]
 }

@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y nfs-common"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} nfs"
   ]
 }

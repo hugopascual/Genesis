@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y git"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} git"
   ]
 }

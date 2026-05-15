@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y gimp"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} gimp"
   ]
 }

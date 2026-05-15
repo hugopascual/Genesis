@@ -8,5 +8,8 @@
   ],
   "debian": [
     "sudo apt install -y vlc"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y \\{package\\} vlc"
   ]
 }
