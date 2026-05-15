@@ -12,6 +12,8 @@
     "rm ./*.deb"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} minecraft"
+    "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+    "sudo apt-get install -y ./*.deb",
+    "rm ./*.deb"
   ]
 }

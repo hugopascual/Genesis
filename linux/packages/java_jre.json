@@ -10,6 +10,6 @@
     "sudo apt install -y default-jre"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} java_jre"
+    "sudo apt install -y java_jre"
   ]
 }

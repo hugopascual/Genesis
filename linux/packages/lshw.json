@@ -10,6 +10,6 @@
     "sudo apt install -y lshw"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} lshw"
+    "sudo apt install -y lshw"
   ]
 }

@@ -18,6 +18,10 @@
     "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} jetbrains_toolbox"
+    "sudo apt-get install -y libfuse2",
+    "wget -c https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.2.0.65851.tar.gz",
+    "sudo tar -xzf jetbrains-toolbox-3.2.0.65851.tar.gz -C /opt",
+    "sudo mv /opt/jetbrains-toolbox-3.2.0.65851 /opt/jetbrains-toolbox",
+    "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
   ]
 }

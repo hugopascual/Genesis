@@ -10,6 +10,6 @@
     "sudo apt install -y vim"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} vim"
+    "sudo apt install -y vim"
   ]
 }

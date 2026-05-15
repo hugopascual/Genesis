@@ -10,6 +10,6 @@
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} postman"
+    "sudo flatpak install -y flathub com.getpostman.Postman"
   ]
 }

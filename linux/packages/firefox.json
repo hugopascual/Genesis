@@ -10,6 +10,6 @@
     "sudo apt install -y firefox"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} firefox"
+    "sudo apt install -y firefox"
   ]
 }

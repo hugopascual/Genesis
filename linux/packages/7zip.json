@@ -10,6 +10,6 @@
     "sudo apt install -y 7zip"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} 7zip"
+    "sudo apt install -y 7zip"
   ]
 }

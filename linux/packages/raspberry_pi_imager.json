@@ -10,6 +10,6 @@
     "sudo apt install -y rpi-imager"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} raspberry_pi_imager"
+    "sudo apt install -y rpi-imager"
   ]
 }

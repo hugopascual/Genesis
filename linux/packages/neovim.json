@@ -10,6 +10,6 @@
     "sudo apt install -y neovim"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} neovim"
+    "sudo apt install -y neovim"
   ]
 }

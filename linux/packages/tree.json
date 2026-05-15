@@ -10,6 +10,6 @@
     "sudo apt install -y tree"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} tree"
+    "sudo apt install -y tree"
   ]
 }

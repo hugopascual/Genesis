@@ -10,6 +10,6 @@
     "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} keepassxc"
+    "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
   ]
 }

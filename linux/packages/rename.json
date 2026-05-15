@@ -10,6 +10,6 @@
     "sudo apt install -y rename"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} rename"
+    "sudo apt install -y rename"
   ]
 }

@@ -10,6 +10,6 @@
     "sudo apt install -y kitty"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} kitty"
+    "sudo apt install -y kitty"
   ]
 }

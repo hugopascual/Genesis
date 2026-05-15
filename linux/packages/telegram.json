@@ -10,6 +10,6 @@
     "sudo flatpak install -y flathub org.telegram.desktop"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} telegram"
+    "sudo flatpak install -y flathub org.telegram.desktop"
   ]
 }

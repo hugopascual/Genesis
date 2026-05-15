@@ -14,6 +14,8 @@
     "rm configuradorfnmt*"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} config_fnmt"
+    "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
+    "sudo apt install -y ./configuradorfnmt*",
+    "rm configuradorfnmt*"
   ]
 }

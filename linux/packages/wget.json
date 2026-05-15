@@ -10,6 +10,6 @@
     "sudo apt install -y wget"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} wget"
+    "sudo apt install -y wget"
   ]
 }

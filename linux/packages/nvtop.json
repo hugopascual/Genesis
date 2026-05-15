@@ -10,6 +10,6 @@
     "sudo apt install -y nvtop"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} nvtop"
+    "sudo apt install -y nvtop"
   ]
 }

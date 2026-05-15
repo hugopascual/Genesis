@@ -16,6 +16,9 @@
     "rm Autofirma*"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} autofirma"
+    "curl -OL https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip",
+    "unzip Autofirma_Linux_Debian.zip",
+    "sudo apt install -y ./*.deb",
+    "rm Autofirma*"
   ]
 }

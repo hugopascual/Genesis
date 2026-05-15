@@ -10,6 +10,6 @@
     "sudo apt install -y terminator"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} terminator"
+    "sudo apt install -y terminator"
   ]
 }
