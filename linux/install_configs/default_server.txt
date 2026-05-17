@@ -1,20 +1,21 @@
 # System
+curl
 htop
-tree
+fastfetch
+lshw
+neovim
 nfs
+tree
 rename
 rsync
-lshw
 wget
-curl
 vim
-neovim
-fastfetch
 
 # Development
+docker
 git
 java_jdk
-docker
 lazydocker
-python
 nodejs
+python
+
