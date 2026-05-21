@@ -67,8 +67,8 @@ export PACKAGES_PATH="$BASE_PATH/packages"
 export STATICS_PATH="$BASE_PATH/statics"
 
 ### Installation configs paths
-export DEFAULT_DEKSTOP_INSTALL_PATH="$INSTALL_CONFIGS_PATH/default_desktop.txt"
-export DEFAULT_SERVER_INSTALL_PATH="$INSTALL_CONFIGS_PATH/default_server.txt"
+export DEFAULT_DEKSTOP_INSTALL_PATH="$INSTALL_CONFIGS_PATH/desktop.txt"
+export DEFAULT_SERVER_INSTALL_PATH="$INSTALL_CONFIGS_PATH/server.txt"
 
 ### Logs paths
 export LOG_FILE="$LOGS_PATH/genesis_$(date +%Y%m%d_%H%M%S).log"
