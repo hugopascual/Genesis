@@ -3,15 +3,20 @@
   "arch": [],
   "ubuntu": [
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "debian": [
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} steam"
+    "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
+    "rm ./*.deb"
   ]
 }

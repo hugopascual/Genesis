@@ -4,6 +4,7 @@
     "yay -Syu --noconfirm openvpn3"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y apt-transport-https curl",
     "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
     "DISTRO=$(lsb_release -c -s)",
@@ -12,6 +13,7 @@
     "sudo apt install -y openvpn3"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y apt-transport-https curl",
     "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
     "DISTRO=$(lsb_release -c -s)",
@@ -20,6 +22,12 @@
     "sudo apt install -y openvpn3"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} openvpn3"
+    "sudo apt update",
+    "sudo apt install -y apt-transport-https curl",
+    "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
+    "DISTRO=$(lsb_release -c -s)",
+    "echo \"deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main\" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list",
+    "sudo apt update",
+    "sudo apt install -y openvpn3"
   ]
 }

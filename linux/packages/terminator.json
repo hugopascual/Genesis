@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm terminator"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y terminator"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y terminator"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} terminator"
+    "sudo apt update",
+    "sudo apt install -y terminator"
   ]
 }

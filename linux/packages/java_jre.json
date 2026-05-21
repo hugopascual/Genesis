@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm jre-openjdk"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y default-jre"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y default-jre"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} java_jre"
+    "sudo apt update",
+    "sudo apt install -y default-jre"
   ]
 }

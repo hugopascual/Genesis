@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm rsync"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y rsync"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y rsync"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} rsync"
+    "sudo apt update",
+    "sudo apt install -y rsync"
   ]
 }

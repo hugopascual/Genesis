@@ -10,6 +10,6 @@
     "sudo flatpak install -y flathub com.google.Chrome"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} google_chrome"
+    "sudo flatpak install -y flathub com.google.Chrome"
   ]
 }

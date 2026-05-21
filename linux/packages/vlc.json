@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm vlc"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y vlc"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y vlc"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} vlc"
+    "sudo apt update",
+    "sudo apt install -y vlc"
   ]
 }

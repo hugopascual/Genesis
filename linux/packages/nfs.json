@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm nfs-utils"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y nfs-common"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y nfs-common"
   ],
   "raspberrypi": [
-    "sudo apt install -y \\{package\\} nfs"
+    "sudo apt update",
+    "sudo apt install -y nfs-common"
   ]
 }

@@ -12,7 +12,7 @@ sudo sed -i -E 's/^# (es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
 
 sudo locale-gen
 localectl set-locale LANG=en_GB.UTF-8
-localectl set-locale LANGUAGE=en_US.UTF-8
+localectl set-locale LANGUAGE=en_GB.UTF-8
 localectl set-locale LC_CTYPE=es_ES.UTF-8
 localectl set-locale LC_NUMERIC=es_ES.UTF-8
 localectl set-locale LC_TIME=es_ES.UTF-8
