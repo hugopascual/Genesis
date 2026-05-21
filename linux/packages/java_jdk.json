@@ -10,6 +10,6 @@
     "sudo apt install -y default-jdk"
   ],
   "raspberrypi": [
-    "sudo apt install -y java_jdk"
+    "sudo apt install -y default-jdk"
   ]
 }
