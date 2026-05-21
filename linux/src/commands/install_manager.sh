@@ -13,7 +13,6 @@ install_command() {
     
     if [[ -f "$OPTION_SELECTED" ]]; then
         config_file="$OPTION_SELECTED"
-        local is_default=0
     else
         check_option_supported "$OPTION_SELECTED" \
             "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
@@ -31,11 +30,10 @@ install_command() {
                 exit 1
                 ;;
         esac
-        local is_default=1
     fi
     
     # Execute installation with determined config file
-    run_installation "$config_file" $is_default
+    run_installation "$config_file"
 }
 
 ##
@@ -46,14 +44,9 @@ install_command() {
 ##
 run_installation() {
     local config_file="$1"
-    local is_default=$2
     
     log_info "Using configuration file: $config_file"
     
-    if [ $is_default == 1 ] ; then
-        base_install
-    fi
-
     if ! command -v jq &> /dev/null; then
         log_info "Installing jq (required for JSON-based installation)"
         case $DISTRO_SELECTED in
@@ -69,27 +62,6 @@ run_installation() {
     install_from_config_file "$config_file" "$DISTRO_SELECTED"
     
     log_info "Installation completed"
-}
-
-##
-# @Description
-# Install base packages required for the distribution
-# These are distribution-specific packages needed before other installations
-##
-base_install() {
-    log_info "Installing base packages for $DISTRO_SELECTED"
-    
-    case $DISTRO_SELECTED in
-        "$ARCH")
-            install_software "yay" "$DISTRO_SELECTED"
-            install_software "flatpak" "$DISTRO_SELECTED"
-            ;;
-        "$UBUNTU"|"$DEBIAN")
-            install_software "flatpak" "$DISTRO_SELECTED"
-            ;;
-    esac
-    
-    log_info "Base packages installation completed"
 }
 
 ##
