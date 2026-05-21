@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm git"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y git"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y git"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y git"
   ]
 }

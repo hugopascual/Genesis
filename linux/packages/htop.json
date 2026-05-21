@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm htop"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y htop"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y htop"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y htop"
   ]
 }

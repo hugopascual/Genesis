@@ -5,14 +5,17 @@
   ],
   "ubuntu": [
     "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
-    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/"
+    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+    "sudo apt update"
   ],
   "debian": [
     "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
-    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/"
+    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+    "sudo apt update"
   ],
   "raspberrypi": [
     "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
-    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/"
+    "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+    "sudo apt update"
   ]
 }

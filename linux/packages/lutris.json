@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm lutris"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo flatpak install flathub --user -y net.lutris.Lutris"
   ],
   "debian": [
+    "sudo apt update",
     "sudo flatpak install flathub --user -y net.lutris.Lutris"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo flatpak install flathub --user -y net.lutris.Lutris"
   ]
 }

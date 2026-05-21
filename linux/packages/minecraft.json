@@ -3,17 +3,20 @@
   "arch": [],
   "ubuntu": [
     "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "debian": [
     "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "raspberrypi": [
     "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ]
 }

@@ -5,17 +5,20 @@
   ],
   "ubuntu": [
     "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "debian": [
     "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "raspberrypi": [
     "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt-get install -y ./*.deb",
+    "sudo apt update",
+    "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ]
 }

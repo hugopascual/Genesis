@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm vim"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y vim"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y vim"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y vim"
   ]
 }

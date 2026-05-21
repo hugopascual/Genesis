@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm neovim"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y neovim"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y neovim"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y neovim"
   ]
 }

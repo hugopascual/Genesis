@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm nvtop"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y nvtop"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y nvtop"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y nvtop"
   ]
 }

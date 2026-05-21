@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm lshw"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y lshw"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y lshw"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y lshw"
   ]
 }

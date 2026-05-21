@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm curl"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y curl"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y curl"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y curl"
   ]
 }

@@ -4,12 +4,15 @@
     "sudo pacman -Syu --noconfirm tree"
   ],
   "ubuntu": [
+    "sudo apt update",
     "sudo apt install -y tree"
   ],
   "debian": [
+    "sudo apt update",
     "sudo apt install -y tree"
   ],
   "raspberrypi": [
+    "sudo apt update",
     "sudo apt install -y tree"
   ]
 }
