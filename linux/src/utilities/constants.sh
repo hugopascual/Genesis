@@ -96,9 +96,8 @@ export VPN_PATH="$HOME/vpns"
 export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export BASE_DEVELOPMENT_PATH="$HOME/devops"
 export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
-export DOCKER_BASE_DEVELOPMENT_PATH="$BASE_DEVELOPMENT_PATH/docker"
-export DOCKER_DEPLOYMENTS_PATH="$DOCKER_BASE_DEVELOPMENT_PATH/deployments"
-export DOCKER_VOLUMES_PATH="$DOCKER_BASE_DEVELOPMENT_PATH/volumes"
+export DEPLOYMENTS_BASE_PATH="$BASE_DEVELOPMENT_PATH/deployments"
+export DEPLOYMENTS_VOLUMES_PATH="$DEPLOYMENTS_BASE_PATH/volumes"
 export NFS_SHARE_PATH="$HOME/nfs"
 
 ################################################################################
