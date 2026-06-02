@@ -9,9 +9,7 @@ setup_command() {
         "$SETUP_NOT_VALID_MESSAGE" \
         "${SETUP_TYPES[@]}"
 
-    export DISTRO_PLUS_TYPE="${DISTRO_SELECTED}_${OPTION_SELECTED}"
-
     log_info "Starting setup for $DISTRO_PLUS_TYPE"
     # shellcheck disable=SC1090
-    source "$SETUP_SCRIPTS_PATH/$DISTRO_PLUS_TYPE.sh"
+    source "$SETUP_SCRIPTS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED.sh"
 }

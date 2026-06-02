@@ -38,12 +38,15 @@ export INSTALL_COMMAND_TYPES=(
 )
 
 # Available setup types
+# TODO: How to extract the available types from the actual scripts
 export GNOME='gnome'
 export HYPRLAND='hyprland'
+export SERVER='server'
 
 export SETUP_TYPES=(
     "$GNOME"
     "$HYPRLAND"
+    "$SERVER"
 )
 
 ################################################################################
@@ -88,13 +91,13 @@ export AVAILABLE_DISTROS_FILEPATH="$CONFIG_PATH/available_distros.txt"
 ################################################################################
 
 # Setups folders creation paths
-export VPN_PATH="$HOME/vpns"
-export WINDOWS_APPS_PATH="$HOME/windows_apps"
 export BASE_DEVELOPMENT_PATH="$HOME/devops"
 export REPOSITORIES_PATH="$BASE_DEVELOPMENT_PATH/repos"
 export DEPLOYMENTS_BASE_PATH="$BASE_DEVELOPMENT_PATH/deployments"
 export DEPLOYMENTS_VOLUMES_PATH="$DEPLOYMENTS_BASE_PATH/volumes"
 export NFS_SHARE_PATH="$HOME/nfs"
+export VPN_PATH="$HOME/vpns"
+export WINDOWS_APPS_PATH="$HOME/windows"
 
 ################################################################################
 

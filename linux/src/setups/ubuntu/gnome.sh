@@ -3,8 +3,6 @@
 ################################################################################
 # Configure system locales
 
-# TODO: Modify /etc/locale.gen to include the line es_ES.UTF-8
-
 # Enable en_US.UTF-8 UTF-8 locale
 sudo sed -i -E 's/^# (en_US\.UTF-8 UTF-8)/\1/' /etc/locale.gen
 # Enable en_GB.UTF-8 UTF-8 locale
