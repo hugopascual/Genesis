@@ -1,12 +1,13 @@
 # Package managers
-yay
 flatpak
+yay
 
 # System
 curl
 htop
 fastfetch
 lshw
+make
 neovim
 nfs
 tree

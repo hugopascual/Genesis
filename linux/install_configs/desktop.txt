@@ -1,64 +1,65 @@
 # Package managers
-yay
 flatpak
+yay
 
 # System
+curl
+fastfetch
 htop
-tree
+lshw
+make
+neovim
 nfs
+nvtop
 rename
 rsync
-lshw
-wget
-curl
+tree
 vim
-neovim
-fastfetch
-nvtop
+wget
 
 # Development
+docker
 git
 ghcli
 java_jdk
-docker
-lazydocker
-python
-nodejs
-vscode
 jetbrains_toolbox
+lazydocker
+nodejs
 postman
+python
+vscode
 
 # Browsers
 firefox
 
 # Communication
-thunderbird
 discord
+thunderbird
 
 # Media
-vlc
 gimp
+vlc
 
 # Utilities
 7zip
-kitty
-terminator
-keepassxc
-obsidian
 autofirma
 config_fnmt
+keepassxc
+kitty
+obsidian
 rustdesk
 raspberry_pi_imager
+terminator
 
 # VPNs
-wireguard
 openvpn3
+wireguard
 
 # Drivers
 display_link_driver
 
 # Videogames
-steam
+curseforge
 lutris
 minecraft
-curseforge
+steam
