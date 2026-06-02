@@ -90,7 +90,7 @@ done
 ################################################################
 # Create basics folders structure
 
-folder_structure_creation
+base_folder_structure_creation
 
 ################################################################
 # Add second keyboard distribution
