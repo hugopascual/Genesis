@@ -27,7 +27,7 @@ pacman_install 'hyprctl'
 
 
 # Copy configuration folders
-folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi')
+folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi' 'terminator')
 for folder in "${folders_to_copy[@]}";
 do
     rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
@@ -80,13 +80,8 @@ base_folder_structure_creation
 # Deactivate bluethooth on startup
 sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 
-# Add aliases to .bashrc
-echo \
-"
-alias ll='ls -alF'
-" >> "$HOME/.bashrc"
+## Add aliases to .bashrc
+aliases_setup
 
 ################################################################################
 # Graphics drivers
-
-################################################################################

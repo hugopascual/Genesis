@@ -78,6 +78,7 @@ export LOG_FILE="$LOGS_PATH/genesis_$(date +%Y%m%d_%H%M%S).log"
 
 ### Statis files paths
 export REPOSITORIES_CLONE_SCRIPT_PATH="$STATICS_PATH/clone.sh"
+export ALIASES_DEFINITIONS_FILEPATH="$STATICS_PATH/aliases.txt"
 
 ## src paths
 export COMMANDS_PATH="$SRC_PATH/commands"

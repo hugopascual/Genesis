@@ -1,0 +1,191 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 26:23
+      maximised = False
+      fullscreen = False
+      size = 814, 548
+      title = volundur@brann: ~
+      last_active_term = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+  [[trasgo]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 2560, 1371
+      title = volundur@brann: ~
+      last_active_term = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 1278
+      ratio = 0.5001956947162427
+    [[[child2]]]
+      type = VPaned
+      parent = child1
+      order = 0
+      position = 683
+      ratio = 0.5
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      group = trasgo
+      profile = default
+      uuid = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+      command = ssh k8s@trasgo04.dit.upm.es
+    [[[terminal4]]]
+      type = Terminal
+      parent = child2
+      order = 1
+      group = trasgo
+      profile = default
+      uuid = 5ebb4911-ccbb-45cd-8302-c4364df1b56b
+      command = ssh k8s@trasgo05.dit.upm.es
+    [[[child5]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 683
+      ratio = 0.5
+    [[[child6]]]
+      type = VPaned
+      parent = child5
+      order = 0
+      position = 451
+      ratio = 0.6651917404129793
+    [[[child7]]]
+      type = VPaned
+      parent = child6
+      order = 0
+      position = 218
+      ratio = 0.48878923766816146
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      group = trasgo
+      profile = default
+      uuid = 6e7ce1c9-c99f-4557-9d94-c521e1479246
+      command = ssh k8s@trasgo01.dit.upm.es
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      group = trasgo
+      profile = default
+      uuid = 76039f36-13b3-493d-91c3-4f5dbf919c43
+      command = ssh k8s@trasgo02.dit.upm.es
+    [[[terminal10]]]
+      type = Terminal
+      parent = child6
+      order = 1
+      group = trasgo
+      profile = default
+      uuid = 543a52bd-a5c9-45f5-8cf1-8810b322bcca
+      command = ssh k8s@trasgo03.dit.upm.es
+    [[[child11]]]
+      type = VPaned
+      parent = child5
+      order = 1
+      position = 461
+      ratio = 0.6759530791788856
+    [[[child12]]]
+      type = VPaned
+      parent = child11
+      order = 0
+      position = 222
+      ratio = 0.4868421052631579
+    [[[terminal13]]]
+      type = Terminal
+      parent = child12
+      order = 0
+      group = trasgo
+      profile = default
+      uuid = cbd107f0-d299-4d65-88ce-f81c05704446
+      command = ssh k8s@trasgo06.dit.upm.es
+    [[[terminal14]]]
+      type = Terminal
+      parent = child12
+      order = 1
+      group = trasgo
+      profile = default
+      uuid = f3d38734-996f-428e-83eb-9995287e94cb
+      command = ssh k8s@trasgo07.dit.upm.es
+    [[[terminal15]]]
+      type = Terminal
+      parent = child11
+      order = 1
+      group = trasgo
+      profile = default
+      uuid = 0abc1a5d-86bb-4cd2-a0be-a032c03eee4d
+      command = ssh k8s@trasgo08.dit.upm.es
+  [[raphtory]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 2560, 1371
+      title = volundur@brann: ~
+      last_active_term = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+      last_active_window = True
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 1278
+      ratio = 0.5001956947162427
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      group = raphtory
+      profile = default
+      uuid = 4ab1c516-3cf4-4afb-b29b-5debc00b2a2c
+      command = ssh hugopascual@raphtory01.dit.upm.es
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 683
+      ratio = 0.5
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      group = raphtory
+      profile = default
+      uuid = f55395c8-aa2e-4679-b9e6-5a853a771076
+      command = ssh hugopascual@raphtory02.dit.upm.es
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      group = raphtory
+      profile = default
+      uuid = 1ef9fe87-20a5-459b-a17a-0a0aa5cd131a
+      command = ssh hugopascual@raphtory03.dit.upm.es
+[plugins]

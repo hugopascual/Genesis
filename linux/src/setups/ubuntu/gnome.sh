@@ -79,7 +79,7 @@ gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 log_info "Setup finished"
 
 # Copy configuration folders
-folders_to_copy=('kitty' 'yazi')
+folders_to_copy=('kitty' 'yazi' 'terminator')
 for folder in "${folders_to_copy[@]}";
 do
     rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
@@ -106,12 +106,9 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 
 # .bashrc configuration and customization
 sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
-echo \
-"
-alias ll='ls -alF'
-" >> "$HOME/.bashrc"
+
+## Add aliases to .bashrc
+aliases_setup
 
 ################################################################################
 # Graphics drivers
-
-################################################################################

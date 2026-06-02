@@ -23,3 +23,8 @@ base_folder_structure_creation() {
     mkdir -p "$VPN_PATH"
     mkdir -p "$WINDOWS_APPS_PATH"
 }
+
+aliases_setup(){
+    # Add user setup aliases
+    cat "$ALIASES_DEFINITIONS_FILEPATH" >> "$HOME/.bashrc"
+}

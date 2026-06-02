@@ -20,14 +20,8 @@ base_folder_structure_creation
 ################################################################################
 # Other setup configurations
 
-# .bashrc configuration and customization
-sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
-
-# Add aliases to .bashrc
-echo \
-"
-alias ll='ls -alF'
-" >> "$HOME/.bashrc"
+## Add aliases to .bashrc
+aliases_setup
 
 ################################################################################
 # Graphics drivers
