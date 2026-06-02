@@ -1,0 +1,18 @@
+{
+  "description": "File archiver with high compression ratio",
+  "arch": [
+    "sudo pacman -Syu --noconfirm make"
+  ],
+  "ubuntu": [
+    "sudo apt update",
+    "sudo apt install -y make"
+  ],
+  "debian": [
+    "sudo apt update",
+    "sudo apt install -y make"
+  ],
+  "raspberrypi": [
+    "sudo apt update",
+    "sudo apt install -y make"
+  ]
+}
