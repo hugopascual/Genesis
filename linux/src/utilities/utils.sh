@@ -72,3 +72,18 @@ check_distro_not_included_in_packages() {
         exit 1
     fi
 }
+
+##
+# @Description
+#
+##
+check_command_installed(){
+    command="$1"
+
+    if ! command -v "$command" &> /dev/null; then
+        echo "Command $command not installed"
+        return 1
+    fi
+
+    return 0
+}

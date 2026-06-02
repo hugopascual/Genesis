@@ -2,37 +2,40 @@
 
 ##
 # @Description
-# 
+# General update function
 ##
 update_command() {
     log_info "Starting update for $DISTRO_SELECTED"
-    # shellcheck disable=SC1090
-    source "$UPDATE_SCRIPTS_PATH/${DISTRO_SELECTED}_update.sh"
+
+    # APT
+    if check_command_installed "apt" ; then
+        update_apt
+    fi
+
+    # Snap
+    if check_command_installed "snap" ; then
+        update_snap
+    fi
+
+    # Pacman
+    if check_command_installed "pacman"; then
+        update_pacman
+    fi
+
+    # Yay
+    if check_command_installed "yay"; then
+        update_yay
+    fi
+
+    # Flatpak
+    if check_command_installed "flatpak"; then
+        update_flatpak
+    fi
 }
 
 ######################
 #--Update Functions--#
 ######################
-##
-# @Description
-# Flatpak packages update
-##
-update_flatpak() {
-    log_info "Flatpak update started"
-    sudo flatpak update -y
-    log_info "Flatpak update finished"
-}
-
-##
-# @Description
-# Snap packages update
-##
-update_snap() {
-    log_info "Snap update started"
-    sudo snap refresh
-    log_info "Snap update finished"
-}
-
 ##
 # @Description
 # APT packages update and cleanup
@@ -48,6 +51,16 @@ update_apt() {
     sudo apt-get autoremove -y
     sudo apt-get autoclean -y
     log_info "APT update finished"
+}
+
+##
+# @Description
+# Snap packages update
+##
+update_snap() {
+    log_info "Snap update started"
+    sudo snap refresh
+    log_info "Snap update finished"
 }
 
 ##
@@ -68,4 +81,14 @@ update_yay() {
     log_info "AUR packages update started"
     sudo yay -Syu --noconfirm
     log_info "AUR packages update finished"
+}
+
+##
+# @Description
+# Flatpak packages update
+##
+update_flatpak() {
+    log_info "Flatpak update started"
+    sudo flatpak update -y
+    log_info "Flatpak update finished"
 }
