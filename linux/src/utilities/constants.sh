@@ -86,7 +86,6 @@ export UTILITIES_PATH="$SRC_PATH/utilities"
 export AVAILABLE_DISTROS_FILEPATH="$CONFIG_PATH/available_distros.txt"
 
 ### Functions paths
-export UPDATE_SCRIPTS_PATH="$SCRIPTS_PATH/update"
 export SETUP_SCRIPTS_PATH="$SCRIPTS_PATH/setup"
 
 ################################################################################
