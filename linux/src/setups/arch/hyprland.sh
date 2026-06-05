@@ -6,7 +6,13 @@
 # TODO
 
 ################################################################################
-# Configure desktop environment
+# Create basics folders structure 
+base_folder_structure_creation
+
+################################################################################
+# Configure environment
+selected_statics_path="$STATICS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED"
+copy_config_statics
 
 # Install hyprland desktop and the around software used
 ## First of all the around software used for som functionalities 
@@ -25,19 +31,10 @@ pacman_install 'xdg-desktop-portal-hyprland'
 pacman_install 'hyprshot'
 pacman_install 'hyprctl'
 
-
-# Copy configuration folders
-folders_to_copy=('kitty' 'yazi' 'hypr' 'wofi' 'terminator')
-for folder in "${folders_to_copy[@]}";
-do
-    rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/$folder/" "$HOME/.config/$folder"
-done
-
-
 # Startup and login configuration with greetd
 pacman_install 'greetd'
 pacman_install 'greetd-tuigreet'
-sudo rsync -azP --delete --mkpath "$STATICS_PATH/$DISTRO_PLUS_TYPE/greetd/" '/etc/greetd'
+sudo rsync -azP --delete --mkpath "$selected_statics_path/greetd/" '/etc/greetd'
 sudo systemctl enable greetd.service
 
 
@@ -55,14 +52,10 @@ pacman_install 'gtk4'
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+
 pacman_install 'qt5ct'
 pacman_install 'qt6ct'
 pacman_install 'kvantum'
-
-################################################################################
-# Create basics folders structure 
-
-base_folder_structure_creation
 
 ################################################################
 # Add second keyboard distribution

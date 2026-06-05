@@ -36,6 +36,11 @@ install_command() {
     run_installation "$config_file"
 }
 
+
+#####################################
+#--Auxiliar Installation Functions--#
+#####################################
+
 ##
 # @Description
 # Run installation from a configuration file
@@ -187,7 +192,8 @@ install_software() {
     return 0
 }
 
-# TODO: Probably this is legacy code
+
+# TODO: Probably this is legacy code not used
 ##################################
 #--Generic Installing Functions--#
 ##################################

@@ -4,12 +4,13 @@
 # Configure system locales
 
 ################################################################################
-# Configure desktop environment
+# Create basics folders structure 
+base_folder_structure_creation
 
 ################################################################################
-# Create basics folders structure 
-
-base_folder_structure_creation
+# Configure environment
+selected_statics_path="$STATICS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED"
+copy_config_statics
 
 ################################################################
 # Add second keyboard distribution

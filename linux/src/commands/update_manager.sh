@@ -8,27 +8,27 @@ update_command() {
     log_info "Starting update for $DISTRO_SELECTED"
 
     # APT
-    if check_command_installed "apt" ; then
+    if is_command_installed "apt" ; then
         update_apt
     fi
 
     # Snap
-    if check_command_installed "snap" ; then
+    if is_command_installed "snap" ; then
         update_snap
     fi
 
     # Pacman
-    if check_command_installed "pacman"; then
+    if is_command_installed "pacman"; then
         update_pacman
     fi
 
     # Yay
-    if check_command_installed "yay"; then
+    if is_command_installed "yay"; then
         update_yay
     fi
 
     # Flatpak
-    if check_command_installed "flatpak"; then
+    if is_command_installed "flatpak"; then
         update_flatpak
     fi
 }

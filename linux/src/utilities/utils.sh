@@ -77,7 +77,7 @@ check_distro_not_included_in_packages() {
 # @Description
 #
 ##
-check_command_installed(){
+is_command_installed(){
     command="$1"
 
     if ! command -v "$command" &> /dev/null; then
