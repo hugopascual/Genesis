@@ -82,6 +82,8 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 # Notifications
 gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
+# TODO: Add the baterry percentage show
+
 #------------------------------- END
 log_info "Setup finished"
 
