@@ -21,6 +21,7 @@ setup_command() {
 base_folder_structure_creation() {
     mkdir -p "$BASE_DEVELOPMENT_PATH"
     mkdir -p "$REPOSITORIES_PATH"
+    rsync -azP --delete --mkpath "$REPOSITORIES_CLONE_SCRIPT_PATH" "$REPOSITORIES_PATH/clone.sh"
     mkdir -p "$DEPLOYMENTS_BASE_PATH"
     mkdir -p "$DEPLOYMENTS_VOLUMES_PATH"
     mkdir -p "$NFS_SHARE_PATH"
