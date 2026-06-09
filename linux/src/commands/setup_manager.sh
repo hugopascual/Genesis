@@ -34,7 +34,7 @@ aliases_setup(){
 }
 
 copy_config_statics(){
-    local source_path="$STATICS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED"
+    local source_path="$STATICS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED/.config"
     folders_to_copy=()
     
     # Get all folders from the source path
