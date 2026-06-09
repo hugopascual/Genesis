@@ -6,6 +6,7 @@ yay
 curl
 htop
 fastfetch
+less
 lshw
 make
 neovim
