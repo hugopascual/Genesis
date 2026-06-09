@@ -27,8 +27,10 @@ pacman_install 'hyprland'
 pacman_install 'hyprpaper'
 pacman_install 'hypridle'
 pacman_install 'hyprlock'
+# TODO probably not neccesary
 pacman_install 'xdg-desktop-portal-hyprland'
 pacman_install 'hyprshot'
+# TODO is not available any more
 pacman_install 'hyprctl'
 
 # Startup and login configuration with greetd
@@ -78,3 +80,10 @@ aliases_setup
 
 ################################################################################
 # Graphics drivers
+
+# TODO: chek if NVIDIA
+nvidia_config(){
+    pacman_install 'nvidia-open'
+    pacman_install 'nvidia-utils'
+    pacman_install 'nvidia-settings'
+}
