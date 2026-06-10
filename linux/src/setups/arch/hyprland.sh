@@ -21,7 +21,6 @@ pacman_install 'qt6-wayland'
 pacman_install 'wofi'
 pacman_install 'brightnessctl'
 pacman_install 'swaync'
-pacman_install 'yazi'
 ## Now we go with the proper hyprland software
 pacman_install 'hyprland'
 pacman_install 'hyprpaper'
@@ -81,7 +80,7 @@ aliases_setup
 ################################################################################
 # Graphics drivers
 
-# TODO: chek if NVIDIA
+# TODO: check if NVIDIA
 nvidia_config(){
     pacman_install 'nvidia-open'
     pacman_install 'nvidia-utils'

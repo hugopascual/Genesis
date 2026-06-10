@@ -21,10 +21,9 @@ if is_command_installed 'gnome'; then
     log_info "GNOME is installed"
 else
     log_info "GNOME not installed"
-    exit 1
+    pacman_install 'gnome'
 fi
 
-pacman_install 'gnome'
 sudo systemctl enable gdm.service
 
 #------------------------------- Appearance and general settings
@@ -36,16 +35,6 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/theme/background.jpg"
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.config/theme/background.jpg"
 gsettings set org.gnome.desktop.screensaver picture-uri "file://$HOME/.config/theme/screensaver.jpg"
-
-# Desktop icons
-gsettings set org.gnome.shell.extensions.ding show-home false
-
-# Dock
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action minimize
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 # Multitasking 
 gsettings set org.gnome.mutter workspaces-only-on-primary true
@@ -68,7 +57,6 @@ gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 # Define the 2 keyboard distributions
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'es')]"
 
-
 ################################################################
 # Startup applications
 
@@ -85,3 +73,10 @@ sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
 
 ################################################################################
 # Graphics drivers
+
+# TODO: check if NVIDIA
+nvidia_config(){
+    pacman_install 'nvidia-open'
+    pacman_install 'nvidia-utils'
+    pacman_install 'nvidia-settings'
+}
