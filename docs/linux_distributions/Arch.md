@@ -1,5 +1,20 @@
 # Arch
 
+## Graphics Drivers
+
+### NVIDIA
+
+```shell
+sudo pacman -Syu --noconfirm nvidia-utils nvidia-settings
+```
+
+Depending on the GPU you have to install other driver instead of `nvidia-open`.
+Check the [Arch Wiki](https://wiki.archlinux.org/title/NVIDIA) for more information.
+
+```shell
+sudo pacman -Syu --noconfirm nvidia-open
+```
+
 ## Arch with Hyprland
 
 ### Documentación software instalado

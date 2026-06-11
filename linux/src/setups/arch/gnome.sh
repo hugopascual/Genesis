@@ -86,10 +86,3 @@ sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
 
 ################################################################################
 # Graphics drivers
-
-# TODO: check if NVIDIA
-nvidia_config(){
-    pacman_install 'nvidia-open'
-    pacman_install 'nvidia-utils'
-    pacman_install 'nvidia-settings'
-}
