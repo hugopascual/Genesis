@@ -56,17 +56,20 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 # Keyboard shortcuts
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-## Crtl+Alt+T for terminal
+## Custom shortcuts
+### Crtl+Alt+T for terminal
+terminal_shortcut_id="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/"
 terminal_command="kitty"
+### SUPER+E for file manager
+file_manager_id="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/"
+file_manager_command="nautilus"
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
-"['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/']"
+"['$terminal_shortcut_id', '$file_manager_id']"
+### Set terminal shortcut
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ name "Terminal"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ command "$terminal_command"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ binding "<Ctrl><Alt>T"
-## SUPER+E for file manager
-file_manager_command="nautilus"
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
-"['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/']"
+### Set file manager shortcut
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ name "Files"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ command "$file_manager_command"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ binding "<Super>e"
