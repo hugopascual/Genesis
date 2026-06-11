@@ -1,8 +1,6 @@
 {
   "description": "CurseForge mod manager",
-  "arch": [
-    "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.AppImage"
-  ],
+  "arch": [],
   "ubuntu": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
     "sudo apt update",

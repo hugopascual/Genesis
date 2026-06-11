@@ -51,6 +51,7 @@ obsidian
 rustdesk
 raspberry_pi_imager
 terminator
+yazi
 
 # VPNs
 openvpn3
