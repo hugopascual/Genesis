@@ -24,7 +24,10 @@ else
     pacman_install 'gnome'
 fi
 
+# Activate GNOME desktop on start
 sudo systemctl enable gdm.service
+# GNOME network manager integration with openvpn
+pacman_install 'networkmanager-openvpn'
 
 #------------------------------- Appearance and general settings
 # Style
