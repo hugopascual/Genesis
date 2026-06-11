@@ -57,17 +57,18 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 ## Crtl+Alt+T for terminal
-terminal="kitty"
+terminal_command="kitty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ name "Terminal"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ command "$terminal"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ command "$terminal_command"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ binding "<Ctrl><Alt>T"
 ## SUPER+E for file manager
+file_manager_command="nautilus"
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ name "Files"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ command "nautilus"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ command "$file_manager_command"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/ binding "<Super>e"
 
 #-------------------------------------------------------------------------------
