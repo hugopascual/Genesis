@@ -50,7 +50,12 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 # Notifications
 gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
-# TODO: Add the baterry percentage show
+# Add the baterry percentage show
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+# Keyboard shortcuts
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 
 #-------------------------------------------------------------------------------
 
