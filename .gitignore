@@ -22,3 +22,6 @@ bin-release/
 
 # Project
 *.log
+linux/install_configs/
+!linux/install_configs/desktop.txt
+!linux/install_configs/server.txt

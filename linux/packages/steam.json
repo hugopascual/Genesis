@@ -1,6 +1,9 @@
 {
   "description": "Video game digital distribution service",
-  "arch": [],
+  "arch": [
+    "sudo sed -i '/^#\\[multilib\\]/,/^\\s*$/ s/^#//' /etc/pacman.conf",
+    "sudo pacman -Syu --noconfirm steam"
+  ],
   "ubuntu": [
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
     "sudo apt update",
