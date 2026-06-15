@@ -3,6 +3,7 @@ flatpak
 yay
 
 # System
+btop
 curl
 fastfetch
 htop
