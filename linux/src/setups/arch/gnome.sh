@@ -84,12 +84,12 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 
 ################################################################
 # Startup applications
-
-mkdir -p "$HOME/autostart"
+autostart_folder="$HOME/.config/autostart"
+mkdir -p "$autostart_folder"
 # Obsidian
-cp /usr/share/applications/obsidian.desktop "$HOME/autostart/"
-cp /usr/share/applications/org.mozilla.Thunderbird.desktop "$HOME/autostart/"
-cp /usr/share/applications/firefox.desktop "$HOME/autostart/"
+cp /usr/share/applications/obsidian.desktop "$autostart_folder"
+cp /usr/share/applications/org.mozilla.Thunderbird.desktop "$autostart_folder"
+cp /usr/share/applications/firefox.desktop "$autostart_folder"
 
 
 ################################################################################
