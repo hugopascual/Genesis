@@ -31,8 +31,12 @@ pacman_install 'networkmanager-openvpn'
 
 #------------------------------- Appearance and general settings
 # Style
-gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
+pacman_install 'gtk3'
+pacman_install 'gtk4'
+pacman_install 'adwaita-icon-theme'
+pacman_install 'gnome-themes-extra'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Background and screensaver
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/theme/background.jpg"
