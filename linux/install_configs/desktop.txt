@@ -26,8 +26,8 @@ ghcli
 java_jdk
 jetbrains_toolbox
 lazydocker
-nodejs
-postman
+# nodejs
+# postman
 python
 vscode
 
@@ -49,7 +49,7 @@ config_fnmt
 keepassxc
 kitty
 obsidian
-rustdesk
+# rustdesk
 raspberry_pi_imager
 terminator
 yazi

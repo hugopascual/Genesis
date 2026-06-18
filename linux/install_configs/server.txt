@@ -23,5 +23,4 @@ docker
 git
 java_jdk
 lazydocker
-nodejs
 python
