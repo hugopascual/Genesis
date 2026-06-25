@@ -47,7 +47,7 @@ check_option_supported "$COMMAND_SELECTED" \
     "${COMMAND_TYPES[@]}" 
 
 case $COMMAND_SELECTED in
-    "$INSTALL_COMMAND"|"$UPDATE_COMMAND"|"$SETUP_COMMAND")
+    "$INSTALL_COMMAND"|"$SETUP_COMMAND")
         check_option_supported "$DISTRO_SELECTED" \
             "$DISTRIBUTION_NOT_VALID_MESSAGE" \
             "${AVAILABLE_DISTROS[@]}"

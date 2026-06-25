@@ -8,7 +8,7 @@ help() {
     echo \
 "
 Usage:  ./linux/linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
-        ./linux/linux.sh $UPDATE_COMMAND { DISTRO } 
+        ./linux/linux.sh $UPDATE_COMMAND
         ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
         ./linux/linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
 
@@ -32,7 +32,7 @@ where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
 Examples:
     ./linux/linux.sh install arch desktop
     ./linux/linux.sh install ubuntu configs/custom.txt
-    ./linux/linux.sh update debian
+    ./linux/linux.sh update
     ./linux/linux.sh add-distro arch \"sudo pacman -Syu --noconfirm \{package\}\"
 "
     exit 1

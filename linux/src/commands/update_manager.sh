@@ -5,7 +5,7 @@
 # General update function
 ##
 update_command() {
-    log_info "Starting update for $DISTRO_SELECTED"
+    log_info "Starting update os system..."
 
     # APT
     if is_command_installed "apt" ; then
@@ -79,7 +79,7 @@ update_pacman() {
 ##
 update_yay() {
     log_info "AUR packages update started"
-    sudo yay -Syu --noconfirm
+    yay -Syu --noconfirm
     log_info "AUR packages update finished"
 }
 
