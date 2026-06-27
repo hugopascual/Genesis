@@ -4,6 +4,7 @@ yay
 
 # System
 btop
+cron
 curl
 fastfetch
 htop
@@ -26,8 +27,6 @@ ghcli
 java_jdk
 jetbrains_toolbox
 lazydocker
-# nodejs
-# postman
 python
 vscode
 
@@ -47,12 +46,9 @@ vlc
 autofirma
 config_fnmt
 keepassxc
-kitty
 obsidian
-# rustdesk
 raspberry_pi_imager
 terminator
-yazi
 
 # VPNs
 openvpn3
@@ -62,7 +58,4 @@ wireguard
 display_link_driver
 
 # Videogames
-curseforge
-lutris
-minecraft
 steam

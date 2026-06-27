@@ -1,0 +1,15 @@
+{
+  "description": "",
+  "arch": [
+    "sudo pacman -Syu --noconfirm cronie"
+  ],
+  "ubuntu": [
+    "sudo apt install -y cron"
+  ],
+  "debian": [
+    "sudo apt install -y cron"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y cron"
+  ]
+}
