@@ -63,7 +63,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 ## Custom shortcuts
 ### Crtl+Alt+T for terminal
 terminal_shortcut_id="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/"
-terminal_command="kitty"
+terminal_command="terminator"
 ### SUPER+E for file manager
 file_manager_id="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/files/"
 file_manager_command="nautilus"
