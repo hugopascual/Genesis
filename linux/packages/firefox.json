@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm firefox"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y firefox"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y firefox"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y firefox"
   ]
 }

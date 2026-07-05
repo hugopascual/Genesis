@@ -5,19 +5,16 @@
   ],
   "ubuntu": [
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
-    "sudo apt update",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "debian": [
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
-    "sudo apt update",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
   "raspberrypi": [
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
-    "sudo apt update",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ]

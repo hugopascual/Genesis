@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm rpi-imager"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y rpi-imager"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y rpi-imager"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y rpi-imager"
   ]
 }

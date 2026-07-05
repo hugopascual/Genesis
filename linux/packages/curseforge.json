@@ -3,19 +3,16 @@
   "arch": [],
   "ubuntu": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
-    "sudo apt update",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
   ],
   "debian": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
-    "sudo apt update",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
   ],
   "raspberrypi": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
-    "sudo apt update",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
   ]

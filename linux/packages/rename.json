@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm perl-rename"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y rename"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y rename"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y rename"
   ]
 }

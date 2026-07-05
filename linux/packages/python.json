@@ -4,19 +4,16 @@
     "sudo pacman -Syu --noconfirm python"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y python3",
     "sudo apt install -y python3-venv",
     "sudo apt install -y python3-pip"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y python3",
     "sudo apt install -y python3-venv",
     "sudo apt install -y python3-pip"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y python3",
     "sudo apt install -y python3-venv",
     "sudo apt install -y python3-pip"

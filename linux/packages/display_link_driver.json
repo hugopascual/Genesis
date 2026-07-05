@@ -8,7 +8,6 @@
   ],
   "ubuntu": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
-    "sudo apt update",
     "sudo apt install -y ./synaptics-repository-keyring.deb",
     "sudo apt update",
     "sudo apt install -y displaylink-driver",
@@ -16,7 +15,6 @@
   ],
   "debian": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
-    "sudo apt update",
     "sudo apt install -y ./synaptics-repository-keyring.deb",
     "sudo apt update",
     "sudo apt install -y displaylink-driver",
@@ -24,7 +22,6 @@
   ],
   "raspberrypi": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
-    "sudo apt update",
     "sudo apt install -y ./synaptics-repository-keyring.deb",
     "sudo apt update",
     "sudo apt install -y displaylink-driver",

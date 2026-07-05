@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm gimp"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y gimp"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y gimp"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y gimp"
   ]
 }

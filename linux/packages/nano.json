@@ -1,0 +1,15 @@
+{
+  "description": "",
+  "arch": [
+    "sudo pacman -Syu --noconfirm nano"
+  ],
+  "ubuntu": [
+    "sudo apt install -y nano"
+  ],
+  "debian": [
+    "sudo apt install -y nano"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y nano"
+  ]
+}

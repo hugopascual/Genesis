@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm 7zip"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y 7zip"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y 7zip"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y 7zip"
   ]
 }

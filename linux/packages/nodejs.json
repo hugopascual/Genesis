@@ -1,25 +1,21 @@
 {
   "description": "JavaScript runtime",
   "arch": [
-    "sudo pacman -yu",
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
   "ubuntu": [
-    "sudo apt update",
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
   "debian": [
-    "sudo apt update",
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"

@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm wireguard-tools"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y wireguard"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y wireguard"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y wireguard"
   ]
 }

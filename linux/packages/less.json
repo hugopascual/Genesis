@@ -4,15 +4,12 @@
     "sudo pacman -Syu --noconfirm less"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y less"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y less"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y less"
   ]
 }

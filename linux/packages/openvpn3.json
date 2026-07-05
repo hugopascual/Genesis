@@ -4,7 +4,6 @@
     "yay -Syu --noconfirm openvpn3"
   ],
   "ubuntu": [
-    "sudo apt update",
     "sudo apt install -y apt-transport-https curl",
     "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
     "DISTRO=$(lsb_release -c -s)",
@@ -13,7 +12,6 @@
     "sudo apt install -y openvpn3"
   ],
   "debian": [
-    "sudo apt update",
     "sudo apt install -y apt-transport-https curl",
     "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
     "DISTRO=$(lsb_release -c -s)",
@@ -22,7 +20,6 @@
     "sudo apt install -y openvpn3"
   ],
   "raspberrypi": [
-    "sudo apt update",
     "sudo apt install -y apt-transport-https curl",
     "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
     "DISTRO=$(lsb_release -c -s)",
