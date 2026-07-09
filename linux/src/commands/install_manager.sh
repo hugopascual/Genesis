@@ -20,10 +20,16 @@ install_command() {
         
         case $OPTION_SELECTED in
             "$INSTALL_TYPE_DESKTOP")
-                config_file="$DEFAULT_DEKSTOP_INSTALL_PATH"
+                config_file="$DEFAULT_BASE_INSTALL_PATH"
                 ;;
             "$INSTALL_TYPE_SERVER")
                 config_file="$DEFAULT_SERVER_INSTALL_PATH"
+                ;;
+            "$INSTALL_TYPE_DESKTOP")
+                config_file="$DEFAULT_DESKTOP_INSTALL_PATH"
+                ;;
+            "$INSTALL_TYPE_GAMES")
+                config_file="$DEFAULT_GAMES_INSTALL_PATH"
                 ;;
             *)
                 echo "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
