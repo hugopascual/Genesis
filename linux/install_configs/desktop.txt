@@ -1,33 +1,6 @@
-# Package managers
-flatpak
-yay
-
-# System
-btop
-cron
-curl
-fastfetch
-htop
-less
-lshw
-make
-neovim
-nfs
-nvtop
-rename
-rsync
-tree
-vim
-wget
-
 # Development
-docker
-git
 ghcli
-java_jdk
 jetbrains_toolbox
-lazydocker
-python
 vscode
 
 # Browsers
@@ -49,6 +22,7 @@ keepassxc
 obsidian
 raspberry_pi_imager
 terminator
+yazi
 
 # VPNs
 openvpn3
@@ -56,6 +30,3 @@ wireguard
 
 # Drivers
 display_link_driver
-
-# Videogames
-steam
