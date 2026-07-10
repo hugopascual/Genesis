@@ -25,8 +25,16 @@ base_folder_structure_creation() {
     mkdir -p "$DEPLOYMENTS_BASE_PATH"
     mkdir -p "$DEPLOYMENTS_VOLUMES_PATH"
     mkdir -p "$NFS_SHARE_PATH"
+}
+
+desktop_folder_structure_creation() {
+    base_folder_structure_creation
     mkdir -p "$VPN_PATH"
     mkdir -p "$WINDOWS_APPS_PATH"
+}
+
+server_folder_structure_creation() {
+    base_folder_structure_creation
 }
 
 aliases_setup(){

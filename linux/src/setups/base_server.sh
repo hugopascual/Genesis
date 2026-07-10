@@ -5,7 +5,7 @@
 
 ################################################################################
 # Create basics folders structure 
-base_folder_structure_creation
+server_folder_structure_creation
 
 ################################################################################
 # Configure environment
@@ -22,6 +22,9 @@ copy_config_statics
 # Other setup configurations
 
 aliases_setup
+
+# .bashrc configuration and customization
+sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
 
 ################################################################################
 # Graphics drivers
