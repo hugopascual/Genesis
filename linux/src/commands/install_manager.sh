@@ -19,7 +19,7 @@ install_command() {
             "${INSTALL_COMMAND_TYPES[@]}"
         
         case $OPTION_SELECTED in
-            "$INSTALL_TYPE_DESKTOP")
+            "$INSTALL_TYPE_BASE")
                 config_file="$DEFAULT_BASE_INSTALL_PATH"
                 ;;
             "$INSTALL_TYPE_SERVER")
