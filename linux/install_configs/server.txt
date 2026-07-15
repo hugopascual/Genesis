@@ -1,0 +1,34 @@
+###############################################################################
+# Base
+###############################################################################
+
+# Package managers
+flatpak
+yay
+
+# System
+btop
+cron
+curl
+fastfetch
+htop
+less
+lshw
+make
+nano
+neovim
+nfs
+rename
+rsync
+tree
+wget
+vim
+
+# Development
+docker
+git
+java_jdk
+lazydocker
+python
+
+###############################################################################
