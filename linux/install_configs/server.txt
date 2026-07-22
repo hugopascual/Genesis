@@ -2,10 +2,6 @@
 # Base
 ###############################################################################
 
-# Package managers
-flatpak
-yay
-
 # System
 btop
 cron
