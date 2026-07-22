@@ -4,12 +4,13 @@
 # Configure system locales
 
 ################################################################################
-# Configure desktop environment
+# Create basics folders structure 
+server_folder_structure_creation
 
 ################################################################################
-# Create basics folders structure 
-
-base_folder_structure_creation
+# Configure environment
+selected_statics_path="$STATICS_PATH/$DISTRO_SELECTED/$OPTION_SELECTED"
+copy_config_statics
 
 ################################################################
 # Add second keyboard distribution
@@ -20,9 +21,10 @@ base_folder_structure_creation
 ################################################################################
 # Other setup configurations
 
-## Add aliases to .bashrc
 aliases_setup
+
+# .bashrc configuration and customization
+sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
 
 ################################################################################
 # Graphics drivers
-
