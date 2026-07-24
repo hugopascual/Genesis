@@ -1,0 +1,12 @@
+{
+  "description": "",
+  "arch": [
+    "sudo pacman -Syu --noconfirm bind"
+  ],
+  "ubuntu": [
+  ],
+  "debian": [
+  ],
+  "raspberrypi": [
+  ]
+}

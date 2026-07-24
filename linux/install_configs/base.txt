@@ -4,6 +4,7 @@
 
 # System
 btop
+bind
 cron
 curl
 fastfetch
