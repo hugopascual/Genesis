@@ -71,6 +71,7 @@ Making right click aand selecting `Show more options` to get the old menu:
 - View
   - Disable `Show desktop icons`
 
+## WIP
 
 - Startup apps: Firefox, Obsidian, Thunderbird
   - Apps folder: `Win+R` -> `shell:appsfolder`
