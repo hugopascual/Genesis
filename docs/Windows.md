@@ -25,32 +25,53 @@ powershell -ExecutionPolicy Bypass -File .\windows.ps1
 
 ## Environment Setup
 
-- Configure locales
-- Customize desktop
-  - Desktop icons
-    - In screen, right button -> `View -> Disable Show Desktop Icons`
-  - Black Mode in blue
+### Settings configuration
+
+- Personalisation
   - Background
-    - Select Photo
+    - Picture: Select Photo
+  - Themes
+    - Dark Mode
+    - Custom accent color: Blue
   - Lock Screen
-    - Select Photo
-    - Disble fun facts, tips and tricks
-    - App on screen -> None
+    - Picture: Select Photo
+    - Disable `Get fun facts, tips, tricks and more on your lock screen`
+    - Lock screen status: None
   - Start
-    - More pins
-    - Disble recomendations
-    - Disbale related notifications
-    - Folders
-      - Settings
-      - File Explorer
-      - Personal folder
+    - Recommended
+      - Disable `Show recently added apps`
+      - Disable `Show recommended files in Start, recentfiles in File Explorer and on Jump Lists`
+      - Disable `Show recommendations for tips, shortcuts, new apps and more`
   - Taskbar
-    - Search icon only
-    - Disble Widgets
-    - Taskbar Behaviours
-      - Automatically hide the taskbar
-- Create basic folders structure
-- Add second keyboard distribution
+    - Taskbar items
+      - Search: `Search icon only`
+      - Task view: `On`
+      - Widgets: `Off`
+    - Taskbar corner icons
+      - Disable `Pen menu`
+      - Disable `Touch keyboard`
+      - Disable `Virtual touchpad`
+    - Taskbar corner overflow
+      - Disable all
+    - Taskbar behaviours
+      - Enable `Automatically hide the taskbar`
+- Time & language
+  - Language & region
+    - Language
+      - Windows display language: English (United Kingdom)
+      - Preferred languages: English (United Kingdom), Spanish (Spain)
+    - Region
+      - Country or region: Spain
+      - Regional format: Spanish (Spain, Internacional Sort)
+
+### Desktop configuration
+
+Making right click aand selecting `Show more options` to get the old menu:
+
+- View
+  - Disable `Show desktop icons`
+
+
 - Startup apps: Firefox, Obsidian, Thunderbird
   - Apps folder: `Win+R` -> `shell:appsfolder`
   - Startup folder: `Win+R` -> `shell:startup`

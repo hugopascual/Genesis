@@ -21,14 +21,11 @@ function install_from_url {
     Write-Host "`nAll installations completed."
 }
 
-################################################################################
+########################################################################################################################
 # Minimum installations
-################################################################################
 # choco install -y 7zip
 
-################################################################################
 # Development installations
-################################################################################
 choco install -y git
 choco install -y vscode
 choco install -y jetbrainstoolbox
@@ -39,15 +36,11 @@ choco install -y postman
 # RPI Imager
 # install_from_url -urls @("https://downloads.raspberrypi.com/imager/imager_latest.exe")
 
-################################################################################
 # DIT installations
-################################################################################
 # OpenVPNv3
 choco install -y openvpn-connect
 
-################################################################################
 # Desktop installations
-################################################################################
 choco install -y geforce-experience
 choco install -y firefox
 choco install -y googlechrome
@@ -87,3 +80,5 @@ choco install -y heroic-games-launcher
 # https://www.chitubox.com/en/download/chitubox-free
 # Lychee Slicer
 # https://mango3d.io/download-lychee-slicer
+
+########################################################################################################################
