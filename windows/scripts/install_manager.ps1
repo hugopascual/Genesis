@@ -67,10 +67,18 @@ function Invoke-GenesisCommands {
 
         Write-Host "[$PackageName] $cmd"
         try {
-            Invoke-Expression $cmd
+            # Stream all command output (stdout/stderr/information) directly to the current console.
+            $global:LASTEXITCODE = 0
+            & ([ScriptBlock]::Create($cmd)) *>&1 | ForEach-Object { $_ | Out-Host }
+
+            if ($global:LASTEXITCODE -ne 0) {
+                Write-Warning "Command exited with code $global:LASTEXITCODE for '$PackageName': $cmd"
+                return $false
+            }
         }
         catch {
             Write-Warning "Command failed for '$PackageName': $cmd"
+            Write-Warning $_.Exception.Message
             return $false
         }
     }
