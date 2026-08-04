@@ -78,6 +78,14 @@ function ConvertTo-Array {
     return @($Value)
 }
 
+function Get-ItemCount {
+    param (
+        $Value
+    )
+
+    return @(ConvertTo-Array -Value $Value).Count
+}
+
 function Get-PackageNamesFromConfig {
     param (
         [Parameter(Mandatory = $true)]
@@ -161,25 +169,25 @@ function Install-Package {
     [array]$wingetCommands = if ($hasWinget) { ConvertTo-Array -Value $Definition.winget } else { @() }
     [array]$urlInstallers = if ($hasUrls) { ConvertTo-Array -Value $Definition.urls } else { @() }
 
-    if ($chocoCommands.Length -gt 0 -and -not $script:checkedChocolatey) {
+    if ((Get-ItemCount -Value $chocoCommands) -gt 0 -and -not $script:checkedChocolatey) {
         Test-Dependency -Name "choco"
         $script:checkedChocolatey = $true
     }
 
-    if ($wingetCommands.Length -gt 0 -and -not $script:checkedWinget) {
+    if ((Get-ItemCount -Value $wingetCommands) -gt 0 -and -not $script:checkedWinget) {
         Test-Dependency -Name "winget"
         $script:checkedWinget = $true
     }
 
-    if ($chocoCommands.Length -gt 0) {
+    if ((Get-ItemCount -Value $chocoCommands) -gt 0) {
         $success = $success -and (Invoke-InstallCommands -Commands $chocoCommands -Provider "choco" -PackageName $PackageName)
     }
 
-    if ($wingetCommands.Length -gt 0) {
+    if ((Get-ItemCount -Value $wingetCommands) -gt 0) {
         $success = $success -and (Invoke-InstallCommands -Commands $wingetCommands -Provider "winget" -PackageName $PackageName)
     }
 
-    if ($urlInstallers.Length -gt 0) {
+    if ((Get-ItemCount -Value $urlInstallers) -gt 0) {
         try {
             install_from_url -Installers $urlInstallers
         }
@@ -203,7 +211,7 @@ if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
 Write-Host "Using install config: $ConfigPath"
 [array]$packageNames = ConvertTo-Array -Value (Get-PackageNamesFromConfig -Path $ConfigPath)
 
-if ($packageNames.Length -eq 0) {
+if ((Get-ItemCount -Value $packageNames) -eq 0) {
     throw "No packages found in install config: $ConfigPath"
 }
 
@@ -228,11 +236,13 @@ foreach ($packageName in $packageNames) {
 }
 
 Write-Host "`nInstallation summary"
-Write-Host "- Total packages: $($packageNames.Length)"
+$totalPackages = Get-ItemCount -Value $packageNames
+$failedCount = Get-ItemCount -Value $failedPackages
+Write-Host "- Total packages: $totalPackages"
 Write-Host "- Installed successfully: $installedCount"
-Write-Host "- Failed: $($failedPackages.Length)"
+Write-Host "- Failed: $failedCount"
 
-if ($failedPackages.Length -gt 0) {
+if ($failedCount -gt 0) {
     Write-Host "- Failed packages: $($failedPackages -join ', ')"
     exit 1
 }
