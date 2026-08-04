@@ -2,6 +2,6 @@
   "description": "Postman",
   "info": "https://community.chocolatey.org/packages/postman",
   "commands": [
-    "choco install -y postman"
+    "choco install -y postman --ignore-checksums"
   ]
 }

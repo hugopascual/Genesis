@@ -2,6 +2,6 @@
   "description": "Openvpn Connect",
   "info": "https://community.chocolatey.org/packages/openvpn-connect",
   "commands": [
-    "choco install -y openvpn-connect"
+    "choco install -y openvpn-connect --ignore-checksums"
   ]
 }

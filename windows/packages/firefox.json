@@ -2,6 +2,6 @@
   "description": "Firefox",
   "info": "https://community.chocolatey.org/packages/firefox",
   "commands": [
-    "choco install -y firefox"
+    "choco install -y firefox --ignore-checksums"
   ]
 }

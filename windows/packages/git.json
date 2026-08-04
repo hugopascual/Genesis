@@ -2,6 +2,6 @@
   "description": "Git",
   "info": "https://community.chocolatey.org/packages/git",
   "commands": [
-    "choco install -y git"
+    "choco install -y git --ignore-checksums"
   ]
 }

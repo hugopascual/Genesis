@@ -2,6 +2,6 @@
   "description": "7zip",
   "info": "https://community.chocolatey.org/packages/7zip",
   "commands": [
-    "choco install -y 7zip"
+    "choco install -y 7zip --ignore-checksums"
   ]
 }

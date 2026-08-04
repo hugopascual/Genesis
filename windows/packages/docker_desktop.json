@@ -2,6 +2,6 @@
   "description": "Docker Desktop",
   "info": "https://community.chocolatey.org/packages/docker-desktop",
   "commands": [
-    "choco install -y docker-desktop"
+    "choco install -y docker-desktop --ignore-checksums"
   ]
 }

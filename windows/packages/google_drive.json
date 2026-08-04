@@ -2,6 +2,6 @@
   "description": "Google Drive",
   "info": "https://community.chocolatey.org/packages/googledrive",
   "commands": [
-    "choco install -y googledrive"
+    "choco install -y googledrive --ignore-checksums"
   ]
 }

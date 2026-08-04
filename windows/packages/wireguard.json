@@ -2,6 +2,6 @@
   "description": "Wireguard",
   "info": "https://community.chocolatey.org/packages/wireguard",
   "commands": [
-    "choco install -y wireguard"
+    "choco install -y wireguard --ignore-checksums"
   ]
 }

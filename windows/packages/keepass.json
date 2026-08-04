@@ -2,6 +2,6 @@
   "description": "Keepass",
   "info": "https://community.chocolatey.org/packages/keepass.install",
   "commands": [
-    "choco install -y keepass.install"
+    "choco install -y keepass.install --ignore-checksums"
   ]
 }

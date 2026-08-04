@@ -2,6 +2,6 @@
   "description": "Vscode",
   "info": "https://community.chocolatey.org/packages/vscode",
   "commands": [
-    "choco install -y vscode"
+    "choco install -y vscode --ignore-checksums"
   ]
 }

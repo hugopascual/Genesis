@@ -2,6 +2,6 @@
   "description": "Github Desktop",
   "info": "https://community.chocolatey.org/packages/github-desktop",
   "commands": [
-    "choco install -y github-desktop"
+    "choco install -y github-desktop --ignore-checksums"
   ]
 }

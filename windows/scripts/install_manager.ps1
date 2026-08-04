@@ -87,11 +87,6 @@ function Install-GenesisPackage {
     )
 
     $commands = ConvertTo-GenesisArray -Value $Definition.commands
-    if (@($commands).Count -eq 0) {
-        Write-Warning "Package '$PackageName' has no install commands, skipping"
-        return $true
-    }
-
     return Invoke-GenesisCommands -Commands $commands -PackageName $PackageName
 }
 
@@ -119,6 +114,7 @@ function Invoke-GenesisInstall {
 
     $installedCount = 0
     $failedPackages = @()
+    $manualPackages = @()
 
     foreach ($packageName in $packageNames) {
         Write-Host "`n==> Installing package: $packageName"
@@ -126,6 +122,27 @@ function Invoke-GenesisInstall {
 
         if ($null -eq $definition) {
             $failedPackages += $packageName
+            continue
+        }
+
+        $commands = ConvertTo-GenesisArray -Value $definition.commands
+        if (@($commands).Count -eq 0) {
+            Write-Warning "Package '$packageName' has no install commands, skipping"
+
+            $manualInfo = ""
+            if ($definition.PSObject.Properties.Name -contains "info") {
+                $manualInfo = [string]$definition.info
+            }
+
+            if ([string]::IsNullOrWhiteSpace($manualInfo)) {
+                $manualInfo = "(no info URL provided)"
+            }
+
+            $manualPackages += [pscustomobject]@{
+                name = $packageName
+                info = $manualInfo
+            }
+
             continue
         }
 
@@ -141,6 +158,14 @@ function Invoke-GenesisInstall {
     Write-Host "- Total packages: $(@($packageNames).Count)"
     Write-Host "- Installed successfully: $installedCount"
     Write-Host "- Failed: $(@($failedPackages).Count)"
+    Write-Host "- Skipped (manual): $(@($manualPackages).Count)"
+
+    if (@($manualPackages).Count -gt 0) {
+        Write-Host "`nPackages skipped (manual install required):"
+        foreach ($manualPackage in $manualPackages) {
+            Write-Host "- $($manualPackage.name): $($manualPackage.info)"
+        }
+    }
 
     if (@($failedPackages).Count -gt 0) {
         Write-Host "- Failed packages: $($failedPackages -join ', ')"

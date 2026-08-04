@@ -14,7 +14,6 @@ vscode
 
 # Browsers
 firefox
-google_chrome
 
 # Communication
 discord
@@ -29,8 +28,6 @@ keepass
 google_drive
 obsidian
 raspberrypi_imager
-rustdesk
-spotify
 vlc
 
 # 3D printing

@@ -2,6 +2,6 @@
   "description": "Google Chrome",
   "info": "https://community.chocolatey.org/packages/googlechrome",
   "commands": [
-    "choco install -y googlechrome"
+    "choco install -y googlechrome --ignore-checksums"
   ]
 }

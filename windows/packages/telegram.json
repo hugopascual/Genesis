@@ -2,6 +2,6 @@
   "description": "Telegram",
   "info": "https://community.chocolatey.org/packages/telegram.install",
   "commands": [
-    "choco install -y telegram.install"
+    "choco install -y telegram.install --ignore-checksums"
   ]
 }

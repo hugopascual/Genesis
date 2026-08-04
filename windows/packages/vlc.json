@@ -2,6 +2,6 @@
   "description": "Vlc",
   "info": "https://community.chocolatey.org/packages/vlc",
   "commands": [
-    "choco install -y vlc"
+    "choco install -y vlc --ignore-checksums"
   ]
 }

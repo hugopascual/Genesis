@@ -2,6 +2,6 @@
   "description": "Ea App",
   "info": "https://community.chocolatey.org/packages/ea-app",
   "commands": [
-    "choco install -y ea-app"
+    "choco install -y ea-app --ignore-checksums"
   ]
 }

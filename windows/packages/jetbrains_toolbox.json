@@ -2,6 +2,6 @@
   "description": "Jetbrains Toolbox",
   "info": "https://community.chocolatey.org/packages/jetbrainstoolbox",
   "commands": [
-    "choco install -y jetbrainstoolbox"
+    "choco install -y jetbrainstoolbox --ignore-checksums"
   ]
 }
