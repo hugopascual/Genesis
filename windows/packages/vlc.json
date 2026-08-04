@@ -1,0 +1,8 @@
+{
+  "description": "VLC media player",
+  "chocolatey": [
+    "choco install -y vlc"
+  ],
+  "winget": [],
+  "urls": []
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Raspberry Pi Imager",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://downloads.raspberrypi.com/imager/imager_latest.exe"
+    }
+  ]
+}

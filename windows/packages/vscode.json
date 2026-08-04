@@ -1,0 +1,8 @@
+{
+  "description": "Visual Studio Code",
+  "chocolatey": [
+    "choco install -y vscode"
+  ],
+  "winget": [],
+  "urls": []
+}

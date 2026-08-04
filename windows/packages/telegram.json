@@ -1,0 +1,8 @@
+{
+  "description": "Telegram Desktop",
+  "chocolatey": [
+    "choco install -y telegram.install"
+  ],
+  "winget": [],
+  "urls": []
+}

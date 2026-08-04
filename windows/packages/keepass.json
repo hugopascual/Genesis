@@ -1,0 +1,8 @@
+{
+  "description": "KeePass password manager",
+  "chocolatey": [
+    "choco install -y keepass.install"
+  ],
+  "winget": [],
+  "urls": []
+}

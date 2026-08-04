@@ -1,0 +1,8 @@
+{
+  "description": "Python",
+  "chocolatey": [
+    "choco install -y python"
+  ],
+  "winget": [],
+  "urls": []
+}

@@ -1,0 +1,8 @@
+{
+  "description": "JetBrains Toolbox",
+  "chocolatey": [
+    "choco install -y jetbrainstoolbox"
+  ],
+  "winget": [],
+  "urls": []
+}

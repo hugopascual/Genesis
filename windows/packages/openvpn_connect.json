@@ -1,0 +1,8 @@
+{
+  "description": "OpenVPN v3",
+  "chocolatey": [
+    "choco install -y openvpn-connect"
+  ],
+  "winget": [],
+  "urls": []
+}

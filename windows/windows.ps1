@@ -1,84 +1,224 @@
+param (
+    [string]$Profile = "base",
+    [string]$ConfigPath
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+$script:checkedChocolatey = $false
+$script:checkedWinget = $false
+
 function install_from_url {
     param (
         [Parameter(Mandatory = $true)]
-        [string[]]$urls
+        [array]$Installers
     )
 
-    $destFolder = [Environment]::GetFolderPath('UserProfile') + "\Downloads"
+    $destFolder = Join-Path ([Environment]::GetFolderPath("UserProfile")) "Downloads"
 
-    foreach ($url in $urls) {
+    foreach ($installer in $Installers) {
+        $url = $null
+        $arguments = $null
+
+        if ($installer -is [string]) {
+            $url = $installer
+        }
+        else {
+            $url = $installer.url
+            $arguments = $installer.arguments
+        }
+
+        if ([string]::IsNullOrWhiteSpace($url)) {
+            Write-Warning "Skipping URL installer because url is empty."
+            continue
+        }
+
         $dest = Join-Path $destFolder (Split-Path $url -Leaf)
 
-        Write-Host "Downloading $url..."
+        Write-Host "Downloading $url"
         Invoke-WebRequest -Uri $url -OutFile $dest
 
-        Write-Host "Running installer..."
-        Start-Process -FilePath $dest -Wait
+        Write-Host "Running installer: $dest"
+        if ([string]::IsNullOrWhiteSpace($arguments)) {
+            Start-Process -FilePath $dest -Wait
+        }
+        else {
+            Start-Process -FilePath $dest -ArgumentList $arguments -Wait
+        }
 
-        Write-Host "Installation completed. The installer remains at: $dest"
+        Write-Host "Installer completed. File kept at: $dest"
     }
-
-    Write-Host "`nAll installations completed."
 }
 
-########################################################################################################################
-# Minimum installations
-# choco install -y 7zip
+function Test-Dependency {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Name
+    )
 
-# Development installations
-choco install -y git
-choco install -y vscode
-choco install -y jetbrainstoolbox
-choco install -y docker-desktop
-choco install -y python
-choco install -y github-desktop
-choco install -y postman
-# RPI Imager
-# install_from_url -urls @("https://downloads.raspberrypi.com/imager/imager_latest.exe")
+    if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
+        throw "Required tool '$Name' was not found in PATH."
+    }
+}
 
-# DIT installations
-# OpenVPNv3
-choco install -y openvpn-connect
+function Get-PackageNamesFromConfig {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Path
+    )
 
-# Desktop installations
-choco install -y geforce-experience
-choco install -y firefox
-choco install -y googlechrome
-choco install -y thunderbird
-choco install -y keepass.install
-choco install -y googledrive
-choco install -y adobereader
-choco install -y spotify
-choco install -y telegram.install
-choco install -y discord.install
-choco install -y obsidian
-choco install -y vlc
-# DisplayLink Driver
-# https://www.synaptics.com/products/displaylink-graphics/downloads
-# Autofirma
-# https://firmaelectronica.gob.es/ciudadanos/descargas
-# Config FNMT
-# install_from_url -urls @(""https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe")
-# TODO: install rustdesk
-choco install -y wireguard
+    if (-not (Test-Path $Path)) {
+        throw "Install config not found: $Path"
+    }
 
-################################################################################
-# Hobbys installations
-################################################################################
-choco install -y steam --ignore-checksums
-choco install -y epicgameslauncher
-choco install -y amazongames --ignore-checksums
-# Battle.net
-# https://eu.shop.battle.net/
-# EA App
-choco install -y ea-app
-# Minecraft Launcher
-# https://www.minecraft.net/es-es/download
-# Heroic
-choco install -y heroic-games-launcher
-# Chitubox Software: Chitubox Free
-# https://www.chitubox.com/en/download/chitubox-free
-# Lychee Slicer
-# https://mango3d.io/download-lychee-slicer
+    return Get-Content -Path $Path |
+        ForEach-Object { $_.Trim() } |
+        Where-Object { $_ -and -not $_.StartsWith("#") }
+}
 
-########################################################################################################################
+function Get-PackageDefinition {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$PackageName,
+        [Parameter(Mandatory = $true)]
+        [string]$PackagesPath
+    )
+
+    $definitionPath = Join-Path $PackagesPath "$PackageName.json"
+    if (-not (Test-Path $definitionPath)) {
+        Write-Warning "Package definition not found: $definitionPath"
+        return $null
+    }
+
+    try {
+        return Get-Content -Path $definitionPath -Raw | ConvertFrom-Json
+    }
+    catch {
+        Write-Warning "Invalid JSON for package '$PackageName' in $definitionPath"
+        return $null
+    }
+}
+
+function Invoke-InstallCommands {
+    param (
+        [Parameter(Mandatory = $true)]
+        [array]$Commands,
+        [Parameter(Mandatory = $true)]
+        [string]$Provider,
+        [Parameter(Mandatory = $true)]
+        [string]$PackageName
+    )
+
+    foreach ($cmd in $Commands) {
+        if ([string]::IsNullOrWhiteSpace($cmd)) {
+            continue
+        }
+
+        Write-Host "[$PackageName][$Provider] $cmd"
+        try {
+            Invoke-Expression $cmd
+        }
+        catch {
+            Write-Warning "Command failed for '$PackageName': $cmd"
+            return $false
+        }
+    }
+
+    return $true
+}
+
+function Install-Package {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$PackageName,
+        [Parameter(Mandatory = $true)]
+        [pscustomobject]$Definition
+    )
+
+    $success = $true
+    $hasChocolatey = $Definition.PSObject.Properties.Name -contains "chocolatey"
+    $hasWinget = $Definition.PSObject.Properties.Name -contains "winget"
+    $hasUrls = $Definition.PSObject.Properties.Name -contains "urls"
+
+    $chocoCommands = if ($hasChocolatey) { @($Definition.chocolatey) } else { @() }
+    $wingetCommands = if ($hasWinget) { @($Definition.winget) } else { @() }
+    $urlInstallers = if ($hasUrls) { @($Definition.urls) } else { @() }
+
+    if ($chocoCommands.Count -gt 0 -and -not $script:checkedChocolatey) {
+        Test-Dependency -Name "choco"
+        $script:checkedChocolatey = $true
+    }
+
+    if ($wingetCommands.Count -gt 0 -and -not $script:checkedWinget) {
+        Test-Dependency -Name "winget"
+        $script:checkedWinget = $true
+    }
+
+    if ($chocoCommands.Count -gt 0) {
+        $success = $success -and (Invoke-InstallCommands -Commands $chocoCommands -Provider "choco" -PackageName $PackageName)
+    }
+
+    if ($wingetCommands.Count -gt 0) {
+        $success = $success -and (Invoke-InstallCommands -Commands $wingetCommands -Provider "winget" -PackageName $PackageName)
+    }
+
+    if ($urlInstallers.Count -gt 0) {
+        try {
+            install_from_url -Installers $urlInstallers
+        }
+        catch {
+            Write-Warning "URL installer failed for '$PackageName': $($_.Exception.Message)"
+            $success = $false
+        }
+    }
+
+    return $success
+}
+
+$scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$packagesPath = Join-Path $scriptRoot "packages"
+$installConfigsPath = Join-Path $scriptRoot "install_configs"
+
+if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
+    $ConfigPath = Join-Path $installConfigsPath "$Profile.txt"
+}
+
+Write-Host "Using install config: $ConfigPath"
+$packageNames = Get-PackageNamesFromConfig -Path $ConfigPath
+
+if ($packageNames.Count -eq 0) {
+    throw "No packages found in install config: $ConfigPath"
+}
+
+$installedCount = 0
+$failedPackages = @()
+
+foreach ($packageName in $packageNames) {
+    Write-Host "`n==> Installing package: $packageName"
+    $definition = Get-PackageDefinition -PackageName $packageName -PackagesPath $packagesPath
+
+    if ($null -eq $definition) {
+        $failedPackages += $packageName
+        continue
+    }
+
+    if (Install-Package -PackageName $packageName -Definition $definition) {
+        $installedCount++
+    }
+    else {
+        $failedPackages += $packageName
+    }
+}
+
+Write-Host "`nInstallation summary"
+Write-Host "- Total packages: $($packageNames.Count)"
+Write-Host "- Installed successfully: $installedCount"
+Write-Host "- Failed: $($failedPackages.Count)"
+
+if ($failedPackages.Count -gt 0) {
+    Write-Host "- Failed packages: $($failedPackages -join ', ')"
+    exit 1
+}
+
+Write-Host "All packages installed successfully."

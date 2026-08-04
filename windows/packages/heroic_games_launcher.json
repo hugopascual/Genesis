@@ -1,0 +1,8 @@
+{
+  "description": "Heroic Games Launcher",
+  "chocolatey": [
+    "choco install -y heroic-games-launcher"
+  ],
+  "winget": [],
+  "urls": []
+}

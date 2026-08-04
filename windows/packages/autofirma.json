@@ -1,0 +1,10 @@
+{
+  "description": "Autofirma",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://firmaelectronica.gob.es/ciudadanos/descargas"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Minecraft Launcher",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://www.minecraft.net/es-es/download"
+    }
+  ]
+}

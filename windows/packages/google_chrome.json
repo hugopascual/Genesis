@@ -1,0 +1,8 @@
+{
+  "description": "Google Chrome",
+  "chocolatey": [
+    "choco install -y googlechrome"
+  ],
+  "winget": [],
+  "urls": []
+}

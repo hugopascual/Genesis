@@ -1,0 +1,10 @@
+{
+  "description": "Lychee Slicer",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://mango3d.io/download-lychee-slicer"
+    }
+  ]
+}

@@ -11,17 +11,61 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Then, run the software installation script:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\windows.ps1
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 -Profile base
 ```
+
+### Installation profiles
+
+The script now uses profile files (similar to Linux) and package JSON definitions:
+
+- Profiles: `windows/install_configs/*.txt`
+- Package definitions: `windows/packages/*.json`
+
+Active profile currently included:
+
+- `base`
+
+The script logic remains profile-based, so adding `development`, `desktop`, or `games` again only requires creating new `.txt` files in `windows/install_configs/`.
+
+Examples:
+
+```powershell
+# Use a custom list file
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 -ConfigPath .\windows\install_configs\base.txt
+```
+
+### Package JSON format
+
+Each package file can define one or more providers:
+
+```json
+{
+  "description": "Software description",
+  "chocolatey": [
+    "choco install -y package"
+  ],
+  "winget": [
+    "winget install --id Vendor.Package --silent --accept-package-agreements --accept-source-agreements"
+  ],
+  "urls": [
+    {
+      "url": "https://example.org/installer.exe",
+      "arguments": "/S"
+    }
+  ]
+}
+```
+
+If a provider array is empty, it is skipped.
 
 ### Default installs
 
-- **System**: htop, tree, rsync, wget, curl, fastfetch
-- **Development**: git, docker, vscode, jetbrains-toolbox, postman
+- **Development**: git, vscode, python, docker-desktop, jetbrains-toolbox, postman
 - **Browsers**: firefox, google-chrome
 - **Communication**: thunderbird, telegram, discord
 - **Media**: vlc, spotify
-- **Utilities**: keepassxc, obsidian
+- **Utilities**: keepass, obsidian, wireguard
+- **Games**: steam, epic-games-launcher, ea-app, heroic-games-launcher
 
 ## Environment Setup
 

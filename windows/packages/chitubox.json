@@ -1,0 +1,10 @@
+{
+  "description": "Chitubox",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://www.chitubox.com/en/download/chitubox-free"
+    }
+  ]
+}

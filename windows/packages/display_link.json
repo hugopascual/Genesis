@@ -1,0 +1,10 @@
+{
+  "description": "Display Link",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://www.synaptics.com/products/displaylink-graphics/downloads"
+    }
+  ]
+}

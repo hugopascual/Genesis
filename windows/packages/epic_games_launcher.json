@@ -1,0 +1,8 @@
+{
+  "description": "Epic Games Launcher",
+  "chocolatey": [
+    "choco install -y epicgameslauncher"
+  ],
+  "winget": [],
+  "urls": []
+}

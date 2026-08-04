@@ -1,0 +1,8 @@
+{
+  "description": "Git version control",
+  "chocolatey": [
+    "choco install -y git"
+  ],
+  "winget": [],
+  "urls": []
+}

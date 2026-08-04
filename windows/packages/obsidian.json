@@ -1,0 +1,8 @@
+{
+  "description": "Obsidian",
+  "chocolatey": [
+    "choco install -y obsidian"
+  ],
+  "winget": [],
+  "urls": []
+}

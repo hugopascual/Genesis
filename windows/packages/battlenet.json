@@ -1,0 +1,10 @@
+{
+  "description": "Battle.net",
+  "chocolatey": [],
+  "winget": [],
+  "urls": [
+    {
+      "url": "https://eu.shop.battle.net/"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "description": "GitHub Desktop App",
+  "chocolatey": [
+    "choco install -y github-desktop"
+  ],
+  "winget": [],
+  "urls": []
+}

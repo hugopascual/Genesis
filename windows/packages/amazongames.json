@@ -1,0 +1,8 @@
+{
+  "description": "Amazon Games",
+  "chocolatey": [
+    "choco install -y amazongames --ignore-checksums"
+  ],
+  "winget": [],
+  "urls": []
+}

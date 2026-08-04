@@ -1,0 +1,8 @@
+{
+  "description": "Google Drive",
+  "chocolatey": [
+    "choco install -y googledrive"
+  ],
+  "winget": [],
+  "urls": []
+}

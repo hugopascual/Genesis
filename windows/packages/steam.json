@@ -1,0 +1,8 @@
+{
+  "description": "Steam",
+  "chocolatey": [
+    "choco install -y steam --ignore-checksums"
+  ],
+  "winget": [],
+  "urls": []
+}

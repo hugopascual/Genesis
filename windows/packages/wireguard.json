@@ -1,0 +1,8 @@
+{
+  "description": "WireGuard",
+  "chocolatey": [
+    "choco install -y wireguard"
+  ],
+  "winget": [],
+  "urls": []
+}

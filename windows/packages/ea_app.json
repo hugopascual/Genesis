@@ -1,0 +1,8 @@
+{
+  "description": "EA App",
+  "chocolatey": [
+    "choco install -y ea-app"
+  ],
+  "winget": [],
+  "urls": []
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Discord",
+  "chocolatey": [
+    "choco install -y discord.install"
+  ],
+  "winget": [],
+  "urls": []
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Docker Desktop",
+  "chocolatey": [
+    "choco install -y docker-desktop"
+  ],
+  "winget": [],
+  "urls": []
+}

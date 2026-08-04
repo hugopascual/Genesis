@@ -1,0 +1,8 @@
+{
+  "description": "Mozilla Thunderbird",
+  "chocolatey": [
+    "choco install -y thunderbird"
+  ],
+  "winget": [],
+  "urls": []
+}
