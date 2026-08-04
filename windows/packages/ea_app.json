@@ -1,8 +1,7 @@
 {
-  "description": "EA App",
-  "chocolatey": [
+  "description": "Ea App",
+  "info": "https://community.chocolatey.org/packages/ea-app",
+  "commands": [
     "choco install -y ea-app"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

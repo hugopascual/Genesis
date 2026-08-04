@@ -1,8 +1,7 @@
 {
-  "description": "JetBrains Toolbox",
-  "chocolatey": [
+  "description": "Jetbrains Toolbox",
+  "info": "https://community.chocolatey.org/packages/jetbrainstoolbox",
+  "commands": [
     "choco install -y jetbrainstoolbox"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

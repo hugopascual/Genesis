@@ -1,8 +1,7 @@
 {
   "description": "Google Chrome",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/googlechrome",
+  "commands": [
     "choco install -y googlechrome"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

@@ -1,8 +1,7 @@
 {
   "description": "Epic Games Launcher",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/epicgameslauncher",
+  "commands": [
     "choco install -y epicgameslauncher"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

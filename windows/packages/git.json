@@ -1,8 +1,7 @@
 {
-  "description": "Git version control",
-  "chocolatey": [
+  "description": "Git",
+  "info": "https://community.chocolatey.org/packages/git",
+  "commands": [
     "choco install -y git"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

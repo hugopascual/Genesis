@@ -1,8 +1,7 @@
 {
-  "description": "Telegram Desktop",
-  "chocolatey": [
+  "description": "Telegram",
+  "info": "https://community.chocolatey.org/packages/telegram.install",
+  "commands": [
     "choco install -y telegram.install"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

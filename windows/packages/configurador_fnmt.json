@@ -1,10 +1,7 @@
 {
-  "description": "Configurador FNMT",
-  "chocolatey": [],
-  "winget": [],
-  "urls": [
-    {
-      "url": "https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe"
-    }
+  "description": "Configurador Fnmt",
+  "info": "https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe",
+  "commands": [
+    "Invoke-WebRequest -Uri \"https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.0.3_64bits.exe\" -OutFile \"$env:USERPROFILE\\Downloads\\Configurador_FNMT_5.0.3_64bits.exe\""
   ]
 }

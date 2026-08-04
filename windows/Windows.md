@@ -43,7 +43,6 @@ Each package file now uses a single command list and optional info URL:
 
 ```json
 {
-  "description": "Software name",
   "info": "https://example.org/software",
   "commands": [
     "choco install -y package",
@@ -55,7 +54,6 @@ Each package file now uses a single command list and optional info URL:
 Notes:
 
 - `commands` is the only field executed by the installer.
-- `description` is metadata only and is not used by the installer logic.
 - URL downloads are also expressed directly as commands.
 - If `commands` is empty, the package is skipped with a warning.
 

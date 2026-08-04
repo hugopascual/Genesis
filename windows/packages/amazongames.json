@@ -1,8 +1,7 @@
 {
-  "description": "Amazon Games",
-  "chocolatey": [
+  "description": "Amazongames",
+  "info": "https://community.chocolatey.org/packages/amazongames",
+  "commands": [
     "choco install -y amazongames --ignore-checksums"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

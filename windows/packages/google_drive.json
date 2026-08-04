@@ -1,8 +1,7 @@
 {
   "description": "Google Drive",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/googledrive",
+  "commands": [
     "choco install -y googledrive"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

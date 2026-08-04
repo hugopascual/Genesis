@@ -1,8 +1,7 @@
 {
-  "description": "Visual Studio Code",
-  "chocolatey": [
+  "description": "Vscode",
+  "info": "https://community.chocolatey.org/packages/vscode",
+  "commands": [
     "choco install -y vscode"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

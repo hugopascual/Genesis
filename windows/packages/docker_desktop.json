@@ -1,8 +1,7 @@
 {
   "description": "Docker Desktop",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/docker-desktop",
+  "commands": [
     "choco install -y docker-desktop"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

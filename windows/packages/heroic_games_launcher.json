@@ -1,8 +1,7 @@
 {
   "description": "Heroic Games Launcher",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/heroic-games-launcher",
+  "commands": [
     "choco install -y heroic-games-launcher"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

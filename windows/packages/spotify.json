@@ -1,8 +1,7 @@
 {
   "description": "Spotify",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/spotify",
+  "commands": [
     "choco install -y spotify"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

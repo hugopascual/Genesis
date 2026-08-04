@@ -1,8 +1,7 @@
 {
-  "description": "OpenVPN v3",
-  "chocolatey": [
+  "description": "Openvpn Connect",
+  "info": "https://community.chocolatey.org/packages/openvpn-connect",
+  "commands": [
     "choco install -y openvpn-connect"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

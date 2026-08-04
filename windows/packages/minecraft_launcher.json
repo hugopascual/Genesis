@@ -1,6 +1,5 @@
 {
   "description": "Minecraft Launcher",
-  "chocolatey": [],
-  "winget": [],
-  "urls": []
+  "info": "",
+  "commands": []
 }

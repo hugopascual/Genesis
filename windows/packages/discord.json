@@ -1,8 +1,7 @@
 {
   "description": "Discord",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/discord.install",
+  "commands": [
     "choco install -y discord.install"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

@@ -1,8 +1,7 @@
 {
   "description": "Obsidian",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/obsidian",
+  "commands": [
     "choco install -y obsidian"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

@@ -1,8 +1,7 @@
 {
-  "description": "WireGuard",
-  "chocolatey": [
+  "description": "Wireguard",
+  "info": "https://community.chocolatey.org/packages/wireguard",
+  "commands": [
     "choco install -y wireguard"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

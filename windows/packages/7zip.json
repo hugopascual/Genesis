@@ -1,8 +1,7 @@
 {
   "description": "7zip",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/7zip",
+  "commands": [
     "choco install -y 7zip"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

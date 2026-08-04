@@ -1,8 +1,7 @@
 {
   "description": "Steam",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/steam",
+  "commands": [
     "choco install -y steam --ignore-checksums"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

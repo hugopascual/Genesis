@@ -1,6 +1,5 @@
 {
-  "description": "Battle.net",
-  "chocolatey": [],
-  "winget": [],
-  "urls": []
+  "description": "Battlenet",
+  "info": "",
+  "commands": []
 }

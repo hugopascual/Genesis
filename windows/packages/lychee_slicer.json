@@ -1,8 +1,7 @@
 {
   "description": "Lychee Slicer",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/lycheeslicer",
+  "commands": [
     "choco install -y lycheeslicer"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

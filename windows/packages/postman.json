@@ -1,8 +1,7 @@
 {
   "description": "Postman",
-  "chocolatey": [
+  "info": "https://community.chocolatey.org/packages/postman",
+  "commands": [
     "choco install -y postman"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }

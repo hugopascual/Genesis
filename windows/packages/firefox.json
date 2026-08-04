@@ -1,8 +1,7 @@
 {
-  "description": "Mozilla Firefox",
-  "chocolatey": [
+  "description": "Firefox",
+  "info": "https://community.chocolatey.org/packages/firefox",
+  "commands": [
     "choco install -y firefox"
-  ],
-  "winget": [],
-  "urls": []
+  ]
 }
