@@ -62,6 +62,22 @@ function Test-Dependency {
     }
 }
 
+function ConvertTo-Array {
+    param (
+        $Value
+    )
+
+    if ($null -eq $Value) {
+        return @()
+    }
+
+    if ($Value -is [System.Array]) {
+        return $Value
+    }
+
+    return @($Value)
+}
+
 function Get-PackageNamesFromConfig {
     param (
         [Parameter(Mandatory = $true)]
@@ -141,29 +157,29 @@ function Install-Package {
     $hasWinget = $Definition.PSObject.Properties.Name -contains "winget"
     $hasUrls = $Definition.PSObject.Properties.Name -contains "urls"
 
-    $chocoCommands = if ($hasChocolatey) { @($Definition.chocolatey) } else { @() }
-    $wingetCommands = if ($hasWinget) { @($Definition.winget) } else { @() }
-    $urlInstallers = if ($hasUrls) { @($Definition.urls) } else { @() }
+    [array]$chocoCommands = if ($hasChocolatey) { ConvertTo-Array -Value $Definition.chocolatey } else { @() }
+    [array]$wingetCommands = if ($hasWinget) { ConvertTo-Array -Value $Definition.winget } else { @() }
+    [array]$urlInstallers = if ($hasUrls) { ConvertTo-Array -Value $Definition.urls } else { @() }
 
-    if ($chocoCommands.Count -gt 0 -and -not $script:checkedChocolatey) {
+    if ($chocoCommands.Length -gt 0 -and -not $script:checkedChocolatey) {
         Test-Dependency -Name "choco"
         $script:checkedChocolatey = $true
     }
 
-    if ($wingetCommands.Count -gt 0 -and -not $script:checkedWinget) {
+    if ($wingetCommands.Length -gt 0 -and -not $script:checkedWinget) {
         Test-Dependency -Name "winget"
         $script:checkedWinget = $true
     }
 
-    if ($chocoCommands.Count -gt 0) {
+    if ($chocoCommands.Length -gt 0) {
         $success = $success -and (Invoke-InstallCommands -Commands $chocoCommands -Provider "choco" -PackageName $PackageName)
     }
 
-    if ($wingetCommands.Count -gt 0) {
+    if ($wingetCommands.Length -gt 0) {
         $success = $success -and (Invoke-InstallCommands -Commands $wingetCommands -Provider "winget" -PackageName $PackageName)
     }
 
-    if ($urlInstallers.Count -gt 0) {
+    if ($urlInstallers.Length -gt 0) {
         try {
             install_from_url -Installers $urlInstallers
         }
@@ -185,9 +201,9 @@ if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
 }
 
 Write-Host "Using install config: $ConfigPath"
-$packageNames = Get-PackageNamesFromConfig -Path $ConfigPath
+[array]$packageNames = ConvertTo-Array -Value (Get-PackageNamesFromConfig -Path $ConfigPath)
 
-if ($packageNames.Count -eq 0) {
+if ($packageNames.Length -eq 0) {
     throw "No packages found in install config: $ConfigPath"
 }
 
@@ -212,11 +228,11 @@ foreach ($packageName in $packageNames) {
 }
 
 Write-Host "`nInstallation summary"
-Write-Host "- Total packages: $($packageNames.Count)"
+Write-Host "- Total packages: $($packageNames.Length)"
 Write-Host "- Installed successfully: $installedCount"
-Write-Host "- Failed: $($failedPackages.Count)"
+Write-Host "- Failed: $($failedPackages.Length)"
 
-if ($failedPackages.Count -gt 0) {
+if ($failedPackages.Length -gt 0) {
     Write-Host "- Failed packages: $($failedPackages -join ', ')"
     exit 1
 }
