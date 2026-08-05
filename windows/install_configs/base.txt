@@ -3,6 +3,11 @@
 ###############################################################################
 7zip
 
+# Drivers
+amd_drivers
+intel_drivers
+nvidia_app
+
 # Browsers
 firefox
 
