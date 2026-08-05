@@ -1,3 +1,0 @@
-# Utilities
-raspberrypi_imager
-vlc

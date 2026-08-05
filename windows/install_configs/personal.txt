@@ -1,0 +1,49 @@
+# Base
+7zip
+
+# Drivers
+amd_drivers
+intel_drivers
+nvidia_app
+
+# Browsers
+firefox
+
+# Communication
+discord
+thunderbird
+
+# Utilities
+autofirma
+configurador_fnmt
+display_link
+keepass
+obsidian
+raspberrypi_imager
+vlc
+
+# VPNs
+openvpn_connect
+wireguard
+
+# Development
+docker_desktop
+git
+github_desktop
+jetbrains_toolbox
+postman
+python
+vscode
+
+# 3D printing
+chitubox
+lychee_slicer
+
+# Videogames
+amazongames
+battlenet
+ea_app
+epic_games_launcher
+heroic_games_launcher
+minecraft_launcher
+steam

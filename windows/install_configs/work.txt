@@ -1,6 +1,4 @@
-###############################################################################
 # Base
-###############################################################################
 7zip
 
 # Drivers
@@ -12,16 +10,31 @@ nvidia_app
 firefox
 
 # Communication
+discord
 thunderbird
 
 # Utilities
 autofirma
 configurador_fnmt
 display_link
+keepass
+obsidian
+raspberrypi_imager
 vlc
+
+# VPNs
+openvpn_connect
+wireguard
 
 # Development
 docker_desktop
 git
+github_desktop
+jetbrains_toolbox
+postman
 python
 vscode
+
+# Videogames
+battlenet
+steam
