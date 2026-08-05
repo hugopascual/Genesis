@@ -1,0 +1,8 @@
+# Videogames
+amazongames
+battlenet
+ea_app
+epic_games_launcher
+heroic_games_launcher
+minecraft_launcher
+steam

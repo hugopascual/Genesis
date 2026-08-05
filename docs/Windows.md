@@ -21,17 +21,23 @@ The script now uses profile files (similar to Linux) and package JSON definition
 - Profiles: `windows/install_configs/*.txt`
 - Package definitions: `windows/packages/*.json`
 
-Active profile currently included:
+Available profiles are discovered automatically from `windows/install_configs/*.txt`.
 
 - `base`
+- `games`
+- `3dprinting`
 
-The script logic remains profile-based, so adding `development`, `desktop`, or `games` again only requires creating new `.txt` files in `windows/install_configs/`.
+Profile name is the filename without `.txt`.
+Example: `windows/install_configs/base.txt` -> `-Profile base`.
 
 Examples:
 
 ```powershell
 # Use a custom list file
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -ConfigPath .\windows\install_configs\base.txt
+
+# Use a detected profile name (from install_configs filename)
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile games
 
 # Show command help
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 help
@@ -46,7 +52,7 @@ Each package file now uses a single command list and optional info URL:
   "description": "Software name",
   "info": "https://example.org/software",
   "commands": [
-    "choco install -y package",
+    "choco install -y package --ignore-checksums",
     "winget install --id Vendor.Package --silent --accept-package-agreements --accept-source-agreements"
   ]
 }
@@ -54,10 +60,12 @@ Each package file now uses a single command list and optional info URL:
 
 Notes:
 
-- `commands` is the only field executed by the installer.
 - `description` is metadata only and is not used by the installer logic.
-- URL downloads are also expressed directly as commands.
-- If `commands` is empty, the package is skipped with a warning.
+- `commands` is the only field executed by the installer.
+- Command output is streamed to terminal while each command runs.
+- If a command exits with non-zero code, the package is marked as failed.
+- URL downloads are expressed directly as commands.
+- If `commands` is empty, the package is skipped and shown at the end in a manual-install list with the `info` link.
 
 ### Default installs
 
@@ -92,19 +100,19 @@ Notes:
       - Search: `Search icon only`
       - Task view: `On`
       - Widgets: `Off`
-    - Taskbar corner icons
-      - Disable `Pen menu`
-      - Disable `Touch keyboard`
-      - Disable `Virtual touchpad`
-    - Taskbar corner overflow
-      - Disable all
+    - System Tray icons
+      - Emoji and more: `Never`
+      - Pen Menu: `Off`
+      - Touch keyboard: `Never`
     - Taskbar behaviours
       - Enable `Automatically hide the taskbar`
 - Time & language
   - Language & region
     - Language
       - Windows display language: English (United Kingdom)
-      - Preferred languages: English (United Kingdom), Spanish (Spain)
+      - Preferred languages
+        - English (United Kingdom). Add `US` as keyboard layout.
+        - Spanish (Spain)
     - Region
       - Country or region: Spain
       - Regional format: Spanish (Spain, Internacional Sort)

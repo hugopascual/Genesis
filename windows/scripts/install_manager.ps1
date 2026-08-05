@@ -14,6 +14,49 @@ function ConvertTo-GenesisArray {
     return @($Value)
 }
 
+function Get-GenesisAvailableProfiles {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$ScriptRoot
+    )
+
+    $installConfigsPath = Join-Path $ScriptRoot "install_configs"
+    if (-not (Test-Path $installConfigsPath)) {
+        throw "Install configs folder not found: $installConfigsPath"
+    }
+
+    return Get-ChildItem -Path $installConfigsPath -Filter "*.txt" -File |
+        Sort-Object BaseName |
+        Select-Object -ExpandProperty BaseName
+}
+
+function Resolve-GenesisInstallConfigPath {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$ScriptRoot,
+        [string]$Profile = "base",
+        [string]$ConfigPath
+    )
+
+    $installConfigsPath = Join-Path $ScriptRoot "install_configs"
+
+    if (-not [string]::IsNullOrWhiteSpace($ConfigPath)) {
+        return $ConfigPath
+    }
+
+    $availableProfiles = ConvertTo-GenesisArray -Value (Get-GenesisAvailableProfiles -ScriptRoot $ScriptRoot)
+    if (@($availableProfiles).Count -eq 0) {
+        throw "No install profiles found in: $installConfigsPath"
+    }
+
+    if ([string]::IsNullOrWhiteSpace($Profile) -or -not ($availableProfiles -contains $Profile)) {
+        $availableProfilesText = $availableProfiles -join ", "
+        throw "Invalid profile '$Profile'. Available profiles: $availableProfilesText"
+    }
+
+    return Join-Path $installConfigsPath "$Profile.txt"
+}
+
 function Get-GenesisPackageNamesFromConfig {
     param (
         [Parameter(Mandatory = $true)]
@@ -107,11 +150,7 @@ function Invoke-GenesisInstall {
     )
 
     $packagesPath = Join-Path $ScriptRoot "packages"
-    $installConfigsPath = Join-Path $ScriptRoot "install_configs"
-
-    if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
-        $ConfigPath = Join-Path $installConfigsPath "$Profile.txt"
-    }
+    $ConfigPath = Resolve-GenesisInstallConfigPath -ScriptRoot $ScriptRoot -Profile $Profile -ConfigPath $ConfigPath
 
     Write-Host "Using install config: $ConfigPath"
     [array]$packageNames = ConvertTo-GenesisArray -Value (Get-GenesisPackageNamesFromConfig -Path $ConfigPath)

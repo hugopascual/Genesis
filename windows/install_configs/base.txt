@@ -1,16 +1,7 @@
 ###############################################################################
 # Base
 ###############################################################################
-
-# Development
 7zip
-docker_desktop
-git
-github_desktop
-jetbrains_toolbox
-postman
-python
-vscode
 
 # Browsers
 firefox
@@ -25,24 +16,15 @@ autofirma
 configurador_fnmt
 display_link
 keepass
-google_drive
 obsidian
-raspberrypi_imager
 vlc
-
-# 3D printing
-chitubox
-lychee_slicer
 
 # VPNs
 openvpn_connect
 wireguard
 
-# Videogames
-amazongames
-battlenet
-ea_app
-epic_games_launcher
-heroic_games_launcher
-minecraft_launcher
-steam
+# Development
+docker_desktop
+git
+python
+vscode
