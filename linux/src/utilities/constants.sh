@@ -29,16 +29,10 @@ export COMMAND_TYPES=(
 )
 
 # Available installation types
-export INSTALL_TYPE_BASE='base'
-export INSTALL_TYPE_SERVER='server'
-export INSTALL_TYPE_DESKTOP='desktop'
-export INSTALL_TYPE_GAMES='games'
-
 export INSTALL_COMMAND_TYPES=(
-    "$INSTALL_TYPE_BASE"
-    "$INSTALL_TYPE_SERVER" 
-    "$INSTALL_TYPE_DESKTOP"
-    "$INSTALL_TYPE_GAMES"
+    "personal"
+    "work" 
+    "server"
 )
 
 # Available setup types
@@ -72,12 +66,6 @@ export INSTALL_CONFIGS_PATH="$BASE_PATH/install_configs"
 export LOGS_PATH="$BASE_PATH/logs"
 export PACKAGES_PATH="$BASE_PATH/packages"
 export STATICS_PATH="$BASE_PATH/statics"
-
-### Installation configs paths
-export DEFAULT_BASE_INSTALL_PATH="$INSTALL_CONFIGS_PATH/base.txt"
-export DEFAULT_SERVER_INSTALL_PATH="$INSTALL_CONFIGS_PATH/server.txt"
-export DEFAULT_DESKTOP_INSTALL_PATH="$INSTALL_CONFIGS_PATH/desktop.txt"
-export DEFAULT_GAMES_INSTALL_PATH="$INSTALL_CONFIGS_PATH/games.txt"
 
 ### Logs paths
 export LOG_FILE="$LOGS_PATH/genesis_$(date +%Y%m%d_%H%M%S).log"

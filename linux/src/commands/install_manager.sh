@@ -17,25 +17,7 @@ install_command() {
         check_option_supported "$OPTION_SELECTED" \
             "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
             "${INSTALL_COMMAND_TYPES[@]}"
-        
-        case $OPTION_SELECTED in
-            "$INSTALL_TYPE_BASE")
-                config_file="$DEFAULT_BASE_INSTALL_PATH"
-                ;;
-            "$INSTALL_TYPE_SERVER")
-                config_file="$DEFAULT_SERVER_INSTALL_PATH"
-                ;;
-            "$INSTALL_TYPE_DESKTOP")
-                config_file="$DEFAULT_DESKTOP_INSTALL_PATH"
-                ;;
-            "$INSTALL_TYPE_GAMES")
-                config_file="$DEFAULT_GAMES_INSTALL_PATH"
-                ;;
-            *)
-                echo "$INSTALLATION_TYPE_NOT_VALID_MESSAGE"
-                exit 1
-                ;;
-        esac
+        config_file="$INSTALL_CONFIGS_PATH/$OPTION_SELECTED.txt"
     fi
     
     # Execute installation with determined config file

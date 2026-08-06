@@ -14,8 +14,6 @@ Usage:  ./linux/linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFI
 
 where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
         INSTALLATION_TYPE := { ${INSTALL_COMMAND_TYPES[*]} }
-            - desktop: Uses configs/default_desktop.txt
-            - server: Uses configs/default_server.txt
         CONFIG_FILE := Path to custom package list
             - Example: configs/my_packages.txt
 
@@ -30,7 +28,7 @@ where   DISTRO := { ${AVAILABLE_DISTROS[*]} }
             - Example: \"sudo pacman -Syu --noconfirm \{package\}\"
 
 Examples:
-    ./linux/linux.sh install arch desktop
+    ./linux/linux.sh install arch personal
     ./linux/linux.sh install ubuntu configs/custom.txt
     ./linux/linux.sh update
     ./linux/linux.sh add-distro arch \"sudo pacman -Syu --noconfirm \{package\}\"
