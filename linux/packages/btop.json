@@ -3,9 +3,15 @@
   "arch": [
     "sudo pacman -Syu --noconfirm btop"
   ],
-  "ubuntu": [],
-  "debian": [],
-  "raspberrypi": [],
+  "ubuntu": [
+    "sudo apt install -y btop"
+  ],
+  "debian": [
+    "sudo apt install -y btop"
+  ],
+  "raspberrypi": [
+    "sudo apt install -y btop"
+  ],
   "cachyos": [
     "sudo pacman -Syu --noconfirm btop"
   ]

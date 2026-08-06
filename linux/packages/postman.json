@@ -1,7 +1,7 @@
 {
   "description": "API development platform",
   "arch": [
-    "yay -Syu --noconfirm postman-bin"
+    "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
   "ubuntu": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
@@ -13,6 +13,6 @@
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm postman"
+    "sudo flatpak install -y flathub com.getpostman.Postman"
   ]
 }

@@ -19,6 +19,6 @@
     "rm configuradorfnmt*"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm config_fnmt"
+    "yay -Syu --noconfirm configuradorfnmt"
   ]
 }

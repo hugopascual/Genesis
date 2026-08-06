@@ -1,24 +1,18 @@
 {
   "description": "Visual Studio Code editor",
   "arch": [
-    "yay -Syu --noconfirm visual-studio-code-bin"
+    "sudo flatpak install flathub com.visualstudio.code"
   ],
   "ubuntu": [
-    "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt install -y ./*.deb",
-    "rm ./*.deb"
+    "sudo flatpak install flathub com.visualstudio.code"
   ],
   "debian": [
-    "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt install -y ./*.deb",
-    "rm ./*.deb"
+    "sudo flatpak install flathub com.visualstudio.code"
   ],
   "raspberrypi": [
-    "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
-    "sudo apt install -y ./*.deb",
-    "rm ./*.deb"
+    "sudo flatpak install flathub com.visualstudio.code"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm vscode"
+    "sudo flatpak install flathub com.visualstudio.code"
   ]
 }

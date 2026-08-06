@@ -13,6 +13,6 @@
     "sudo apt install -y cron"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm cron"
+    "sudo pacman -Syu --noconfirm cronie"
   ]
 }

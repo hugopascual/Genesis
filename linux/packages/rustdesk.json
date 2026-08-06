@@ -13,6 +13,6 @@
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm rustdesk"
+    "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ]
 }

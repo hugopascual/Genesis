@@ -22,6 +22,6 @@
     "rm Autofirma*"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm autofirma"
+    "yay -Syu --noconfirm autofirma-bin"
   ]
 }

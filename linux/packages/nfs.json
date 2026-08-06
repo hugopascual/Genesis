@@ -13,6 +13,6 @@
     "sudo apt install -y nfs-common"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm nfs"
+    "sudo pacman -Syu --noconfirm nfs-utils"
   ]
 }

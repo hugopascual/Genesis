@@ -13,6 +13,6 @@
     "sudo apt install -y default-jre"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm java_jre"
+    "sudo pacman -Syu --noconfirm jre-openjdk"
   ]
 }

@@ -16,7 +16,5 @@
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm curseforge"
-  ]
+  "cachyos": []
 }

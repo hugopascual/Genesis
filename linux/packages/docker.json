@@ -2,7 +2,6 @@
   "description": "Container platform",
   "arch": [
     "sudo pacman -Syu --noconfirm docker",
-    "sudo pacman -Syu --noconfirm docker-compose",
     "sudo systemctl enable docker.service",
     "sudo usermod -aG docker $USER"
   ],
@@ -40,6 +39,8 @@
     "sudo usermod -aG docker $USER"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm docker"
+    "sudo pacman -Syu --noconfirm docker",
+    "sudo systemctl enable docker.service",
+    "sudo usermod -aG docker $USER"
   ]
 }

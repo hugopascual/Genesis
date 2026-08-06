@@ -13,6 +13,6 @@
     "sudo apt install -y rename"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm rename"
+    "sudo pacman -Syu --noconfirm perl-rename"
   ]
 }

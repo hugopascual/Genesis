@@ -28,6 +28,6 @@
     "sudo apt install -y openvpn3"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm openvpn3"
+    "yay -Syu --noconfirm openvpn3"
   ]
 }
