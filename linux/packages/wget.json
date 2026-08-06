@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y wget"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm wget"
   ]
 }

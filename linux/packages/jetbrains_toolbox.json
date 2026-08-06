@@ -23,5 +23,8 @@
     "sudo tar -xzf jetbrains-toolbox-3.2.0.65851.tar.gz -C /opt",
     "sudo mv /opt/jetbrains-toolbox-3.2.0.65851 /opt/jetbrains-toolbox",
     "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm jetbrains_toolbox"
   ]
 }

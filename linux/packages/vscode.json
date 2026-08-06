@@ -17,5 +17,8 @@
     "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm vscode"
   ]
 }

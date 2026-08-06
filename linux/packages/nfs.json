@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y nfs-common"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm nfs"
   ]
 }

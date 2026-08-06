@@ -15,5 +15,8 @@
     "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm minecraft"
   ]
 }

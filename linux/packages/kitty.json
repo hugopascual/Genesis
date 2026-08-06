@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y kitty"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm kitty"
   ]
 }

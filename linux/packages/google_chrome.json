@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo flatpak install -y flathub com.google.Chrome"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm google_chrome"
   ]
 }

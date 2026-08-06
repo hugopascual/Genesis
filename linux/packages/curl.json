@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y curl"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm curl"
   ]
 }

@@ -1,0 +1,64 @@
+# Package managers
+flatpak
+yay
+
+# System
+btop
+bind
+cron
+curl
+fastfetch
+htop
+less
+lshw
+make
+nano
+neovim
+nfs
+rename
+rsync
+tree
+wget
+vim
+
+# Development
+docker
+git
+ghcli
+java_jdk
+jetbrains_toolbox
+lazydocker
+postman
+python
+vscode
+
+# Browsers
+firefox
+
+# Communication
+discord
+thunderbird
+
+# Media
+gimp
+vlc
+
+# Utilities
+7zip
+autofirma
+config_fnmt
+keepassxc
+obsidian
+raspberry_pi_imager
+terminator
+yazi
+
+# VPNs
+openvpn3
+wireguard
+
+# Drivers
+display_link_driver
+
+# Videogames
+steam

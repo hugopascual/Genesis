@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo flatpak install -y flathub org.telegram.desktop"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm telegram"
   ]
 }

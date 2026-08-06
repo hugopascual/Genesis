@@ -3,10 +3,10 @@
   "arch": [
     "sudo pacman -Syu --noconfirm btop"
   ],
-  "ubuntu": [
-  ],
-  "debian": [
-  ],
-  "raspberrypi": [
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm btop"
   ]
 }

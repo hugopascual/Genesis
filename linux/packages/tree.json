@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y tree"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm tree"
   ]
 }

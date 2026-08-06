@@ -17,5 +17,8 @@
     "wget --content-disposition https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm obsidian"
   ]
 }

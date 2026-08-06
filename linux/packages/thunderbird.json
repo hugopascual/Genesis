@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo flatpak install -y flathub org.mozilla.Thunderbird"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm thunderbird"
   ]
 }

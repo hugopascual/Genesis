@@ -15,5 +15,8 @@
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm curseforge"
   ]
 }

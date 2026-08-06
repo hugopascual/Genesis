@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y lshw"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm lshw"
   ]
 }

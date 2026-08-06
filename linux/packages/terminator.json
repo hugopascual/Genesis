@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y terminator"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm terminator"
   ]
 }

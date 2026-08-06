@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y 7zip"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm 7zip"
   ]
 }

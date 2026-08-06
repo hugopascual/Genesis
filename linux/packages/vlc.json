@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y vlc"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm vlc"
   ]
 }

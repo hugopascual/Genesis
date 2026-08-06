@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y wireguard"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm wireguard"
   ]
 }

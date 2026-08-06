@@ -13,5 +13,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y fastfetch"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm fastfetch"
   ]
 }

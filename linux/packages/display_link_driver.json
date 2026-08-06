@@ -26,5 +26,8 @@
     "sudo apt update",
     "sudo apt install -y displaylink-driver",
     "rm synaptics-repository-keyring.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm display_link_driver"
   ]
 }

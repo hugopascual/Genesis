@@ -20,5 +20,8 @@
     "unzip Autofirma_Linux_Debian.zip",
     "sudo apt install -y ./*.deb",
     "rm Autofirma*"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm autofirma"
   ]
 }

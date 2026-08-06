@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y htop"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm htop"
   ]
 }

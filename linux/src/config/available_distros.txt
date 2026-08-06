@@ -4,3 +4,4 @@ ubuntu
 debian
 arch
 raspberrypi
+cachyos

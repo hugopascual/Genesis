@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y default-jdk"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm java_jdk"
   ]
 }

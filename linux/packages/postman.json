@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm postman"
   ]
 }

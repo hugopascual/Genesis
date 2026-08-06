@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y make"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm make"
   ]
 }

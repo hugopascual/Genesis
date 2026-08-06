@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y gimp"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm gimp"
   ]
 }

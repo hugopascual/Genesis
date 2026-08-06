@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm keepassxc"
   ]
 }

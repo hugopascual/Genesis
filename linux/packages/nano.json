@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y nano"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm nano"
   ]
 }

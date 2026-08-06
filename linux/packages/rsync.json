@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y rsync"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm rsync"
   ]
 }

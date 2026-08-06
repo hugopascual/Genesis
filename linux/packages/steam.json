@@ -18,5 +18,8 @@
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm steam"
   ]
 }

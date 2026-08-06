@@ -11,5 +11,8 @@
   ],
   "raspberrypi": [
     "sudo apt install -y rename"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm rename"
   ]
 }
