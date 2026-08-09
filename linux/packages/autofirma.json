@@ -1,27 +1,18 @@
 {
   "description": "Spanish digital signature tool",
   "arch": [
-    "yay -Syu --noconfirm autofirma-bin"
+    "sudo flatpak -y install flathub es.gob.afirma"
   ],
   "ubuntu": [
-    "curl -OL https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip",
-    "unzip Autofirma_Linux_Debian.zip",
-    "sudo apt install -y ./*.deb",
-    "rm Autofirma*"
+    "sudo flatpak -y install flathub es.gob.afirma"
   ],
   "debian": [
-    "curl -OL https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip",
-    "unzip Autofirma_Linux_Debian.zip",
-    "sudo apt install -y ./*.deb",
-    "rm Autofirma*"
+    "sudo flatpak -y install flathub es.gob.afirma"
   ],
   "raspberrypi": [
-    "curl -OL https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip",
-    "unzip Autofirma_Linux_Debian.zip",
-    "sudo apt install -y ./*.deb",
-    "rm Autofirma*"
+    "sudo flatpak -y install flathub es.gob.afirma"
   ],
   "cachyos": [
-    "yay -Syu --noconfirm autofirma-bin"
+    "sudo flatpak -y install flathub es.gob.afirma"
   ]
 }
