@@ -19,5 +19,8 @@
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
-  "cachyos": []
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm cachyos-gaming-meta",
+    "sudo pacman -Syu --noconfirm cachyos-gaming-applications"
+  ]
 }
