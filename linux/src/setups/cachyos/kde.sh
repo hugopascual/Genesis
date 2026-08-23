@@ -19,13 +19,22 @@ lookandfeeltool -a org.kde.breezedark.desktop
 # Background and screensaver 
 plasma-apply-wallpaperimage "$HOME/.config/theme/background.jpg"
 
-# Multitasking
+# Multitasking. Dynamic virtual desktops
+git clone https://github.com/maurges/dynamic_workspaces.git
+cd dynamic_workspaces
+kpackagetool6 --type KWin/Script --install .
+kwriteconfig6 --file kwinrc --group Plugins --key dynamic_workspacesEnabled true
+qdbus6 org.kde.KWin /KWin reconfigure
+cd ..
+rm -rf dynamic_workspaces
 
-# Mouse and touchpad scrool direction
+# Mouse and touchpad scroll direction
+kwriteconfig6 --file kcminputrc --group Mouse --key NaturalScroll true
 
 # Notifications
 
 # Add the baterry percentage show
+# Difficult to make it because depends on an external plugin
 
 ################################################################
 # Add second keyboard distribution

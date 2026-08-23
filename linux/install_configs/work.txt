@@ -47,6 +47,7 @@ vlc
 7zip
 autofirma
 config_fnmt
+kitty
 keepassxc
 obsidian
 raspberry_pi_imager

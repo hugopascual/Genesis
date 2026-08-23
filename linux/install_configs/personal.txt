@@ -32,7 +32,7 @@ postman
 python
 codeoss
 
-# Browserss
+# Browsers
 firefox
 
 # Communication
@@ -48,6 +48,7 @@ vlc
 autofirma
 config_fnmt
 keepassxc
+kitty
 obsidian
 raspberry_pi_imager
 terminator
