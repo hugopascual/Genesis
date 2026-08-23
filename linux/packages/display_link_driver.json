@@ -1,6 +1,10 @@
 {
   "description": "DisplayLink USB graphics driver",
   "arch": [
+    "sudo pacman -Syu --noconfirm linux-headers",
+    "yay -Syu --noconfirm evdi-dkms",
+    "yay -Syu --noconfirm displaylink",
+    "sudo systemctl enable displaylink.service"
   ],
   "ubuntu": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
@@ -24,5 +28,9 @@
     "rm synaptics-repository-keyring.deb"
   ],
   "cachyos": [
+    "sudo pacman -Syu --noconfirm linux-headers",
+    "yay -Syu --noconfirm evdi-dkms",
+    "yay -Syu --noconfirm displaylink",
+    "sudo systemctl enable displaylink.service"
   ]
 }

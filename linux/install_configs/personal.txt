@@ -30,9 +30,9 @@ jetbrains_toolbox
 lazydocker
 postman
 python
-vscode
+codeoss
 
-# Browsers
+# Browserss
 firefox
 
 # Communication

@@ -1,6 +1,7 @@
 {
   "description": "OpenVPN 3 Client",
   "arch": [
+    "yay -Syu --noconfirm openvpn3"
   ],
   "ubuntu": [
     "sudo apt install -y apt-transport-https curl",
@@ -27,5 +28,6 @@
     "sudo apt install -y openvpn3"
   ],
   "cachyos": [
+    "yay -Syu --noconfirm openvpn3"
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "description": "Visual Studio Code editor",
+  "arch": [
+    "sudo pacman -Syu --noconfirm code"
+  ],
+  "ubuntu": [
+  ],
+  "debian": [
+  ],
+  "raspberrypi": [
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm code"
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "description": "FNMT certificate configuration tool",
   "arch": [
+    "yay -Syu --noconfirm configuradorfnmt"
   ],
   "ubuntu": [
     "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
@@ -18,5 +19,6 @@
     "rm configuradorfnmt*"
   ],
   "cachyos": [
+    "yay -Syu --noconfirm configuradorfnmt"
   ]
 }

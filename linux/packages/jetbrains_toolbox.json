@@ -1,6 +1,7 @@
 {
   "description": "JetBrains Toolbox App",
   "arch": [
+    "yay -Syu --noconfirm jetbrains-toolbox"
   ],
   "ubuntu": [
     "sudo apt-get install -y libfuse2",
@@ -24,5 +25,6 @@
     "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
   ],
   "cachyos": [
+    "yay -Syu --noconfirm jetbrains-toolbox"
   ]
 }
