@@ -5,7 +5,7 @@
 
 ################################################################################
 # Create basics folders structure 
-base_folder_structure_creation
+desktop_folder_structure_creation
 
 ################################################################################
 # Configure environment
@@ -94,7 +94,6 @@ mkdir -p "$autostart_folder"
 cp /usr/share/applications/obsidian.desktop "$autostart_folder"
 cp /usr/share/applications/org.mozilla.Thunderbird.desktop "$autostart_folder"
 cp /usr/share/applications/firefox.desktop "$autostart_folder"
-
 
 ################################################################################
 # Other setup configurations
