@@ -62,3 +62,5 @@ display_link_driver
 
 # Videogames
 steam
+lutris
+heroic
