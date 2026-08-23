@@ -13,6 +13,6 @@
     "sudo apt install -y rpi-imager"
   ],
   "cachyos": [
-    "sudo pacman -Syu --noconfirm rpi_imager"
+    "sudo pacman -Syu --noconfirm rpi-imager"
   ]
 }

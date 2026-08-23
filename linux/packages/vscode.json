@@ -1,7 +1,6 @@
 {
   "description": "Visual Studio Code editor",
   "arch": [
-    "sudo flatpak install flathub com.visualstudio.code"
   ],
   "ubuntu": [
     "sudo flatpak install flathub com.visualstudio.code"
@@ -13,6 +12,5 @@
     "sudo flatpak install flathub com.visualstudio.code"
   ],
   "cachyos": [
-    "sudo flatpak install flathub com.visualstudio.code"
   ]
 }
