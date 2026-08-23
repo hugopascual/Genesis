@@ -28,7 +28,7 @@ localectl set-locale LC_IDENTIFICATION=es_ES.UTF-8
 
 ################################################################
 # Create basics folders structure
-base_folder_structure_creation
+desktop_folder_structure_creation
 
 ################################################################################
 # Configure desktop environment

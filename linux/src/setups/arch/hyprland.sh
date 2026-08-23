@@ -7,7 +7,7 @@
 
 ################################################################################
 # Create basics folders structure 
-base_folder_structure_creation
+desktop_folder_structure_creation
 
 ################################################################################
 # Configure environment
