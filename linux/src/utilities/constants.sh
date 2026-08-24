@@ -40,11 +40,13 @@ export INSTALL_COMMAND_TYPES=(
 export GNOME='gnome'
 export HYPRLAND='hyprland'
 export SERVER='server'
+export KDE='kde'
 
 export SETUP_TYPES=(
     "$GNOME"
     "$HYPRLAND"
     "$SERVER"
+    "$KDE"
 )
 
 ################################################################################

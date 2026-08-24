@@ -28,25 +28,24 @@ kwriteconfig6 --file kwinrc --group Plugins --key dynamic_workspacesEnabled true
 qdbus6 org.kde.KWin /KWin reconfigure
 cd ..
 rm -rf dynamic_workspaces
-## Keyboard shortcuts
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc \
-  --group kwin \
-  --key "Switch One Desktop to the Left" \
-  "Ctrl+Alt+Left"
-
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc \
-  --group kwin \
-  --key "Switch One Desktop to the Right" \
-  "Ctrl+Alt+Right"
-
 
 # Mouse and touchpad scroll direction
-kwriteconfig6 --file kcminputrc --group Mouse --key NaturalScroll true
+kwriteconfig6 --file kcminputrc --group Touchpad --key NaturalScroll false
 
 # Notifications
 
 # Add the baterry percentage show
 # Difficult to make it because depends on an external plugin
+
+# Keyboard shortcuts
+## Change virtual desktops with Ctrl+Alt+Left/Right
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right"
+
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 1" "Meta+1"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 2" "Meta+2"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 3" "Meta+3"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 4" "Meta+4"
 
 ################################################################
 # Add second keyboard distribution

@@ -74,7 +74,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 gsettings set org.gnome.mutter workspaces-only-on-primary true
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
-
 # Mouse and Touchpad
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
