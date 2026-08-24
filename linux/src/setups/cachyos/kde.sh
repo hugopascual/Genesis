@@ -38,17 +38,16 @@ kwriteconfig6 --file kcminputrc --group Touchpad --key NaturalScroll false
 # Difficult to make it because depends on an external plugin
 
 # Keyboard shortcuts
-## Change virtual desktops with Ctrl+Alt+Left/Right
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left,none,Switch One Desktop to the Left"
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right,none,Switch One Desktop to the Right"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left,none,Switch One Desktop to the Left"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right,none,Switch One Desktop to the Right"
 
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch to Desktop 1" "Meta+1,none,Switch to Desktop 1"
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch to Desktop 2" "Meta+2,none,Switch to Desktop 2"
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch to Desktop 3" "Meta+3,none,Switch to Desktop 3"
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Switch to Desktop 4" "Meta+4,none,Switch to Desktop 4"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 1" "Meta+1,none,Switch to Desktop 1"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 2" "Meta+2,none,Switch to Desktop 2"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 3" "Meta+3,none,Switch to Desktop 3"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch to Desktop 4" "Meta+4,none,Switch to Desktop 4"
 
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group kwin --key "Overview" "Meta,none,Toggle Overview"
-kwriteconfig6 --file "$HOME/.config/kglobalshortcutsrc" --group plasmashell --key "activate application launcher" "Meta+W,none,Activate Application Launcher"
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Overview" "Meta,none,Toggle Overview"
+kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Meta+W,none,Activate Application Launcher"
 
 ################################################################
 # Add second keyboard distribution
