@@ -37,6 +37,9 @@ kwriteconfig6 --file kcminputrc --group Touchpad --key NaturalScroll false
 # Add the baterry percentage show
 # Difficult to make it because depends on an external plugin
 
+# Do not save session apps on shut down
+kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
+
 # Keyboard shortcuts
 kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left,none,Switch One Desktop to the Left"
 kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right,none,Switch One Desktop to the Right"
