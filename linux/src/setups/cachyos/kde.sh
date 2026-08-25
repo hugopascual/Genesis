@@ -17,7 +17,7 @@ copy_config_statics
 lookandfeeltool -a org.kde.breezedark.desktop
 
 # Background and screensaver 
-plasma-apply-wallpaperimage "$HOME/.config/theme/background.jpg"
+plasma-apply-wallpaperimage "$BACKGROUND_DESTINATION_PATH"
 
 # Multitasking.
 ## Dynamic virtual desktops

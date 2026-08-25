@@ -84,6 +84,11 @@ export UTILITIES_PATH="$SRC_PATH/utilities"
 
 ### config paths
 export AVAILABLE_DISTROS_FILEPATH="$CONFIG_PATH/available_distros.txt"
+#### config path destinations
+export CUSTOM_CONFIG_DESTINATION_PATH="$HOME/.config/custom"
+export THEME_CONFIG_DESTINATION_PATH="$CUSTOM_CONFIG_DESTINATION_PATH/themes"
+export BACKGROUND_DESTINATION_PATH="$THEME_CONFIG_DESTINATION_PATH/background.jpg"
+export SCREENSAVER_DESTINATION_PATH="$THEME_CONFIG_DESTINATION_PATH/screensaver.jpg"
 
 ################################################################################
 

@@ -56,9 +56,9 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 
 # Background and screensaver
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/theme/background.jpg"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.config/theme/background.jpg"
-gsettings set org.gnome.desktop.screensaver picture-uri "file://$HOME/.config/theme/screensaver.jpg"
+gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_DESTINATION_PATH"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$BACKGROUND_DESTINATION_PATH"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$SCREENSAVER_DESTINATION_PATH"
 
 # Desktop icons
 gsettings set org.gnome.shell.extensions.ding show-home false
