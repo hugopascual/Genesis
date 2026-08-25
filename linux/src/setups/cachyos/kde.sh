@@ -47,6 +47,8 @@ kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop t
 kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Overview" "Meta,none,Toggle Overview"
 kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Meta+W,none,Activate Application Launcher"
 
+kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Window Maximize" "Meta+F,none,Maximise Window"
+
 ################################################################
 # Add second keyboard distribution
  
