@@ -32,6 +32,9 @@ rm -rf dynamic_workspaces
 # Mouse and touchpad scroll direction
 kwriteconfig6 --file kcminputrc --group Touchpad --key NaturalScroll false
 
+# Taskbar
+qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'panels()[0].location = "top"'
+
 # Notifications
 
 # Add the baterry percentage show
