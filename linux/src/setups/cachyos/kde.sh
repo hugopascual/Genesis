@@ -68,7 +68,7 @@ cp /usr/share/applications/firefox.desktop "$autostart_folder"
 ################################################################################
 # Other setup configurations
 
-aliases_setup
+custom_shell_setup
 
 # .bashrc configuration and customization
 sed -iE 's/\\w/\\W/' "$HOME/.bashrc"

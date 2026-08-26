@@ -100,11 +100,10 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 ################################################################################
 # Other setup configurations
 
+custom_shell_setup
+
 # .bashrc configuration and customization
 sed -iE 's/\\w/\\W/' "$HOME/.bashrc"
-
-## Add aliases to .bashrc
-aliases_setup
 
 ################################################################################
 # Graphics drivers

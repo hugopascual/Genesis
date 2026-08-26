@@ -74,8 +74,7 @@ pacman_install 'kvantum'
 # Deactivate bluethooth on startup
 sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
 
-## Add aliases to .bashrc
-aliases_setup
+custom_shell_setup
 
 ################################################################################
 # Graphics drivers

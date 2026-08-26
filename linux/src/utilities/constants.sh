@@ -74,7 +74,6 @@ export LOG_FILE="$LOGS_PATH/genesis_$(date +%Y%m%d_%H%M%S).log"
 
 ### Statis files paths
 export REPOSITORIES_CLONE_SCRIPT_PATH="$STATICS_PATH/clone.sh"
-export ALIASES_DEFINITIONS_FILEPATH="$STATICS_PATH/aliases.txt"
 
 ## src paths
 export COMMANDS_PATH="$SRC_PATH/commands"
@@ -86,9 +85,12 @@ export UTILITIES_PATH="$SRC_PATH/utilities"
 export AVAILABLE_DISTROS_FILEPATH="$CONFIG_PATH/available_distros.txt"
 #### config path destinations
 export CUSTOM_CONFIG_DESTINATION_PATH="$HOME/.config/custom"
-export THEME_CONFIG_DESTINATION_PATH="$CUSTOM_CONFIG_DESTINATION_PATH/themes"
-export BACKGROUND_DESTINATION_PATH="$THEME_CONFIG_DESTINATION_PATH/background.jpg"
-export SCREENSAVER_DESTINATION_PATH="$THEME_CONFIG_DESTINATION_PATH/screensaver.jpg"
+export THEMES_CONFIG_DESTINATION_PATH="$CUSTOM_CONFIG_DESTINATION_PATH/themes"
+export BACKGROUND_DESTINATION_PATH="$THEMES_CONFIG_DESTINATION_PATH/background.jpg"
+export SCREENSAVER_DESTINATION_PATH="$THEMES_CONFIG_DESTINATION_PATH/screensaver.jpg"
+export SHELLS_CONFIG_DESTINATION_PATH="$CUSTOM_CONFIG_DESTINATION_PATH/shells"
+export BASH_CONFIG_DESTINATION_PATH="$SHELLS_CONFIG_DESTINATION_PATH/.bashrc_custom_config.sh"
+export ZSH_CONFIG_DESTINATION_PATH="$SHELLS_CONFIG_DESTINATION_PATH/.zshrc_custom_config.sh"
 
 ################################################################################
 
