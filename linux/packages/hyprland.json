@@ -1,0 +1,14 @@
+{
+  "description": "Hyprland compositor",
+  "arch": [
+    "sudo pacman -Syu --noconfirm hyprland"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm hyprland"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

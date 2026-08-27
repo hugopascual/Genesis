@@ -1,0 +1,14 @@
+{
+  "description": "Waybar status bar",
+  "arch": [
+    "sudo pacman -Syu --noconfirm waybar"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm waybar"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

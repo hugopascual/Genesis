@@ -1,0 +1,14 @@
+{
+  "description": "Hyprlock lock screen",
+  "arch": [
+    "sudo pacman -Syu --noconfirm hyprlock"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm hyprlock"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

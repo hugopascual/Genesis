@@ -1,0 +1,18 @@
+{
+  "description": "OpenVPN systemd-resolved integration",
+  "arch": [
+    ":"
+  ],
+  "cachyos": [
+    ":"
+  ],
+  "ubuntu": [
+    "sudo apt install -y openvpn-systemd-resolved"
+  ],
+  "debian": [
+    "sudo apt install -y openvpn-systemd-resolved"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

@@ -9,7 +9,7 @@ help() {
 "
 Usage:  ./linux/linux.sh $INSTALL_COMMAND { DISTRO } { INSTALLATION_TYPE | CONFIG_FILE }
         ./linux/linux.sh $UPDATE_COMMAND
-        ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
+    ./linux/linux.sh $SETUP_COMMAND { DISTRO } { SETUP_TYPE } 
         ./linux/linux.sh $ADD_DISTRO_COMMAND { NEW_DISTRO } { BASE_COMMAND } 
 
 where   DISTRO := { ${AVAILABLE_DISTROS[*]} }

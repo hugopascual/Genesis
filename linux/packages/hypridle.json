@@ -1,0 +1,14 @@
+{
+  "description": "Hypridle idle daemon",
+  "arch": [
+    "sudo pacman -Syu --noconfirm hypridle"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm hypridle"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

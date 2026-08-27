@@ -1,0 +1,14 @@
+{
+  "description": "Qt5 configuration tool",
+  "arch": [
+    "sudo pacman -Syu --noconfirm qt5ct"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm qt5ct"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

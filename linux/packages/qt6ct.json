@@ -1,0 +1,14 @@
+{
+  "description": "Qt6 configuration tool",
+  "arch": [
+    "sudo pacman -Syu --noconfirm qt6ct"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm qt6ct"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Tuigreet greeter for greetd",
+  "arch": [
+    "sudo pacman -Syu --noconfirm greetd-tuigreet"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm greetd-tuigreet"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

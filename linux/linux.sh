@@ -37,10 +37,14 @@ init_log
 export COMMAND_SELECTED="$1"
 export DISTRO_SELECTED="$2"
 export OPTION_SELECTED="$3"
+SETUP_EXTRA_OPTIONS=("${@:4}")
 
 log_info "Command selected: $COMMAND_SELECTED"
 log_info "Distribution selected: $DISTRO_SELECTED"
 log_info "Option selected: $OPTION_SELECTED"
+if [[ ${#SETUP_EXTRA_OPTIONS[@]} -gt 0 ]]; then
+    log_info "Setup extra options: ${SETUP_EXTRA_OPTIONS[*]}"
+fi
 
 check_option_supported "$COMMAND_SELECTED" \
     "$COMMAND_NOT_VALID_MESSAGE" \

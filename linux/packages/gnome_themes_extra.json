@@ -1,0 +1,18 @@
+{
+  "description": "GNOME additional themes",
+  "arch": [
+    "sudo pacman -Syu --noconfirm gnome-themes-extra"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm gnome-themes-extra"
+  ],
+  "ubuntu": [
+    "sudo apt install -y gnome-themes-extra"
+  ],
+  "debian": [
+    "sudo apt install -y gnome-themes-extra"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

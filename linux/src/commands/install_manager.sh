@@ -64,10 +64,12 @@ run_installation() {
 # @Params
 # $1 Config file path (e.g., "configs/default_server.txt" or absolute path)
 # $2 Distribution name (e.g., "ubuntu", "arch", "debian")
+# $3 Strict mode (optional, true/false). Defaults to false.
 ##
 install_from_config_file() {
     local config_file="$1"
     local distro="$2"
+    local strict_mode="${3:-false}"
     
     if [[ ! -f "$config_file" ]]; then
         log_info "Error: Config file not found: $config_file"
@@ -91,7 +93,7 @@ install_from_config_file() {
         
         ((total_count++))
         
-        if install_software "$software" "$distro"; then
+        if install_software "$software" "$distro" "$strict_mode"; then
             ((installed_count++))
         else
             failed_packages+=("$software")
@@ -120,10 +122,12 @@ install_from_config_file() {
 # @Params
 # $1 Software name (e.g., "htop", "docker")
 # $2 Distribution name (e.g., "ubuntu", "arch", "debian")
+# $3 Strict mode (optional, true/false). Defaults to false.
 ##
 install_software() {
     local software="$1"
     local distro="$2"
+    local strict_mode="${3:-false}"
     
     log_info "$software"
     
@@ -147,6 +151,10 @@ install_software() {
     # Check if commands were found
     if [[ -z "$commands" || "$commands" == "null" || "$commands" == "[]" ]]; then
         log_info "Warning: No installation commands found for '$software' on '$distro'"
+        if [[ "$strict_mode" == "true" ]]; then
+            log_info "Error: Strict mode enabled. Missing distro command mapping for '$software'."
+            return 1
+        fi
         return 0
     fi
     

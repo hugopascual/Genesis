@@ -1,0 +1,18 @@
+{
+  "description": "Qt6 Wayland support",
+  "arch": [
+    "sudo pacman -Syu --noconfirm qt6-wayland"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm qt6-wayland"
+  ],
+  "ubuntu": [
+    "sudo apt install -y qt6-wayland"
+  ],
+  "debian": [
+    "sudo apt install -y qt6-wayland"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

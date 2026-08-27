@@ -1,0 +1,8 @@
+gnome
+nautilus
+networkmanager_openvpn
+openvpn_systemd_resolved
+gtk3
+gtk4
+adwaita_icon_theme
+gnome_themes_extra

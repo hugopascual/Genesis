@@ -1,0 +1,18 @@
+{
+  "description": "Qt5 Wayland support",
+  "arch": [
+    "sudo pacman -Syu --noconfirm qt5-wayland"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm qt5-wayland"
+  ],
+  "ubuntu": [
+    "sudo apt install -y qtwayland5"
+  ],
+  "debian": [
+    "sudo apt install -y qtwayland5"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "GNOME Files (Nautilus)",
+  "arch": [
+    "sudo pacman -Syu --noconfirm nautilus"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm nautilus"
+  ],
+  "ubuntu": [
+    "sudo apt install -y nautilus"
+  ],
+  "debian": [
+    "sudo apt install -y nautilus"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

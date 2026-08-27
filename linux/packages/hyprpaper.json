@@ -1,0 +1,14 @@
+{
+  "description": "Hyprpaper wallpaper daemon",
+  "arch": [
+    "sudo pacman -Syu --noconfirm hyprpaper"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm hyprpaper"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

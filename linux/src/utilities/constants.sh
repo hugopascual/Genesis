@@ -21,6 +21,13 @@ export UPDATE_COMMAND='update'
 export SETUP_COMMAND='setup'
 export ADD_DISTRO_COMMAND='add-distro'
 
+# Distribution keys
+export UBUNTU='ubuntu'
+export DEBIAN='debian'
+export ARCH='arch'
+export RASPBERRYPI='raspberrypi'
+export CACHYOS='cachyos'
+
 export COMMAND_TYPES=(
     "$INSTALL_COMMAND" 
     "$UPDATE_COMMAND" 
@@ -35,19 +42,8 @@ export INSTALL_COMMAND_TYPES=(
     "server"
 )
 
-# Available setup types
-# TODO: How to extract the available types from the actual scripts
-export GNOME='gnome'
-export HYPRLAND='hyprland'
-export SERVER='server'
-export KDE='kde'
-
-export SETUP_TYPES=(
-    "$GNOME"
-    "$HYPRLAND"
-    "$SERVER"
-    "$KDE"
-)
+# Available setup types are loaded dynamically from setup scripts.
+export SETUP_TYPES=()
 
 ################################################################################
 
@@ -55,7 +51,10 @@ export SETUP_TYPES=(
 export COMMAND_NOT_VALID_MESSAGE="Command selected not valid"
 export INSTALLATION_TYPE_NOT_VALID_MESSAGE="Installation type selected not valid"
 export DISTRIBUTION_NOT_VALID_MESSAGE="Distribution selected not valid"
-export SETUT_NOT_VALID_MESSAGE="Setup selected not valid"
+export SETUP_NOT_VALID_MESSAGE="Setup selected not valid"
+
+# Backward compatibility typo alias
+export SETUT_NOT_VALID_MESSAGE="$SETUP_NOT_VALID_MESSAGE"
 export NEW_DISTRO_NOT_VALID_MESSAGE="New distribution name not valid"
 export BASE_COMMAND_NOT_VALID_MESSAGE="Base command for new distribution not valid"
 export DISTRO_ALREADY_INCLUDED_MESSAGE="New distribution is already included in package definitions"
@@ -65,15 +64,13 @@ export DISTRO_ALREADY_INCLUDED_MESSAGE="New distribution is already included in 
 # Paths constants
 ## Basic paths
 export INSTALL_CONFIGS_PATH="$BASE_PATH/install_configs"
+export SETUP_BUNDLES_PATH="$SRC_PATH/setups/bundles"
 export LOGS_PATH="$BASE_PATH/logs"
 export PACKAGES_PATH="$BASE_PATH/packages"
 export STATICS_PATH="$BASE_PATH/statics"
 
 ### Logs paths
 export LOG_FILE="$LOGS_PATH/genesis_$(date +%Y%m%d_%H%M%S).log"
-
-### Statis files paths
-export REPOSITORIES_CLONE_SCRIPT_PATH="$STATICS_PATH/clone.sh"
 
 ## src paths
 export COMMANDS_PATH="$SRC_PATH/commands"
@@ -91,6 +88,13 @@ export SCREENSAVER_DESTINATION_PATH="$THEMES_CONFIG_DESTINATION_PATH/screensaver
 export SHELLS_CONFIG_DESTINATION_PATH="$CUSTOM_CONFIG_DESTINATION_PATH/shells"
 export BASH_CONFIG_DESTINATION_PATH="$SHELLS_CONFIG_DESTINATION_PATH/.bashrc_custom_config.sh"
 export ZSH_CONFIG_DESTINATION_PATH="$SHELLS_CONFIG_DESTINATION_PATH/.zshrc_custom_config.sh"
+
+### Statics files paths
+#### General scripts
+export SCRIPTS_STATICS_PATH="$STATICS_PATH/scripts"
+export REPOSITORIES_CLONE_SCRIPT_PATH="$SCRIPTS_STATICS_PATH/clone.sh"
+#### Setup statics paths
+export TYPES_STATICS_PATH="$STATICS_PATH/types"
 
 ################################################################################
 
@@ -130,6 +134,27 @@ load_available_distros() {
     AVAILABLE_DISTROS=("${distros[@]}")
 }
 
+load_setup_types() {
+    local setup_types=()
+    local type_script
+
+    for type_script in "$SETUP_SCRIPTS_PATH"/types/*.sh; do
+        [[ -f "$type_script" ]] || continue
+        setup_types+=("$(basename "$type_script" .sh)")
+    done
+
+    if [[ ${#setup_types[@]} -eq 0 ]]; then
+        echo "Error: No setup type scripts found in: $SETUP_SCRIPTS_PATH/types"
+        exit 1
+    fi
+
+    IFS=$'\n' setup_types=($(printf "%s\n" "${setup_types[@]}" | sort))
+    unset IFS
+
+    SETUP_TYPES=("${setup_types[@]}")
+}
+
 load_available_distros
+load_setup_types
 
 ################################################################################

@@ -1,0 +1,18 @@
+{
+  "description": "GTK 4 runtime",
+  "arch": [
+    "sudo pacman -Syu --noconfirm gtk4"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm gtk4"
+  ],
+  "ubuntu": [
+    "sudo apt install -y libgtk-4-1"
+  ],
+  "debian": [
+    "sudo apt install -y libgtk-4-1"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

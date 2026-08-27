@@ -1,0 +1,18 @@
+{
+  "description": "Adwaita icon theme",
+  "arch": [
+    "sudo pacman -Syu --noconfirm adwaita-icon-theme"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm adwaita-icon-theme"
+  ],
+  "ubuntu": [
+    "sudo apt install -y adwaita-icon-theme-full"
+  ],
+  "debian": [
+    "sudo apt install -y adwaita-icon-theme-full"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

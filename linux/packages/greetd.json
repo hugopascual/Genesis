@@ -1,0 +1,14 @@
+{
+  "description": "Greetd Login Manager",
+  "arch": [
+    "sudo pacman -Syu --noconfirm greetd"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm greetd"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

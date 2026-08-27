@@ -1,0 +1,14 @@
+{
+  "description": "XDG desktop portal for Hyprland",
+  "arch": [
+    "sudo pacman -Syu --noconfirm xdg-desktop-portal-hyprland"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm xdg-desktop-portal-hyprland"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

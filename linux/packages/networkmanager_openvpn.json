@@ -1,0 +1,18 @@
+{
+  "description": "NetworkManager OpenVPN integration",
+  "arch": [
+    "sudo pacman -Syu --noconfirm networkmanager-openvpn"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm networkmanager-openvpn"
+  ],
+  "ubuntu": [
+    "sudo apt install -y network-manager-openvpn-gnome"
+  ],
+  "debian": [
+    "sudo apt install -y network-manager-openvpn-gnome"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

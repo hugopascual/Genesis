@@ -1,0 +1,14 @@
+{
+  "description": "Hyprshot screenshot utility",
+  "arch": [
+    "sudo pacman -Syu --noconfirm hyprshot"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm hyprshot"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

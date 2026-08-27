@@ -1,0 +1,18 @@
+{
+  "description": "Brightness control utility",
+  "arch": [
+    "sudo pacman -Syu --noconfirm brightnessctl"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm brightnessctl"
+  ],
+  "ubuntu": [
+    "sudo apt install -y brightnessctl"
+  ],
+  "debian": [
+    "sudo apt install -y brightnessctl"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

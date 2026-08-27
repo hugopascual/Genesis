@@ -1,0 +1,14 @@
+{
+  "description": "Wofi launcher",
+  "arch": [
+    "sudo pacman -Syu --noconfirm wofi"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm wofi"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}

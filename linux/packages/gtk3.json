@@ -1,0 +1,18 @@
+{
+  "description": "GTK 3 runtime",
+  "arch": [
+    "sudo pacman -Syu --noconfirm gtk3"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm gtk3"
+  ],
+  "ubuntu": [
+    "sudo apt install -y libgtk-3-0"
+  ],
+  "debian": [
+    "sudo apt install -y libgtk-3-0"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

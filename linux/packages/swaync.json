@@ -1,0 +1,14 @@
+{
+  "description": "Sway Notification Center",
+  "arch": [
+    "sudo pacman -Syu --noconfirm swaync"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm swaync"
+  ],
+  "ubuntu": [],
+  "debian": [],
+  "raspberrypi": [
+    ":"
+  ]
+}
