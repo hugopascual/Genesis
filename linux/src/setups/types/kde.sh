@@ -29,6 +29,8 @@ kde_apply_desktop_preferences() {
 	kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
 	# Switch desktops independently for each screen
 	kwriteconfig6 --file ~/.config/kwinrc --group Windows --key PerOutputVirtualDesktops true
+	# Plugins - Virtual Desktops Only on Primary
+	kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key virtualdesktopsonlyonprimaryEnabled true
 }
 
 kde_apply_shortcuts() {
