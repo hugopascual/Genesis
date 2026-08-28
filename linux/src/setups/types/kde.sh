@@ -21,9 +21,14 @@ kde_install_dynamic_workspaces() {
 }
 
 kde_apply_desktop_preferences() {
+	# Disable natural scrolling
 	kwriteconfig6 --file kcminputrc --group Touchpad --key NaturalScroll false
+	# Taskbar on top
 	qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'panels()[0].location = "top"'
+	# No restore of apps from previouse session
 	kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
+	# Switch desktops independently for each screen
+	kwriteconfig6 --file ~/.config/kwinrc --group Windows --key PerOutputVirtualDesktops true
 }
 
 kde_apply_shortcuts() {
