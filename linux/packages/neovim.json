@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm neovim"
   ],
-  "ubuntu": [
-    "sudo apt install -y neovim"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm neovim"
   ],
   "debian": [
     "sudo apt install -y neovim"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y neovim"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm neovim"
+  "raspberrypi": [
+    "sudo apt install -y neovim"
   ]
 }

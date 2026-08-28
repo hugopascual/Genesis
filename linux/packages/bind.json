@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm bind"
   ],
-  "ubuntu": [
-    "sudo apt install -y bind9"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm bind"
   ],
   "debian": [
     "sudo apt install -y bind9"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y bind9"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm bind"
+  "raspberrypi": [
+    "sudo apt install -y bind9"
   ]
 }

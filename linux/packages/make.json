@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm make"
   ],
-  "ubuntu": [
-    "sudo apt install -y make"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm make"
   ],
   "debian": [
     "sudo apt install -y make"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y make"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm make"
+  "raspberrypi": [
+    "sudo apt install -y make"
   ]
 }

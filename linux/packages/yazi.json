@@ -3,13 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm yazi"
   ],
-  "ubuntu": [
-  ],
-  "debian": [
-  ],
-  "raspberrypi": [
-  ],
   "cachyos": [
     "sudo pacman -Syu --noconfirm yazi"
+  ],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
+  "raspberrypi": [
+    ":"
   ]
 }

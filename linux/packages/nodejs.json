@@ -5,7 +5,7 @@
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
-  "ubuntu": [
+  "cachyos": [
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
@@ -15,12 +15,12 @@
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"
   ],
-  "cachyos": [
+  "raspberrypi": [
     "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
     "\\. $HOME/.nvm/nvm.sh",
     "nvm install 24"

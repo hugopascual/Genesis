@@ -6,10 +6,10 @@
   "cachyos": [
     ":"
   ],
-  "ubuntu": [
+  "debian": [
     "sudo apt install -y openvpn-systemd-resolved"
   ],
-  "debian": [
+  "ubuntu": [
     "sudo apt install -y openvpn-systemd-resolved"
   ],
   "raspberrypi": [

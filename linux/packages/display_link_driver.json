@@ -6,14 +6,20 @@
     "yay -Syu --noconfirm displaylink",
     "sudo systemctl enable displaylink.service"
   ],
-  "ubuntu": [
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm linux-headers",
+    "yay -Syu --noconfirm evdi-dkms",
+    "yay -Syu --noconfirm displaylink",
+    "sudo systemctl enable displaylink.service"
+  ],
+  "debian": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
     "sudo apt install -y ./synaptics-repository-keyring.deb",
     "sudo apt update",
     "sudo apt install -y displaylink-driver",
     "rm synaptics-repository-keyring.deb"
   ],
-  "debian": [
+  "ubuntu": [
     "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
     "sudo apt install -y ./synaptics-repository-keyring.deb",
     "sudo apt update",
@@ -26,11 +32,5 @@
     "sudo apt update",
     "sudo apt install -y displaylink-driver",
     "rm synaptics-repository-keyring.deb"
-  ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm linux-headers",
-    "yay -Syu --noconfirm evdi-dkms",
-    "yay -Syu --noconfirm displaylink",
-    "sudo systemctl enable displaylink.service"
   ]
 }

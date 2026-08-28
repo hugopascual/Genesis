@@ -3,16 +3,16 @@
   "arch": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
-  "ubuntu": [
+  "cachyos": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
   "debian": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ],
-  "cachyos": [
+  "raspberrypi": [
     "sudo flatpak install -y flathub com.getpostman.Postman"
   ]
 }

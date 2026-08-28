@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm gnome-themes-extra"
   ],
-  "ubuntu": [
-    "sudo apt install -y gnome-themes-extra"
-  ],
   "debian": [
     "sudo apt install -y gnome-themes-extra"
   ],
+  "ubuntu": [
+    "sudo apt install -y gnome-themes-extra"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y gnome-themes-extra"
   ]
 }

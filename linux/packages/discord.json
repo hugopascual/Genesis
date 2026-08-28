@@ -3,12 +3,15 @@
   "arch": [
     "sudo pacman -Syu --noconfirm discord"
   ],
-  "ubuntu": [
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm discord"
+  ],
+  "debian": [
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
-  "debian": [
+  "ubuntu": [
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
@@ -17,8 +20,5 @@
     "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
-  ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm discord"
   ]
 }

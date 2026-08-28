@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm thunderbird"
   ],
-  "ubuntu": [
-    "sudo flatpak install -y flathub org.mozilla.Thunderbird"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm thunderbird"
   ],
   "debian": [
     "sudo flatpak install -y flathub org.mozilla.Thunderbird"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak install -y flathub org.mozilla.Thunderbird"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm thunderbird"
+  "raspberrypi": [
+    "sudo flatpak install -y flathub org.mozilla.Thunderbird"
   ]
 }

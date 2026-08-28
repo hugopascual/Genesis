@@ -6,8 +6,12 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm qt6ct"
   ],
-  "ubuntu": [],
-  "debian": [],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
   "raspberrypi": [
     ":"
   ]

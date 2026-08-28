@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm nautilus"
   ],
-  "ubuntu": [
-    "sudo apt install -y nautilus"
-  ],
   "debian": [
     "sudo apt install -y nautilus"
   ],
+  "ubuntu": [
+    "sudo apt install -y nautilus"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y nautilus"
   ]
 }

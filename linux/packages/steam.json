@@ -4,12 +4,16 @@
     "sudo sed -i '/^#\\[multilib\\]/,/^\\s*$/ s/^#//' /etc/pacman.conf",
     "sudo pacman -Syu --noconfirm steam"
   ],
-  "ubuntu": [
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm cachyos-gaming-meta",
+    "sudo pacman -Syu --noconfirm cachyos-gaming-applications"
+  ],
+  "debian": [
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
   ],
-  "debian": [
+  "ubuntu": [
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
@@ -18,9 +22,5 @@
     "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
     "sudo apt install -y ./*.deb",
     "rm ./*.deb"
-  ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm cachyos-gaming-meta",
-    "sudo pacman -Syu --noconfirm cachyos-gaming-applications"
   ]
 }

@@ -3,13 +3,10 @@
   "arch": [
     "sudo pacman -Syu --noconfirm code"
   ],
-  "ubuntu": [
-  ],
-  "debian": [
-  ],
-  "raspberrypi": [
-  ],
   "cachyos": [
     "sudo pacman -Syu --noconfirm code"
-  ]
+  ],
+  "debian": [],
+  "ubuntu": [],
+  "raspberrypi": []
 }

@@ -14,10 +14,10 @@
     "cd /tmp/yay && makepkg -si --noconfirm",
     "rm -rf /tmp/yay"
   ],
-  "ubuntu": [
+  "debian": [
     ":"
   ],
-  "debian": [
+  "ubuntu": [
     ":"
   ],
   "raspberrypi": [

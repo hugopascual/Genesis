@@ -3,18 +3,18 @@
   "arch": [
     "sudo pacman -Syu --noconfirm fastfetch"
   ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm fastfetch"
+  ],
+  "debian": [
+    "sudo apt install -y fastfetch"
+  ],
   "ubuntu": [
     "sudo add-apt-repository ppa:zhangsongcui3371/fastfetch",
     "sudo apt update",
     "sudo apt install fastfetch"
   ],
-  "debian": [
-    "sudo apt install -y fastfetch"
-  ],
   "raspberrypi": [
     "sudo apt install -y fastfetch"
-  ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm fastfetch"
   ]
 }

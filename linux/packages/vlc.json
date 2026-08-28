@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm vlc"
   ],
-  "ubuntu": [
-    "sudo apt install -y vlc"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm vlc"
   ],
   "debian": [
     "sudo apt install -y vlc"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y vlc"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm vlc"
+  "raspberrypi": [
+    "sudo apt install -y vlc"
   ]
 }

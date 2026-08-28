@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm wireguard-tools"
   ],
-  "ubuntu": [
-    "sudo apt install -y wireguard"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm wireguard-tools"
   ],
   "debian": [
     "sudo apt install -y wireguard"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y wireguard"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm wireguard-tools"
+  "raspberrypi": [
+    "sudo apt install -y wireguard"
   ]
 }

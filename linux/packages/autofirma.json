@@ -3,16 +3,16 @@
   "arch": [
     "sudo flatpak -y install flathub es.gob.afirma"
   ],
-  "ubuntu": [
+  "cachyos": [
     "sudo flatpak -y install flathub es.gob.afirma"
   ],
   "debian": [
     "sudo flatpak -y install flathub es.gob.afirma"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak -y install flathub es.gob.afirma"
   ],
-  "cachyos": [
+  "raspberrypi": [
     "sudo flatpak -y install flathub es.gob.afirma"
   ]
 }

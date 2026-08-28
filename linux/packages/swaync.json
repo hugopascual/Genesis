@@ -6,8 +6,12 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm swaync"
   ],
-  "ubuntu": [],
-  "debian": [],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
   "raspberrypi": [
     ":"
   ]

@@ -3,16 +3,16 @@
   "arch": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ],
-  "ubuntu": [
+  "cachyos": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ],
   "debian": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ],
-  "cachyos": [
+  "raspberrypi": [
     "sudo flatpak install -y flathub com.rustdesk.RustDesk"
   ]
 }

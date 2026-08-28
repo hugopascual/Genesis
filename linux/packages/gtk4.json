@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm gtk4"
   ],
-  "ubuntu": [
-    "sudo apt install -y libgtk-4-1"
-  ],
   "debian": [
     "sudo apt install -y libgtk-4-1"
   ],
+  "ubuntu": [
+    "sudo apt install -y libgtk-4-1"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y libgtk-4-1"
   ]
 }

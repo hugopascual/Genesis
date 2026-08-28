@@ -1,15 +1,11 @@
 {
   "description": "Heroic Games Launcher",
-  "arch": [
-  ],
-  "ubuntu": [
-  ],
-  "debian": [
-  ],
-  "raspberrypi": [
-  ],
+  "arch": [],
   "cachyos": [
     "sudo pacman -Syu --noconfirm cachyos-gaming-meta",
     "sudo pacman -Syu --noconfirm cachyos-gaming-applications"
-  ]
+  ],
+  "debian": [],
+  "ubuntu": [],
+  "raspberrypi": []
 }

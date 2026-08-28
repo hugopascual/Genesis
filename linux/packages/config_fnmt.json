@@ -3,12 +3,15 @@
   "arch": [
     "yay -Syu --noconfirm configuradorfnmt"
   ],
-  "ubuntu": [
+  "cachyos": [
+    "yay -Syu --noconfirm configuradorfnmt"
+  ],
+  "debian": [
     "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
     "sudo apt install -y ./configuradorfnmt*",
     "rm configuradorfnmt*"
   ],
-  "debian": [
+  "ubuntu": [
     "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
     "sudo apt install -y ./configuradorfnmt*",
     "rm configuradorfnmt*"
@@ -17,8 +20,5 @@
     "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
     "sudo apt install -y ./configuradorfnmt*",
     "rm configuradorfnmt*"
-  ],
-  "cachyos": [
-    "yay -Syu --noconfirm configuradorfnmt"
   ]
 }

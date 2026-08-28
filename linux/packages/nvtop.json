@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm nvtop"
   ],
-  "ubuntu": [
-    "sudo apt install -y nvtop"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm nvtop"
   ],
   "debian": [
     "sudo apt install -y nvtop"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y nvtop"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm nvtop"
+  "raspberrypi": [
+    "sudo apt install -y nvtop"
   ]
 }

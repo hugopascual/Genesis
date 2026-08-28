@@ -1,12 +1,13 @@
 {
   "description": "CurseForge mod manager",
   "arch": [],
-  "ubuntu": [
+  "cachyos": [],
+  "debian": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
   ],
-  "debian": [
+  "ubuntu": [
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
@@ -15,6 +16,5 @@
     "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
     "sudo apt install -y ./curseforge-latest-linux.deb",
     "rm -rf curseforge-latest-linux.deb"
-  ],
-  "cachyos": []
+  ]
 }

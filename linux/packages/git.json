@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm git"
   ],
-  "ubuntu": [
-    "sudo apt install -y git"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm git"
   ],
   "debian": [
     "sudo apt install -y git"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y git"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm git"
+  "raspberrypi": [
+    "sudo apt install -y git"
   ]
 }

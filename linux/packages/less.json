@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm less"
   ],
-  "ubuntu": [
-    "sudo apt install -y less"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm less"
   ],
   "debian": [
     "sudo apt install -y less"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y less"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm less"
+  "raspberrypi": [
+    "sudo apt install -y less"
   ]
 }

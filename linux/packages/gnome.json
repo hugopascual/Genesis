@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm gnome gdm"
   ],
-  "ubuntu": [
-    "sudo apt install -y ubuntu-desktop gdm3"
-  ],
   "debian": [
     "sudo apt install -y task-gnome-desktop gdm3"
   ],
+  "ubuntu": [
+    "sudo apt install -y ubuntu-desktop gdm3"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y task-gnome-desktop gdm3"
   ]
 }

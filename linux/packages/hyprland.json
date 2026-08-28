@@ -6,8 +6,12 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm hyprland"
   ],
-  "ubuntu": [],
-  "debian": [],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
   "raspberrypi": [
     ":"
   ]

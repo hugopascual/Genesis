@@ -1,18 +1,18 @@
 {
   "description": "Google Chrome web browser",
   "arch": [
-    "yay -Syu --noconfirm google-chrome"
+    "sudo pacman -Syu --noconfirm google-chrome"
   ],
-  "ubuntu": [
-    "sudo flatpak install -y flathub com.google.Chrome"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm google-chrome"
   ],
   "debian": [
     "sudo flatpak install -y flathub com.google.Chrome"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak install -y flathub com.google.Chrome"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm google-chrome"
+  "raspberrypi": [
+    "sudo flatpak install -y flathub com.google.Chrome"
   ]
 }

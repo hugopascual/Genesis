@@ -6,8 +6,12 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm hyprpaper"
   ],
-  "ubuntu": [],
-  "debian": [],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
   "raspberrypi": [
     ":"
   ]

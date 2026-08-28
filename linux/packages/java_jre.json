@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm jre-openjdk"
   ],
-  "ubuntu": [
-    "sudo apt install -y default-jre"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm jre-openjdk"
   ],
   "debian": [
     "sudo apt install -y default-jre"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y default-jre"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm jre-openjdk"
+  "raspberrypi": [
+    "sudo apt install -y default-jre"
   ]
 }

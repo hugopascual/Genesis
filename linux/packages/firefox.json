@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm firefox"
   ],
-  "ubuntu": [
-    "sudo apt install -y firefox"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm firefox"
   ],
   "debian": [
     "sudo apt install -y firefox"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y firefox"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm firefox"
+  "raspberrypi": [
+    "sudo apt install -y firefox"
   ]
 }

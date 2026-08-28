@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm keepassxc"
   ],
-  "ubuntu": [
-    "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm keepassxc"
   ],
   "debian": [
     "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm keepassxc"
+  "raspberrypi": [
+    "sudo flatpak install -y flathub org.keepassxc.KeePassXC"
   ]
 }

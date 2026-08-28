@@ -6,8 +6,12 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm waybar"
   ],
-  "ubuntu": [],
-  "debian": [],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
   "raspberrypi": [
     ":"
   ]

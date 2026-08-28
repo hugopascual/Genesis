@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm rsync"
   ],
-  "ubuntu": [
-    "sudo apt install -y rsync"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm rsync"
   ],
   "debian": [
     "sudo apt install -y rsync"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y rsync"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm rsync"
+  "raspberrypi": [
+    "sudo apt install -y rsync"
   ]
 }

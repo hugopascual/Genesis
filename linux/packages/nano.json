@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm nano"
   ],
-  "ubuntu": [
-    "sudo apt install -y nano"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm nano"
   ],
   "debian": [
     "sudo apt install -y nano"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y nano"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm nano"
+  "raspberrypi": [
+    "sudo apt install -y nano"
   ]
 }

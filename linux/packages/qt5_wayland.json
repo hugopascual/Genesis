@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm qt5-wayland"
   ],
-  "ubuntu": [
-    "sudo apt install -y qtwayland5"
-  ],
   "debian": [
     "sudo apt install -y qtwayland5"
   ],
+  "ubuntu": [
+    "sudo apt install -y qtwayland5"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y qtwayland5"
   ]
 }

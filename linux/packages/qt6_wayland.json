@@ -6,13 +6,13 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm qt6-wayland"
   ],
-  "ubuntu": [
-    "sudo apt install -y qt6-wayland"
-  ],
   "debian": [
     "sudo apt install -y qt6-wayland"
   ],
+  "ubuntu": [
+    "sudo apt install -y qt6-wayland"
+  ],
   "raspberrypi": [
-    ":"
+    "sudo apt install -y qt6-wayland"
   ]
 }

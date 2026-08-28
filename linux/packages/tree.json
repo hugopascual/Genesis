@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm tree"
   ],
-  "ubuntu": [
-    "sudo apt install -y tree"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm tree"
   ],
   "debian": [
     "sudo apt install -y tree"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y tree"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm tree"
+  "raspberrypi": [
+    "sudo apt install -y tree"
   ]
 }

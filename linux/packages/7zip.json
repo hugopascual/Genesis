@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm 7zip"
   ],
-  "ubuntu": [
-    "sudo apt install -y 7zip"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm 7zip"
   ],
   "debian": [
     "sudo apt install -y 7zip"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y 7zip"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm 7zip"
+  "raspberrypi": [
+    "sudo apt install -y 7zip"
   ]
 }

@@ -3,14 +3,17 @@
   "arch": [
     "yay -Syu --noconfirm jetbrains-toolbox"
   ],
-  "ubuntu": [
+  "cachyos": [
+    "yay -Syu --noconfirm jetbrains-toolbox"
+  ],
+  "debian": [
     "sudo apt-get install -y libfuse2",
     "wget -c https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.2.0.65851.tar.gz",
     "sudo tar -xzf jetbrains-toolbox-3.2.0.65851.tar.gz -C /opt",
     "sudo mv /opt/jetbrains-toolbox-3.2.0.65851 /opt/jetbrains-toolbox",
     "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
   ],
-  "debian": [
+  "ubuntu": [
     "sudo apt-get install -y libfuse2",
     "wget -c https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.2.0.65851.tar.gz",
     "sudo tar -xzf jetbrains-toolbox-3.2.0.65851.tar.gz -C /opt",
@@ -23,8 +26,5 @@
     "sudo tar -xzf jetbrains-toolbox-3.2.0.65851.tar.gz -C /opt",
     "sudo mv /opt/jetbrains-toolbox-3.2.0.65851 /opt/jetbrains-toolbox",
     "rm -f jetbrains-toolbox-3.2.0.65851.tar.gz"
-  ],
-  "cachyos": [
-    "yay -Syu --noconfirm jetbrains-toolbox"
   ]
 }

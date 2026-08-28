@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm rpi-imager"
   ],
-  "ubuntu": [
-    "sudo apt install -y rpi-imager"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm rpi-imager"
   ],
   "debian": [
     "sudo apt install -y rpi-imager"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y rpi-imager"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm rpi-imager"
+  "raspberrypi": [
+    "sudo apt install -y rpi-imager"
   ]
 }

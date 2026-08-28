@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm perl-rename"
   ],
-  "ubuntu": [
-    "sudo apt install -y rename"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm perl-rename"
   ],
   "debian": [
     "sudo apt install -y rename"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y rename"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm perl-rename"
+  "raspberrypi": [
+    "sudo apt install -y rename"
   ]
 }

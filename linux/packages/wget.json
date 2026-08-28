@@ -3,16 +3,16 @@
   "arch": [
     "sudo pacman -Syu --noconfirm wget"
   ],
-  "ubuntu": [
-    "sudo apt install -y wget"
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm wget"
   ],
   "debian": [
     "sudo apt install -y wget"
   ],
-  "raspberrypi": [
+  "ubuntu": [
     "sudo apt install -y wget"
   ],
-  "cachyos": [
-    "sudo pacman -Syu --noconfirm wget"
+  "raspberrypi": [
+    "sudo apt install -y wget"
   ]
 }

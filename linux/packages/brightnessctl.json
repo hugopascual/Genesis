@@ -6,10 +6,10 @@
   "cachyos": [
     "sudo pacman -Syu --noconfirm brightnessctl"
   ],
-  "ubuntu": [
+  "debian": [
     "sudo apt install -y brightnessctl"
   ],
-  "debian": [
+  "ubuntu": [
     "sudo apt install -y brightnessctl"
   ],
   "raspberrypi": [
