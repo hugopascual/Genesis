@@ -1,0 +1,18 @@
+{
+  "description": "A fancy, modern terminal file manager. Complete your file operations with style.",
+  "arch": [
+    "sudo pacman -Syu --noconfirm superfile"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm superfile"
+  ],
+  "debian": [
+    "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+  ],
+  "ubuntu": [
+    "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+  ],
+  "raspberrypi": [
+    "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+  ]
+}

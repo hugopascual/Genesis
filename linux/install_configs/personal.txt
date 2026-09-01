@@ -51,6 +51,7 @@ keepassxc
 kitty
 obsidian
 raspberry_pi_imager
+superfile
 terminator
 yazi
 

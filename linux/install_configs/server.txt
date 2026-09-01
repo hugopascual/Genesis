@@ -23,3 +23,7 @@ git
 java_jdk
 lazydocker
 python
+
+# Utilities
+superfile
+yazi
