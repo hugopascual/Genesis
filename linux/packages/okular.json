@@ -1,0 +1,19 @@
+{
+  "description": "Okular PDF viewer",
+  "arch": [
+    "sudo flatpak -y install flathub org.kde.okular"
+  ],
+  "cachyos": [
+    "sudo flatpak -y install flathub org.kde.okular"
+  ],
+  "debian": [
+    "sudo flatpak -y install flathub org.kde.okular"
+  ],
+  "ubuntu": [
+    "sudo flatpak -y install flathub org.kde.okular"
+  ],
+  "raspberrypi": [
+    "sudo flatpak -y install flathub org.kde.okular"
+  ]
+}
+

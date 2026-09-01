@@ -50,6 +50,7 @@ config_fnmt
 keepassxc
 kitty
 obsidian
+okular
 raspberry_pi_imager
 superfile
 terminator
