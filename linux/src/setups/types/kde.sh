@@ -37,7 +37,7 @@ kde_apply_shortcuts() {
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left,none,Switch One Desktop to the Left"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right,none,Switch One Desktop to the Right"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Overview" "Meta,none,Toggle Overview"
-	kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Meta+W,none,Activate Application Launcher"
+	kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Ctrl+Space,none,Activate Application Launcher"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Window Maximize" "Meta+F,none,Maximise Window"
 }
 
