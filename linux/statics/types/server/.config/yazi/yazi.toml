@@ -1,0 +1,27 @@
+[mgr]
+show_hidden = true
+
+[opener]
+# play = [
+#         { run = 'mpv "$@"', orphan = true }
+# ]
+edit = [
+        { run = 'nvim "$@"', block = true }
+]
+# json = [
+#         # If you have VSCODIUM installed
+#         { run = 'vscodium --ozone-platform-hint=wayland "$@"', block = true }
+# ]
+
+[open]
+rules = [
+        # { name = "*.json", use = "json" },
+        # { name = "*.jsonc", use = "json" },
+
+        { mime = "text/*", use = "edit" },
+        # { mime = "video/*", use = "play" },
+
+        # Multiple openers for a single rule
+        # { name = "*.html", use = [ "open", "edit" ] }
+]
+
