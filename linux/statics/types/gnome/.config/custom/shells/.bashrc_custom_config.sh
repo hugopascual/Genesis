@@ -47,3 +47,42 @@ discover_grub() {
 	rm -f "$backup_file"
 	echo "OS discovery completed and /etc/default/grub restored."
 }
+sync_repo() {
+    local repo="$1"
+    local message="$2"
+
+    cd "$repo" || return
+
+    git fetch &&
+    git pull &&
+    git add . &&
+    git commit -m "$message" &&
+    git push
+
+    cd "$HOME"
+}
+
+pullallrepos() {
+    local repos_root="$HOME/devops/repos"
+    local org_dir
+    local repo_dir
+
+    if [[ ! -d "$repos_root" ]]; then
+        echo "Directory not found: $repos_root"
+        return 1
+    fi
+
+    for org_dir in "$repos_root"/*; do
+        [[ -d "$org_dir" ]] || continue
+
+        for repo_dir in "$org_dir"/*; do
+            [[ -d "$repo_dir/.git" ]] || continue
+
+            (
+                cd "$repo_dir" || exit 1
+                echo "Updating $(basename "$org_dir")/$(basename "$repo_dir")"
+                git pull || echo "Failed to update $repo_dir"
+            )
+        done
+    done
+}

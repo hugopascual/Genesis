@@ -20,6 +20,7 @@ vim
 # Development
 docker
 git
+ghcli
 java_jdk
 lazydocker
 python
