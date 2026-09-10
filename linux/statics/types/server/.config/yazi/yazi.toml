@@ -24,4 +24,3 @@ rules = [
         # Multiple openers for a single rule
         # { name = "*.html", use = [ "open", "edit" ] }
 ]
-
