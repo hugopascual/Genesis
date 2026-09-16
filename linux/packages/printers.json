@@ -1,0 +1,24 @@
+{
+  "description": "Necessary packages for printing support",
+  "arch": [
+    "sudo pacman -Syu --noconfirm cups",
+    "sudo pacman -Syu --noconfirm print-manager",
+    "sudo pacman -S system-config-printer",
+    "sudo systemctl enable --now cups.service"
+  ],
+  "cachyos": [
+    "sudo pacman -Syu --noconfirm cups",
+    "sudo pacman -Syu --noconfirm print-manager",
+    "sudo pacman -S system-config-printer",
+    "sudo systemctl enable --now cups.service"
+  ],
+  "debian": [
+    ":"
+  ],
+  "ubuntu": [
+    ":"
+  ],
+  "raspberrypi": [
+    ":"
+  ]
+}

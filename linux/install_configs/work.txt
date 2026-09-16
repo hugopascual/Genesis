@@ -51,6 +51,7 @@ kitty
 keepassxc
 obsidian
 okular
+printers
 raspberry_pi_imager
 superfile
 terminator
