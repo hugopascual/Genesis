@@ -3,13 +3,15 @@
   "arch": [
     "sudo pacman -Syu --noconfirm cups",
     "sudo pacman -Syu --noconfirm print-manager",
-    "sudo pacman -S system-config-printer",
+    "sudo pacman -Syu --noconfirm system-config-printer",
+    "sudo pacman -Syu --noconfirm hplip",
     "sudo systemctl enable --now cups.service"
   ],
   "cachyos": [
     "sudo pacman -Syu --noconfirm cups",
     "sudo pacman -Syu --noconfirm print-manager",
-    "sudo pacman -S system-config-printer",
+    "sudo pacman -Syu --noconfirm system-config-printer",
+    "sudo pacman -Syu --noconfirm hplip",
     "sudo systemctl enable --now cups.service"
   ],
   "debian": [
