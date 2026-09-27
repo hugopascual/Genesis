@@ -3,12 +3,18 @@
 kde_apply_look_and_feel() {
 	# Theme configuration
 	lookandfeeltool -a org.kde.breezedark.desktop
+
 	# Background wallpaper
 	plasma-apply-wallpaperimage "$BACKGROUND_DESTINATION_PATH"
 	# Screen Locking wallpaper
-	kwriteconfig6 --file ~/.config/kscreenlockerrc \
+	kwriteconfig6 --file kscreenlockerrc \
 		--group Greeter --group Wallpaper --group org.kde.image --group General \
 		--key Image "$SCREENSAVER_DESTINATION_PATH"
+	
+	# Search bar in the midle of the screen
+	kwriteconfig6 --file krunnerrc \
+		--group General \
+		--key FreeFloating true
 }
 
 kde_install_dynamic_workspaces() {
@@ -34,16 +40,14 @@ kde_apply_desktop_preferences() {
 	# No restore of apps from previouse session
 	kwriteconfig6 --file ksmserverrc --group General --key loginMode emptySession
 	# Switch desktops independently for each screen
-	kwriteconfig6 --file ~/.config/kwinrc --group Windows --key PerOutputVirtualDesktops true
-	# Plugins - Virtual Desktops Only on Primary
-	kwriteconfig6 --file ~/.config/kwinrc --group Plugins --key virtualdesktopsonlyonprimaryEnabled true
+	kwriteconfig6 --file kwinrc --group Windows --key PerOutputVirtualDesktops true
 }
 
 kde_apply_shortcuts() {
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Left" "Ctrl+Alt+Left,none,Switch One Desktop to the Left"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Switch One Desktop to the Right" "Ctrl+Alt+Right,none,Switch One Desktop to the Right"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Overview" "Meta,none,Toggle Overview"
-	kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Ctrl+Space,none,Activate Application Launcher"
+	kwriteconfig6 --file kglobalshortcutsrc --group plasmashell --key "activate application launcher" "Alt+F1,none,Activate Application Launcher"
 	kwriteconfig6 --file kglobalshortcutsrc --group kwin --key "Window Maximize" "Meta+F,none,Maximise Window"
 }
 
