@@ -1,8 +1,14 @@
 #!/bin/bash
 
 kde_apply_look_and_feel() {
+	# Theme configuration
 	lookandfeeltool -a org.kde.breezedark.desktop
+	# Background wallpaper
 	plasma-apply-wallpaperimage "$BACKGROUND_DESTINATION_PATH"
+	# Screen Locking wallpaper
+	kwriteconfig6 --file ~/.config/kscreenlockerrc \
+		--group Greeter --group Wallpaper --group org.kde.image --group General \
+		--key Image "$SCREENSAVER_DESTINATION_PATH"
 }
 
 kde_install_dynamic_workspaces() {
@@ -42,15 +48,29 @@ kde_apply_shortcuts() {
 }
 
 kde_apply_input_sources() {
-	kwriteconfig6 --file kxkbrc --group Layout --key Use true
-	kwriteconfig6 --file kxkbrc --group Layout --key LayoutList "us,es"
-	kwriteconfig6 --file kxkbrc --group Layout --key Options "grp:win_space_toggle"
+	# Keyboard layouts
+	kwriteconfig6 --file kxkbrc \
+		--group Layout --key Use true
+
+	kwriteconfig6 --file kxkbrc \
+		--group Layout --key LayoutList "us,es"
+
+	# KDE keyboard shortcut
+	kwriteconfig6 --file kglobalshortcutsrc \
+		--group "KDE Keyboard Layout Switcher" \
+		--key "Switch to Next Keyboard Layout" \
+	    "Meta+Space,Meta+Space,Switch to Next Keyboard Layout"
 }
 
 kde_configure_startup_apps() {
 	setup_copy_autostart_entry_if_exists "/usr/share/applications/obsidian.desktop"
 	setup_copy_autostart_entry_if_exists "/usr/share/applications/org.mozilla.Thunderbird.desktop"
 	setup_copy_autostart_entry_if_exists "/usr/share/applications/firefox.desktop"
+}
+
+shell_to_bash() {
+	sudo chsh --shell /bin/bash "$USER"
+	sudo chsh --shell /bin/bash root
 }
 
 ###############################################################################
