@@ -8,7 +8,7 @@ Genesis provides automated scripts to install and configure software packages ac
 
 ## Supported Systems
 
-- **Linux**: Ubuntu, Debian, Arch Linux
+- **Linux**: Ubuntu, Debian, Arch Linux, Raspberry Pi, CachyOS
 - **Windows**: PowerShell-based installation
 
 ## Quick Start
