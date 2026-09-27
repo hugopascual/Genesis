@@ -77,23 +77,6 @@ shell_to_bash() {
 	sudo chsh --shell /bin/bash root
 }
 
-kde_terminator_shortcut() {
-    local desktop_file="/usr/share/applications/terminator.desktop"
-
-    # Make Terminator the default terminal
-    kwriteconfig6 --file kdeglobals \
-        --group General --key TerminalService "$desktop_file"
-
-    kwriteconfig6 --file kdeglobals \
-        --group General --key TerminalApplication "terminator"
-
-    # Configure Ctrl+Alt+T as the global shortcut
-    kwriteconfig6 --file kglobalshortcutsrc \
-        --group "$desktop_file" \
-        --key "_launch" \
-        "Ctrl+Alt+T,Ctrl+Alt+T,Launch Terminator"
-}
-
 ###############################################################################
 
 desktop_folder_structure_creation
