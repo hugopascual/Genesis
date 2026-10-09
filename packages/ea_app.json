@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "EA games launcher",
+  "install": {
+    "windows": {
+      "choco": "ea-app"
+    }
+  }
+}

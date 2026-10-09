@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Okular PDF viewer",
+  "install": {
+    "arch": {
+      "flatpak": "org.kde.okular"
+    },
+    "cachyos": {
+      "flatpak": "org.kde.okular"
+    },
+    "debian": {
+      "flatpak": "org.kde.okular"
+    },
+    "ubuntu": {
+      "flatpak": "org.kde.okular"
+    },
+    "raspberrypi": {
+      "flatpak": "org.kde.okular"
+    }
+  }
+}

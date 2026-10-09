@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Vi IMproved text editor",
+  "install": {
+    "arch": {
+      "pacman": "vim"
+    },
+    "cachyos": {
+      "pacman": "vim"
+    },
+    "debian": {
+      "apt": "vim"
+    },
+    "ubuntu": {
+      "apt": "vim"
+    },
+    "raspberrypi": {
+      "apt": "vim"
+    }
+  }
+}

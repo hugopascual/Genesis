@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Rename files",
+  "install": {
+    "arch": {
+      "pacman": "perl-rename"
+    },
+    "cachyos": {
+      "pacman": "perl-rename"
+    },
+    "debian": {
+      "apt": "rename"
+    },
+    "ubuntu": {
+      "apt": "rename"
+    },
+    "raspberrypi": {
+      "apt": "rename"
+    }
+  }
+}

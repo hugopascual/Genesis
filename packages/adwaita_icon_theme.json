@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Adwaita icon theme",
+  "install": {
+    "arch": {
+      "pacman": "adwaita-icon-theme"
+    },
+    "cachyos": {
+      "pacman": "adwaita-icon-theme"
+    },
+    "debian": {
+      "apt": "adwaita-icon-theme-full"
+    },
+    "ubuntu": {
+      "apt": "adwaita-icon-theme-full"
+    },
+    "raspberrypi": {
+      "apt": "adwaita-icon-theme-full"
+    }
+  }
+}

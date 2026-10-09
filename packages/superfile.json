@@ -1,0 +1,27 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "A fancy, modern terminal file manager. Complete your file operations with style.",
+  "install": {
+    "arch": {
+      "pacman": "superfile"
+    },
+    "cachyos": {
+      "pacman": "superfile"
+    },
+    "debian": {
+      "commands": [
+        "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "bash -c \"$(curl -sLo- https://superfile.dev/install.sh)\""
+      ]
+    }
+  }
+}

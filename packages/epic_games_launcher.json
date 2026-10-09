@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Epic Games launcher",
+  "install": {
+    "windows": {
+      "choco": "epicgameslauncher"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "JavaScript runtime",
+  "install": {
+    "arch": {
+      "commands": [
+        "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
+        "\\. $HOME/.nvm/nvm.sh",
+        "nvm install 24"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
+        "\\. $HOME/.nvm/nvm.sh",
+        "nvm install 24"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
+        "\\. $HOME/.nvm/nvm.sh",
+        "nvm install 24"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
+        "\\. $HOME/.nvm/nvm.sh",
+        "nvm install 24"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash",
+        "\\. $HOME/.nvm/nvm.sh",
+        "nvm install 24"
+      ]
+    }
+  }
+}

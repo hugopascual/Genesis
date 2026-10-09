@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Google Chrome web browser",
+  "install": {
+    "arch": {
+      "pacman": "google-chrome"
+    },
+    "cachyos": {
+      "pacman": "google-chrome"
+    },
+    "debian": {
+      "flatpak": "com.google.Chrome"
+    },
+    "ubuntu": {
+      "flatpak": "com.google.Chrome"
+    },
+    "raspberrypi": {
+      "flatpak": "com.google.Chrome"
+    },
+    "windows": {
+      "choco": "googlechrome"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Qt5 Wayland support",
+  "install": {
+    "arch": {
+      "pacman": "qt5-wayland"
+    },
+    "cachyos": {
+      "pacman": "qt5-wayland"
+    },
+    "debian": {
+      "apt": "qtwayland5"
+    },
+    "ubuntu": {
+      "apt": "qtwayland5"
+    },
+    "raspberrypi": {
+      "apt": "qtwayland5"
+    }
+  }
+}

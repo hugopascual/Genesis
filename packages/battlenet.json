@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Blizzard Battle.net launcher",
+  "install": {
+    "windows": {
+      "manual": "https://eu.shop.battle.net/en-us"
+    }
+  }
+}

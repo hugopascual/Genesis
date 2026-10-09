@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Telegram messaging app",
+  "install": {
+    "arch": {
+      "flatpak": "org.telegram.desktop"
+    },
+    "cachyos": {
+      "flatpak": "org.telegram.desktop"
+    },
+    "debian": {
+      "flatpak": "org.telegram.desktop"
+    },
+    "ubuntu": {
+      "flatpak": "org.telegram.desktop"
+    },
+    "raspberrypi": {
+      "flatpak": "org.telegram.desktop"
+    },
+    "windows": {
+      "choco": "telegram.install"
+    }
+  }
+}

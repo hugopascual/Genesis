@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Mozilla Firefox web browser",
+  "install": {
+    "arch": {
+      "pacman": "firefox"
+    },
+    "cachyos": {
+      "pacman": "firefox"
+    },
+    "debian": {
+      "apt": "firefox"
+    },
+    "ubuntu": {
+      "apt": "firefox"
+    },
+    "raspberrypi": {
+      "apt": "firefox"
+    },
+    "windows": {
+      "choco": "firefox"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Application deployment framework",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm flatpak",
+        "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm flatpak",
+        "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "sudo apt install -y flatpak",
+        "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "sudo apt install -y flatpak",
+        "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "sudo apt install -y flatpak",
+        "sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+      ]
+    }
+  }
+}

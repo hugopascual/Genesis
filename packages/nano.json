@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Terminal text editor",
+  "install": {
+    "arch": {
+      "pacman": "nano"
+    },
+    "cachyos": {
+      "pacman": "nano"
+    },
+    "debian": {
+      "apt": "nano"
+    },
+    "ubuntu": {
+      "apt": "nano"
+    },
+    "raspberrypi": {
+      "apt": "nano"
+    }
+  }
+}

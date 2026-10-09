@@ -1,0 +1,22 @@
+@include base
+
+# Communication
+discord
+
+# Utilities
+keepass
+obsidian
+raspberrypi_imager
+
+# VPNs
+openvpn
+wireguard
+
+# Development
+github_desktop
+jetbrains_toolbox
+postman
+
+# Videogames
+battlenet
+steam

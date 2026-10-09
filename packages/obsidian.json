@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Knowledge base and note-taking app",
+  "install": {
+    "arch": {
+      "pacman": "obsidian"
+    },
+    "cachyos": {
+      "pacman": "obsidian"
+    },
+    "debian": {
+      "commands": [
+        "wget --content-disposition https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget --content-disposition https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget --content-disposition https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.7/obsidian_1.6.7_amd64.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "windows": {
+      "choco": "obsidian"
+    }
+  }
+}

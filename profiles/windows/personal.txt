@@ -1,0 +1,31 @@
+@include base
+
+# Communication
+discord
+
+# Utilities
+keepass
+obsidian
+raspberrypi_imager
+
+# VPNs
+openvpn
+wireguard
+
+# Development
+github_desktop
+jetbrains_toolbox
+postman
+
+# 3D printing
+chitubox
+lychee_slicer
+
+# Videogames
+amazongames
+battlenet
+ea_app
+epic_games_launcher
+heroic
+minecraft
+steam

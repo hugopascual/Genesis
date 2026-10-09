@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Terminal pager",
+  "install": {
+    "arch": {
+      "pacman": "less"
+    },
+    "cachyos": {
+      "pacman": "less"
+    },
+    "debian": {
+      "apt": "less"
+    },
+    "ubuntu": {
+      "apt": "less"
+    },
+    "raspberrypi": {
+      "apt": "less"
+    }
+  }
+}

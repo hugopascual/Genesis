@@ -1,0 +1,26 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Raspberry Pi Imaging Utility",
+  "install": {
+    "arch": {
+      "pacman": "rpi-imager"
+    },
+    "cachyos": {
+      "pacman": "rpi-imager"
+    },
+    "debian": {
+      "apt": "rpi-imager"
+    },
+    "ubuntu": {
+      "apt": "rpi-imager"
+    },
+    "raspberrypi": {
+      "apt": "rpi-imager"
+    },
+    "windows": {
+      "commands": [
+        "Invoke-WebRequest -Uri \"https://downloads.raspberrypi.com/imager/imager_latest.exe\" -OutFile \"$env:USERPROFILE\\Downloads\\imager_latest.exe\""
+      ]
+    }
+  }
+}

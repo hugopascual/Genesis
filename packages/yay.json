@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "AUR helper for Arch Linux",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm git",
+        "sudo pacman -Syu --noconfirm base-devel",
+        "git clone https://aur.archlinux.org/yay.git /tmp/yay",
+        "cd /tmp/yay && makepkg -si --noconfirm",
+        "rm -rf /tmp/yay"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm git",
+        "sudo pacman -Syu --noconfirm base-devel",
+        "git clone https://aur.archlinux.org/yay.git /tmp/yay",
+        "cd /tmp/yay && makepkg -si --noconfirm",
+        "rm -rf /tmp/yay"
+      ]
+    }
+  }
+}

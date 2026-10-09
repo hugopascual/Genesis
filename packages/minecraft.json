@@ -1,0 +1,30 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Minecraft launcher",
+  "install": {
+    "debian": {
+      "commands": [
+        "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget --content-disposition https://launcher.mojang.com/download/Minecraft.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "windows": {
+      "manual": "https://www.minecraft.net/"
+    }
+  }
+}

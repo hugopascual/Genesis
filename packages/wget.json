@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Network downloader",
+  "install": {
+    "arch": {
+      "pacman": "wget"
+    },
+    "cachyos": {
+      "pacman": "wget"
+    },
+    "debian": {
+      "apt": "wget"
+    },
+    "ubuntu": {
+      "apt": "wget"
+    },
+    "raspberrypi": {
+      "apt": "wget"
+    }
+  }
+}

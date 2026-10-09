@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Terminal resource monitor",
+  "install": {
+    "arch": {
+      "pacman": "btop"
+    },
+    "cachyos": {
+      "pacman": "btop"
+    },
+    "debian": {
+      "apt": "btop"
+    },
+    "ubuntu": {
+      "apt": "btop"
+    },
+    "raspberrypi": {
+      "apt": "btop"
+    }
+  }
+}

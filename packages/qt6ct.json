@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Qt6 configuration tool",
+  "install": {
+    "arch": {
+      "pacman": "qt6ct"
+    },
+    "cachyos": {
+      "pacman": "qt6ct"
+    }
+  }
+}

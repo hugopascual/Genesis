@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Java Runtime Environment",
+  "install": {
+    "arch": {
+      "pacman": "jre-openjdk"
+    },
+    "cachyos": {
+      "pacman": "jre-openjdk"
+    },
+    "debian": {
+      "apt": "default-jre"
+    },
+    "ubuntu": {
+      "apt": "default-jre"
+    },
+    "raspberrypi": {
+      "apt": "default-jre"
+    }
+  }
+}

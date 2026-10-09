@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Resin 3D printing slicer",
+  "install": {
+    "windows": {
+      "choco": "lycheeslicer"
+    }
+  }
+}

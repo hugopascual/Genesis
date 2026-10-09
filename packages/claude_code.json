@@ -1,0 +1,31 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Claude Code CLI",
+  "install": {
+    "arch": {
+      "commands": [
+        "curl -fsSL https://claude.ai/install.sh | bash"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "curl -fsSL https://claude.ai/install.sh | bash"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "curl -fsSL https://claude.ai/install.sh | bash"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "curl -fsSL https://claude.ai/install.sh | bash"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "curl -fsSL https://claude.ai/install.sh | bash"
+      ]
+    }
+  }
+}

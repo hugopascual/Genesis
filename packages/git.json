@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Distributed version control system",
+  "install": {
+    "arch": {
+      "pacman": "git"
+    },
+    "cachyos": {
+      "pacman": "git"
+    },
+    "debian": {
+      "apt": "git"
+    },
+    "ubuntu": {
+      "apt": "git"
+    },
+    "raspberrypi": {
+      "apt": "git"
+    },
+    "windows": {
+      "choco": "git"
+    }
+  }
+}

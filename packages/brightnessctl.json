@@ -1,0 +1,18 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Brightness control utility",
+  "install": {
+    "arch": {
+      "pacman": "brightnessctl"
+    },
+    "cachyos": {
+      "pacman": "brightnessctl"
+    },
+    "debian": {
+      "apt": "brightnessctl"
+    },
+    "ubuntu": {
+      "apt": "brightnessctl"
+    }
+  }
+}

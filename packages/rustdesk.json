@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Remote desktop software",
+  "install": {
+    "arch": {
+      "flatpak": "com.rustdesk.RustDesk"
+    },
+    "cachyos": {
+      "flatpak": "com.rustdesk.RustDesk"
+    },
+    "debian": {
+      "flatpak": "com.rustdesk.RustDesk"
+    },
+    "ubuntu": {
+      "flatpak": "com.rustdesk.RustDesk"
+    },
+    "raspberrypi": {
+      "flatpak": "com.rustdesk.RustDesk"
+    },
+    "windows": {
+      "manual": "https://rustdesk.com/"
+    }
+  }
+}

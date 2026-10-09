@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GPU-accelerated terminal emulator",
+  "install": {
+    "arch": {
+      "pacman": "kitty"
+    },
+    "cachyos": {
+      "pacman": "kitty"
+    },
+    "debian": {
+      "apt": "kitty"
+    },
+    "ubuntu": {
+      "apt": "kitty"
+    },
+    "raspberrypi": {
+      "apt": "kitty"
+    }
+  }
+}

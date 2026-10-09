@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "NetworkManager OpenVPN integration",
+  "install": {
+    "arch": {
+      "pacman": "networkmanager-openvpn"
+    },
+    "cachyos": {
+      "pacman": "networkmanager-openvpn"
+    },
+    "debian": {
+      "apt": "network-manager-openvpn-gnome"
+    },
+    "ubuntu": {
+      "apt": "network-manager-openvpn-gnome"
+    },
+    "raspberrypi": {
+      "apt": "network-manager-openvpn-gnome"
+    }
+  }
+}

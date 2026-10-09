@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hyprshot screenshot utility",
+  "install": {
+    "arch": {
+      "pacman": "hyprshot"
+    },
+    "cachyos": {
+      "pacman": "hyprshot"
+    }
+  }
+}

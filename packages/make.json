@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.",
+  "install": {
+    "arch": {
+      "pacman": "make"
+    },
+    "cachyos": {
+      "pacman": "make"
+    },
+    "debian": {
+      "apt": "make"
+    },
+    "ubuntu": {
+      "apt": "make"
+    },
+    "raspberrypi": {
+      "apt": "make"
+    }
+  }
+}

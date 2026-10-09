@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "API development platform",
+  "install": {
+    "arch": {
+      "flatpak": "com.getpostman.Postman"
+    },
+    "cachyos": {
+      "flatpak": "com.getpostman.Postman"
+    },
+    "debian": {
+      "flatpak": "com.getpostman.Postman"
+    },
+    "ubuntu": {
+      "flatpak": "com.getpostman.Postman"
+    },
+    "raspberrypi": {
+      "flatpak": "com.getpostman.Postman"
+    },
+    "windows": {
+      "choco": "postman"
+    }
+  }
+}

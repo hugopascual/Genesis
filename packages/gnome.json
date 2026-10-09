@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Gnome Desktop Environment",
+  "install": {
+    "arch": {
+      "pacman": [
+        "gnome",
+        "gdm"
+      ]
+    },
+    "cachyos": {
+      "pacman": [
+        "gnome",
+        "gdm"
+      ]
+    },
+    "debian": {
+      "apt": [
+        "task-gnome-desktop",
+        "gdm3"
+      ]
+    },
+    "ubuntu": {
+      "apt": [
+        "ubuntu-desktop",
+        "gdm3"
+      ]
+    },
+    "raspberrypi": {
+      "apt": [
+        "task-gnome-desktop",
+        "gdm3"
+      ]
+    }
+  }
+}

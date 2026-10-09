@@ -1,0 +1,27 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "CurseForge mod manager",
+  "install": {
+    "debian": {
+      "commands": [
+        "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
+        "sudo apt install -y ./curseforge-latest-linux.deb",
+        "rm -rf curseforge-latest-linux.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
+        "sudo apt install -y ./curseforge-latest-linux.deb",
+        "rm -rf curseforge-latest-linux.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb",
+        "sudo apt install -y ./curseforge-latest-linux.deb",
+        "rm -rf curseforge-latest-linux.deb"
+      ]
+    }
+  }
+}

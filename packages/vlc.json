@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "VLC media player",
+  "install": {
+    "arch": {
+      "pacman": "vlc"
+    },
+    "cachyos": {
+      "pacman": "vlc"
+    },
+    "debian": {
+      "apt": "vlc"
+    },
+    "ubuntu": {
+      "apt": "vlc"
+    },
+    "raspberrypi": {
+      "apt": "vlc"
+    },
+    "windows": {
+      "choco": "vlc"
+    }
+  }
+}

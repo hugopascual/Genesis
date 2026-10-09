@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Wofi launcher",
+  "install": {
+    "arch": {
+      "pacman": "wofi"
+    },
+    "cachyos": {
+      "pacman": "wofi"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Transfer data with URLs",
+  "install": {
+    "arch": {
+      "pacman": "curl"
+    },
+    "cachyos": {
+      "pacman": "curl"
+    },
+    "debian": {
+      "apt": "curl"
+    },
+    "ubuntu": {
+      "apt": "curl"
+    },
+    "raspberrypi": {
+      "apt": "curl"
+    }
+  }
+}

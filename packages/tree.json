@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Display directory tree",
+  "install": {
+    "arch": {
+      "pacman": "tree"
+    },
+    "cachyos": {
+      "pacman": "tree"
+    },
+    "debian": {
+      "apt": "tree"
+    },
+    "ubuntu": {
+      "apt": "tree"
+    },
+    "raspberrypi": {
+      "apt": "tree"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Visual Studio Code editor",
+  "install": {
+    "arch": {
+      "yay": "visual-studio-code-bin"
+    },
+    "cachyos": {
+      "yay": "visual-studio-code-bin"
+    },
+    "debian": {
+      "commands": [
+        "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "windows": {
+      "choco": "vscode"
+    }
+  }
+}

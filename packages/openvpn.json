@@ -1,0 +1,45 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "OpenVPN 3 client (OpenVPN Connect on Windows)",
+  "install": {
+    "arch": {
+      "yay": "openvpn3"
+    },
+    "cachyos": {
+      "yay": "openvpn3"
+    },
+    "debian": {
+      "commands": [
+        "sudo apt install -y apt-transport-https curl",
+        "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
+        "DISTRO=$(lsb_release -c -s)",
+        "echo \"deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main\" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list",
+        "sudo apt update",
+        "sudo apt install -y openvpn3"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "sudo apt install -y apt-transport-https curl",
+        "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
+        "DISTRO=$(lsb_release -c -s)",
+        "echo \"deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main\" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list",
+        "sudo apt update",
+        "sudo apt install -y openvpn3"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "sudo apt install -y apt-transport-https curl",
+        "sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc",
+        "DISTRO=$(lsb_release -c -s)",
+        "echo \"deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian $DISTRO main\" | sudo tee /etc/apt/sources.list.d/openvpn-packages.list",
+        "sudo apt update",
+        "sudo apt install -y openvpn3"
+      ]
+    },
+    "windows": {
+      "choco": "openvpn-connect"
+    }
+  }
+}

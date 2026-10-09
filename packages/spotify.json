@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Spotify music streaming client",
+  "install": {
+    "arch": {
+      "flatpak": "com.spotify.Client"
+    },
+    "cachyos": {
+      "flatpak": "com.spotify.Client"
+    },
+    "debian": {
+      "flatpak": "com.spotify.Client"
+    },
+    "ubuntu": {
+      "flatpak": "com.spotify.Client"
+    },
+    "raspberrypi": {
+      "flatpak": "com.spotify.Client"
+    },
+    "windows": {
+      "choco": "spotify"
+    }
+  }
+}

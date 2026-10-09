@@ -1,0 +1,33 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Yazi (means \"duck\") is a terminal file manager written in Rust, based on non-blocking async I/O. It aims to provide an efficient, user-friendly, and customizable file management experience.",
+  "install": {
+    "arch": {
+      "pacman": "yazi"
+    },
+    "cachyos": {
+      "pacman": "yazi"
+    },
+    "debian": {
+      "commands": [
+        "curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null",
+        "echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null",
+        "sudo apt update && sudo apt install yazi"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null",
+        "echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null",
+        "sudo apt update && sudo apt install yazi"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null",
+        "echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null",
+        "sudo apt update && sudo apt install yazi"
+      ]
+    }
+  }
+}

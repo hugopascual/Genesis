@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "XDG desktop portal for Hyprland",
+  "install": {
+    "arch": {
+      "pacman": "xdg-desktop-portal-hyprland"
+    },
+    "cachyos": {
+      "pacman": "xdg-desktop-portal-hyprland"
+    }
+  }
+}

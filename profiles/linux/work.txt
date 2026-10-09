@@ -1,0 +1,45 @@
+@include base
+
+# Package managers
+flatpak
+yay
+
+# Development
+jetbrains_toolbox
+postman
+vscode
+
+# Browsers
+firefox
+
+# Communication
+discord
+thunderbird
+
+# Media
+gimp
+vlc
+
+# Utilities
+7zip
+autofirma
+configurador_fnmt
+kitty
+keepass
+obsidian
+okular
+printers
+raspberrypi_imager
+terminator
+
+# VPNs
+openvpn
+wireguard
+
+# Drivers
+display_link
+
+# Videogames
+steam
+lutris
+heroic

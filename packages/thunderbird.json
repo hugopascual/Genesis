@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Mozilla Thunderbird email client",
+  "install": {
+    "arch": {
+      "pacman": "thunderbird"
+    },
+    "cachyos": {
+      "pacman": "thunderbird"
+    },
+    "debian": {
+      "flatpak": "org.mozilla.Thunderbird"
+    },
+    "ubuntu": {
+      "flatpak": "org.mozilla.Thunderbird"
+    },
+    "raspberrypi": {
+      "flatpak": "org.mozilla.Thunderbird"
+    },
+    "windows": {
+      "choco": "thunderbird"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "DisplayLink USB graphics driver",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm linux-headers",
+        "yay -Syu --noconfirm evdi-dkms",
+        "yay -Syu --noconfirm displaylink",
+        "sudo systemctl enable displaylink.service"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm linux-headers",
+        "yay -Syu --noconfirm evdi-dkms",
+        "yay -Syu --noconfirm displaylink",
+        "sudo systemctl enable displaylink.service"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
+        "sudo apt install -y ./synaptics-repository-keyring.deb",
+        "sudo apt update",
+        "sudo apt install -y displaylink-driver",
+        "rm synaptics-repository-keyring.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
+        "sudo apt install -y ./synaptics-repository-keyring.deb",
+        "sudo apt update",
+        "sudo apt install -y displaylink-driver",
+        "rm synaptics-repository-keyring.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb",
+        "sudo apt install -y ./synaptics-repository-keyring.deb",
+        "sudo apt update",
+        "sudo apt install -y displaylink-driver",
+        "rm synaptics-repository-keyring.deb"
+      ]
+    },
+    "windows": {
+      "manual": "https://www.synaptics.com/products/displaylink-graphics/downloads/windows"
+    }
+  }
+}

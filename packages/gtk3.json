@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GTK 3 runtime",
+  "install": {
+    "arch": {
+      "pacman": "gtk3"
+    },
+    "cachyos": {
+      "pacman": "gtk3"
+    },
+    "debian": {
+      "apt": "libgtk-3-0"
+    },
+    "ubuntu": {
+      "apt": "libgtk-3-0"
+    },
+    "raspberrypi": {
+      "apt": "libgtk-3-0"
+    }
+  }
+}

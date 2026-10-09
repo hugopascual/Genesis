@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hyprland compositor",
+  "install": {
+    "arch": {
+      "pacman": "hyprland"
+    },
+    "cachyos": {
+      "pacman": "hyprland"
+    }
+  }
+}

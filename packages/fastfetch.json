@@ -1,0 +1,25 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Fast system information tool",
+  "install": {
+    "arch": {
+      "pacman": "fastfetch"
+    },
+    "cachyos": {
+      "pacman": "fastfetch"
+    },
+    "debian": {
+      "apt": "fastfetch"
+    },
+    "ubuntu": {
+      "commands": [
+        "sudo add-apt-repository ppa:zhangsongcui3371/fastfetch",
+        "sudo apt update",
+        "sudo apt install fastfetch"
+      ]
+    },
+    "raspberrypi": {
+      "apt": "fastfetch"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Qt5 configuration tool",
+  "install": {
+    "arch": {
+      "pacman": "qt5ct"
+    },
+    "cachyos": {
+      "pacman": "qt5ct"
+    }
+  }
+}
