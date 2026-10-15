@@ -1,7 +1,0 @@
-{
-  "description": "Amazongames",
-  "info": "https://community.chocolatey.org/packages/amazongames",
-  "commands": [
-    "choco install -y amazongames --ignore-checksums"
-  ]
-}

@@ -62,7 +62,7 @@ check_distro_not_included_in_packages() {
 
     for package_file in "${package_files[@]}"; do
         ((total_count++))
-        if jq -e --arg distro "$distro" 'has($distro)' "$package_file" > /dev/null; then
+        if jq -e --arg distro "$distro" '.install | has($distro)' "$package_file" > /dev/null; then
             ((existing_count++))
         fi
     done

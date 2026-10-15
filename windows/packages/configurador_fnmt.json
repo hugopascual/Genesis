@@ -1,7 +1,0 @@
-{
-  "description": "Configurador Fnmt",
-  "info": "https://www.sede.fnmt.gob.es/certificados/persona-fisica/obtener-certificado-software/configuracion-previa",
-  "commands": [
-    "Invoke-WebRequest -Uri \"https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.1.2_64bits.exe\" -OutFile \"$env:USERPROFILE\\Downloads\\Configurador_FNMT_5.1.2_64bits.exe\""
-  ]
-}

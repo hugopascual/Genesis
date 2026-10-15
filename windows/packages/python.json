@@ -1,7 +1,0 @@
-{
-  "description": "Python",
-  "info": "https://community.chocolatey.org/packages/python",
-  "commands": [
-    "choco install -y python --ignore-checksums"
-  ]
-}

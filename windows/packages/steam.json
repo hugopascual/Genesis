@@ -1,7 +1,0 @@
-{
-  "description": "Steam",
-  "info": "https://community.chocolatey.org/packages/steam",
-  "commands": [
-    "choco install -y steam --ignore-checksums"
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "description": "Discord",
-  "info": "https://community.chocolatey.org/packages/discord.install",
-  "commands": [
-    "choco install -y discord.install --ignore-checksums"
-  ]
-}

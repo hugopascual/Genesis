@@ -1,7 +1,0 @@
-{
-  "description": "Spotify",
-  "info": "https://community.chocolatey.org/packages/spotify",
-  "commands": [
-    "choco install -y spotify --ignore-checksums"
-  ]
-}

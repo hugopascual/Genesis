@@ -11,70 +11,68 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Then, run the software installation script:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile base
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile desktop
 ```
 
 ### Installation profiles
 
-The script now uses profile files (similar to Linux) and package JSON definitions:
+Profiles are defined in `profiles/windows/*.txt` and packages in the shared `packages/*.json` catalog (see the Packages section of the main `README.md`).
 
-- Profiles: `windows/install_configs/*.txt`
-- Package definitions: `windows/packages/*.json`
+Profiles are organised by levels: `base` is included by `desktop`, and `desktop` is included by `work` and `personal`. See `profiles/README.md` for the `@include` syntax.
 
-Available profiles are discovered automatically from `windows/install_configs/*.txt`.
-
-- `base`
-- `games`
-- `3dprinting`
-
-Profile name is the filename without `.txt`.
-Example: `windows/install_configs/base.txt` -> `-Profile base`.
+The profile name is the filename without `.txt`. If `-Profile` is not given, `desktop` is used.
 
 Examples:
 
 ```powershell
-# Use a custom list file
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -ConfigPath .\windows\install_configs\base.txt
+# Use a profile
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile personal
 
-# Use a detected profile name (from install_configs filename)
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile games
+# Use a custom package list (it can contain "@include <profile>")
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -ConfigPath .\my_packages.txt
 
 # Show command help
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 help
 ```
 
-### Package JSON format
+### Installation behaviour
 
-Each package file now uses a single command list and optional info URL:
-
-```json
-{
-  "description": "Software name",
-  "info": "https://example.org/software",
-  "commands": [
-    "choco install -y package --ignore-checksums",
-    "winget install --id Vendor.Package --silent --accept-package-agreements --accept-source-agreements"
-  ]
-}
-```
-
-Notes:
-
-- `description` is metadata only and is not used by the installer logic.
-- `commands` is the only field executed by the installer.
+- Before installing, the selected options are shown and a confirmation is requested.
+- Each package uses its `windows` entry: `choco`, `commands` (PowerShell) or `manual`.
 - Command output is streamed to terminal while each command runs.
 - If a command exits with non-zero code, the package is marked as failed.
-- URL downloads are expressed directly as commands.
-- If `commands` is empty, the package is skipped and shown at the end in a manual-install list with the `info` link.
+- Packages without a `windows` entry are skipped and listed as not available.
+- Packages with a `manual` entry are skipped and listed at the end with their URL.
 
-### Default installs
+## Update
 
-- **Development**: git, vscode, python, docker-desktop, jetbrains-toolbox, postman
-- **Browsers**: firefox, google-chrome
-- **Communication**: thunderbird, telegram, discord
-- **Media**: vlc, spotify
-- **Utilities**: keepass, obsidian, wireguard
-- **Games**: steam, epic-games-launcher, ea-app, heroic-games-launcher
+Update all Chocolatey packages:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 update
+```
+
+## Logs
+
+The whole session output, including the output of the installation commands, is saved in `windows/logs` with the format `genesis_YYYYMMDD_HHMMSS.log`. It is enabled by default; to disable it set the `GENESIS_LOG_ENABLED` environment variable to `false`:
+
+```powershell
+$env:GENESIS_LOG_ENABLED = "false"
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile desktop
+```
+
+### Project Structure
+
+The Windows code follows the same layout as the Linux one:
+
+```text
+windows/
+├── windows.ps1            # Main entrypoint
+├── logs/                  # Session logs
+└── src/
+    ├── commands/          # Command managers (install, update)
+    └── utilities/         # Constants, help, logging and utilities
+```
 
 ## Environment Setup
 

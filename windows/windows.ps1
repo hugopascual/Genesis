@@ -1,45 +1,73 @@
 param (
     [string]$Command = "install",
-    [string]$Profile = "base",
+    [string]$Profile,
     [string]$ConfigPath
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$scriptsPath = Join-Path $scriptRoot "scripts"
+################################################################################
+# Get the path to the main directory.
+$BasePath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$SrcPath = Join-Path $BasePath "src"
 
-if (-not (Test-Path $scriptsPath)) {
-    throw "Scripts folder not found: $scriptsPath"
+################################################################################
+### Imports (dot-sourced at script level so functions and constants stay visible)
+foreach ($importDirectory in @("utilities", "commands")) {
+    foreach ($scriptFile in Get-ChildItem -Path (Join-Path $SrcPath $importDirectory) -Filter "*.ps1" -File -Recurse | Sort-Object FullName) {
+        . $scriptFile.FullName
+    }
 }
 
-Get-ChildItem -Path $scriptsPath -Filter "*.ps1" -File |
-    Sort-Object Name |
-    ForEach-Object { . $_.FullName }
-
-switch ($Command.ToLowerInvariant()) {
-    "install" {
-        Invoke-GenesisInstall -ScriptRoot $scriptRoot -Profile $Profile -ConfigPath $ConfigPath
+################################################################################
+### Initialize logging system (finally also runs on "exit", closing the log)
+Start-GenesisLog
+try {
+    $Command = $Command.ToLowerInvariant()
+    if ([string]::IsNullOrWhiteSpace($Profile)) {
+        $Profile = $DefaultProfile
     }
-    "help" {
-        $availableProfiles = @()
-        try {
-            $availableProfiles = @(Get-GenesisAvailableProfiles -ScriptRoot $scriptRoot)
+
+    Test-GenesisOptionSupported -Option $Command `
+        -ErrorMessage $CommandNotValidMessage `
+        -SupportedOptions $CommandTypes
+
+    if ($Command -eq $HelpCommand) {
+        Show-GenesisHelp
+        exit 0
+    }
+
+    Write-Host "Command selected: $Command"
+    if ($Command -eq $InstallCommand) {
+        if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
+            Write-Host "Profile selected: $Profile"
         }
-        catch {
-            $availableProfiles = @()
+        else {
+            Write-Host "Package list selected: $ConfigPath"
         }
-
-        $profilesText = if ($availableProfiles.Count -gt 0) { $availableProfiles -join ", " } else { "(none found)" }
-
-        Write-Host "Usage:"
-        Write-Host "  .\\windows\\windows.ps1 install [-Profile <profile-name>] [-ConfigPath .\\windows\\install_configs\\<profile-name>.txt]"
-        Write-Host "  .\\windows\\windows.ps1 help"
-        Write-Host ""
-        Write-Host "Available profiles (from windows/install_configs/*.txt): $profilesText"
     }
-    default {
-        throw "Invalid command '$Command'. Use 'install' or 'help'."
+
+    # Display options selected and ask for confirmation
+    $answer = Read-Host "Are you sure you want to continue? (Y/n)"
+    if (-not [string]::IsNullOrWhiteSpace($answer) -and $answer -notmatch '^(y|yes)$') {
+        Write-Host "Operation cancelled by user"
+        exit 1
     }
+
+    # Execute routine depending on command
+    switch ($Command) {
+        $InstallCommand {
+            Write-Host "Starting installation"
+            Invoke-GenesisInstall -Profile $Profile -ConfigPath $ConfigPath
+        }
+        $UpdateCommand {
+            Write-Host "Starting update"
+            Invoke-GenesisUpdate
+        }
+    }
+}
+finally {
+    ### Display log file location
+    Stop-GenesisLog
 }

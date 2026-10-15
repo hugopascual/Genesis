@@ -1,7 +1,0 @@
-{
-  "description": "Heroic Games Launcher",
-  "info": "https://community.chocolatey.org/packages/heroic-games-launcher",
-  "commands": [
-    "choco install -y heroic-games-launcher --ignore-checksums"
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "description": "Epic Games Launcher",
-  "info": "https://community.chocolatey.org/packages/epicgameslauncher",
-  "commands": [
-    "choco install -y epicgameslauncher --ignore-checksums"
-  ]
-}

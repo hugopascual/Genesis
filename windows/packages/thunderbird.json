@@ -1,7 +1,0 @@
-{
-  "description": "Thunderbird",
-  "info": "https://community.chocolatey.org/packages/thunderbird",
-  "commands": [
-    "choco install -y thunderbird --ignore-checksums"
-  ]
-}

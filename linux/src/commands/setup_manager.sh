@@ -98,7 +98,7 @@ setup_install_bundle() {
         return 1
     fi
 
-    install_from_config_file "$bundle_path" "$DISTRO_SELECTED" "true"
+    install_from_config_file "$bundle_path" "$DISTRO_SELECTED"
 }
 
 setup_finalize_type() {

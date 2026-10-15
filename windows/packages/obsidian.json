@@ -1,7 +1,0 @@
-{
-  "description": "Obsidian",
-  "info": "https://community.chocolatey.org/packages/obsidian",
-  "commands": [
-    "choco install -y obsidian --ignore-checksums"
-  ]
-}
