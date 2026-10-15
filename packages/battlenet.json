@@ -2,6 +2,21 @@
   "$schema": "../schema/package.schema.json",
   "description": "Blizzard Battle.net launcher",
   "install": {
+    "arch": {
+      "manual": "https://lutris.net/games/battlenet/"
+    },
+    "cachyos": {
+      "manual": "https://lutris.net/games/battlenet/"
+    },
+    "debian": {
+      "manual": "https://lutris.net/games/battlenet/"
+    },
+    "ubuntu": {
+      "manual": "https://lutris.net/games/battlenet/"
+    },
+    "raspberrypi": {
+      "manual": "https://lutris.net/games/battlenet/"
+    },
     "windows": {
       "manual": "https://eu.shop.battle.net/en-us"
     }

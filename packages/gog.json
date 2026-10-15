@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GOG games client (Minigalaxy on Linux, GOG Galaxy on Windows)",
+  "install": {
+    "arch": {
+      "yay": "minigalaxy"
+    },
+    "cachyos": {
+      "yay": "minigalaxy"
+    },
+    "debian": {
+      "apt": "minigalaxy"
+    },
+    "ubuntu": {
+      "apt": "minigalaxy"
+    },
+    "windows": {
+      "choco": "goggalaxy"
+    }
+  }
+}
