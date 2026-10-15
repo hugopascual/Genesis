@@ -4,12 +4,16 @@ Automated installation and configuration system for Linux and Windows operating 
 
 ## Overview
 
-Genesis provides automated scripts to install and configure software packages across different operating systems and distributions. It simplifies the process of setting up new machines with predefined or custom software configurations.
+Genesis installs and configures software on new machines from a single package catalog shared by Linux and Windows:
+
+- **Packages**: one JSON file per program, describing how to install it on each platform.
+- **Profiles**: lists of packages for each kind of machine (`server`, `desktop`, `work`, `personal`…), organised by levels.
+- **Setups** (Linux only): desktop environment and dotfiles configuration.
 
 ## Supported Systems
 
-- **Linux**: Ubuntu, Debian, Arch Linux, Raspberry Pi, CachyOS
-- **Windows**: PowerShell-based installation
+- **Linux**: Arch Linux, CachyOS, Debian, Ubuntu, Raspberry Pi OS
+- **Windows**: PowerShell with [Chocolatey](https://chocolatey.org/)
 
 ## Quick Start
 
@@ -17,9 +21,10 @@ Genesis provides automated scripts to install and configure software packages ac
 
 ```bash
 ./linux/linux.sh install <distro> <profile>
-./linux/linux.sh update <distro>
-./linux/linux.sh setup <distro> <environment>
+./linux/linux.sh update
+./linux/linux.sh setup <distro> <setup_type>
 ./linux/linux.sh add-distro <new_distro> "<base_command>"
+./linux/linux.sh help
 ```
 
 ### Windows
@@ -27,7 +32,10 @@ Genesis provides automated scripts to install and configure software packages ac
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile <profile>
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 update
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 help
 ```
+
+Both entrypoints show the selected options and ask for confirmation before running, print a summary at the end and save a log (see each guide).
 
 ## Project Structure
 
@@ -38,23 +46,25 @@ Genesis/
 │   ├── linux/
 │   └── windows/
 ├── schema/         # JSON Schema for package definitions
-├── linux/          # Linux entrypoint, source code and statics
+├── linux/          # Linux entrypoint, source code, statics and logs
 │   ├── linux.sh
 │   ├── src/
-│   └── statics/
-├── windows/        # Windows entrypoint and source code
+│   ├── statics/
+│   └── logs/
+├── windows/        # Windows entrypoint, source code and logs
 │   ├── windows.ps1
-│   └── src/
+│   ├── src/
+│   └── logs/
 └── docs/           # Detailed documentation
 ```
 
-# Packages
+## Packages
 
-One JSON file per logical package, shared by Linux and Windows. The file name (without `.json`) is the name used in [profiles](profiles/README.md) and setup bundles.
+One JSON file per logical package in `packages/`, shared by Linux and Windows. The file name (without `.json`) is the name used in [profiles](docs/Profiles.md) and setup bundles.
 
 The format is defined in [package.schema.json](schema/package.schema.json). Editors that support JSON Schema validate each file through its `$schema` key.
 
-## Format
+### Format
 
 ```json
 {
@@ -76,10 +86,10 @@ The format is defined in [package.schema.json](schema/package.schema.json). Edit
 - A platform that is not listed means the package is not available there: it is skipped and reported in the installation summary.
 - Each platform entry has exactly one installation method.
 
-## Installation methods
+### Installation methods
 
 | Method | Platforms | Runs |
-|---|---|---|
+| --- | --- | --- |
 | `pacman` | Linux | `sudo pacman -Syu --noconfirm <pkgs>` |
 | `yay` | Linux | `yay -Syu --noconfirm <pkgs>` |
 | `apt` | Linux | `sudo apt install -y <pkgs>` |
@@ -102,19 +112,21 @@ Use `commands` when the installation needs more than one step:
 }
 ```
 
-## Naming
+### Naming
 
 Use one logical name per tool, even when each platform installs a different product (`keepass`, `docker`, `openvpn`, `gog`). Keep separate packages only when they are different tools that can coexist or conflict (`vscode` and `codeoss`).
 
+### Adding a package
+
+1. Create `packages/<name>.json` with an entry for each platform where it can be installed.
+2. Add `<name>` to the profiles ([docs/Profiles.md](docs/Profiles.md)) or Linux setup bundles that need it.
+
 ## Documentation
 
-- **[Packages](#packages)** - Package definition format
-- **[Profiles](profiles/README.md)** - Profile levels and `@include` syntax
-- **[Linux](docs/Linux.md)** - Linux installation and configuration guide
-  - [Ubuntu](docs/Ubuntu.md)
-  - [Debian](docs/Debian.md)
-  - [Arch](docs/Arch.md)
-- **[Windows](docs/Windows.md)** - Windows installation and configuration guide
+- **[Profiles](docs/Profiles.md)** - Profile levels and `@include` syntax
+- **[Linux](docs/Linux.md)** - Linux commands, setups and development guide
+  - [Arch](docs/Arch.md) - Arch Linux and Hyprland notes
+- **[Windows](docs/Windows.md)** - Windows commands and manual configuration
 
 ## License
 

@@ -1,4 +1,4 @@
-# Arch
+# Arch Linux Notes
 
 ## Graphics Drivers
 
@@ -8,7 +8,7 @@
 sudo pacman -Syu --noconfirm nvidia-utils nvidia-settings
 ```
 
-Depending on the GPU you have to install other driver instead of `nvidia-open`.
+Depending on the GPU you may need a different driver instead of `nvidia-open`.
 Check the [Arch Wiki](https://wiki.archlinux.org/title/NVIDIA) for more information.
 
 ```shell
@@ -17,44 +17,44 @@ sudo pacman -Syu --noconfirm nvidia-open
 
 ## Arch with Hyprland
 
-### Documentación software instalado
+`./linux/linux.sh setup arch hyprland` installs the Hyprland bundle and automates the `greetd` and Waybar configuration described below.
+
+### Installed software documentation
 
 - [Hyprland](https://wiki.hypr.land/)
-- [Ecosistema hyprland](https://wiki.hypr.land/Hypr-Ecosystem/)
+- [Hyprland ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/)
 - [Yazi](https://knng.de/blog/hyprland_yazi/)
 - [Yay](https://github.com/Jguer/yay)
 
 ### Network Manager
 
-Una vez instalado el NetworkManager hay que asegurarse de tener el servicio activo
+Once NetworkManager is installed, make sure its service is running:
 
 ```sh
 systemctl status NetworkManager
 ```
 
-Si el servicio está activo debes buscar las redes WiFi disponibles
+If the service is running, list the available WiFi networks:
 
 ```sh
 nmcli dev wifi
 ```
 
-Descubierto el nombre de la red a la que nos queremos conectar nos podemos conectar con
+Then connect to the network:
 
 ```sh
 nmcli dev wifi connect <SSID> --ask
 ```
 
-Información más detallada en la [página oficial](https://wiki.archlinux.org/title/NetworkManager) o
-[aquí](https://itsfoss.gitlab.io/post/enable-networkmanager-after-arch-installation/).
+More information in the [Arch Wiki](https://wiki.archlinux.org/title/NetworkManager) or in
+[Enable NetworkManager after Arch installation](https://itsfoss.gitlab.io/post/enable-networkmanager-after-arch-installation/).
 
-### Configuración de arranque
+### Boot and login
 
-En este caso vamos a configurar `tuigreet` como pantalla de login en el arranque
-y para el login posterior al bloquear la pantalla usaremos `hyprlock`.
-Utilizaremos `greetd` como servicio en `systemd` para hacer el arranque
-instantaneo con `systemctl enable greetd.service`.
+`tuigreet` is used as the login screen at boot, and `hyprlock` to unlock the screen afterwards.
+`greetd` runs as a `systemd` service to start it at boot (`systemctl enable greetd.service`).
 
-La configuración se modifica en el fichero `/etc/greetd/config.toml`:
+The configuration is in `/etc/greetd/config.toml` (the setup copies it from `linux/statics/types/hyprland/greetd`):
 
 ```toml
 [terminal]
@@ -77,9 +77,7 @@ user = "greeter"
 
 ---
 
-**Existe una alternativa** si desea configurar `hyprlock` como login inicial
-cambiaremos la configuración por la siguiente. Fíjese que debe cambiar el
-usuario por el suyo.
+**Alternative**: to use `hyprlock` as the initial login, use the following configuration instead, replacing the user with yours.
 
 ```toml
 [terminal]
@@ -97,18 +95,18 @@ command = "hyprland"
 # The user to run the command as. The privileges this user must have depends
 # on the greeter. A graphical greeter may for example require the user to be
 # in the `video` group.
-user = "tu-usuario"
+user = "your-user"
 ```
 
 ### Waybar
 
-Configuración custom usando la [mechabar](https://github.com/sejjy/mechabar).
+Custom configuration using [mechabar](https://github.com/sejjy/mechabar) (installed by the setup):
 
 ```sh
 git clone https://github.com/sejjy/mechabar.git ~/.config/waybar
 ~/.config/waybar/install.sh
 ```
 
-### Sitios de interés
+### Useful links
 
 - [hyprlock configs](https://github.com/MrVivekRajan/Hyprlock-Styles/)

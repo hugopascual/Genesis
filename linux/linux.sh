@@ -50,6 +50,10 @@ check_option_supported "$COMMAND_SELECTED" \
     "$COMMAND_NOT_VALID_MESSAGE" \
     "${COMMAND_TYPES[@]}" 
 
+if [[ "$COMMAND_SELECTED" == "$HELP_COMMAND" ]]; then
+    help 0
+fi
+
 case $COMMAND_SELECTED in
     "$INSTALL_COMMAND"|"$SETUP_COMMAND")
         check_option_supported "$DISTRO_SELECTED" \

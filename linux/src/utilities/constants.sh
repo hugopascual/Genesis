@@ -20,6 +20,7 @@ export INSTALL_COMMAND='install'
 export UPDATE_COMMAND='update'
 export SETUP_COMMAND='setup'
 export ADD_DISTRO_COMMAND='add-distro'
+export HELP_COMMAND='help'
 
 # Distribution keys
 export UBUNTU='ubuntu'
@@ -33,6 +34,7 @@ export COMMAND_TYPES=(
     "$UPDATE_COMMAND" 
     "$SETUP_COMMAND"
     "$ADD_DISTRO_COMMAND"
+    "$HELP_COMMAND"
 )
 
 # Available installation types are loaded dynamically from profiles.
