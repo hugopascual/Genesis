@@ -1,0 +1,34 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Calibre ebook management",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin"
+      ]
+    },
+    "windows": {
+      "manual": "https://calibre-ebook.com/download_windows"
+    }
+  }
+}
