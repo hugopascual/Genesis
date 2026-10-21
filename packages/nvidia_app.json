@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "NVIDIA drivers and app",
+  "install": {
+    "windows": {
+      "manual": "https://www.nvidia.com/en-us/software/nvidia-app/"
+    }
+  }
+}

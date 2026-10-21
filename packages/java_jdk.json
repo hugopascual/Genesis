@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Java Development Kit",
+  "install": {
+    "arch": {
+      "pacman": "jdk-openjdk"
+    },
+    "cachyos": {
+      "pacman": "jdk-openjdk"
+    },
+    "debian": {
+      "apt": "default-jdk"
+    },
+    "ubuntu": {
+      "apt": "default-jdk"
+    },
+    "raspberrypi": {
+      "apt": "default-jdk"
+    }
+  }
+}

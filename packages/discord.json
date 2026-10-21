@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Discord communication platform",
+  "install": {
+    "arch": {
+      "pacman": "discord"
+    },
+    "cachyos": {
+      "pacman": "discord"
+    },
+    "debian": {
+      "commands": [
+        "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget --content-disposition https://discord.com/api/download?platform=linux&format=deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "windows": {
+      "choco": "discord.install"
+    }
+  }
+}

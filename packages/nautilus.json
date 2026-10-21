@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GNOME Files (Nautilus)",
+  "install": {
+    "arch": {
+      "pacman": "nautilus"
+    },
+    "cachyos": {
+      "pacman": "nautilus"
+    },
+    "debian": {
+      "apt": "nautilus"
+    },
+    "ubuntu": {
+      "apt": "nautilus"
+    },
+    "raspberrypi": {
+      "apt": "nautilus"
+    }
+  }
+}

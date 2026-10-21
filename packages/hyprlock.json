@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hyprlock lock screen",
+  "install": {
+    "arch": {
+      "pacman": "hyprlock"
+    },
+    "cachyos": {
+      "pacman": "hyprlock"
+    }
+  }
+}

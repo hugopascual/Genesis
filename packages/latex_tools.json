@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "LaTeX tools for local working",
+  "install": {
+    "arch": {
+      "pacman": "texlive-binextra"
+    },
+    "cachyos": {
+      "pacman": "texlive-binextra"
+    },
+    "debian": {
+      "apt": "latexdiff"
+    },
+    "ubuntu": {
+      "apt": "latexdiff"
+    },
+    "raspberrypi": {
+      "apt": "latexdiff"
+    }
+  }
+}

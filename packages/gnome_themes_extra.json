@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GNOME additional themes",
+  "install": {
+    "arch": {
+      "pacman": "gnome-themes-extra"
+    },
+    "cachyos": {
+      "pacman": "gnome-themes-extra"
+    },
+    "debian": {
+      "apt": "gnome-themes-extra"
+    },
+    "ubuntu": {
+      "apt": "gnome-themes-extra"
+    },
+    "raspberrypi": {
+      "apt": "gnome-themes-extra"
+    }
+  }
+}

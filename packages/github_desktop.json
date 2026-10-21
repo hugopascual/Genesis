@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GitHub desktop client",
+  "install": {
+    "windows": {
+      "choco": "github-desktop"
+    }
+  }
+}

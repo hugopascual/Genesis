@@ -1,0 +1,4 @@
+# Development
+docker
+git
+python

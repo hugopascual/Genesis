@@ -1,0 +1,15 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Heroic Games Launcher",
+  "install": {
+    "cachyos": {
+      "pacman": [
+        "cachyos-gaming-meta",
+        "cachyos-gaming-applications"
+      ]
+    },
+    "windows": {
+      "choco": "heroic-games-launcher"
+    }
+  }
+}

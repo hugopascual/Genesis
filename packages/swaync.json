@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Sway Notification Center",
+  "install": {
+    "arch": {
+      "pacman": "swaync"
+    },
+    "cachyos": {
+      "pacman": "swaync"
+    }
+  }
+}

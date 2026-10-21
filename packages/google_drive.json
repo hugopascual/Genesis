@@ -1,0 +1,9 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Google Drive desktop client",
+  "install": {
+    "windows": {
+      "choco": "googledrive"
+    }
+  }
+}

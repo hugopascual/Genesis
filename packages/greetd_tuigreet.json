@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Tuigreet greeter for greetd",
+  "install": {
+    "arch": {
+      "pacman": "greetd-tuigreet"
+    },
+    "cachyos": {
+      "pacman": "greetd-tuigreet"
+    }
+  }
+}

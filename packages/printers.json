@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Necessary packages for printing support",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm cups",
+        "sudo pacman -Syu --noconfirm print-manager",
+        "sudo pacman -Syu --noconfirm system-config-printer",
+        "sudo pacman -Syu --noconfirm hplip",
+        "sudo systemctl enable --now cups.service"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm cups",
+        "sudo pacman -Syu --noconfirm print-manager",
+        "sudo pacman -Syu --noconfirm system-config-printer",
+        "sudo pacman -Syu --noconfirm hplip",
+        "sudo systemctl enable --now cups.service"
+      ]
+    }
+  }
+}

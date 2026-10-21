@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Password manager (KeePassXC on Linux, KeePass on Windows)",
+  "install": {
+    "arch": {
+      "pacman": "keepassxc"
+    },
+    "cachyos": {
+      "pacman": "keepassxc"
+    },
+    "debian": {
+      "flatpak": "org.keepassxc.KeePassXC"
+    },
+    "ubuntu": {
+      "flatpak": "org.keepassxc.KeePassXC"
+    },
+    "raspberrypi": {
+      "flatpak": "org.keepassxc.KeePassXC"
+    },
+    "windows": {
+      "choco": "keepass.install"
+    }
+  }
+}

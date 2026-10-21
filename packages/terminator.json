@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Terminator is a terminal emulator which supports tabs and multiple resizable terminal panels in one window. It is based on GNOME Terminal.",
+  "install": {
+    "arch": {
+      "pacman": "terminator"
+    },
+    "cachyos": {
+      "pacman": "terminator"
+    },
+    "debian": {
+      "apt": "terminator"
+    },
+    "ubuntu": {
+      "apt": "terminator"
+    },
+    "raspberrypi": {
+      "apt": "terminator"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Spanish digital signature tool",
+  "install": {
+    "arch": {
+      "flatpak": "es.gob.afirma"
+    },
+    "cachyos": {
+      "flatpak": "es.gob.afirma"
+    },
+    "debian": {
+      "flatpak": "es.gob.afirma"
+    },
+    "ubuntu": {
+      "flatpak": "es.gob.afirma"
+    },
+    "raspberrypi": {
+      "flatpak": "es.gob.afirma"
+    },
+    "windows": {
+      "manual": "https://autofirma.net/descargar/"
+    }
+  }
+}

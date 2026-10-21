@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hardware lister",
+  "install": {
+    "arch": {
+      "pacman": "lshw"
+    },
+    "cachyos": {
+      "pacman": "lshw"
+    },
+    "debian": {
+      "apt": "lshw"
+    },
+    "ubuntu": {
+      "apt": "lshw"
+    },
+    "raspberrypi": {
+      "apt": "lshw"
+    }
+  }
+}

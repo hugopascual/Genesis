@@ -1,0 +1,9 @@
+@include desktop
+
+# Videogames
+battlenet
+gog
+heroic
+minecraft
+lutris
+steam

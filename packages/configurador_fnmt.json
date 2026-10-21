@@ -1,0 +1,38 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "FNMT certificate configuration tool",
+  "install": {
+    "arch": {
+      "yay": "configuradorfnmt"
+    },
+    "cachyos": {
+      "yay": "configuradorfnmt"
+    },
+    "debian": {
+      "commands": [
+        "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
+        "sudo apt install -y ./configuradorfnmt*",
+        "rm configuradorfnmt*"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
+        "sudo apt install -y ./configuradorfnmt*",
+        "rm configuradorfnmt*"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget https://descargas.cert.fnmt.es/Linux/configuradorfnmt_4.0.5_amd64.deb",
+        "sudo apt install -y ./configuradorfnmt*",
+        "rm configuradorfnmt*"
+      ]
+    },
+    "windows": {
+      "commands": [
+        "Invoke-WebRequest -Uri \"https://descargas.cert.fnmt.es/Windows/Configurador_FNMT_5.1.2_64bits.exe\" -OutFile \"$env:USERPROFILE\\Downloads\\Configurador_FNMT_5.1.2_64bits.exe\""
+      ]
+    }
+  }
+}

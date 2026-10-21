@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hypridle idle daemon",
+  "install": {
+    "arch": {
+      "pacman": "hypridle"
+    },
+    "cachyos": {
+      "pacman": "hypridle"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GPU process monitoring",
+  "install": {
+    "arch": {
+      "pacman": "nvtop"
+    },
+    "cachyos": {
+      "pacman": "nvtop"
+    },
+    "debian": {
+      "apt": "nvtop"
+    },
+    "ubuntu": {
+      "apt": "nvtop"
+    },
+    "raspberrypi": {
+      "apt": "nvtop"
+    }
+  }
+}

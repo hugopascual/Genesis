@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "WireGuard VPN",
+  "install": {
+    "arch": {
+      "pacman": "wireguard-tools"
+    },
+    "cachyos": {
+      "pacman": "wireguard-tools"
+    },
+    "debian": {
+      "apt": "wireguard"
+    },
+    "ubuntu": {
+      "apt": "wireguard"
+    },
+    "raspberrypi": {
+      "apt": "wireguard"
+    },
+    "windows": {
+      "choco": "wireguard"
+    }
+  }
+}

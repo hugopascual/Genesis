@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Job scheduler",
+  "install": {
+    "arch": {
+      "pacman": "cronie"
+    },
+    "cachyos": {
+      "pacman": "cronie"
+    },
+    "debian": {
+      "apt": "cron"
+    },
+    "ubuntu": {
+      "apt": "cron"
+    },
+    "raspberrypi": {
+      "apt": "cron"
+    }
+  }
+}

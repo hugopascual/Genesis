@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "File archiver with high compression ratio",
+  "install": {
+    "arch": {
+      "pacman": "7zip"
+    },
+    "cachyos": {
+      "pacman": "7zip"
+    },
+    "debian": {
+      "apt": "7zip"
+    },
+    "ubuntu": {
+      "apt": "7zip"
+    },
+    "raspberrypi": {
+      "apt": "7zip"
+    },
+    "windows": {
+      "choco": "7zip"
+    }
+  }
+}

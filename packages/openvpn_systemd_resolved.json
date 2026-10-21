@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "OpenVPN systemd-resolved integration",
+  "install": {
+    "debian": {
+      "apt": "openvpn-systemd-resolved"
+    },
+    "ubuntu": {
+      "apt": "openvpn-systemd-resolved"
+    }
+  }
+}

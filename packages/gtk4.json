@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GTK 4 runtime",
+  "install": {
+    "arch": {
+      "pacman": "gtk4"
+    },
+    "cachyos": {
+      "pacman": "gtk4"
+    },
+    "debian": {
+      "apt": "libgtk-4-1"
+    },
+    "ubuntu": {
+      "apt": "libgtk-4-1"
+    },
+    "raspberrypi": {
+      "apt": "libgtk-4-1"
+    }
+  }
+}

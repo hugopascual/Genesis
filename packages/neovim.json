@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Vim-fork focused on extensibility",
+  "install": {
+    "arch": {
+      "pacman": "neovim"
+    },
+    "cachyos": {
+      "pacman": "neovim"
+    },
+    "debian": {
+      "apt": "neovim"
+    },
+    "ubuntu": {
+      "apt": "neovim"
+    },
+    "raspberrypi": {
+      "apt": "neovim"
+    }
+  }
+}

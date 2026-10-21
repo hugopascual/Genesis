@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "DNS server and tools (dig, nslookup)",
+  "install": {
+    "arch": {
+      "pacman": "bind"
+    },
+    "cachyos": {
+      "pacman": "bind"
+    },
+    "debian": {
+      "apt": "bind9"
+    },
+    "ubuntu": {
+      "apt": "bind9"
+    },
+    "raspberrypi": {
+      "apt": "bind9"
+    }
+  }
+}

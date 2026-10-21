@@ -20,6 +20,7 @@ export INSTALL_COMMAND='install'
 export UPDATE_COMMAND='update'
 export SETUP_COMMAND='setup'
 export ADD_DISTRO_COMMAND='add-distro'
+export HELP_COMMAND='help'
 
 # Distribution keys
 export UBUNTU='ubuntu'
@@ -33,14 +34,11 @@ export COMMAND_TYPES=(
     "$UPDATE_COMMAND" 
     "$SETUP_COMMAND"
     "$ADD_DISTRO_COMMAND"
+    "$HELP_COMMAND"
 )
 
-# Available installation types
-export INSTALL_COMMAND_TYPES=(
-    "personal"
-    "work" 
-    "server"
-)
+# Available installation types are loaded dynamically from profiles.
+export INSTALL_COMMAND_TYPES=()
 
 # Available setup types are loaded dynamically from setup scripts.
 export SETUP_TYPES=()
@@ -63,10 +61,11 @@ export DISTRO_ALREADY_INCLUDED_MESSAGE="New distribution is already included in 
 
 # Paths constants
 ## Basic paths
-export INSTALL_CONFIGS_PATH="$BASE_PATH/install_configs"
+export REPOSITORY_PATH="$(dirname "$BASE_PATH")"
+export PROFILES_PATH="$REPOSITORY_PATH/profiles/linux"
+export PACKAGES_PATH="$REPOSITORY_PATH/packages"
 export SETUP_BUNDLES_PATH="$SRC_PATH/setups/bundles"
 export LOGS_PATH="$BASE_PATH/logs"
-export PACKAGES_PATH="$BASE_PATH/packages"
 export STATICS_PATH="$BASE_PATH/statics"
 
 ### Logs paths
@@ -154,7 +153,25 @@ load_setup_types() {
     SETUP_TYPES=("${setup_types[@]}")
 }
 
+load_install_types() {
+    local install_types=()
+    local profile_file
+
+    for profile_file in "$PROFILES_PATH"/*.txt; do
+        [[ -f "$profile_file" ]] || continue
+        install_types+=("$(basename "$profile_file" .txt)")
+    done
+
+    if [[ ${#install_types[@]} -eq 0 ]]; then
+        echo "Error: No profiles found in: $PROFILES_PATH"
+        exit 1
+    fi
+
+    INSTALL_COMMAND_TYPES=("${install_types[@]}")
+}
+
 load_available_distros
+load_install_types
 load_setup_types
 
 ################################################################################

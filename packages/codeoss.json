@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Official Arch Linux open-source release. Ships a configuration enabling Open VSX.",
+  "install": {
+    "arch": {
+      "pacman": "code"
+    },
+    "cachyos": {
+      "pacman": "code"
+    }
+  }
+}

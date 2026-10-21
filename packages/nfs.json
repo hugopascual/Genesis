@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "NFS utilities",
+  "install": {
+    "arch": {
+      "pacman": "nfs-utils"
+    },
+    "cachyos": {
+      "pacman": "nfs-utils"
+    },
+    "debian": {
+      "apt": "nfs-common"
+    },
+    "ubuntu": {
+      "apt": "nfs-common"
+    },
+    "raspberrypi": {
+      "apt": "nfs-common"
+    }
+  }
+}

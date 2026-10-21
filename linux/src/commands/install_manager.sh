@@ -1,25 +1,31 @@
 #!/bin/bash
 
+# install_software return codes
+export INSTALL_STATUS_OK=0
+export INSTALL_STATUS_FAILED=1
+export INSTALL_STATUS_NOT_AVAILABLE=2
+export INSTALL_STATUS_MANUAL=3
+
 ##
 # @Description
 # Main installation command handler
-# 
+#
 # Environment Variables:
 #   DISTRO_SELECTED: Distribution name (ubuntu/debian/arch)
-#   OPTION_SELECTED: Installation option or custom software list
+#   OPTION_SELECTED: Profile name (profiles/linux/<name>.txt) or custom package list path
 ##
 install_command() {
     local config_file=""
-    
+
     if [[ -f "$OPTION_SELECTED" ]]; then
         config_file="$OPTION_SELECTED"
     else
         check_option_supported "$OPTION_SELECTED" \
             "$INSTALLATION_TYPE_NOT_VALID_MESSAGE" \
             "${INSTALL_COMMAND_TYPES[@]}"
-        config_file="$INSTALL_CONFIGS_PATH/$OPTION_SELECTED.txt"
+        config_file="$PROFILES_PATH/$OPTION_SELECTED.txt"
     fi
-    
+
     # Execute installation with determined config file
     run_installation "$config_file"
 }
@@ -37,220 +43,225 @@ install_command() {
 ##
 run_installation() {
     local config_file="$1"
-    
+
     log_info "Using configuration file: $config_file"
-    
-    if ! command -v jq &> /dev/null; then
-        log_info "Installing jq (required for JSON-based installation)"
-        case $DISTRO_SELECTED in
-            "$ARCH")
-                sudo pacman -Syu --noconfirm jq
-                ;;
-            "$UBUNTU"|"$DEBIAN")
-                sudo apt install -y jq
-                ;;
-        esac
+
+    ensure_jq_installed || return 1
+    if ! install_from_config_file "$config_file" "$DISTRO_SELECTED"; then
+        log_severe "Installation finished with errors"
+        return 1
     fi
-    
-    install_from_config_file "$config_file" "$DISTRO_SELECTED"
-    
+
     log_info "Installation completed"
 }
 
 ##
 # @Description
-# Install multiple software packages from a config file (e.g., configs/default_server.txt)
-# Each line in the config file should be a software name
+# Install jq with the distro package manager if it is missing
+##
+ensure_jq_installed() {
+    if command -v jq &> /dev/null; then
+        return 0
+    fi
+
+    log_info "Installing jq (required for JSON-based installation)"
+    if command -v pacman &> /dev/null; then
+        sudo pacman -Syu --noconfirm jq
+    elif command -v apt &> /dev/null; then
+        sudo apt install -y jq
+    else
+        log_severe "jq is not installed and no supported package manager was found"
+        return 1
+    fi
+}
+
+##
+# @Description
+# Print the package names of a profile, expanding "@include <profile>" lines recursively.
+# Included profiles are resolved from PROFILES_PATH. Output may contain duplicates.
 # @Params
-# $1 Config file path (e.g., "configs/default_server.txt" or absolute path)
+# $1 Profile file path
+# $2 Profiles already being expanded (space separated), used to detect include cycles
+##
+expand_profile() {
+    local profile_file="$1"
+    local include_stack="${2:-$(basename "$profile_file" .txt)}"
+    local line
+    local included_profile
+
+    if [[ ! -f "$profile_file" ]]; then
+        log_severe "Profile not found: $profile_file" >&2
+        return 1
+    fi
+
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line="$(echo "$line" | xargs)"
+        [[ -z "$line" || "$line" == \#* ]] && continue
+
+        if [[ "$line" == "@include "* ]]; then
+            included_profile="$(echo "${line#@include }" | xargs)"
+            if [[ " $include_stack " == *" $included_profile "* ]]; then
+                log_severe "Include cycle detected: $include_stack $included_profile" >&2
+                return 1
+            fi
+            expand_profile "$PROFILES_PATH/$included_profile.txt" "$include_stack $included_profile" || return 1
+        else
+            echo "$line"
+        fi
+    done < "$profile_file"
+}
+
+##
+# @Description
+# Install every package of a profile or package list (e.g., profiles/linux/work.txt)
+# Each line is a package name or an "@include <profile>" directive.
+# Packages repeated through includes are installed only once.
+# @Params
+# $1 Config file path (e.g., "profiles/linux/server.txt" or absolute path)
 # $2 Distribution name (e.g., "ubuntu", "arch", "debian")
-# $3 Strict mode (optional, true/false). Defaults to false.
 ##
 install_from_config_file() {
     local config_file="$1"
     local distro="$2"
-    local strict_mode="${3:-false}"
-    
-    if [[ ! -f "$config_file" ]]; then
-        log_info "Error: Config file not found: $config_file"
-        return 1
-    fi
-    
+    local expanded
+    local packages=()
+    local software
+
+    expanded="$(expand_profile "$config_file")" || return 1
+    mapfile -t packages < <(printf '%s\n' "$expanded" | awk 'NF && !seen[$0]++')
+
     log_info "Installing packages from: $config_file"
     log_info "Distribution: $distro"
-    
-    local failed_packages=()
+
     local installed_count=0
-    local total_count=0
-    
-    # Read config file line by line
-    while IFS= read -r software || [[ -n "$software" ]]; do
-        # Skip empty lines and comments
-        [[ -z "$software" || "$software" =~ ^[[:space:]]*# ]] && continue
-        
-        # Trim whitespace
-        software=$(echo "$software" | xargs)
-        
-        ((total_count++))
-        
-        if install_software "$software" "$distro" "$strict_mode"; then
-            ((installed_count++))
-        else
-            failed_packages+=("$software")
-        fi
-    done < "$config_file"
-    
+    local failed_packages=()
+    local not_available_packages=()
+    local manual_packages=()
+
+    for software in "${packages[@]}"; do
+        install_software "$software" "$distro"
+        case $? in
+            "$INSTALL_STATUS_OK") ((installed_count++)) ;;
+            "$INSTALL_STATUS_NOT_AVAILABLE") not_available_packages+=("$software") ;;
+            "$INSTALL_STATUS_MANUAL") manual_packages+=("$software: $(get_manual_url "$software" "$distro")") ;;
+            *) failed_packages+=("$software") ;;
+        esac
+    done
+
     log_info "Installation summary:"
-    log_info "  Total packages: $total_count"
+    log_info "  Total packages: ${#packages[@]}"
     log_info "  Successfully installed: $installed_count"
-    
-    if [[ ${#failed_packages[@]} -gt 0 ]]; then
-        log_info "  Failed packages (${#failed_packages[@]}):"
-        for pkg in "${failed_packages[@]}"; do
-            log_info "    - $pkg"
-        done
-        return 1
-    fi
-    
-    return 0
+    log_info "  Not available on $distro: ${#not_available_packages[@]}"
+    for software in "${not_available_packages[@]}"; do
+        log_info "    - $software"
+    done
+    log_info "  Manual install required: ${#manual_packages[@]}"
+    for software in "${manual_packages[@]}"; do
+        log_info "    - $software"
+    done
+    log_info "  Failed: ${#failed_packages[@]}"
+    for software in "${failed_packages[@]}"; do
+        log_info "    - $software"
+    done
+
+    [[ ${#failed_packages[@]} -eq 0 ]]
 }
 
 ##
 # @Description
-# Install a single software package using JSON configuration
-# Uses modular packages/ directory structure (packages/software.json)
+# Print the manual installation URL of a package for a distro
+# @Params
+# $1 Software name
+# $2 Distribution name
+##
+get_manual_url() {
+    jq -r --arg distro "$2" '.install[$distro].manual' "$PACKAGES_PATH/$1.json"
+}
+
+##
+# @Description
+# Print the command for a typed installer entry (pacman, yay, apt, flatpak)
+# @Params
+# $1 Installer name
+# $2 Packages, space separated
+##
+build_typed_install_command() {
+    local installer="$1"
+    local packages="$2"
+
+    case $installer in
+        pacman) echo "sudo pacman -Syu --noconfirm $packages" ;;
+        yay) echo "yay -Syu --noconfirm $packages" ;;
+        apt) echo "sudo apt install -y $packages" ;;
+        flatpak) echo "sudo flatpak install -y flathub $packages" ;;
+        *) return 1 ;;
+    esac
+}
+
+##
+# @Description
+# Install a single software package using its definition in packages/<software>.json
 # @Params
 # $1 Software name (e.g., "htop", "docker")
 # $2 Distribution name (e.g., "ubuntu", "arch", "debian")
-# $3 Strict mode (optional, true/false). Defaults to false.
+# @Returns
+# INSTALL_STATUS_OK, INSTALL_STATUS_FAILED, INSTALL_STATUS_NOT_AVAILABLE or INSTALL_STATUS_MANUAL
 ##
 install_software() {
     local software="$1"
     local distro="$2"
-    local strict_mode="${3:-false}"
-    
-    log_info "$software"
-    
-    # Check if jq is available
-    if ! command -v jq &> /dev/null; then
-        log_info "Error: jq is not installed. Please install jq to use JSON-based installation."
-        exit 1
-    fi
-    
-    # Build package file path
     local package_file="$PACKAGES_PATH/$software.json"
-    if [[ ! -f "$package_file" ]]; then
-        log_info "Warning: Package definition not found for '$software' in $package_file"
-        return 1
-    fi
-    
-    # Read commands for the specific distribution
-    local commands
-    commands=$(jq -r ".\"$distro\" // []" "$package_file")
-    
-    # Check if commands were found
-    if [[ -z "$commands" || "$commands" == "null" || "$commands" == "[]" ]]; then
-        log_info "Warning: No installation commands found for '$software' on '$distro'"
-        if [[ "$strict_mode" == "true" ]]; then
-            log_info "Error: Strict mode enabled. Missing distro command mapping for '$software'."
-            return 1
-        fi
-        return 0
-    fi
-    
-    # Parse and execute commands
-    local cmd_count
-    cmd_count=$(echo "$commands" | jq -r 'length')
-    
-    if [[ "$cmd_count" -eq 0 ]]; then
-        log_info "Info: No commands to execute for '$software' (empty array)"
-        return 0
-    fi
-    
-    # Execute each command
-    local index=0
-    while [[ $index -lt $cmd_count ]]; do
-        local cmd
-        cmd=$(echo "$commands" | jq -r ".[$index]")
-        
-        if [[ -n "$cmd" && "$cmd" != "null" ]]; then
-            log_info "  Executing: $cmd"
-            if ! eval "$cmd"; then
-                log_info "Error: Failed to execute command for '$software': $cmd"
-                return 1
-            fi
-        fi
-        
-        ((index++))
-    done
-    
+    local installer
+    local commands=()
+
     log_info "$software"
-    return 0
-}
 
+    if [[ ! -f "$package_file" ]]; then
+        log_warning "Package definition not found for '$software' in $package_file"
+        return "$INSTALL_STATUS_FAILED"
+    fi
 
-# TODO: Probably this is legacy code not used
-##################################
-#--Generic Installing Functions--#
-##################################
-##
-# @Description
-# Install a software package using apt-get
-# @Params
-# $1 Name of the apt package software wanted to be installed
-##
-apt_install() {
-    sudo apt install -y "$1"
-}
+    installer="$(jq -r --arg distro "$distro" '.install[$distro] // {} | keys[0] // ""' "$package_file")" \
+        || return "$INSTALL_STATUS_FAILED"
 
-##
-# @Description
-# Install a software package using pacman
-# @Params
-# $1 Name of the pacman package software wanted to be installed
-##
-pacman_install() {
-    sudo pacman -Syu --noconfirm "$1"
-}
+    case $installer in
+        "")
+            log_info "  Not available on '$distro', skipping"
+            return "$INSTALL_STATUS_NOT_AVAILABLE"
+            ;;
+        manual)
+            log_info "  Manual install required: $(get_manual_url "$software" "$distro")"
+            return "$INSTALL_STATUS_MANUAL"
+            ;;
+        commands)
+            # Read one command at a time: a command may contain newlines
+            local cmd_count index
+            cmd_count="$(jq -r --arg distro "$distro" '.install[$distro].commands | length' "$package_file")"
+            for ((index = 0; index < cmd_count; index++)); do
+                commands+=("$(jq -r --arg distro "$distro" --argjson i "$index" \
+                    '.install[$distro].commands[$i]' "$package_file")")
+            done
+            ;;
+        *)
+            local package_names typed_command
+            package_names="$(jq -r --arg distro "$distro" --arg installer "$installer" \
+                '.install[$distro][$installer] | if type == "array" then join(" ") else . end' "$package_file")"
+            if ! typed_command="$(build_typed_install_command "$installer" "$package_names")"; then
+                log_severe "Installer '$installer' is not supported on Linux ('$software' on '$distro')"
+                return "$INSTALL_STATUS_FAILED"
+            fi
+            commands+=("$typed_command")
+            ;;
+    esac
 
-##
-# @Description
-# Install a software package using yay
-# @Params
-# $1 Name of the yay package software wanted to be installed
-##
-yay_install() {
-    yay -Syu --noconfirm "$1"
-}
+    local cmd
+    for cmd in "${commands[@]}"; do
+        log_info "  Executing: $cmd"
+        if ! eval "$cmd"; then
+            log_severe "Failed to execute command for '$software': $cmd"
+            return "$INSTALL_STATUS_FAILED"
+        fi
+    done
 
-##
-# @Description
-# Install a software package from flathub via flatpak
-# @Params
-# $1 Name of the apt package software wanted to be installed
-##
-flathub_install() {
-    sudo flatpak install -y flathub "$1"
-}
-
-##
-# @Description
-# Install a software package via snap
-# @Params
-# $1 Name of the apt package software wanted to be installed
-##
-snap_install() {
-    sudo snap install "$1"
-}
-
-##
-# @Description
-# Install a software package downloading the deb package
-# @Params
-# $1 URL of deb package to install
-##
-deb_download_and_install() {
-    wget --content-disposition "$1"
-    sudo apt-get install -y ./*.deb
-    rm ./*.deb
+    return "$INSTALL_STATUS_OK"
 }

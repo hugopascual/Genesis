@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Python programming language",
+  "install": {
+    "arch": {
+      "pacman": "python"
+    },
+    "cachyos": {
+      "pacman": "python"
+    },
+    "debian": {
+      "apt": [
+        "python3",
+        "python3-venv",
+        "python3-pip"
+      ]
+    },
+    "ubuntu": {
+      "apt": [
+        "python3",
+        "python3-venv",
+        "python3-pip"
+      ]
+    },
+    "raspberrypi": {
+      "apt": [
+        "python3",
+        "python3-venv",
+        "python3-pip"
+      ]
+    },
+    "windows": {
+      "choco": "python"
+    }
+  }
+}

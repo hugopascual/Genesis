@@ -1,7 +1,0 @@
-{
-  "description": "Lychee Slicer",
-  "info": "https://community.chocolatey.org/packages/lycheeslicer",
-  "commands": [
-    "choco install -y lycheeslicer --ignore-checksums"
-  ]
-}

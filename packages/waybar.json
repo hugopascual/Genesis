@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Waybar status bar",
+  "install": {
+    "arch": {
+      "pacman": "waybar"
+    },
+    "cachyos": {
+      "pacman": "waybar"
+    }
+  }
+}

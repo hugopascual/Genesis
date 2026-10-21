@@ -1,0 +1,33 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "TUI for docker",
+  "install": {
+    "arch": {
+      "pacman": "lazydocker"
+    },
+    "cachyos": {
+      "pacman": "lazydocker"
+    },
+    "debian": {
+      "commands": [
+        "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
+        "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+        "sudo apt update"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
+        "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+        "sudo apt update"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash",
+        "sudo mv $HOME/.local/bin/lazydocker /usr/local/bin/",
+        "sudo apt update"
+      ]
+    }
+  }
+}

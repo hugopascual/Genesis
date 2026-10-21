@@ -1,0 +1,42 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Video game digital distribution service",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo sed -i '/^#\\[multilib\\]/,/^\\s*$/ s/^#//' /etc/pacman.conf",
+        "sudo pacman -Syu --noconfirm steam"
+      ]
+    },
+    "cachyos": {
+      "pacman": [
+        "cachyos-gaming-meta",
+        "cachyos-gaming-applications"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "wget --content-disposition https://cdn.akamai.steamstatic.com/client/installer/steam.deb",
+        "sudo apt install -y ./*.deb",
+        "rm ./*.deb"
+      ]
+    },
+    "windows": {
+      "choco": "steam"
+    }
+  }
+}

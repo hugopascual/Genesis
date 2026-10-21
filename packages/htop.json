@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Interactive process viewer",
+  "install": {
+    "arch": {
+      "pacman": "htop"
+    },
+    "cachyos": {
+      "pacman": "htop"
+    },
+    "debian": {
+      "apt": "htop"
+    },
+    "ubuntu": {
+      "apt": "htop"
+    },
+    "raspberrypi": {
+      "apt": "htop"
+    }
+  }
+}

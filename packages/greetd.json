@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Greetd Login Manager",
+  "install": {
+    "arch": {
+      "pacman": "greetd"
+    },
+    "cachyos": {
+      "pacman": "greetd"
+    }
+  }
+}

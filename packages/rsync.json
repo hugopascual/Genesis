@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Fast file copying tool",
+  "install": {
+    "arch": {
+      "pacman": "rsync"
+    },
+    "cachyos": {
+      "pacman": "rsync"
+    },
+    "debian": {
+      "apt": "rsync"
+    },
+    "ubuntu": {
+      "apt": "rsync"
+    },
+    "raspberrypi": {
+      "apt": "rsync"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "GNU Image Manipulation Program",
+  "install": {
+    "arch": {
+      "pacman": "gimp"
+    },
+    "cachyos": {
+      "pacman": "gimp"
+    },
+    "debian": {
+      "apt": "gimp"
+    },
+    "ubuntu": {
+      "apt": "gimp"
+    },
+    "raspberrypi": {
+      "apt": "gimp"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "package.schema.json",
+  "title": "Genesis package definition",
+  "description": "One logical package with its installation method for every supported platform. A platform not listed means the package is not available there.",
+  "type": "object",
+  "required": ["description", "install"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "description": { "type": "string", "minLength": 1 },
+    "install": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z0-9_]+$" },
+      "additionalProperties": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "packageList": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+      ]
+    },
+    "entry": {
+      "description": "Exactly one installation method per platform.",
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "pacman": { "$ref": "#/$defs/packageList", "description": "sudo pacman -Syu --noconfirm <pkgs>" },
+        "yay": { "$ref": "#/$defs/packageList", "description": "yay -Syu --noconfirm <pkgs>" },
+        "apt": { "$ref": "#/$defs/packageList", "description": "sudo apt install -y <pkgs>" },
+        "flatpak": { "$ref": "#/$defs/packageList", "description": "sudo flatpak install -y flathub <ids>" },
+        "choco": { "$ref": "#/$defs/packageList", "description": "choco install -y <pkgs> --ignore-checksums" },
+        "commands": {
+          "description": "Raw shell commands (bash on Linux, PowerShell on Windows), run in order.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "manual": {
+          "description": "No automatic install: URL shown in the final summary.",
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Hyprpaper wallpaper daemon",
+  "install": {
+    "arch": {
+      "pacman": "hyprpaper"
+    },
+    "cachyos": {
+      "pacman": "hyprpaper"
+    }
+  }
+}

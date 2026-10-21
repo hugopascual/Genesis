@@ -1,7 +1,0 @@
-{
-  "description": "Raspberrypi Imager",
-  "info": "https://downloads.raspberrypi.com/imager/imager_latest.exe",
-  "commands": [
-    "Invoke-WebRequest -Uri \"https://downloads.raspberrypi.com/imager/imager_latest.exe\" -OutFile \"$env:USERPROFILE\\Downloads\\imager_latest.exe\""
-  ]
-}

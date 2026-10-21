@@ -2,7 +2,7 @@
 
 ##
 # @Description
-# Add a new distribution key to all package JSON files with a basic command.
+# Add a new distribution key to every package JSON file available on Linux, with a basic command.
 #
 # Environment Variables:
 #   DISTRO_SELECTED: New distribution key to add (e.g. fedora)
@@ -44,8 +44,14 @@ add_distro_command() {
         package_name="$(basename "$package_file" .json)"
         ((total_files++))
 
-        if jq -e --arg distro "$new_distro" 'has($distro)' "$package_file" > /dev/null; then
+        if jq -e --arg distro "$new_distro" '.install | has($distro)' "$package_file" > /dev/null; then
             log_info "Skip: '$package_name' already has '$new_distro'"
+            ((skipped_files++))
+            continue
+        fi
+
+        if ! jq -e '.install | keys | any(. != "windows")' "$package_file" > /dev/null; then
+            log_info "Skip: '$package_name' is not available on Linux"
             ((skipped_files++))
             continue
         fi
@@ -59,7 +65,7 @@ add_distro_command() {
 
         local tmp_file="${package_file}.tmp"
         if jq --arg distro "$new_distro" --arg cmd "$package_command" \
-            '. + {($distro): [$cmd]}' "$package_file" > "$tmp_file"; then
+            '.install[$distro] = {commands: [$cmd]}' "$package_file" > "$tmp_file"; then
             mv "$tmp_file" "$package_file"
             log_info "Updated: '$package_name'"
             ((updated_files++))

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Qt6 Wayland support",
+  "install": {
+    "arch": {
+      "pacman": "qt6-wayland"
+    },
+    "cachyos": {
+      "pacman": "qt6-wayland"
+    },
+    "debian": {
+      "apt": "qt6-wayland"
+    },
+    "ubuntu": {
+      "apt": "qt6-wayland"
+    },
+    "raspberrypi": {
+      "apt": "qt6-wayland"
+    }
+  }
+}

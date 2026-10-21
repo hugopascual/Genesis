@@ -1,84 +1,67 @@
-# Windows Software
+# Windows Genesis Guide
 
-## Installation
+## Requirements
 
-The first step is to install Chocolatey, on an administrative powershell, run:
+Install [Chocolatey](https://chocolatey.org/install) from an administrative PowerShell:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-Then, run the software installation script:
+## Commands
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile base
-```
-
-### Installation profiles
-
-The script now uses profile files (similar to Linux) and package JSON definitions:
-
-- Profiles: `windows/install_configs/*.txt`
-- Package definitions: `windows/packages/*.json`
-
-Available profiles are discovered automatically from `windows/install_configs/*.txt`.
-
-- `base`
-- `games`
-- `3dprinting`
-
-Profile name is the filename without `.txt`.
-Example: `windows/install_configs/base.txt` -> `-Profile base`.
-
-Examples:
-
-```powershell
-# Use a custom list file
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -ConfigPath .\windows\install_configs\base.txt
-
-# Use a detected profile name (from install_configs filename)
-powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile games
-
-# Show command help
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install [-Profile <profile>] [-ConfigPath <package_list_file>]
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 update
 powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 help
 ```
 
-### Package JSON format
+- `install` is the default command, and `desktop` the default profile: running the script without arguments installs the `desktop` profile.
+- Every command except `help` shows the selected options and asks for confirmation before running.
 
-Each package file now uses a single command list and optional info URL:
+## Install
 
-```json
-{
-  "description": "Software name",
-  "info": "https://example.org/software",
-  "commands": [
-    "choco install -y package --ignore-checksums",
-    "winget install --id Vendor.Package --silent --accept-package-agreements --accept-source-agreements"
-  ]
-}
+```powershell
+# Profile (profiles/windows/<profile>.txt)
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile personal
+
+# Custom package list, it can contain "@include <profile>"
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -ConfigPath .\my_packages.txt
 ```
 
-Notes:
+Profiles and the `@include` syntax are described in [Profiles](Profiles.md). If both `-Profile` and `-ConfigPath` are given, `-ConfigPath` is used.
 
-- `description` is metadata only and is not used by the installer logic.
-- `commands` is the only field executed by the installer.
-- Command output is streamed to terminal while each command runs.
-- If a command exits with non-zero code, the package is marked as failed.
-- URL downloads are expressed directly as commands.
-- If `commands` is empty, the package is skipped and shown at the end in a manual-install list with the `info` link.
+Each package is installed with its `windows` entry (see [Packages](../README.md#packages)):
 
-### Default installs
+- `choco`: installed with Chocolatey.
+- `commands`: PowerShell commands run in order. Their output is shown while they run, and a non-zero exit code marks the package as failed.
+- `manual`: skipped and listed at the end with its URL to install it by hand.
+- No `windows` entry: skipped and listed as not available.
 
-- **Development**: git, vscode, python, docker-desktop, jetbrains-toolbox, postman
-- **Browsers**: firefox, google-chrome
-- **Communication**: thunderbird, telegram, discord
-- **Media**: vlc, spotify
-- **Utilities**: keepass, obsidian, wireguard
-- **Games**: steam, epic-games-launcher, ea-app, heroic-games-launcher
+At the end, a summary lists the packages installed, not available, requiring a manual install and failed. The command exits with an error only if some package failed.
 
-## Environment Setup
+## Update
 
-### Settings configuration
+Update all Chocolatey packages:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 update
+```
+
+## Logs
+
+The whole session output, including the output of the installation commands, is saved in `windows\logs\` with the format `genesis_YYYYMMDD_HHMMSS.log`. Logs are enabled by default; set `GENESIS_LOG_ENABLED` to `false` to disable them:
+
+```powershell
+$env:GENESIS_LOG_ENABLED = "false"
+powershell -ExecutionPolicy Bypass -File .\windows\windows.ps1 install -Profile desktop
+```
+
+## Manual configuration
+
+There is no automated setup on Windows yet. These are the settings applied by hand.
+
+### Settings
 
 - Personalisation
   - Background
@@ -93,7 +76,7 @@ Notes:
   - Start
     - Recommended
       - Disable `Show recently added apps`
-      - Disable `Show recommended files in Start, recentfiles in File Explorer and on Jump Lists`
+      - Disable `Show recommended files in Start, recent files in File Explorer and on Jump Lists`
       - Disable `Show recommendations for tips, shortcuts, new apps and more`
   - Taskbar
     - Taskbar items
@@ -115,22 +98,44 @@ Notes:
         - Spanish (Spain)
     - Region
       - Country or region: Spain
-      - Regional format: Spanish (Spain, Internacional Sort)
+      - Regional format: Spanish (Spain, International Sort)
 
-### Desktop configuration
+### Desktop
 
-Making right click aand selecting `Show more options` to get the old menu:
+Right click on the desktop and select `Show more options` to get the old menu:
 
 - View
   - Disable `Show desktop icons`
 
-## WIP
+### Pending
 
 - Startup apps: Firefox, Obsidian, Thunderbird
   - Apps folder: `Win+R` -> `shell:appsfolder`
   - Startup folder: `Win+R` -> `shell:startup`
-  - Drag and drop the ones
-- Other setup configurations
-  - Remove Windows Slop -> `Apps -> Installed apps`
-- Graphic drivers
-  - [GeForce Experience](https://www.nvidia.com/es-es/geforce/drivers/)
+  - Drag and drop the apps from the apps folder to the startup folder
+- Remove preinstalled apps: `Apps -> Installed apps`
+- Graphics drivers: installed manually through the `amd_drivers`, `intel_drivers` and `nvidia_app` packages of the `desktop` profile
+
+## For developers
+
+### Project Structure
+
+The Windows code follows the same layout as the Linux one:
+
+```text
+Genesis/
+├── packages/              # Software definitions shared with Linux (JSON)
+├── profiles/windows/      # Installation profiles
+└── windows/
+    ├── windows.ps1        # Main entrypoint
+    ├── logs/              # Session logs
+    └── src/
+        ├── commands/      # Command managers (install, update)
+        └── utilities/     # Constants, help, logging and utilities
+```
+
+Scripts in `src/utilities` and `src/commands` are loaded automatically by `windows.ps1`, in that order.
+
+### Adding software
+
+See [Packages](../README.md#packages).
