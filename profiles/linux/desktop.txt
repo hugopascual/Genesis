@@ -34,6 +34,7 @@ okular
 printers
 raspberrypi_imager
 terminator
+zip
 
 # VPNs
 openvpn

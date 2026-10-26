@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "ZIP",
+  "install": {
+    "arch": {
+      "pacman": "zip"
+    },
+    "cachyos": {
+      "pacman": "zip"
+    },
+    "debian": {
+      "apt": "zip"
+    },
+    "ubuntu": {
+      "apt": "zip"
+    },
+    "raspberrypi": {
+      "apt": "zip"
+    }
+  }
+}
