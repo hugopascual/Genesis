@@ -28,6 +28,7 @@ autofirma
 configurador_fnmt
 keepass
 kitty
+latex_tools
 obsidian
 okular
 printers
