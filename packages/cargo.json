@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Rust's package manager",
+  "install": {
+    "arch": {
+      "pacman": "cargo"
+    },
+    "cachyos": {
+      "pacman": "cargo"
+    }
+  }
+}

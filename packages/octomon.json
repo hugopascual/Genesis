@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Latency, bandwidth, network config and device performance in a terminal app with a built-in dashboard and analysis to help diagnose the data.",
+  "install": {
+    "arch": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm cargo",
+        "grep -qsxF \"export PATH=\\\"\\$PATH:$HOME/.cargo/bin\\\"\" \"$HOME/.profile\" || printf '%s\\n' '#Added cargo binaries to PATH' \"export PATH=\\\"\\$PATH:$HOME/.cargo/bin\\\"\" >> \"$HOME/.profile\"",
+        "cargo install octomon"
+      ]
+    },
+    "cachyos": {
+      "commands": [
+        "sudo pacman -Syu --noconfirm cargo",
+        "grep -qsxF \"export PATH=\\\"\\$PATH:$HOME/.cargo/bin\\\"\" \"$HOME/.profile\" || printf '%s\\n' '#Added cargo binaries to PATH' \"export PATH=\\\"\\$PATH:$HOME/.cargo/bin\\\"\" >> \"$HOME/.profile\"",
+        "cargo install octomon"
+      ]
+    },
+    "debian": {
+      "commands": [
+        "curl -fsSL https://octomon.dev/apt/octomon.gpg | sudo tee /usr/share/keyrings/octomon.gpg >/dev/null",
+        "echo \"deb [signed-by=/usr/share/keyrings/octomon.gpg] https://octomon.dev/apt stable main\" | sudo tee /etc/apt/sources.list.d/octomon.list",
+        "sudo apt update && sudo apt install octomon"
+      ]
+    },
+    "ubuntu": {
+      "commands": [
+        "curl -fsSL https://octomon.dev/apt/octomon.gpg | sudo tee /usr/share/keyrings/octomon.gpg >/dev/null",
+        "echo \"deb [signed-by=/usr/share/keyrings/octomon.gpg] https://octomon.dev/apt stable main\" | sudo tee /etc/apt/sources.list.d/octomon.list",
+        "sudo apt update && sudo apt install octomon"
+      ]
+    },
+    "raspberrypi": {
+      "commands": [
+        "curl -fsSL https://octomon.dev/apt/octomon.gpg | sudo tee /usr/share/keyrings/octomon.gpg >/dev/null",
+        "echo \"deb [signed-by=/usr/share/keyrings/octomon.gpg] https://octomon.dev/apt stable main\" | sudo tee /etc/apt/sources.list.d/octomon.list",
+        "sudo apt update && sudo apt install octomon"
+      ]
+    }
+  }
+}
