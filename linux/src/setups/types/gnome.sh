@@ -76,11 +76,6 @@ shell_to_bash() {
 	sudo chsh --shell /bin/bash root
 }
 
-
-gnome_enable_display_manager() {
-	
-}
-
 ###############################################################################
 
 log_info "Starting GNOME setup"
