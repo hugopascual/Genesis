@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Integrate AppImages into your app menu with just one click",
+  "install": {
+    "arch": {
+      "flatpak": "it.mijorus.gearlever"
+    },
+    "cachyos": {
+      "flatpak": "it.mijorus.gearlever"
+    },
+    "debian": {
+      "flatpak": "it.mijorus.gearlever"
+    },
+    "ubuntu": {
+      "flatpak": "it.mijorus.gearlever"
+    },
+    "raspberrypi": {
+      "flatpak": "it.mijorus.gearlever"
+    }
+  }
+}
