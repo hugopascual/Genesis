@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/package.schema.json",
+  "description": "Integrate AppImages into your app menu with just one click",
+  "install": {
+    "arch": {
+      "pacman": "fuse2"
+    },
+    "cachyos": {
+      "pacman": "fuse2"
+    },
+    "debian": {
+      "apt": "fuse2"
+    },
+    "ubuntu": {
+      "apt": "fuse2"
+    },
+    "raspberrypi": {
+      "apt": "fuse2"
+    }
+  }
+}
